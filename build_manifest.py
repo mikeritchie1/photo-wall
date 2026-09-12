@@ -1,5 +1,9 @@
 import json
 import re
+import shutil
+import subprocess
+import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from datetime import datetime, timezone
 
@@ -24,6 +28,8 @@ except ImportError:
 PROJECT_ROOT = Path(__file__).parent
 IMAGES_DIR = PROJECT_ROOT / "images"
 MANIFEST_PATH = IMAGES_DIR / "manifest.json"
+VIDEOS_DIR = PROJECT_ROOT / "videos"
+VIDEO_MANIFEST_PATH = VIDEOS_DIR / "manifest.json"
 ROOT_MISC_FOLDER_NAME = "Various"
 TARGET_FOLDERS = None
 DELETE_ORIGINAL_HEIC = True
@@ -32,6 +38,27 @@ DELETE_CONSUMED_SIDECAR_JSON = False
 # Allowed image file extensions
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp", ".gif"}
 HEIC_EXTENSIONS = {".heic", ".heif"}
+VIDEO_EXTENSIONS = {".mp4", ".webm", ".mov", ".m4v", ".avi", ".mkv"}
+MAX_VIDEO_BYTES = 20 * 1024 * 1024
+COMPRESS_TRIGGER_BYTES = MAX_VIDEO_BYTES
+# Kept only for migrating files created by older versions. New compressed
+# videos are written back to their original filename.
+COMPRESSED_VIDEO_SUFFIX = ".compressed.mp4"
+
+
+def find_media_tool(tool_name: str):
+    """Find FFmpeg tools on PATH or in the standard Windows WinGet location."""
+    tool = shutil.which(tool_name)
+    if tool:
+        return tool
+
+    local_app_data = Path.home() / "AppData" / "Local"
+    winget_packages = local_app_data / "Microsoft" / "WinGet" / "Packages"
+    if winget_packages.exists():
+        matches = sorted(winget_packages.glob(f"Gyan.FFmpeg*/*/bin/{tool_name}.exe"))
+        if matches:
+            return str(matches[0])
+    return None
 
 
 def format_display_date(dt: datetime) -> str:
@@ -203,6 +230,12 @@ def get_sidecar_candidates_for_image(image_file: Path):
         add_candidate(base_stem)
         add_candidate(f"{base_stem}.heic")
         add_candidate(f"{base_stem}.heif")
+
+    # Oversized videos may be replaced by a `.compressed.mp4` file while
+    # retaining the original Google Takeout sidecar name.
+    compressed_suffix = ".compressed"
+    if base_stem.endswith(compressed_suffix):
+        add_candidate(base_stem[:-len(compressed_suffix)])
 
     # Google Photos takeout occasionally emits a sidecar stem with one trailing digit missing.
     if is_google_takeout_numeric_stem(base_stem):
@@ -452,6 +485,224 @@ def move_root_images_to_various_folder():
         )
 
 
+def compress_large_video(video_file: Path) -> Path:
+    """Compress an oversized video and replace the original with the result."""
+    if video_file.name.endswith(COMPRESSED_VIDEO_SUFFIX) or video_file.stat().st_size <= COMPRESS_TRIGGER_BYTES:
+        return video_file
+
+    ffmpeg = find_media_tool("ffmpeg")
+    if not ffmpeg:
+        print(f"Warning: {video_file.name} is over 20 MB, but FFmpeg is not installed; leaving it unchanged.")
+        return video_file
+
+    # FFmpeg cannot safely read and write the same file. Encode beside the
+    # source, then replace the source immediately when the attempt finishes.
+    output_file = video_file
+    temporary_file = video_file.with_name(
+        f"{video_file.stem}.compressed.tmp{video_file.suffix}"
+    )
+    duration_seconds = video_duration_seconds(video_file)
+    source_for_attempt = video_file
+    try:
+        compression_attempts = [
+            (28, 1280, "96k"),
+            (32, 1280, "96k"),
+            (36, 1280, "96k"),
+            (40, 960, "96k"),
+            (44, 720, "64k"),
+            (48, 540, "64k"),
+            (51, 360, "48k"),
+            (51, 240, "32k"),
+            (51, 160, "24k"),
+        ]
+        attempt = 0
+        while True:
+            if attempt >= len(compression_attempts):
+                previous_width = compression_attempts[-1][1]
+                previous_audio_kbps = int(compression_attempts[-1][2].removesuffix("k"))
+                compression_attempts.append(
+                    (51, max(64, previous_width // 2), f"{max(8, previous_audio_kbps // 2)}k")
+                )
+            crf, max_width, audio_bitrate = compression_attempts[attempt]
+            attempt += 1
+            if temporary_file.exists():
+                temporary_file.unlink()
+            command = [
+                ffmpeg, "-y", "-i", str(source_for_attempt),
+                "-vf", f"scale='min({max_width},iw)':-2",
+                "-c:v", "libx264", "-preset", "medium", "-crf", str(crf),
+                "-c:a", "aac", "-b:a", audio_bitrate, "-movflags", "+faststart",
+                "-progress", "pipe:1", "-nostats", str(temporary_file),
+            ]
+            print(
+                f"  Attempt {attempt} "
+                f"(CRF {crf}, max width {max_width}, audio {audio_bitrate})",
+                flush=True,
+            )
+            process = subprocess.Popen(
+                command,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.DEVNULL,
+                text=True,
+            )
+            for line in process.stdout or []:
+                if not duration_seconds or "out_time_us=" not in line:
+                    continue
+                try:
+                    elapsed = int(line.split("=", 1)[1]) / 1_000_000
+                except (IndexError, ValueError):
+                    continue
+                percent = min(100, max(0, elapsed / duration_seconds * 100))
+                bar_length = 30
+                filled = int(bar_length * percent / 100)
+                bar = "#" * filled + "-" * (bar_length - filled)
+                print(f"\r  [{bar}] {percent:5.1f}%", end="", flush=True)
+            return_code = process.wait()
+            if duration_seconds:
+                print("\r  [##############################] 100.0%", flush=True)
+            if return_code != 0:
+                raise subprocess.CalledProcessError(return_code, command)
+            temporary_file.replace(output_file)
+            print(f"Saved compressed video: {output_file.name} ({output_file.stat().st_size / (1024 * 1024):.1f} MB)", flush=True)
+            if output_file.stat().st_size <= MAX_VIDEO_BYTES:
+                print(f"Compressed and replaced {video_file.name} -> {output_file.name}")
+                return output_file
+            source_for_attempt = output_file
+    except (OSError, subprocess.CalledProcessError) as error:
+        print(f"Warning: compression failed for {video_file.name}: {error}")
+    finally:
+        if temporary_file.exists():
+            temporary_file.unlink()
+    return output_file if output_file.exists() else video_file
+
+
+def video_has_audio(video_file: Path) -> bool:
+    """Return whether FFprobe finds an audio stream; assume true if unavailable."""
+    ffprobe = find_media_tool("ffprobe")
+    if not ffprobe:
+        return True
+    try:
+        result = subprocess.run(
+            [
+                ffprobe, "-v", "error", "-select_streams", "a:0",
+                "-show_entries", "stream=index", "-of", "csv=p=0", str(video_file),
+            ],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        return bool(result.stdout.strip())
+    except (OSError, subprocess.CalledProcessError):
+        return True
+
+
+def video_duration_seconds(video_file: Path):
+    """Read a video's duration for compression progress reporting."""
+    ffprobe = find_media_tool("ffprobe")
+    if not ffprobe:
+        return None
+    try:
+        result = subprocess.run(
+            [
+                ffprobe, "-v", "error", "-show_entries", "format=duration",
+                "-of", "default=noprint_wrappers=1:nokey=1", str(video_file),
+            ],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        duration = float(result.stdout.strip())
+        return duration if duration > 0 else None
+    except (OSError, ValueError, subprocess.CalledProcessError):
+        return None
+
+
+def build_video_manifest():
+    """Create the lightweight manifest used by the web app's video mode."""
+    video_manifest = {}
+    included_paths = set()
+    if VIDEOS_DIR.exists():
+        for file in sorted(VIDEOS_DIR.rglob("*")):
+            if not file.is_file() or file.suffix.lower() not in VIDEO_EXTENSIONS:
+                continue
+            relative = file.relative_to(VIDEOS_DIR)
+            if relative in included_paths:
+                continue
+            included_paths.add(relative)
+            folder = relative.parts[0] if len(relative.parts) > 1 else ROOT_MISC_FOLDER_NAME
+            sidecar_files = [
+                candidate
+                for candidate in file.parent.iterdir()
+                if candidate.is_file()
+                and candidate.suffix.lower() == ".json"
+                and candidate.name.lower() not in {"manifest.json", "metadata.json"}
+            ]
+            text, taken_time, people, _ = get_sidecar_metadata(
+                find_matching_sidecars(file, sidecar_files)
+            )
+            video_manifest.setdefault(folder, []).append(
+                {
+                    "filename": file.name,
+                    "path": "/".join(relative.parts),
+                    "text": text,
+                    "date": taken_time or format_file_mtime(file),
+                    "people": people,
+                    "hasAudio": video_has_audio(file),
+                }
+            )
+
+    VIDEOS_DIR.mkdir(parents=True, exist_ok=True)
+    with open(VIDEO_MANIFEST_PATH, "w", encoding="utf-8") as f:
+        json.dump(video_manifest, f, indent=2, ensure_ascii=False)
+    print(f"Video manifest created: {VIDEO_MANIFEST_PATH}")
+
+
+def compress_videos():
+    """Compress oversized videos with up to four workers, then rebuild manifests."""
+    if not VIDEOS_DIR.exists():
+        print("Videos folder not found; nothing to compress.")
+        build_manifest()
+        return
+
+    oversized_videos = []
+    for temporary_file in sorted(VIDEOS_DIR.rglob("*.compressed.tmp.*")):
+        if temporary_file.is_file():
+            try:
+                temporary_file.unlink()
+                print(f"Removed incomplete temporary file: {temporary_file.name}", flush=True)
+            except OSError as error:
+                print(f"Warning: could not remove temporary file {temporary_file.name}: {error}")
+
+    for video_file in sorted(VIDEOS_DIR.rglob("*")):
+        if not video_file.is_file() or video_file.suffix.lower() not in VIDEO_EXTENSIONS:
+            continue
+        if video_file.name.endswith(COMPRESSED_VIDEO_SUFFIX):
+            continue
+        if video_file.stat().st_size <= COMPRESS_TRIGGER_BYTES:
+            continue
+
+        oversized_videos.append(video_file)
+
+    def compress_one_video(video_file):
+        size_mb = video_file.stat().st_size / (1024 * 1024)
+        print(f"Compressing video: {video_file.name} ({size_mb:.1f} MB)", flush=True)
+        compressed_file = compress_large_video(video_file)
+        print(f"Finished video: {compressed_file.name}", flush=True)
+
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        futures = [executor.submit(compress_one_video, video_file) for video_file in oversized_videos]
+        for future in as_completed(futures):
+            future.result()
+            # Publish each completed replacement immediately instead of
+            # waiting for every worker in the batch.
+            build_video_manifest()
+
+    print(
+        f"Video compression complete: {len(oversized_videos)} oversized video(s) processed."
+    )
+    build_manifest()
+
+
 def build_manifest():
     manifest = {}
 
@@ -560,6 +811,8 @@ def build_manifest():
     with open(MANIFEST_PATH, "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
 
+    build_video_manifest()
+
     print(f"Manifest created: {MANIFEST_PATH}")
     manifest_preview = json.dumps(manifest, indent=2, ensure_ascii=False)
     try:
@@ -568,4 +821,7 @@ def build_manifest():
         print(manifest_preview.encode("ascii", errors="replace").decode("ascii"))
 
 if __name__ == "__main__":
-    build_manifest()
+    if "--compress-videos" in sys.argv[1:]:
+        compress_videos()
+    else:
+        build_manifest()

@@ -13,6 +13,9 @@ const yearEndSlider = document.getElementById("yearEndSlider");
 const yearRangeActive = document.getElementById("yearRangeActive");
 const yearRangeValue = document.getElementById("yearRangeValue");
 const textSelect = document.getElementById("textSelect");
+const mediaMixSlider = document.getElementById("mediaMixSlider");
+const mediaMixValue = document.getElementById("mediaMixValue");
+const soundCheckbox = document.getElementById("soundCheckbox");
 const peopleFilterSummary = document.getElementById("peopleFilterSummary");
 const peopleOptions = document.getElementById("peopleOptions");
 const resetControlsBtn = document.getElementById("resetControlsBtn");
@@ -21,9 +24,11 @@ const R2_BASE_URL = "https://pub-bd90151148dc4ad4a6dcce4b188be9ac.r2.dev";
 const isLocalRuntime =
   location.protocol === "file:" ||
   location.hostname === "localhost" ||
-  location.hostname === "127.0.0.1";
+  location.hostname === "127.0.0.1" ||
+  location.hostname === "appassets.local";
 const PHOTO_BASE_URL = isLocalRuntime ? "images" : R2_BASE_URL;
 const MANIFEST_URL = isLocalRuntime ? "images/manifest.json" : `${R2_BASE_URL}/manifest.json`;
+const VIDEO_MANIFEST_URL = isLocalRuntime ? "videos/manifest.json" : `${R2_BASE_URL}/videos/manifest.json`;
 const GROUPS_URL = isLocalRuntime ? "images/groups.json" : `${R2_BASE_URL}/groups.json`;
 const DEFAULT_CUSTOM_GROUPS = {
   Friends: ["michael"]
@@ -56,7 +61,7 @@ const PHOTO_WRAP_BUFFER_PX = 36;
 const DEFAULT_CONTROL_VALUES = {
   folder: "all",
   size: "420",
-  speed: "0.5",
+  speed: "1.75",
   reverse: false,
   sway: "1.5",
   lightColumns: "3",
@@ -89,6 +94,19 @@ const photos = [
   { container: document.getElementById("photo12-container"), imgEl: document.getElementById("photo12"), textEl: document.getElementById("photo12-text"), column: "right", index: 5, rotation:  7, swayOffset: 4.9 }
 ];
 
+for (const photo of photos) {
+  const videoEl = document.createElement("video");
+  videoEl.className = "photo photo-video";
+  videoEl.muted = true;
+  videoEl.loop = true;
+  videoEl.autoplay = true;
+  videoEl.playsInline = true;
+  videoEl.preload = "metadata";
+  videoEl.setAttribute("aria-hidden", "true");
+  photo.container.insertBefore(videoEl, photo.imgEl);
+  photo.videoEl = videoEl;
+}
+
 textSelect.value = "auto";
 
 function sortPhotosForQueue(items) {
@@ -111,6 +129,9 @@ function getActivePhotos() {
 let activeQueuePhotos = sortPhotosForQueue(getActivePhotos());
 
 let manifest = null;
+let imageManifest = null;
+let videoManifest = null;
+let mediaMixIndex = 3;
 let selectedFolder = "all";
 let availablePeople = [];
 let selectedPeople = new Set();
@@ -120,6 +141,17 @@ let imageCycle = [];
 let imageCycleIndex = 0;
 let lastServedImageKey = null;
 let hasAvailableImages = true;
+let videoAssignmentSequence = 0;
+let audibleVideoPhoto = null;
+let audioUnlocked = false;
+let videoRoundKeys = new Set();
+let audibleVideoRoundKeys = new Set();
+let audioPlaybackStartedAt = 0;
+let audioMinimumHoldUntil = 0;
+let pendingAudioTarget = null;
+const MIN_AUDIO_HOLD_MS = 2000;
+const AUDIO_END_SAFETY_SECONDS = 3;
+let soundEnabled = true;
 
 function isMobileViewport() {
   return window.innerWidth <= MOBILE_BREAKPOINT;
@@ -169,11 +201,13 @@ function deriveAvailableYearBounds() {
   }
 
   const years = [];
-  for (const images of Object.values(manifest)) {
-    for (const image of images) {
+  for (const source of getActiveManifests()) {
+    for (const images of Object.values(source.data)) {
+      for (const image of images) {
       const year = extractYearFromDate(image.date);
       if (year !== null) {
         years.push(year);
+      }
       }
     }
   }
@@ -253,8 +287,17 @@ function initializeYearRangeFromManifest() {
 
 async function loadManifest() {
   try {
-    const response = await fetch(MANIFEST_URL);
-    manifest = await response.json();
+    const [imageResponse, videoResponse] = await Promise.all([
+      fetch(MANIFEST_URL),
+      fetch(VIDEO_MANIFEST_URL).catch(() => null)
+    ]);
+    if (!imageResponse.ok) {
+      throw new Error(`Image manifest request failed: ${imageResponse.status}`);
+    }
+    imageManifest = await imageResponse.json();
+    videoManifest = videoResponse && videoResponse.ok ? await videoResponse.json() : {};
+    manifest = imageManifest;
+    updateMediaMixControl();
     await loadGroups();
     populateFolderSelect();
     initializeYearRangeFromManifest();
@@ -332,8 +375,9 @@ function populateFolderSelect() {
   allOption.selected = true;
   folderSelect.appendChild(allOption);
 
-  // Add individual folders
-  for (const folder of Object.keys(manifest)) {
+  // Add individual folders from both media libraries.
+  const folders = new Set(getActiveManifests().flatMap((source) => Object.keys(source.data)));
+  for (const folder of Array.from(folders).sort()) {
     const option = document.createElement("option");
     option.value = folder;
     option.textContent = folder;
@@ -343,6 +387,50 @@ function populateFolderSelect() {
     folderSelect.appendChild(option);
   }
 }
+
+const MEDIA_MIXES = [
+  { photos: 100, videos: 0 },
+  { photos: 75, videos: 25 },
+  { photos: 50, videos: 50 },
+  { photos: 25, videos: 75 },
+  { photos: 0, videos: 100 }
+];
+
+function hasVideos() {
+  return videoManifest && Object.values(videoManifest).some((items) => items.length > 0);
+}
+
+function getMediaMix() {
+  return MEDIA_MIXES[mediaMixIndex] || MEDIA_MIXES[0];
+}
+
+function getActiveManifests() {
+  const mix = getMediaMix();
+  const manifests = [];
+  if (mix.photos > 0) manifests.push({ data: imageManifest, mediaType: "image" });
+  if (mix.videos > 0) manifests.push({ data: videoManifest, mediaType: "video" });
+  return manifests.filter((source) => source.data);
+}
+
+function updateMediaMixControl() {
+  const mix = getMediaMix();
+  mediaMixSlider.value = String(mediaMixIndex);
+  mediaMixValue.textContent = `${mix.photos}% photos · ${mix.videos}% videos`;
+  mediaMixSlider.disabled = !hasVideos();
+  mediaMixSlider.title = hasVideos() ? "Choose the photos and videos mix" : "Add videos to the videos folder first";
+}
+
+mediaMixSlider.addEventListener("input", () => {
+  mediaMixIndex = parseInt(mediaMixSlider.value, 10) || 0;
+  manifest = imageManifest;
+  updateMediaMixControl();
+  populateFolderSelect();
+  initializeYearRangeFromManifest();
+  populatePeopleFilter();
+  resetImageCycle();
+  assignRandomImages();
+  resetHideTimer();
+});
 
 folderSelect.addEventListener("change", (event) => {
   selectedFolder = event.target.value;
@@ -438,12 +526,14 @@ function resolveImagePath(image, folder) {
   return `${folder}/${image.filename}`;
 }
 
-function buildPhotoUrl(relativePath) {
+function buildPhotoUrl(relativePath, mediaType = "image") {
   const encodedPath = relativePath
     .split("/")
     .map((part) => encodeURIComponent(part))
     .join("/");
-  return `${PHOTO_BASE_URL}/${encodedPath}`;
+  const mediaFolder = mediaType === "video" ? "videos" : "images";
+  const storagePath = isLocalRuntime ? encodedPath : `${mediaFolder}/${encodedPath}`;
+  return `${isLocalRuntime ? mediaFolder : R2_BASE_URL}/${storagePath}`;
 }
 
 function imageMatchesActiveFilters(image, { ignorePerson = false } = {}) {
@@ -470,51 +560,124 @@ function imageMatchesActiveFilters(image, { ignorePerson = false } = {}) {
 }
 
 function buildImagePool({ ignorePerson = false } = {}) {
-  if (!manifest) {
+  if (!imageManifest) {
     return [];
   }
 
   const pool = [];
-
-  if (selectedFolder === "all") {
-    for (const [folder, images] of Object.entries(manifest)) {
-      for (const image of images) {
-        const relativePath = resolveImagePath(image, folder);
+  for (const source of getActiveManifests()) {
+    const folders = selectedFolder === "all"
+      ? Object.entries(source.data)
+      : [[selectedFolder, source.data[selectedFolder] || []]];
+    for (const [folder, items] of folders) {
+      for (const item of items) {
+        const relativePath = resolveImagePath(item, folder);
         pool.push({
-          filename: buildPhotoUrl(relativePath),
-          text: image.text || "",
-          people: normalizePeopleField(image.people),
+          filename: buildPhotoUrl(relativePath, source.mediaType),
+          mediaType: source.mediaType,
+          hasAudio: item.hasAudio !== false,
+          text: item.text || "",
+          people: normalizePeopleField(item.people),
           folder,
-          date: image.date || "",
-          year: extractYearFromDate(image.date),
-          _key: relativePath
+          date: item.date || "",
+          year: extractYearFromDate(item.date),
+          _key: `${source.mediaType}:${relativePath}`
         });
       }
     }
-    return pool.filter((image) => imageMatchesActiveFilters(image, { ignorePerson }));
   }
 
-  const images = manifest[selectedFolder] || [];
-  for (const image of images) {
-    const relativePath = resolveImagePath(image, selectedFolder);
-    pool.push({
-      filename: buildPhotoUrl(relativePath),
-      text: image.text || "",
-      people: normalizePeopleField(image.people),
-      folder: selectedFolder,
-      date: image.date || "",
-      year: extractYearFromDate(image.date),
-      _key: relativePath
-    });
+  return createWeightedMediaPool(pool.filter((image) => imageMatchesActiveFilters(image, { ignorePerson })));
+}
+
+function createWeightedMediaPool(pool) {
+  const mix = getMediaMix();
+  if (mix.photos === 100 || mix.videos === 100) {
+    return shuffleArray(pool);
   }
 
-  return pool.filter((image) => imageMatchesActiveFilters(image, { ignorePerson }));
+  const photoItems = shuffleArray(pool.filter((item) => item.mediaType === "image"));
+  const videoItems = shuffleArray(pool.filter((item) => item.mediaType === "video"));
+  if (!photoItems.length || !videoItems.length) {
+    return pool;
+  }
+
+  // Build a predictable ratio pattern instead of relying on random chance.
+  // For example, 75/25 places videos at positions 4, 8, 12, etc.
+  const cycleLength = Math.max(photoItems.length, videoItems.length);
+  const weightedPool = [];
+  let videoAccumulator = 0;
+  let photoIndex = 0;
+  let videoIndex = 0;
+
+  for (let index = 0; index < cycleLength; index += 1) {
+    videoAccumulator += mix.videos;
+    const useVideo = videoAccumulator >= 100;
+    if (useVideo) {
+      videoAccumulator -= 100;
+    }
+
+    if (useVideo) {
+      weightedPool.push({ ...videoItems[videoIndex % videoItems.length] });
+      videoIndex += 1;
+    } else {
+      weightedPool.push({ ...photoItems[photoIndex % photoItems.length] });
+      photoIndex += 1;
+    }
+  }
+
+  // Keep the random order, but avoid showing the same video in adjacent
+  // video slots when there is another video available.
+  for (let index = 1; index < weightedPool.length; index += 1) {
+    const previous = weightedPool[index - 1];
+    const current = weightedPool[index];
+    if (previous.mediaType !== "video" || current.mediaType !== "video" || previous._key !== current._key) {
+      continue;
+    }
+
+    const replacementIndex = weightedPool.findIndex((candidate, candidateIndex) =>
+      candidateIndex > index &&
+      candidate.mediaType === "video" &&
+      candidate._key !== previous._key
+    );
+    if (replacementIndex !== -1) {
+      [weightedPool[index], weightedPool[replacementIndex]] = [weightedPool[replacementIndex], weightedPool[index]];
+    }
+  }
+
+  // Also prevent the final video in one cycle from matching the first video
+  // in the next cycle.
+  if (lastServedImageKey) {
+    const firstVideoIndex = weightedPool.findIndex((item) => item.mediaType === "video");
+    const lastVideoIndex = weightedPool.length - 1;
+    if (
+      firstVideoIndex !== -1 &&
+      weightedPool[firstVideoIndex]._key === lastServedImageKey &&
+      weightedPool[lastVideoIndex].mediaType === "video"
+    ) {
+      const replacementIndex = weightedPool.findIndex((candidate, candidateIndex) =>
+        candidateIndex > firstVideoIndex &&
+        candidate.mediaType === "video" &&
+        candidate._key !== lastServedImageKey
+      );
+      if (replacementIndex !== -1) {
+        [weightedPool[firstVideoIndex], weightedPool[replacementIndex]] = [weightedPool[replacementIndex], weightedPool[firstVideoIndex]];
+      }
+    }
+  }
+
+  return weightedPool;
 }
 
 function resetImageCycle() {
   const pool = buildImagePool();
-  imageCycle = shuffleArray(pool);
+  // buildImagePool already randomizes each media list while preserving the
+  // requested repeating photo/video pattern.
+  imageCycle = pool;
   imageCycleIndex = 0;
+  videoRoundKeys.clear();
+  audibleVideoRoundKeys.clear();
+  pendingAudioTarget = null;
   hasAvailableImages = imageCycle.length > 0;
   updateCenterPhotoVisibility();
 
@@ -538,8 +701,42 @@ function getNextImage() {
     return null;
   }
 
-  const imageData = imageCycle[imageCycleIndex];
+  let imageData = imageCycle[imageCycleIndex];
+
+  if (imageData.mediaType === "video") {
+    const allVideoKeys = new Set(
+      imageCycle.filter((item) => item.mediaType === "video").map((item) => item._key)
+    );
+    const videosAlreadyOnStrings = new Set(
+      photos
+        .filter((photo) => photo.currentMediaType === "video" && photo.currentImageKey)
+        .map((photo) => photo.currentImageKey)
+    );
+
+    const videoRoundComplete = allVideoKeys.size > 0 && videoRoundKeys.size >= allVideoKeys.size;
+    if (videoRoundComplete) {
+      videoRoundKeys.clear();
+    }
+
+    if (videosAlreadyOnStrings.has(imageData._key) && !videoRoundComplete) {
+      const unusedVideoIndex = imageCycle.findIndex((candidate, candidateIndex) =>
+        candidateIndex >= imageCycleIndex &&
+        candidate.mediaType === "video" &&
+        !videoRoundKeys.has(candidate._key) &&
+        !videosAlreadyOnStrings.has(candidate._key)
+      );
+      if (unusedVideoIndex !== -1) {
+        [imageCycle[imageCycleIndex], imageCycle[unusedVideoIndex]] =
+          [imageCycle[unusedVideoIndex], imageCycle[imageCycleIndex]];
+        imageData = imageCycle[imageCycleIndex];
+      }
+    }
+  }
+
   imageCycleIndex += 1;
+  if (imageData.mediaType === "video") {
+    videoRoundKeys.add(imageData._key);
+  }
   lastServedImageKey = imageData._key;
   return imageData;
 }
@@ -798,6 +995,10 @@ function assignRandomImageToPhoto(photo) {
     return;
   }
   const nextCaption = getDisplayTextForImage(imageData);
+  photo.currentMediaType = imageData.mediaType;
+  photo.currentImageKey = imageData._key;
+  photo.currentHasAudio = imageData.hasAudio !== false;
+  photo.audioRandomStartApplied = false;
   const requestId = (photo.pendingRequestId || 0) + 1;
   photo.pendingRequestId = requestId;
 
@@ -810,16 +1011,178 @@ function assignRandomImageToPhoto(photo) {
     photo.imgEl.onerror = null;
   };
 
-  photo.imgEl.onload = finalizeCaptionUpdate;
-  photo.imgEl.onerror = finalizeCaptionUpdate;
-  photo.imgEl.src = imageData.filename;
-
-  if (photo.imgEl.complete) {
+  if (imageData.mediaType === "video") {
+    photo.imgEl.onload = null;
+    photo.imgEl.onerror = null;
+    photo.imgEl.style.display = "none";
+    photo.videoEl.style.display = "block";
+    photo.videoEl.src = imageData.filename;
+    photo.videoAssignmentId = ++videoAssignmentSequence;
+    let randomStartApplied = false;
+    const startVideoAtRandomPoint = () => {
+      if (randomStartApplied || !Number.isFinite(photo.videoEl.duration) || photo.videoEl.duration <= 0) {
+        return;
+      }
+      randomStartApplied = true;
+      const latestStart = Math.max(0, photo.videoEl.duration - AUDIO_END_SAFETY_SECONDS);
+      photo.videoEl.currentTime = Math.random() * latestStart;
+      photo.videoEl.play().catch(() => {});
+    };
+    photo.videoEl.addEventListener("loadedmetadata", startVideoAtRandomPoint, { once: true });
+    photo.videoEl.load();
+    startVideoAtRandomPoint();
+    photo.videoEl.play().catch(() => {});
     finalizeCaptionUpdate();
+  } else {
+    photo.videoEl.pause();
+    photo.videoEl.removeAttribute("src");
+    photo.videoEl.load();
+    photo.videoEl.style.display = "none";
+    photo.imgEl.style.display = "block";
+    photo.imgEl.onload = finalizeCaptionUpdate;
+    photo.imgEl.onerror = finalizeCaptionUpdate;
+    photo.imgEl.src = imageData.filename;
+
+    if (photo.imgEl.complete) {
+      finalizeCaptionUpdate();
+    }
   }
 }
 
+function updateVideoAudio() {
+  const visibleVideos = photos
+    .map((photo) => {
+      if (photo.currentMediaType !== "video" || !photo.currentHasAudio || photo.container.style.display === "none") {
+        return null;
+      }
+      const bounds = photo.container.getBoundingClientRect();
+      if (bounds.bottom <= 32 || bounds.top >= window.innerHeight - 32) {
+        return null;
+      }
+      return { photo, bounds };
+    })
+    .filter(Boolean);
+  const readyVisibleVideos = visibleVideos.filter(({ bounds }) => {
+    // Do not hand audio to a card while it is clipped by either screen edge.
+    return bounds.top >= 0 && bounds.bottom <= window.innerHeight;
+  });
+  const orderedVisibleVideos = [...readyVisibleVideos].sort((a, b) => {
+    const aCenter = (a.bounds.top + a.bounds.bottom) / 2;
+    const bCenter = (b.bounds.top + b.bounds.bottom) / 2;
+    return aCenter - bCenter;
+  });
+  const currentAudibleEntry = visibleVideos.find(({ photo }) => photo === audibleVideoPhoto);
+  const minimumHoldComplete = performance.now() >= audioMinimumHoldUntil;
+  const currentCenterY = currentAudibleEntry
+    ? (currentAudibleEntry.bounds.top + currentAudibleEntry.bounds.bottom) / 2
+    : null;
+  const currentHasReachedSwitchHeight = currentCenterY !== null &&
+    currentCenterY >= window.innerHeight * 0.5;
+  let nextAudibleEntry = null;
+
+  if (!audibleVideoPhoto ||
+      (minimumHoldComplete && currentHasReachedSwitchHeight)) {
+    if (!currentAudibleEntry) {
+      nextAudibleEntry = orderedVisibleVideos[0] || null;
+    } else {
+      // Choose the closest eligible video above the current one by actual
+      // position, even if the current video is not in the eligible list.
+      const higherVideos = orderedVisibleVideos.filter((entry) => {
+        const entryCenter = (entry.bounds.top + entry.bounds.bottom) / 2;
+        return entry.photo !== audibleVideoPhoto && entryCenter < currentCenterY;
+      });
+      nextAudibleEntry = higherVideos.reduce((closest, entry) => {
+        if (!closest) return entry;
+        const entryCenter = (entry.bounds.top + entry.bounds.bottom) / 2;
+        const closestCenter = (closest.bounds.top + closest.bounds.bottom) / 2;
+        return entryCenter > closestCenter ? entry : closest;
+      }, null);
+    }
+  }
+
+  const nextAudiblePhoto = nextAudibleEntry
+    ? nextAudibleEntry.photo
+    : currentAudibleEntry
+    ? currentAudibleEntry.photo
+    : !minimumHoldComplete
+    ? audibleVideoPhoto
+    : null;
+
+  const randomizeAudioStart = (photo) => {
+    if (photo.audioRandomStartApplied || !Number.isFinite(photo.videoEl.duration) || photo.videoEl.duration <= 0) {
+      return;
+    }
+    const latestSafeStart = Math.max(0, photo.videoEl.duration - AUDIO_END_SAFETY_SECONDS);
+    const randomStart = Math.random() * latestSafeStart;
+    photo.videoEl.pause();
+    photo.videoEl.currentTime = randomStart;
+    photo.audioRandomStartApplied = true;
+  };
+
+  if (audibleVideoPhoto === nextAudiblePhoto && nextAudiblePhoto) {
+    nextAudiblePhoto.videoEl.muted = !soundEnabled || !audioUnlocked;
+    nextAudiblePhoto.container.classList.toggle("audio-active", soundEnabled && audioUnlocked);
+    if (soundEnabled && audioUnlocked) {
+      randomizeAudioStart(nextAudiblePhoto);
+      if (!audioPlaybackStartedAt) {
+        audioPlaybackStartedAt = performance.now();
+      }
+      if (!audioMinimumHoldUntil) {
+        audioMinimumHoldUntil = performance.now() + MIN_AUDIO_HOLD_MS;
+      }
+      nextAudiblePhoto.videoEl.play().catch(() => {});
+    }
+    return;
+  }
+
+  audibleVideoPhoto = nextAudiblePhoto;
+  if (nextAudiblePhoto) {
+    audibleVideoRoundKeys.add(nextAudiblePhoto.currentImageKey);
+  }
+  if (nextAudiblePhoto === pendingAudioTarget?.photo) {
+    pendingAudioTarget = null;
+  }
+  audioPlaybackStartedAt = nextAudiblePhoto && soundEnabled && audioUnlocked ? performance.now() : 0;
+  audioMinimumHoldUntil = nextAudiblePhoto && soundEnabled && audioUnlocked
+    ? performance.now() + MIN_AUDIO_HOLD_MS
+    : 0;
+  for (const photo of photos) {
+    const isAudible = photo === audibleVideoPhoto;
+    photo.videoEl.muted = !isAudible || !soundEnabled || !audioUnlocked;
+    photo.container.classList.toggle("audio-active", isAudible && soundEnabled && audioUnlocked);
+    if (isAudible && soundEnabled && audioUnlocked) {
+      // Always choose a new random point at the exact sound handoff.
+      photo.audioRandomStartApplied = false;
+      randomizeAudioStart(photo);
+      audioPlaybackStartedAt = performance.now();
+      photo.videoEl.volume = 1;
+      photo.videoEl.play().catch(() => {});
+    }
+  }
+}
+
+soundCheckbox.addEventListener("change", () => {
+  soundEnabled = soundCheckbox.checked;
+  if (!soundEnabled) {
+    audioPlaybackStartedAt = 0;
+    audioMinimumHoldUntil = 0;
+  }
+  updateVideoAudio();
+  resetHideTimer();
+});
+
+document.addEventListener("pointerdown", () => {
+  audioUnlocked = true;
+  updateVideoAudio();
+}, { passive: true });
+
 function resetControlsToDefaults() {
+  soundEnabled = true;
+  soundCheckbox.checked = true;
+  updateVideoAudio();
+  mediaMixIndex = 3;
+  updateMediaMixControl();
+  manifest = imageManifest;
   selectedFolder = DEFAULT_CONTROL_VALUES.folder;
   folderSelect.value = DEFAULT_CONTROL_VALUES.folder;
 
@@ -1004,12 +1367,14 @@ updateLightStreamVisibility();
 updateCenterPhotoVisibility();
 
 function getPhotoWidth(photo) {
-  return photo.imgEl.offsetWidth || photoWidth;
+  const activeMedia = photo.videoEl.style.display !== "none" ? photo.videoEl : photo.imgEl;
+  return activeMedia.offsetWidth || photoWidth;
 }
 
 function getPhotoHeight(photo) {
-  if (photo.imgEl.offsetHeight > 0) {
-    return photo.imgEl.offsetHeight;
+  const activeMedia = photo.videoEl.style.display !== "none" ? photo.videoEl : photo.imgEl;
+  if (activeMedia.offsetHeight > 0) {
+    return activeMedia.offsetHeight;
   }
   return photoWidth;
 }
@@ -1171,6 +1536,8 @@ function render(time) {
     photo.container.style.transform =
       `translate(${photo.x}px, ${photo.y + bob}px) translate(-50%, -50%) rotate(${photo.rotation + sway}deg)`;
   }
+
+  updateVideoAudio();
 
   updateLights(time, deltaSeconds);
 

@@ -793,37 +793,38 @@
     {
       "filename": "000015.JPG",
       "path": "Various/000015.JPG",
-      "text": "",
+      "text": "Clifton 2022",
       "date": "1st January 2022",
       "people": [
         "CJ Louw",
-        "Michael Ritchie",
         "Mikkel Du Plessis",
         "Reg Grobler",
-        "Adam De Waal"
+        "Adam De Waal",
+        "Michael Ritchie"
       ]
     },
     {
       "filename": "000018.jpg",
       "path": "Various/000018.jpg",
-      "text": "",
+      "text": "CJ's Place 2021",
       "date": "28th September 2021",
       "people": [
         "Dani Du Toit",
         "Reg Grobler",
         "Amy Frost",
         "Michael Ritchie",
+        "Charl",
         "Tristan",
         "Mikkel Du Plessis",
-        "Liam",
         "Adam De Waal",
-        "CJ Louw"
+        "CJ Louw",
+        "Liam"
       ]
     },
     {
       "filename": "000021.jpg",
       "path": "Various/000021.jpg",
-      "text": "",
+      "text": "Sea Point 2021",
       "date": "28th September 2021",
       "people": [
         "Michael Ritchie",
@@ -834,20 +835,21 @@
     {
       "filename": "000023.JPG",
       "path": "Various/000023.JPG",
-      "text": "",
+      "text": "Clifton 2022",
       "date": "1st January 2022",
       "people": [
-        "Michael Ritchie",
         "Adam De Waal",
-        "Reg Grobler"
+        "Reg Grobler",
+        "Michael Ritchie"
       ]
     },
     {
       "filename": "000027.jpg",
       "path": "Various/000027.jpg",
-      "text": "",
+      "text": "Clay Cafe 2022",
       "date": "1st January 2022",
       "people": [
+        "Mary Wheeler",
         "Michael Ritchie",
         "Mikkel Du Plessis",
         "Tristan",
@@ -860,7 +862,7 @@
     {
       "filename": "000030.JPG",
       "path": "Various/000030.JPG",
-      "text": "",
+      "text": "Tim And Mila 2022",
       "date": "29th March 2022",
       "people": [
         "Mila Daly",
@@ -871,9 +873,10 @@
     {
       "filename": "000045.JPG",
       "path": "Various/000045.JPG",
-      "text": "",
+      "text": "Tristan's Place 2021",
       "date": "28th September 2021",
       "people": [
+        "Charl",
         "Reg Grobler",
         "Tristan",
         "Dani Du Toit",
@@ -883,11 +886,44 @@
       ]
     },
     {
+      "filename": "002B8A23-231C-4DBF-8B63-5B191842F6D7.png",
+      "path": "Various/002B8A23-231C-4DBF-8B63-5B191842F6D7.png",
+      "text": "",
+      "date": "23rd July 2025",
+      "people": [
+        "Reg Grobler"
+      ]
+    },
+    {
+      "filename": "00a40a30-7033-4377-9f32-c62a19c18248.jpg",
+      "path": "Various/00a40a30-7033-4377-9f32-c62a19c18248.jpg",
+      "text": "",
+      "date": "19th June 2025",
+      "people": [
+        "Mikkel Du Plessis",
+        "Lucia Daly",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "011bc233-8198-4d62-8ecb-51c6cdfd4102.jpg",
+      "path": "Various/011bc233-8198-4d62-8ecb-51c6cdfd4102.jpg",
+      "text": "",
+      "date": "18th January 2026",
+      "people": [
+        "Jade",
+        "Michael Ritchie",
+        "Josh Finlay",
+        "Reg Grobler"
+      ]
+    },
+    {
       "filename": "02a3ab68-f47b-43a5-9cf4-018ca3c9bdd2.jpg",
       "path": "Various/02a3ab68-f47b-43a5-9cf4-018ca3c9bdd2.jpg",
-      "text": "",
+      "text": "Orange River 2022",
       "date": "19th April 2022",
       "people": [
+        "Jeffrey Lewis",
         "Michael Ritchie"
       ]
     },
@@ -897,6 +933,7 @@
       "text": "Dean and Stacy's Wedding Party 2025",
       "date": "11th November 2025",
       "people": [
+        "Cameron Davies",
         "Michael Ritchie"
       ]
     },
@@ -906,8 +943,18 @@
       "text": "Habitat 2026 Pre's",
       "date": "30th March 2026",
       "people": [
-        "Michael Ritchie",
-        "Reg Grobler"
+        "Josh Finlay",
+        "Reg Grobler",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "06677934-e06b-4918-bbcf-0e716573f4f6.jpg",
+      "path": "Various/06677934-e06b-4918-bbcf-0e716573f4f6.jpg",
+      "text": "",
+      "date": "11th January 2025",
+      "people": [
+        "Liam"
       ]
     },
     {
@@ -922,16 +969,39 @@
     {
       "filename": "076d949e-b5f0-4928-a8f1-3f1da34edcfd.jpg",
       "path": "Various/076d949e-b5f0-4928-a8f1-3f1da34edcfd.jpg",
-      "text": "",
+      "text": "Rocklands 2022",
       "date": "2nd May 2022",
       "people": [
         "CJ Louw"
       ]
     },
     {
+      "filename": "08c4f709-3d52-43ca-beff-9cb06c19f9c9.jpg",
+      "path": "Various/08c4f709-3d52-43ca-beff-9cb06c19f9c9.jpg",
+      "text": "",
+      "date": "30th November 2025",
+      "people": [
+        "Raph",
+        "Jade",
+        "Josh Finlay",
+        "Michael Ritchie",
+        "Adam De Waal"
+      ]
+    },
+    {
+      "filename": "09fcc5bf-7c42-4696-9a36-bb97354f1bcf.jpg",
+      "path": "Various/09fcc5bf-7c42-4696-9a36-bb97354f1bcf.jpg",
+      "text": "",
+      "date": "15th March 2021",
+      "people": [
+        "Michael Ritchie",
+        "Josh Finlay"
+      ]
+    },
+    {
       "filename": "0ade4637-73ca-4986-8401-32808a761040.jpg",
       "path": "Various/0ade4637-73ca-4986-8401-32808a761040.jpg",
-      "text": "",
+      "text": "Wild Coast 2022",
       "date": "29th August 2022",
       "people": [
         "Michael Ritchie",
@@ -945,6 +1015,7 @@
       "text": "Tristan's 21st",
       "date": "3rd March 2018",
       "people": [
+        "Tristan",
         "Liam",
         "Reg Grobler",
         "Michael Ritchie"
@@ -953,7 +1024,7 @@
     {
       "filename": "0dbbc995-33d9-43fc-bd05-4dfc4c1802b8.jpg",
       "path": "Various/0dbbc995-33d9-43fc-bd05-4dfc4c1802b8.jpg",
-      "text": "",
+      "text": "Rocklands 2022",
       "date": "2nd May 2022",
       "people": [
         "Michael Ritchie"
@@ -962,23 +1033,23 @@
     {
       "filename": "0dd2ab60-0f7e-47e4-badd-d9f17cc030c3.JPG",
       "path": "Various/0dd2ab60-0f7e-47e4-badd-d9f17cc030c3.JPG",
-      "text": "",
+      "text": "Stellies 2020",
       "date": "23rd January 2020",
       "people": [
-        "Michael Ritchie",
-        "Reg Grobler"
+        "Reg Grobler",
+        "Michael Ritchie"
       ]
     },
     {
       "filename": "10.JPG",
       "path": "Various/10.JPG",
-      "text": "",
+      "text": "Varsity Cup 2017",
       "date": "23rd November 2017",
       "people": [
         "Reg Grobler",
         "Dani Du Toit",
         "Liam",
-        "Oscar De Waal"
+        "Adam De Waal"
       ]
     },
     {
@@ -990,7 +1061,18 @@
         "Michael Ritchie",
         "CJ Louw",
         "Mikkel Du Plessis",
-        "Liam"
+        "Liam",
+        "Ant Cartwight",
+        "Adam De Waal"
+      ]
+    },
+    {
+      "filename": "11a9e9c8-2f1e-480f-bbcc-c4afcb57c256.jpg",
+      "path": "Various/11a9e9c8-2f1e-480f-bbcc-c4afcb57c256.jpg",
+      "text": "",
+      "date": "29th August 2025",
+      "people": [
+        "Michael Ritchie"
       ]
     },
     {
@@ -1002,18 +1084,24 @@
         "Lucia Daly",
         "Adam De Waal",
         "Mikkel Du Plessis",
-        "Tim Terblanche",
+        "Klara",
+        "Jeffrey Lewis",
+        "Charl",
         "Reg Grobler",
         "Liam",
-        "Michael Ritchie"
+        "Ant Cartwight",
+        "CJ Louw",
+        "Michael Ritchie",
+        "Tim Terblanche"
       ]
     },
     {
       "filename": "120d4067-8053-453c-9752-a26ed6553996.jpg",
       "path": "Various/120d4067-8053-453c-9752-a26ed6553996.jpg",
-      "text": "",
+      "text": "Graduation 2021",
       "date": "15th December 2021",
       "people": [
+        "Leonie Grabe",
         "Michael Ritchie"
       ]
     },
@@ -1027,19 +1115,41 @@
       ]
     },
     {
-      "filename": "1458288413867.jpg",
-      "path": "Various/1458288413867.jpg",
+      "filename": "14.jpeg",
+      "path": "Various/14.jpeg",
       "text": "",
-      "date": "20th April 2016",
+      "date": "12th October 2017",
       "people": [
         "Michael Ritchie",
-        "Reg Grobler"
+        "Liam"
+      ]
+    },
+    {
+      "filename": "1420e878-a37c-402d-9360-5ae5d6e29caf.jpg",
+      "path": "Various/1420e878-a37c-402d-9360-5ae5d6e29caf.jpg",
+      "text": "",
+      "date": "18th January 2026",
+      "people": [
+        "Reg Grobler",
+        "Michael Ritchie",
+        "Josh Finlay"
+      ]
+    },
+    {
+      "filename": "1458288413867.jpg",
+      "path": "Various/1458288413867.jpg",
+      "text": "Tristan's Place 2016",
+      "date": "20th April 2016",
+      "people": [
+        "Reg Grobler",
+        "Michael Ritchie",
+        "Tristan"
       ]
     },
     {
       "filename": "1460441973624.jpg",
       "path": "Various/1460441973624.jpg",
-      "text": "",
+      "text": "Block 7 2016",
       "date": "20th April 2016",
       "people": [
         "Michael Ritchie"
@@ -1064,6 +1174,7 @@
         "CJ Louw",
         "Adam De Waal",
         "Michael Ritchie",
+        "Charl",
         "Tristan",
         "Reg Grobler"
       ]
@@ -1074,23 +1185,33 @@
       "text": "Winetasting 2017",
       "date": "23rd November 2017",
       "people": [
+        "Ant Cartwight",
         "Michael Ritchie",
         "Liam"
       ]
     },
     {
+      "filename": "16ea6e18-3fef-4c26-b426-3031067277e7.jpg",
+      "path": "Various/16ea6e18-3fef-4c26-b426-3031067277e7.jpg",
+      "text": "",
+      "date": "20th March 2021",
+      "people": []
+    },
+    {
       "filename": "17.jpeg",
       "path": "Various/17.jpeg",
-      "text": "",
+      "text": "Block 7 2017",
       "date": "12th October 2017",
       "people": [
-        "Michael Ritchie"
+        "Ant Cartwight",
+        "Michael Ritchie",
+        "Liam"
       ]
     },
     {
       "filename": "17b4fded-fbaa-4046-85ec-110057357675.jpg",
       "path": "Various/17b4fded-fbaa-4046-85ec-110057357675.jpg",
-      "text": "",
+      "text": "Rocklands 2022",
       "date": "3rd May 2022",
       "people": [
         "Adam De Waal",
@@ -1100,16 +1221,17 @@
     {
       "filename": "18adde2c-e4fd-47c9-90c7-dcd6a064cac6.jpg",
       "path": "Various/18adde2c-e4fd-47c9-90c7-dcd6a064cac6.jpg",
-      "text": "",
+      "text": "Sea Point 2022",
       "date": "3rd December 2022",
       "people": [
+        "Ant Cartwight",
         "Michael Ritchie"
       ]
     },
     {
       "filename": "19510abe-3f21-4e87-a49a-d03f73cea975.jpg",
       "path": "Various/19510abe-3f21-4e87-a49a-d03f73cea975.jpg",
-      "text": "",
+      "text": "Rocklands 2022",
       "date": "2nd May 2022",
       "people": [
         "Mikkel Du Plessis",
@@ -1120,36 +1242,63 @@
     {
       "filename": "1a5a2f79-c7d8-4d90-96ed-01f1c923d51d.jpg",
       "path": "Various/1a5a2f79-c7d8-4d90-96ed-01f1c923d51d.jpg",
-      "text": "",
+      "text": "Weed Garden - Coffee Bay 2022",
       "date": "29th December 2022",
       "people": [
         "Amy Frost"
       ]
     },
     {
+      "filename": "1adeade5-8450-430e-a441-148479a0540b.jpg",
+      "path": "Various/1adeade5-8450-430e-a441-148479a0540b.jpg",
+      "text": "",
+      "date": "2nd January 2026",
+      "people": [
+        "Adam De Waal",
+        "Liam",
+        "Tristan",
+        "CJ Louw"
+      ]
+    },
+    {
       "filename": "1ced3b87-2e26-486e-a836-68e071ff1763.jpg",
       "path": "Various/1ced3b87-2e26-486e-a836-68e071ff1763.jpg",
-      "text": "",
+      "text": "Bromance",
       "date": "24th September 2021",
-      "people": []
+      "people": [
+        "Ant Cartwight"
+      ]
+    },
+    {
+      "filename": "1ffab4dc-2225-4e24-be1d-71603ded5103.jpg",
+      "path": "Various/1ffab4dc-2225-4e24-be1d-71603ded5103.jpg",
+      "text": "",
+      "date": "23rd July 2025",
+      "people": [
+        "Reg Grobler"
+      ]
     },
     {
       "filename": "20.JPG",
       "path": "Various/20.JPG",
-      "text": "",
+      "text": "Stellies 2018",
       "date": "19th March 2019",
       "people": [
+        "Ross",
         "Reg Grobler",
         "Dani Du Toit",
-        "Liam"
+        "Kirsty",
+        "Liam",
+        "Michael Ritchie"
       ]
     },
     {
       "filename": "21.JPG",
       "path": "Various/21.JPG",
-      "text": "",
+      "text": "Stellies 2019",
       "date": "19th March 2019",
       "people": [
+        "Jeffrey Lewis",
         "Michael Ritchie"
       ]
     },
@@ -1159,16 +1308,36 @@
       "text": "",
       "date": "19th March 2019",
       "people": [
-        "Michael Ritchie",
-        "Reg Grobler"
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "22e33dba-785b-4f28-8324-ee906af7e907.jpg",
+      "path": "Various/22e33dba-785b-4f28-8324-ee906af7e907.jpg",
+      "text": "",
+      "date": "8th December 2020",
+      "people": [
+        "Cameron Davies",
+        "Michael Ritchie"
       ]
     },
     {
       "filename": "23.JPG",
       "path": "Various/23.JPG",
-      "text": "",
+      "text": "Halloween",
       "date": "19th March 2019",
       "people": [
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "23097269-2320-453f-96b7-2a67491d2f37.jpg",
+      "path": "Various/23097269-2320-453f-96b7-2a67491d2f37.jpg",
+      "text": "",
+      "date": "15th March 2021",
+      "people": [
+        "Robs Jenkins",
+        "Josh Finlay",
         "Michael Ritchie"
       ]
     },
@@ -1184,17 +1353,18 @@
     {
       "filename": "24.JPG",
       "path": "Various/24.JPG",
-      "text": "",
+      "text": "Graduation Photo 2019",
       "date": "19th March 2019",
       "people": [
         "Reg Grobler",
+        "Jeffrey Lewis",
         "Michael Ritchie"
       ]
     },
     {
       "filename": "24bc0992-1958-4813-815d-717d9ca8f556.jpg",
       "path": "Various/24bc0992-1958-4813-815d-717d9ca8f556.jpg",
-      "text": "",
+      "text": "Rocklands 2022",
       "date": "2nd May 2022",
       "people": [
         "Adam De Waal",
@@ -1208,7 +1378,30 @@
       "text": "Kelsey's Birthday 2020",
       "date": "24th February 2020",
       "people": [
+        "Ross",
+        "Michael Ritchie",
+        "Josh Finlay"
+      ]
+    },
+    {
+      "filename": "280f3483-d096-4094-92ce-8651301655b5.jpg",
+      "path": "Various/280f3483-d096-4094-92ce-8651301655b5.jpg",
+      "text": "",
+      "date": "18th December 2020",
+      "people": [
+        "Adam De Waal",
         "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "2b21c93a-f907-48cd-a936-1c3a4cba5255.jpg",
+      "path": "Various/2b21c93a-f907-48cd-a936-1c3a4cba5255.jpg",
+      "text": "",
+      "date": "21st May 2025",
+      "people": [
+        "Michael Ritchie",
+        "Jordan Wright",
+        "Amber"
       ]
     },
     {
@@ -1226,18 +1419,29 @@
     {
       "filename": "2d300ea0-05a4-41fa-b133-68f99778c61a.jpg",
       "path": "Various/2d300ea0-05a4-41fa-b133-68f99778c61a.jpg",
-      "text": "",
+      "text": "Wine Tram 2022",
       "date": "28th November 2022",
       "people": [
         "Tim Terblanche",
-        "CJ Louw",
-        "Adam De Waal"
+        "Adam De Waal",
+        "CJ Louw"
+      ]
+    },
+    {
+      "filename": "2ebf7394-2447-46e4-943d-526c9c236594.jpg",
+      "path": "Various/2ebf7394-2447-46e4-943d-526c9c236594.jpg",
+      "text": "",
+      "date": "22nd September 2021",
+      "people": [
+        "Michael Ritchie",
+        "Dani Du Toit",
+        "CJ Louw"
       ]
     },
     {
       "filename": "2fe07f3f-d4a3-4ead-8d5b-ae4a105f4f4b.jpg",
       "path": "Various/2fe07f3f-d4a3-4ead-8d5b-ae4a105f4f4b.jpg",
-      "text": "",
+      "text": "Rocklands 2022",
       "date": "2nd May 2022",
       "people": [
         "Michael Ritchie"
@@ -1251,28 +1455,53 @@
       "people": [
         "CJ Louw",
         "Tim Terblanche",
+        "Liam",
         "Michael Ritchie",
-        "Adam De Waal",
-        "Tristan"
+        "Mikkel Du Plessis",
+        "Tristan",
+        "Adam De Waal"
       ]
+    },
+    {
+      "filename": "33a39688-afe1-478b-9fb9-b2c148645a9d.jpg",
+      "path": "Various/33a39688-afe1-478b-9fb9-b2c148645a9d.jpg",
+      "text": "",
+      "date": "17th November 2025",
+      "people": []
     },
     {
       "filename": "35640c46-4bd2-498a-b965-eedc9e403422.jpg",
       "path": "Various/35640c46-4bd2-498a-b965-eedc9e403422.jpg",
       "text": "Habitat 2026",
       "date": "29th March 2026",
-      "people": []
+      "people": [
+        "Josh Finlay",
+        "Jade"
+      ]
+    },
+    {
+      "filename": "35a4d979-74bb-4070-896c-306249ddb271.jpg",
+      "path": "Various/35a4d979-74bb-4070-896c-306249ddb271.jpg",
+      "text": "",
+      "date": "29th August 2022",
+      "people": [
+        "Michael Ritchie",
+        "Adam De Waal",
+        "Dani Du Toit",
+        "Reg Grobler"
+      ]
     },
     {
       "filename": "35fe9c1c-3247-4609-9aa2-fcc3d7b33bbd.jpg",
       "path": "Various/35fe9c1c-3247-4609-9aa2-fcc3d7b33bbd.jpg",
-      "text": "",
+      "text": "Pre-Burn Meetup",
       "date": "15th April 2023",
       "people": [
         "Adam De Waal",
         "Amy Frost",
         "Dani Du Toit",
         "Michael Ritchie",
+        "Mickey",
         "Tristan",
         "CJ Louw"
       ]
@@ -1280,16 +1509,51 @@
     {
       "filename": "363A1358.JPG",
       "path": "Various/363A1358.JPG",
-      "text": "",
+      "text": "Rocklands 2023",
       "date": "8th April 2023",
       "people": [
         "Michael Ritchie"
       ]
     },
     {
+      "filename": "36adda57-52ca-4f14-b56c-4a475cc89567.jpg",
+      "path": "Various/36adda57-52ca-4f14-b56c-4a475cc89567.jpg",
+      "text": "",
+      "date": "13th February 2026",
+      "people": [
+        "John Winter",
+        "Mikkel Du Plessis"
+      ]
+    },
+    {
+      "filename": "37687801-9a53-4f17-8465-66fda99fd0da.jpg",
+      "path": "Various/37687801-9a53-4f17-8465-66fda99fd0da.jpg",
+      "text": "",
+      "date": "4th March 2021",
+      "people": [
+        "Amy Frost",
+        "Adam De Waal",
+        "Tristan",
+        "Reg Grobler",
+        "Dani Du Toit",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "3903a423-dc56-41c3-9772-a634541d2b18.jpg",
+      "path": "Various/3903a423-dc56-41c3-9772-a634541d2b18.jpg",
+      "text": "",
+      "date": "25th February 2025",
+      "people": [
+        "Adam De Waal",
+        "Jose",
+        "Michael Ritchie"
+      ]
+    },
+    {
       "filename": "3f5912a9-2ffd-4d41-9b52-22f248b15cee.jpg",
       "path": "Various/3f5912a9-2ffd-4d41-9b52-22f248b15cee.jpg",
-      "text": "",
+      "text": "Rocklands 2022",
       "date": "2nd May 2022",
       "people": [
         "Dani Du Toit",
@@ -1299,7 +1563,7 @@
     {
       "filename": "3F67B3F9-3B71-4A45-AE13-1D6D7D41C77B.jpg",
       "path": "Various/3F67B3F9-3B71-4A45-AE13-1D6D7D41C77B.jpg",
-      "text": "",
+      "text": "Coffee Bay",
       "date": "26th February 2023",
       "people": [
         "Tristan",
@@ -1312,7 +1576,7 @@
     {
       "filename": "3f9f79dd-1491-472f-9c7c-a0fde4909891.jpg",
       "path": "Various/3f9f79dd-1491-472f-9c7c-a0fde4909891.jpg",
-      "text": "",
+      "text": "Rocklands 2022",
       "date": "3rd May 2022",
       "people": [
         "Dani Du Toit",
@@ -1326,9 +1590,23 @@
       "text": "Palmiet Hike 2025",
       "date": "28th December 2025",
       "people": [
+        "Leva De Waal",
         "Oscar De Waal",
+        "Raph",
         "Adam De Waal",
-        "Michael Ritchie"
+        "Charl",
+        "Michael Ritchie",
+        "Abi"
+      ]
+    },
+    {
+      "filename": "40ff03a5-a3d0-4671-9ae2-b64c9f4f8f8a.jpg",
+      "path": "Various/40ff03a5-a3d0-4671-9ae2-b64c9f4f8f8a.jpg",
+      "text": "",
+      "date": "22nd July 2025",
+      "people": [
+        "Reg Grobler",
+        "Adam De Waal"
       ]
     },
     {
@@ -1341,10 +1619,36 @@
       ]
     },
     {
+      "filename": "4117d907-8e98-4022-ac0c-51fe8b6f8371.jpg",
+      "path": "Various/4117d907-8e98-4022-ac0c-51fe8b6f8371.jpg",
+      "text": "",
+      "date": "10th February 2025",
+      "people": [
+        "Tim Terblanche",
+        "Dani Du Toit",
+        "Mikkel Du Plessis",
+        "Reg Grobler",
+        "Lucia Daly",
+        "Michael Ritchie",
+        "CJ Louw"
+      ]
+    },
+    {
       "filename": "419E58CE-9443-47A1-BA17-5A027A170019.JPG",
       "path": "Various/419E58CE-9443-47A1-BA17-5A027A170019.JPG",
       "text": "",
       "date": "29th March 2022",
+      "people": [
+        "Tim Terblanche",
+        "Michael Ritchie",
+        "CJ Louw"
+      ]
+    },
+    {
+      "filename": "44dd5e51-23b9-406b-ae26-c1d21304333c.jpg",
+      "path": "Various/44dd5e51-23b9-406b-ae26-c1d21304333c.jpg",
+      "text": "",
+      "date": "8th April 2022",
       "people": [
         "Tim Terblanche",
         "Michael Ritchie",
@@ -1361,13 +1665,32 @@
       ]
     },
     {
+      "filename": "45a4041e-a47e-4460-9a22-c5a36ce7abb0.jpg",
+      "path": "Various/45a4041e-a47e-4460-9a22-c5a36ce7abb0.jpg",
+      "text": "",
+      "date": "3rd May 2022",
+      "people": [
+        "Adam De Waal"
+      ]
+    },
+    {
       "filename": "46ae62a6-2b82-49cf-8643-1a21e82f1d41.jpg",
       "path": "Various/46ae62a6-2b82-49cf-8643-1a21e82f1d41.jpg",
       "text": "",
       "date": "28th April 2018",
       "people": [
+        "Dani Du Toit",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "4939314d-8ce6-45ba-bffa-80b5ccf3bf90.jpg",
+      "path": "Various/4939314d-8ce6-45ba-bffa-80b5ccf3bf90.jpg",
+      "text": "",
+      "date": "5th December 2024",
+      "people": [
         "Michael Ritchie",
-        "Dani Du Toit"
+        "Tim Terblanche"
       ]
     },
     {
@@ -1380,11 +1703,56 @@
       ]
     },
     {
+      "filename": "497aff18-5f4f-4e9d-b179-b1f9ca9901df.jpg",
+      "path": "Various/497aff18-5f4f-4e9d-b179-b1f9ca9901df.jpg",
+      "text": "",
+      "date": "2nd November 2025",
+      "people": [
+        "Mila Daly",
+        "Michael Ritchie",
+        "Stephan Ritchie",
+        "Josh Finlay",
+        "Tim Terblanche",
+        "CJ Louw"
+      ]
+    },
+    {
+      "filename": "49f6652a-36ba-4470-9153-2f3218198a72.jpg",
+      "path": "Various/49f6652a-36ba-4470-9153-2f3218198a72.jpg",
+      "text": "",
+      "date": "11th October 2025",
+      "people": [
+        "Reg Grobler"
+      ]
+    },
+    {
+      "filename": "4aafc8e6-db65-41fe-bca3-5bdd72c61432.jpg",
+      "path": "Various/4aafc8e6-db65-41fe-bca3-5bdd72c61432.jpg",
+      "text": "",
+      "date": "23rd November 2025",
+      "people": [
+        "Liam"
+      ]
+    },
+    {
       "filename": "4d0dbeb7-43fb-4b04-9ea2-15b956578f88.jpg",
       "path": "Various/4d0dbeb7-43fb-4b04-9ea2-15b956578f88.jpg",
-      "text": "",
+      "text": "Wild Coast 2022",
       "date": "29th August 2022",
       "people": []
+    },
+    {
+      "filename": "4d5ec773-8fd7-4cd6-9ca7-6426f3a0d8e2.jpg",
+      "path": "Various/4d5ec773-8fd7-4cd6-9ca7-6426f3a0d8e2.jpg",
+      "text": "",
+      "date": "2nd January 2026",
+      "people": [
+        "CJ Louw",
+        "Mikkel Du Plessis",
+        "Tristan",
+        "Tim Terblanche",
+        "Adam De Waal"
+      ]
     },
     {
       "filename": "4deec06d-aeca-4e0b-92bf-92e8f50b607e.jpg",
@@ -1393,13 +1761,24 @@
       "date": "29th March 2026",
       "people": [
         "Michael Ritchie",
-        "Reg Grobler"
+        "Jade",
+        "Reg Grobler",
+        "Josh Finlay"
+      ]
+    },
+    {
+      "filename": "4f5966f3-3cee-482e-8664-9f4d18263e12.jpg",
+      "path": "Various/4f5966f3-3cee-482e-8664-9f4d18263e12.jpg",
+      "text": "",
+      "date": "10th January 2026",
+      "people": [
+        "Adam De Waal"
       ]
     },
     {
       "filename": "4fd44cdd-fdec-4c92-be9d-dbabf6d5b0e4.jpg",
       "path": "Various/4fd44cdd-fdec-4c92-be9d-dbabf6d5b0e4.jpg",
-      "text": "",
+      "text": "Stellies",
       "date": "26th February 2023",
       "people": [
         "Reg Grobler",
@@ -1414,38 +1793,55 @@
       "text": "Josh is in his...",
       "date": "30th March 2026",
       "people": [
-        "Reg Grobler"
+        "Reg Grobler",
+        "Josh Finlay"
       ]
     },
     {
-      "filename": "546402498_31573561235620848_1906931629410191143.jpg",
-      "path": "Various/546402498_31573561235620848_1906931629410191143.jpg",
+      "filename": "53bf420b-927f-4758-ac64-b7cc0595f4e8.jpg",
+      "path": "Various/53bf420b-927f-4758-ac64-b7cc0595f4e8.jpg",
+      "text": "",
+      "date": "13th February 2026",
+      "people": [
+        "Raph",
+        "Dani Du Toit",
+        "Lucia Daly"
+      ]
+    },
+    {
+      "filename": "546402498_31573561235620848_1906931629410191143_n.jpg",
+      "path": "Various/546402498_31573561235620848_1906931629410191143_n.jpg",
       "text": "Don't Touch My Drumset",
-      "date": "20th January 2026",
+      "date": "20th January 2013",
       "people": [
         "Michael Ritchie"
       ]
     },
     {
-      "filename": "555609002_31827487680228201_3278591342149447564.jpg",
-      "path": "Various/555609002_31827487680228201_3278591342149447564.jpg",
+      "filename": "555609002_31827487680228201_3278591342149447564_n.jpg",
+      "path": "Various/555609002_31827487680228201_3278591342149447564_n.jpg",
       "text": "Fam",
-      "date": "20th January 2026",
+      "date": "20th January 2017",
       "people": [
-        "Michael Ritchie"
+        "Michael Ritchie",
+        "Leonie Grabe",
+        "Stephan Ritchie"
       ]
     },
     {
       "filename": "58a1c0ef-0578-4848-a081-9dbe9714dcc1.JPG",
       "path": "Various/58a1c0ef-0578-4848-a081-9dbe9714dcc1.JPG",
-      "text": "",
+      "text": "Ane's Party",
       "date": "26th February 2023",
       "people": [
+        "John Winter",
         "Lucia Daly",
         "Mikkel Du Plessis",
         "Adam De Waal",
         "Reg Grobler",
         "CJ Louw",
+        "Charl",
+        "Amber",
         "Michael Ritchie"
       ]
     },
@@ -1466,20 +1862,30 @@
       "text": "Dean and Stacy's Wedding Party 2025",
       "date": "11th November 2025",
       "people": [
-        "Michael Ritchie"
+        "Michael Ritchie",
+        "Cameron Davies"
       ]
     },
     {
       "filename": "5b4e0656-6ca3-45c3-8843-49e7912030b4.jpg",
       "path": "Various/5b4e0656-6ca3-45c3-8843-49e7912030b4.jpg",
-      "text": "",
+      "text": "Orange River 2022",
       "date": "19th April 2022",
       "people": []
     },
     {
+      "filename": "5b9f9012-7529-4172-a426-cefe140f8af5.jpg",
+      "path": "Various/5b9f9012-7529-4172-a426-cefe140f8af5.jpg",
+      "text": "",
+      "date": "24th July 2025",
+      "people": [
+        "Michael Ritchie"
+      ]
+    },
+    {
       "filename": "5d33c7ad-70f8-4178-a0e3-ce88e429b5a9.jpg",
       "path": "Various/5d33c7ad-70f8-4178-a0e3-ce88e429b5a9.jpg",
-      "text": "",
+      "text": "Graduation 2021",
       "date": "15th December 2021",
       "people": [
         "Michael Ritchie"
@@ -1488,35 +1894,62 @@
     {
       "filename": "5e4cb4bd-3062-460b-9212-87a7f1aeb696.jpg",
       "path": "Various/5e4cb4bd-3062-460b-9212-87a7f1aeb696.jpg",
-      "text": "",
+      "text": "Winter Is Coming",
       "date": "27th March 2024",
       "people": [
         "Michael Ritchie"
       ]
     },
     {
+      "filename": "5edc2067-cf7e-4caf-9281-2e8a0e6f2806.jpg",
+      "path": "Various/5edc2067-cf7e-4caf-9281-2e8a0e6f2806.jpg",
+      "text": "",
+      "date": "13th February 2026",
+      "people": [
+        "Mikkel Du Plessis",
+        "Tim Terblanche",
+        "Mila Daly",
+        "Adam De Waal"
+      ]
+    },
+    {
       "filename": "5fb89fd1-0c22-48cc-964b-921d9b9b2257.JPG",
       "path": "Various/5fb89fd1-0c22-48cc-964b-921d9b9b2257.JPG",
-      "text": "",
+      "text": "We Found A Limo",
       "date": "22nd January 2020",
       "people": [
+        "Ant Cartwight",
         "Michael Ritchie"
       ]
     },
     {
       "filename": "6.jpg",
       "path": "Various/6.jpg",
-      "text": "",
+      "text": "Tristan's Place 2017",
       "date": "14th November 2017",
       "people": [
         "Reg Grobler",
+        "Michael Ritchie",
+        "Tristan"
+      ]
+    },
+    {
+      "filename": "6190df01-bc55-4037-8d66-d8e2af752d1a.jpg",
+      "path": "Various/6190df01-bc55-4037-8d66-d8e2af752d1a.jpg",
+      "text": "",
+      "date": "2nd May 2022",
+      "people": [
+        "Adam De Waal",
+        "Mikkel Du Plessis",
+        "Reg Grobler",
+        "Lucia Daly",
         "Michael Ritchie"
       ]
     },
     {
       "filename": "61e724e5-3347-4650-8b63-fc70242320c6.jpg",
       "path": "Various/61e724e5-3347-4650-8b63-fc70242320c6.jpg",
-      "text": "",
+      "text": "Graduation 2021",
       "date": "15th December 2021",
       "people": []
     },
@@ -1527,6 +1960,59 @@
       "date": "29th March 2026",
       "people": [
         "Reg Grobler",
+        "Michael Ritchie",
+        "Jade",
+        "Josh Finlay"
+      ]
+    },
+    {
+      "filename": "67b1c752-a9b0-402f-ad5d-dd2c678547ef.jpg",
+      "path": "Various/67b1c752-a9b0-402f-ad5d-dd2c678547ef.jpg",
+      "text": "",
+      "date": "14th February 2021",
+      "people": [
+        "Adam De Waal",
+        "CJ Louw",
+        "Tim Terblanche"
+      ]
+    },
+    {
+      "filename": "67f4d9e4-0aa0-44fb-8b28-e68a40a8f257.jpg",
+      "path": "Various/67f4d9e4-0aa0-44fb-8b28-e68a40a8f257.jpg",
+      "text": "",
+      "date": "8th July 2025",
+      "people": [
+        "Adam De Waal",
+        "Raph",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "68ac47e2-6d02-47fb-a7da-ef55ae4247ea.jpg",
+      "path": "Various/68ac47e2-6d02-47fb-a7da-ef55ae4247ea.jpg",
+      "text": "",
+      "date": "28th May 2025",
+      "people": [
+        "CJ Louw"
+      ]
+    },
+    {
+      "filename": "68c08161-1e4c-4442-ac25-35663c1fb5be.jpg",
+      "path": "Various/68c08161-1e4c-4442-ac25-35663c1fb5be.jpg",
+      "text": "",
+      "date": "17th July 2024",
+      "people": [
+        "Reg Grobler",
+        "Tim Terblanche",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "693f11ee-1792-44e7-bcd6-b4075e482d70.jpg",
+      "path": "Various/693f11ee-1792-44e7-bcd6-b4075e482d70.jpg",
+      "text": "",
+      "date": "28th May 2025",
+      "people": [
         "Michael Ritchie"
       ]
     },
@@ -1538,14 +2024,126 @@
       "people": []
     },
     {
+      "filename": "6ab1a39e-da2b-4e61-b2e9-9515b831aab3.jpg",
+      "path": "Various/6ab1a39e-da2b-4e61-b2e9-9515b831aab3.jpg",
+      "text": "",
+      "date": "23rd November 2025",
+      "people": [
+        "Tim Terblanche",
+        "Murray",
+        "Robs Jenkins",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "6b.jpg",
+      "path": "Various/6b.jpg",
+      "text": "",
+      "date": "28th May 2017",
+      "people": [
+        "Liam",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "6c86d4ff-44d6-479c-a765-0cc195dbae68.jpg",
+      "path": "Various/6c86d4ff-44d6-479c-a765-0cc195dbae68.jpg",
+      "text": "",
+      "date": "11th October 2025",
+      "people": [
+        "CJ Louw",
+        "Reg Grobler",
+        "Michael Ritchie",
+        "Josh Finlay",
+        "Tim Terblanche"
+      ]
+    },
+    {
+      "filename": "6ee7b72e-b763-4cd8-bb75-9816ac68b457.jpg",
+      "path": "Various/6ee7b72e-b763-4cd8-bb75-9816ac68b457.jpg",
+      "text": "",
+      "date": "13th October 2025",
+      "people": [
+        "Josh Finlay",
+        "Michael Ritchie",
+        "Raph",
+        "John Winter",
+        "Adam De Waal"
+      ]
+    },
+    {
       "filename": "6f601085-75f3-4840-b98f-fdf25d763c2a.jpg",
       "path": "Various/6f601085-75f3-4840-b98f-fdf25d763c2a.jpg",
       "text": "",
       "date": "3rd November 2023",
       "people": [
-        "Tim Terblanche",
+        "Michael Ritchie",
+        "Adam De Waal",
+        "Tim Terblanche"
+      ]
+    },
+    {
+      "filename": "70ebe2ba-d4a4-494a-9563-d93155b7885a.jpg",
+      "path": "Various/70ebe2ba-d4a4-494a-9563-d93155b7885a.jpg",
+      "text": "",
+      "date": "19th June 2025",
+      "people": [
+        "Dani Du Toit",
+        "Reg Grobler",
+        "Michael Ritchie",
+        "CJ Louw"
+      ]
+    },
+    {
+      "filename": "71dd6bec-af25-4144-95d0-4e7142358ae9.jpg",
+      "path": "Various/71dd6bec-af25-4144-95d0-4e7142358ae9.jpg",
+      "text": "",
+      "date": "22nd July 2025",
+      "people": [
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "723b3c80-7e39-4f1a-8fb6-f2e3d707c9c0.jpg",
+      "path": "Various/723b3c80-7e39-4f1a-8fb6-f2e3d707c9c0.jpg",
+      "text": "",
+      "date": "10th June 2021",
+      "people": [
+        "Reg Grobler",
+        "Tristan",
         "Adam De Waal",
         "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "73b06c1f-f364-49cb-98f5-13ca33b45d60.jpg",
+      "path": "Various/73b06c1f-f364-49cb-98f5-13ca33b45d60.jpg",
+      "text": "",
+      "date": "17th November 2025",
+      "people": [
+        "Michael Ritchie",
+        "Leva De Waal",
+        "Reg Grobler",
+        "Adam De Waal"
+      ]
+    },
+    {
+      "filename": "741d4bdc-d289-48b6-9e1f-e62c5ecb71b4.jpg",
+      "path": "Various/741d4bdc-d289-48b6-9e1f-e62c5ecb71b4.jpg",
+      "text": "",
+      "date": "16th November 2025",
+      "people": []
+    },
+    {
+      "filename": "7884f355-7469-4787-82ba-913796db1ab5.jpg",
+      "path": "Various/7884f355-7469-4787-82ba-913796db1ab5.jpg",
+      "text": "",
+      "date": "1st May 2025",
+      "people": [
+        "Mila Daly",
+        "Michael Ritchie",
+        "Emma",
+        "Liam"
       ]
     },
     {
@@ -1558,20 +2156,29 @@
       ]
     },
     {
+      "filename": "79bb34fd-f49d-4b22-96d0-31396c0d40f5.jpg",
+      "path": "Various/79bb34fd-f49d-4b22-96d0-31396c0d40f5.jpg",
+      "text": "",
+      "date": "29th August 2022",
+      "people": []
+    },
+    {
       "filename": "7a7a2372-5b98-46dc-a1e2-b43356184c31.jpg",
       "path": "Various/7a7a2372-5b98-46dc-a1e2-b43356184c31.jpg",
-      "text": "",
+      "text": "Stellies",
       "date": "26th February 2023",
       "people": [
         "Liam",
+        "Kirsty",
         "Dani Du Toit",
-        "Reg Grobler"
+        "Reg Grobler",
+        "Ross"
       ]
     },
     {
       "filename": "7abcabe4-2dbc-4829-8128-6636b73e5cb1.jpg",
       "path": "Various/7abcabe4-2dbc-4829-8128-6636b73e5cb1.jpg",
-      "text": "",
+      "text": "A Cold One",
       "date": "27th March 2024",
       "people": [
         "Michael Ritchie"
@@ -1580,40 +2187,107 @@
     {
       "filename": "7ca39a36-200d-4376-9b0f-65ed5cca35cf.jpg",
       "path": "Various/7ca39a36-200d-4376-9b0f-65ed5cca35cf.jpg",
-      "text": "",
+      "text": "Disco Mike",
       "date": "21st August 2023",
       "people": [
         "Michael Ritchie"
       ]
     },
     {
+      "filename": "826d73bb-c69d-4069-ab29-eda7fcd4c631.jpg",
+      "path": "Various/826d73bb-c69d-4069-ab29-eda7fcd4c631.jpg",
+      "text": "",
+      "date": "10th February 2025",
+      "people": [
+        "Mikkel Du Plessis",
+        "Michael Ritchie",
+        "Lucia Daly",
+        "Dani Du Toit",
+        "Tim Terblanche",
+        "Reg Grobler"
+      ]
+    },
+    {
       "filename": "827eec71-799c-44a9-b5e8-c9bd4ba81601.jpg",
       "path": "Various/827eec71-799c-44a9-b5e8-c9bd4ba81601.jpg",
-      "text": "",
+      "text": "Bazique 2022",
       "date": "18th March 2022",
       "people": [
         "Adam De Waal",
         "Robs Jenkins",
+        "Mary Wheeler",
         "Amy Frost",
         "Mila Daly",
         "Tim Terblanche",
         "Lucia Daly",
+        "Kirsty",
         "Michael Ritchie",
         "Reg Grobler",
         "Dani Du Toit"
       ]
     },
     {
+      "filename": "8291a030-e6ac-4df7-a93e-a672bff2ef8a.jpg",
+      "path": "Various/8291a030-e6ac-4df7-a93e-a672bff2ef8a.jpg",
+      "text": "",
+      "date": "15th December 2025",
+      "people": [
+        "Michael Ritchie",
+        "Adam De Waal",
+        "Mikkel Du Plessis",
+        "CJ Louw"
+      ]
+    },
+    {
+      "filename": "82a7da8b-4533-4da5-9e13-4255167b4624.jpg",
+      "path": "Various/82a7da8b-4533-4da5-9e13-4255167b4624.jpg",
+      "text": "",
+      "date": "28th March 2021",
+      "people": [
+        "Mary Wheeler",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "83a8e827-e021-44ba-8ad0-efdd2a135755.jpg",
+      "path": "Various/83a8e827-e021-44ba-8ad0-efdd2a135755.jpg",
+      "text": "",
+      "date": "28th May 2025",
+      "people": [
+        "Reg Grobler"
+      ]
+    },
+    {
+      "filename": "83b87a7e-d719-4d64-bdc3-bbe8e44bf4f3.jpg",
+      "path": "Various/83b87a7e-d719-4d64-bdc3-bbe8e44bf4f3.jpg",
+      "text": "",
+      "date": "13th October 2025",
+      "people": [
+        "Michael Ritchie",
+        "Reg Grobler",
+        "Adam De Waal"
+      ]
+    },
+    {
+      "filename": "86cc339a-c272-4a77-ba5c-4d7ec369f764.jpg",
+      "path": "Various/86cc339a-c272-4a77-ba5c-4d7ec369f764.jpg",
+      "text": "",
+      "date": "12th October 2025",
+      "people": [
+        "Michael Ritchie"
+      ]
+    },
+    {
       "filename": "8bca8b4a-a772-4055-acb2-63518ec3a3bf.jpg",
       "path": "Various/8bca8b4a-a772-4055-acb2-63518ec3a3bf.jpg",
-      "text": "",
+      "text": "Bobbing 2023",
       "date": "24th March 2023",
       "people": [
         "Adam De Waal",
         "Reg Grobler",
-        "Liam",
         "Amy Frost",
-        "Michael Ritchie"
+        "Michael Ritchie",
+        "Liam"
       ]
     },
     {
@@ -1630,7 +2304,7 @@
     {
       "filename": "8f6d8aa2-a487-4dff-803b-a5961edba193.jpg",
       "path": "Various/8f6d8aa2-a487-4dff-803b-a5961edba193.jpg",
-      "text": "",
+      "text": "Baviaanskloof NYE 2021-2022",
       "date": "27th December 2021",
       "people": [
         "Oscar De Waal",
@@ -1641,32 +2315,93 @@
     {
       "filename": "91f08a91-08ca-4dad-a5eb-547e3961da4d.jpg",
       "path": "Various/91f08a91-08ca-4dad-a5eb-547e3961da4d.jpg",
-      "text": "",
+      "text": "Rocklands 2022",
       "date": "2nd May 2022",
       "people": [
         "Michael Ritchie"
       ]
     },
     {
+      "filename": "930090de-0809-4987-8b8e-8f5061907e01.jpg",
+      "path": "Various/930090de-0809-4987-8b8e-8f5061907e01.jpg",
+      "text": "",
+      "date": "11th October 2025",
+      "people": [
+        "Mila Daly",
+        "Leva De Waal",
+        "Liam",
+        "CJ Louw",
+        "Reg Grobler",
+        "Dani Du Toit",
+        "Tristan",
+        "Raph",
+        "Tim Terblanche",
+        "Amy Frost",
+        "Michael Ritchie",
+        "Oscar De Waal",
+        "John Winter",
+        "Josh Finlay"
+      ]
+    },
+    {
+      "filename": "9341bb77-0dc9-4e6c-bd88-3aaabcd85770.jpg",
+      "path": "Various/9341bb77-0dc9-4e6c-bd88-3aaabcd85770.jpg",
+      "text": "",
+      "date": "22nd October 2025",
+      "people": []
+    },
+    {
       "filename": "97b1086b-91c8-450b-87e5-e5a35e145f6e.jpg",
       "path": "Various/97b1086b-91c8-450b-87e5-e5a35e145f6e.jpg",
-      "text": "",
+      "text": "Disco Mike",
       "date": "22nd August 2023",
       "people": [
         "Michael Ritchie"
       ]
     },
     {
+      "filename": "98d5eeef-21d2-4515-b7b3-90515936ba60.jpg",
+      "path": "Various/98d5eeef-21d2-4515-b7b3-90515936ba60.jpg",
+      "text": "",
+      "date": "28th March 2021",
+      "people": [
+        "Reg Grobler",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "99692ddb-7b0e-46a7-884c-ce0fa1a4698f.jpg",
+      "path": "Various/99692ddb-7b0e-46a7-884c-ce0fa1a4698f.jpg",
+      "text": "",
+      "date": "22nd January 2021",
+      "people": [
+        "Oscar De Waal",
+        "CJ Louw",
+        "Adam De Waal",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "9a86f490-6c33-4aab-9457-e628de94b98b.jpg",
+      "path": "Various/9a86f490-6c33-4aab-9457-e628de94b98b.jpg",
+      "text": "",
+      "date": "3rd May 2022",
+      "people": [
+        "Adam De Waal",
+        "Reg Grobler"
+      ]
+    },
+    {
       "filename": "9b2e60f1-6269-4948-a450-c2e582542f82.jpg",
       "path": "Various/9b2e60f1-6269-4948-a450-c2e582542f82.jpg",
-      "text": "",
+      "text": "Block 7 3rd Year",
       "date": "26th February 2023",
       "people": []
     },
     {
       "filename": "9ba49709-55ef-43b5-8d69-eb7404e6ac7f.jpg",
       "path": "Various/9ba49709-55ef-43b5-8d69-eb7404e6ac7f.jpg",
-      "text": "",
+      "text": "Fastest Man In The World",
       "date": "20th February 2022",
       "people": [
         "Adam De Waal"
@@ -1682,6 +2417,16 @@
       ]
     },
     {
+      "filename": "9c225ffc-be6b-4153-80b0-8effc945853a.jpg",
+      "path": "Various/9c225ffc-be6b-4153-80b0-8effc945853a.jpg",
+      "text": "",
+      "date": "31st October 2022",
+      "people": [
+        "Michael Ritchie",
+        "John Winter"
+      ]
+    },
+    {
       "filename": "9c30d3cf-baf2-4041-80b0-50513b817558.jpg",
       "path": "Various/9c30d3cf-baf2-4041-80b0-50513b817558.jpg",
       "text": "",
@@ -1693,24 +2438,77 @@
       ]
     },
     {
+      "filename": "9cc7f6b0-1ee7-4a8f-aa2f-6be517b9f91a.jpg",
+      "path": "Various/9cc7f6b0-1ee7-4a8f-aa2f-6be517b9f91a.jpg",
+      "text": "",
+      "date": "25th February 2025",
+      "people": [
+        "Oscar De Waal",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "9e175692-967e-4d94-9c72-2d9bbc9e140c-EDIT.jpg",
+      "path": "Various/9e175692-967e-4d94-9c72-2d9bbc9e140c-EDIT.jpg",
+      "text": "",
+      "date": "24th June 2025",
+      "people": [
+        "Michael Ritchie",
+        "Adam De Waal"
+      ]
+    },
+    {
+      "filename": "9fb745f7-b19d-4f01-beae-7caeef727fe7.jpg",
+      "path": "Various/9fb745f7-b19d-4f01-beae-7caeef727fe7.jpg",
+      "text": "",
+      "date": "23rd February 2025",
+      "people": [
+        "Michael Ritchie",
+        "Adam De Waal"
+      ]
+    },
+    {
       "filename": "_20161003_175842.JPG",
       "path": "Various/_20161003_175842.JPG",
-      "text": "",
+      "text": "Domino's, Bitch",
       "date": "3rd October 2016",
       "people": [
         "Reg Grobler",
-        "Michael Ritchie",
-        "Liam"
+        "Liam",
+        "Michael Ritchie"
       ]
     },
     {
       "filename": "_DSC3344.jpg",
       "path": "Various/_DSC3344.jpg",
-      "text": "",
+      "text": "Block 7",
       "date": "20th September 2019",
       "people": [
         "Michael Ritchie",
         "Adam De Waal"
+      ]
+    },
+    {
+      "filename": "a16982c5-c9ce-4c97-9245-64e3d9843544.jpg",
+      "path": "Various/a16982c5-c9ce-4c97-9245-64e3d9843544.jpg",
+      "text": "",
+      "date": "22nd September 2021",
+      "people": [
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "a2babc40-1b73-4848-addd-efda07bb9c59.jpg",
+      "path": "Various/a2babc40-1b73-4848-addd-efda07bb9c59.jpg",
+      "text": "",
+      "date": "13th December 2025",
+      "people": [
+        "Mikkel Du Plessis",
+        "Charl",
+        "Michael Ritchie",
+        "Paul",
+        "Ant Cartwight",
+        "CJ Louw"
       ]
     },
     {
@@ -1729,15 +2527,56 @@
       "date": "11th August 2021",
       "people": [
         "CJ Louw",
+        "Emma",
         "Liam",
+        "Ant Cartwight",
+        "John Winter",
+        "Paul",
+        "Amber",
+        "Charl",
         "Lucia Daly",
         "Michael Ritchie"
       ]
     },
     {
+      "filename": "adb27928-272f-430f-b935-a63f78d59745.jpg",
+      "path": "Various/adb27928-272f-430f-b935-a63f78d59745.jpg",
+      "text": "",
+      "date": "23rd July 2025",
+      "people": [
+        "Adam De Waal",
+        "Reg Grobler"
+      ]
+    },
+    {
+      "filename": "ae89aad7-1247-40e4-bc12-fe56ade5d25c.jpg",
+      "path": "Various/ae89aad7-1247-40e4-bc12-fe56ade5d25c.jpg",
+      "text": "",
+      "date": "24th January 2025",
+      "people": [
+        "Mikkel Du Plessis",
+        "Lucia Daly",
+        "Michael Ritchie",
+        "Dani Du Toit",
+        "Mila Daly",
+        "Tim Terblanche",
+        "Tristan",
+        "Amy Frost",
+        "Reg Grobler",
+        "CJ Louw"
+      ]
+    },
+    {
+      "filename": "af136bef-5e46-4295-95e2-4a44ebb3ff06.jpg",
+      "path": "Various/af136bef-5e46-4295-95e2-4a44ebb3ff06.jpg",
+      "text": "",
+      "date": "17th February 2025",
+      "people": []
+    },
+    {
       "filename": "af86c6dc-1b19-4234-9d98-94ab7c6eaaa4.jpg",
       "path": "Various/af86c6dc-1b19-4234-9d98-94ab7c6eaaa4.jpg",
-      "text": "",
+      "text": "Rocklands 2022",
       "date": "2nd May 2022",
       "people": [
         "Reg Grobler"
@@ -1746,7 +2585,7 @@
     {
       "filename": "afd1c51e-61ce-485c-a6ba-01f39d317f23.jpg",
       "path": "Various/afd1c51e-61ce-485c-a6ba-01f39d317f23.jpg",
-      "text": "",
+      "text": "Wild Coast 2022",
       "date": "29th August 2022",
       "people": [
         "Michael Ritchie",
@@ -1766,6 +2605,18 @@
       ]
     },
     {
+      "filename": "b01be35d-4819-4d9d-b3b4-67da39459ca4.jpg",
+      "path": "Various/b01be35d-4819-4d9d-b3b4-67da39459ca4.jpg",
+      "text": "",
+      "date": "20th March 2021",
+      "people": [
+        "Tristan",
+        "Adam De Waal",
+        "Michael Ritchie",
+        "Reg Grobler"
+      ]
+    },
+    {
       "filename": "B256A35A-5D80-422B-BB89-469EBC603B77.JPG",
       "path": "Various/B256A35A-5D80-422B-BB89-469EBC603B77.JPG",
       "text": "Baviaanskloof NYE 2021-2022",
@@ -1779,7 +2630,7 @@
     {
       "filename": "b3c4c30c-80b1-4bf5-af1b-ffc566e7eff0.jpg",
       "path": "Various/b3c4c30c-80b1-4bf5-af1b-ffc566e7eff0.jpg",
-      "text": "",
+      "text": "Liams Graduation Party 2022",
       "date": "3rd December 2022",
       "people": [
         "Adam De Waal",
@@ -1815,9 +2666,18 @@
       ]
     },
     {
+      "filename": "b5e9bc1e-f384-46f5-86a9-4a6867c4ee1c.jpg",
+      "path": "Various/b5e9bc1e-f384-46f5-86a9-4a6867c4ee1c.jpg",
+      "text": "",
+      "date": "23rd February 2025",
+      "people": [
+        "Michael Ritchie"
+      ]
+    },
+    {
       "filename": "b620d719-6d2f-4755-ba0d-610255b22d4f.jpg",
       "path": "Various/b620d719-6d2f-4755-ba0d-610255b22d4f.jpg",
-      "text": "",
+      "text": "Rocklands 2022",
       "date": "2nd May 2022",
       "people": [
         "Reg Grobler",
@@ -1826,12 +2686,25 @@
       ]
     },
     {
+      "filename": "b661d43c-6d0b-4def-ab6a-b43a263f9d21.jpg",
+      "path": "Various/b661d43c-6d0b-4def-ab6a-b43a263f9d21.jpg",
+      "text": "",
+      "date": "2nd January 2026",
+      "people": [
+        "Tim Terblanche",
+        "CJ Louw",
+        "Tristan"
+      ]
+    },
+    {
       "filename": "b6965d63-cc18-4764-8ad7-817c94cde826.jpg",
       "path": "Various/b6965d63-cc18-4764-8ad7-817c94cde826.jpg",
       "text": "Habitat 2026",
       "date": "29th March 2026",
       "people": [
-        "Reg Grobler"
+        "Jade",
+        "Reg Grobler",
+        "Josh Finlay"
       ]
     },
     {
@@ -1852,8 +2725,28 @@
       "people": [
         "Tim Terblanche",
         "Tristan",
+        "Mikkel Du Plessis",
         "Adam De Waal",
         "Reg Grobler",
+        "Michael Ritchie",
+        "Liam"
+      ]
+    },
+    {
+      "filename": "be6024ea-2975-4d7a-9eca-ef227f90fd47.jpg",
+      "path": "Various/be6024ea-2975-4d7a-9eca-ef227f90fd47.jpg",
+      "text": "",
+      "date": "7th February 2026",
+      "people": [
+        "Cameron Davies"
+      ]
+    },
+    {
+      "filename": "bf7509b8-7f93-43e6-a654-3e38c622af97.jpg",
+      "path": "Various/bf7509b8-7f93-43e6-a654-3e38c622af97.jpg",
+      "text": "",
+      "date": "3rd May 2022",
+      "people": [
         "Michael Ritchie"
       ]
     },
@@ -1868,25 +2761,84 @@
       ]
     },
     {
+      "filename": "c0c81fe2-a437-4467-843b-5456f2bffcd9.jpg",
+      "path": "Various/c0c81fe2-a437-4467-843b-5456f2bffcd9.jpg",
+      "text": "",
+      "date": "8th January 2026",
+      "people": [
+        "Reg Grobler",
+        "Tristan",
+        "CJ Louw",
+        "Liam"
+      ]
+    },
+    {
+      "filename": "c38d3494-8d33-499b-b51f-c82db1eef4d7.jpg",
+      "path": "Various/c38d3494-8d33-499b-b51f-c82db1eef4d7.jpg",
+      "text": "",
+      "date": "23rd July 2025",
+      "people": [
+        "Michael Ritchie",
+        "Reg Grobler"
+      ]
+    },
+    {
       "filename": "c49a7cd8-8e36-405c-8e08-c8fbdd86ef9d.JPG",
       "path": "Various/c49a7cd8-8e36-405c-8e08-c8fbdd86ef9d.JPG",
-      "text": "",
+      "text": "Block 7",
       "date": "26th February 2023",
       "people": [
         "Dani Du Toit",
         "Reg Grobler",
         "Robs Jenkins",
+        "Ross",
+        "Josh Finlay",
+        "Liam"
+      ]
+    },
+    {
+      "filename": "c7259ed2-ce21-4023-b788-15dc093e1123.jpg",
+      "path": "Various/c7259ed2-ce21-4023-b788-15dc093e1123.jpg",
+      "text": "",
+      "date": "28th May 2025",
+      "people": [
+        "Adam De Waal"
+      ]
+    },
+    {
+      "filename": "c9dd5039-cff0-48a3-ad4c-6253c6fa5949.jpg",
+      "path": "Various/c9dd5039-cff0-48a3-ad4c-6253c6fa5949.jpg",
+      "text": "",
+      "date": "22nd July 2025",
+      "people": [
+        "Reg Grobler",
+        "Liam",
+        "Tristan",
+        "Charl",
+        "Michael Ritchie",
+        "Adam De Waal",
+        "Lucia Daly"
+      ]
+    },
+    {
+      "filename": "c9e07a05-2c44-408d-8b86-33397c2e0554.jpg",
+      "path": "Various/c9e07a05-2c44-408d-8b86-33397c2e0554.jpg",
+      "text": "",
+      "date": "14th February 2021",
+      "people": [
+        "Adam De Waal",
         "Liam"
       ]
     },
     {
       "filename": "ca500191-0caf-4503-b57e-bac2641b9101.jpg",
       "path": "Various/ca500191-0caf-4503-b57e-bac2641b9101.jpg",
-      "text": "",
+      "text": "Three Types Of People",
       "date": "26th February 2023",
       "people": [
         "Michael Ritchie",
-        "Dani Du Toit"
+        "Dani Du Toit",
+        "Reg Grobler"
       ]
     },
     {
@@ -1895,6 +2847,7 @@
       "text": "Bobbing 2024",
       "date": "15th November 2024",
       "people": [
+        "Karl Naude",
         "Michael Ritchie",
         "Adam De Waal",
         "Oscar De Waal"
@@ -1919,6 +2872,38 @@
       ]
     },
     {
+      "filename": "ChatGPT Image Apr 23, 2026, 03_18_15 PM.png",
+      "path": "Various/ChatGPT Image Apr 23, 2026, 03_18_15 PM.png",
+      "text": "",
+      "date": "8th April 2023",
+      "people": [
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "ChatGPT Image Apr 23, 2026, 03_21_04 PM.png",
+      "path": "Various/ChatGPT Image Apr 23, 2026, 03_21_04 PM.png",
+      "text": "",
+      "date": "3rd December 2022",
+      "people": [
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "ChatGPT Image Apr 23, 2026, 03_25_05 PM.png",
+      "path": "Various/ChatGPT Image Apr 23, 2026, 03_25_05 PM.png",
+      "text": "",
+      "date": "10th December 2022",
+      "people": []
+    },
+    {
+      "filename": "ChatGPT Image Mar 17, 2026, 09_35_36 AM.png",
+      "path": "Various/ChatGPT Image Mar 17, 2026, 09_35_36 AM.png",
+      "text": "",
+      "date": "17th March 2026",
+      "people": []
+    },
+    {
       "filename": "ChatGPT Image Mar 19, 2026, 01_09_50 PM.png",
       "path": "Various/ChatGPT Image Mar 19, 2026, 01_09_50 PM.png",
       "text": "Cam's Wedding 2026",
@@ -1928,27 +2913,66 @@
       ]
     },
     {
+      "filename": "ChatGPT Image Nov 5, 2025, 09_17_16 PM.png",
+      "path": "Various/ChatGPT Image Nov 5, 2025, 09_17_16 PM.png",
+      "text": "",
+      "date": "5th November 2025",
+      "people": []
+    },
+    {
+      "filename": "d03ee84d-d69e-43da-a824-e6c1eb821172.jpg",
+      "path": "Various/d03ee84d-d69e-43da-a824-e6c1eb821172.jpg",
+      "text": "",
+      "date": "17th November 2025",
+      "people": [
+        "Dirk",
+        "Michael Ritchie",
+        "Adam De Waal"
+      ]
+    },
+    {
+      "filename": "d4b7ccdf-d1f9-412b-9368-a9ec67f6d212.jpg",
+      "path": "Various/d4b7ccdf-d1f9-412b-9368-a9ec67f6d212.jpg",
+      "text": "",
+      "date": "11th April 2025",
+      "people": [
+        "Adam De Waal",
+        "Michael Ritchie"
+      ]
+    },
+    {
       "filename": "d58bd523-e089-4dce-857e-71fe8ed98041.JPG",
       "path": "Various/d58bd523-e089-4dce-857e-71fe8ed98041.JPG",
       "text": "",
       "date": "22nd January 2020",
       "people": [
-        "Michael Ritchie"
+        "Michael Ritchie",
+        "Ross",
+        "Josh Finlay"
       ]
     },
     {
       "filename": "d6389e3d-b513-4fd9-a6da-12cb424255fa.jpg",
       "path": "Various/d6389e3d-b513-4fd9-a6da-12cb424255fa.jpg",
-      "text": "",
+      "text": "Rocklands 2022",
       "date": "2nd May 2022",
       "people": [
         "Tristan"
       ]
     },
     {
+      "filename": "d745f5cc-9a43-4187-853c-1ebc67506abb.jpg",
+      "path": "Various/d745f5cc-9a43-4187-853c-1ebc67506abb.jpg",
+      "text": "",
+      "date": "22nd July 2025",
+      "people": [
+        "Reg Grobler"
+      ]
+    },
+    {
       "filename": "d7681451-6d1e-4d5b-8480-c0e911ed0e36.jpg",
       "path": "Various/d7681451-6d1e-4d5b-8480-c0e911ed0e36.jpg",
-      "text": "",
+      "text": "Wolfkop 2022",
       "date": "31st October 2022",
       "people": [
         "Reg Grobler"
@@ -1964,28 +2988,92 @@
       ]
     },
     {
+      "filename": "d983178d-b0fe-4464-9bd0-8544f4981e3f.jpg",
+      "path": "Various/d983178d-b0fe-4464-9bd0-8544f4981e3f.jpg",
+      "text": "",
+      "date": "11th October 2025",
+      "people": [
+        "Dani Du Toit",
+        "Michael Ritchie",
+        "Leva De Waal",
+        "Tim Terblanche",
+        "Raph",
+        "CJ Louw",
+        "Josh Finlay",
+        "Oscar De Waal",
+        "John Winter",
+        "Mary Wheeler",
+        "Tristan",
+        "Adam De Waal",
+        "Amy Frost",
+        "Liam"
+      ]
+    },
+    {
+      "filename": "da77137a-6f58-4fae-a340-12ec92495d97.jpg",
+      "path": "Various/da77137a-6f58-4fae-a340-12ec92495d97.jpg",
+      "text": "",
+      "date": "11th March 2021",
+      "people": [
+        "Robs Jenkins",
+        "Josh Finlay",
+        "Michael Ritchie"
+      ]
+    },
+    {
       "filename": "dbcd2583-963d-4c22-9bdc-5502be76c798.jpg",
       "path": "Various/dbcd2583-963d-4c22-9bdc-5502be76c798.jpg",
-      "text": "",
+      "text": "Wild Coast 2022",
       "date": "29th August 2022",
       "people": [
         "Dani Du Toit"
       ]
     },
     {
-      "filename": "DSC02787.JPG",
-      "path": "Various/DSC02787.JPG",
+      "filename": "dbedf17b-8107-4cd2-a742-93fff29f37f2.jpg",
+      "path": "Various/dbedf17b-8107-4cd2-a742-93fff29f37f2.jpg",
       "text": "",
-      "date": "29th April 2023",
+      "date": "7th October 2022",
+      "people": [
+        "Cameron Davies",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "dd9b90a3-d809-4956-90c0-e58da7fd8bcb.jpg",
+      "path": "Various/dd9b90a3-d809-4956-90c0-e58da7fd8bcb.jpg",
+      "text": "",
+      "date": "22nd October 2025",
+      "people": [
+        "Tim Terblanche",
+        "Reg Grobler",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "ddf143f8-95f9-41de-9808-58c1e2f7f1df.jpg",
+      "path": "Various/ddf143f8-95f9-41de-9808-58c1e2f7f1df.jpg",
+      "text": "",
+      "date": "23rd November 2025",
       "people": [
         "Michael Ritchie",
-        "Adam De Waal"
+        "Reg Grobler"
+      ]
+    },
+    {
+      "filename": "DSC02787.JPG",
+      "path": "Various/DSC02787.JPG",
+      "text": "Afrika Burn 2023",
+      "date": "29th April 2023",
+      "people": [
+        "Adam De Waal",
+        "Michael Ritchie"
       ]
     },
     {
       "filename": "DSC03306.JPG",
       "path": "Various/DSC03306.JPG",
-      "text": "",
+      "text": "Zero Gravity 2023",
       "date": "1st September 2023",
       "people": [
         "Michael Ritchie"
@@ -1994,7 +3082,7 @@
     {
       "filename": "DSC03488.JPG",
       "path": "Various/DSC03488.JPG",
-      "text": "",
+      "text": "Greyton 2023",
       "date": "25th November 2023",
       "people": [
         "Mikkel Du Plessis",
@@ -2004,7 +3092,7 @@
     {
       "filename": "DSC03490.JPG",
       "path": "Various/DSC03490.JPG",
-      "text": "",
+      "text": "Greyton 2023",
       "date": "25th November 2023",
       "people": [
         "CJ Louw"
@@ -2013,16 +3101,116 @@
     {
       "filename": "DSC03504.JPG",
       "path": "Various/DSC03504.JPG",
-      "text": "",
+      "text": "Greyton 2023",
       "date": "25th November 2023",
       "people": [
         "Adam De Waal"
       ]
     },
     {
+      "filename": "DSC04416.JPG",
+      "path": "Various/DSC04416.JPG",
+      "text": "",
+      "date": "18th December 2024",
+      "people": [
+        "Raph",
+        "Adam De Waal"
+      ]
+    },
+    {
+      "filename": "DSC04425.JPG",
+      "path": "Various/DSC04425.JPG",
+      "text": "",
+      "date": "18th December 2024",
+      "people": [
+        "Raph"
+      ]
+    },
+    {
+      "filename": "DSC04428.JPG",
+      "path": "Various/DSC04428.JPG",
+      "text": "",
+      "date": "18th December 2024",
+      "people": [
+        "Adam De Waal",
+        "Raph",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "DSC04448.JPG",
+      "path": "Various/DSC04448.JPG",
+      "text": "",
+      "date": "19th December 2024",
+      "people": [
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "DSC04465.JPG",
+      "path": "Various/DSC04465.JPG",
+      "text": "",
+      "date": "19th December 2024",
+      "people": [
+        "Oscar De Waal"
+      ]
+    },
+    {
+      "filename": "DSC04468.JPG",
+      "path": "Various/DSC04468.JPG",
+      "text": "",
+      "date": "19th December 2024",
+      "people": [
+        "Michael Ritchie",
+        "Karl Naude",
+        "Chloe",
+        "Oscar De Waal",
+        "Raph",
+        "Reg Grobler"
+      ]
+    },
+    {
+      "filename": "DSC04533.JPG",
+      "path": "Various/DSC04533.JPG",
+      "text": "",
+      "date": "19th December 2024",
+      "people": [
+        "Chloe",
+        "Abi",
+        "Karl Naude",
+        "Jeffrey Lewis",
+        "Reg Grobler",
+        "Michael Ritchie",
+        "Raph",
+        "Oscar De Waal",
+        "Werner De Waal"
+      ]
+    },
+    {
+      "filename": "DSC04564.JPG",
+      "path": "Various/DSC04564.JPG",
+      "text": "",
+      "date": "19th December 2024",
+      "people": [
+        "Michael Ritchie",
+        "Reg Grobler",
+        "Adam De Waal",
+        "Karl Naude"
+      ]
+    },
+    {
+      "filename": "DSC_0157.JPG",
+      "path": "Various/DSC_0157.JPG",
+      "text": "",
+      "date": "24th January 2016",
+      "people": [
+        "Reg Grobler"
+      ]
+    },
+    {
       "filename": "DSC_0175.JPG",
       "path": "Various/DSC_0175.JPG",
-      "text": "",
+      "text": "Toaster Party",
       "date": "12th February 2016",
       "people": [
         "Adam De Waal"
@@ -2042,7 +3230,8 @@
       "date": "25th January 2017",
       "people": [
         "Reg Grobler",
-        "Michael Ritchie"
+        "Michael Ritchie",
+        "Cameron Davies"
       ]
     },
     {
@@ -2052,7 +3241,8 @@
       "date": "17th February 2017",
       "people": [
         "Michael Ritchie",
-        "Mikkel Du Plessis"
+        "Mikkel Du Plessis",
+        "Ant Cartwight"
       ]
     },
     {
@@ -2061,6 +3251,8 @@
       "text": "",
       "date": "18th March 2017",
       "people": [
+        "Ant Cartwight",
+        "Charl",
         "Reg Grobler",
         "Adam De Waal"
       ]
@@ -2075,7 +3267,7 @@
     {
       "filename": "DSC_0949.JPG",
       "path": "Various/DSC_0949.JPG",
-      "text": "",
+      "text": "Fort Night 2017",
       "date": "14th August 2017",
       "people": [
         "Adam De Waal"
@@ -2091,9 +3283,19 @@
       ]
     },
     {
+      "filename": "e587f1f1-c4b6-448d-952e-51d0eb68a9aa.jpg",
+      "path": "Various/e587f1f1-c4b6-448d-952e-51d0eb68a9aa.jpg",
+      "text": "",
+      "date": "25th March 2021",
+      "people": [
+        "Michael Ritchie",
+        "Robs Jenkins"
+      ]
+    },
+    {
       "filename": "e895d9b2-649e-4df3-adb2-5b1952928e25.jpg",
       "path": "Various/e895d9b2-649e-4df3-adb2-5b1952928e25.jpg",
-      "text": "",
+      "text": "Stellies 2018",
       "date": "29th September 2018",
       "people": [
         "Michael Ritchie"
@@ -2114,7 +3316,18 @@
       "path": "Various/e95501ae-392b-4063-b1b0-f8ed0b8d3259.jpg",
       "text": "Snorkeling with the Boyz",
       "date": "18th January 2026",
-      "people": []
+      "people": [
+        "Reg Grobler"
+      ]
+    },
+    {
+      "filename": "ea57787f-69ce-46c1-8eb7-81537b5790c5.jpg",
+      "path": "Various/ea57787f-69ce-46c1-8eb7-81537b5790c5.jpg",
+      "text": "",
+      "date": "21st October 2025",
+      "people": [
+        "Michael Ritchie"
+      ]
     },
     {
       "filename": "eae2d0b6-153f-4d07-8e12-04a8fc33be17.jpg",
@@ -2136,9 +3349,18 @@
     {
       "filename": "edda4cb3-4080-43d6-8685-5488c00cd325.jpg",
       "path": "Various/edda4cb3-4080-43d6-8685-5488c00cd325.jpg",
-      "text": "",
+      "text": "Rocklands 2022",
       "date": "2nd May 2022",
       "people": []
+    },
+    {
+      "filename": "ef2f2cd9-4214-46a6-94a5-28c1a68f2903.jpg",
+      "path": "Various/ef2f2cd9-4214-46a6-94a5-28c1a68f2903.jpg",
+      "text": "",
+      "date": "26th July 2025",
+      "people": [
+        "Oscar De Waal"
+      ]
     },
     {
       "filename": "ef5874ca-c236-4d2d-bc33-dae37bd6bb7a.JPG",
@@ -2153,14 +3375,25 @@
     {
       "filename": "f0335df1-aac6-4882-8fe7-e1691e1d2af5.jpg",
       "path": "Various/f0335df1-aac6-4882-8fe7-e1691e1d2af5.jpg",
-      "text": "",
+      "text": "Aandklas...",
       "date": "21st October 2021",
       "people": []
     },
     {
+      "filename": "f17015d4-0efa-4e16-9888-ff83d17e2295.jpg",
+      "path": "Various/f17015d4-0efa-4e16-9888-ff83d17e2295.jpg",
+      "text": "",
+      "date": "29th June 2025",
+      "people": [
+        "Michael Ritchie",
+        "Karl Naude",
+        "Adam De Waal"
+      ]
+    },
+    {
       "filename": "f3634ce9-7886-4efe-bd0f-e1972aea4511.jpg",
       "path": "Various/f3634ce9-7886-4efe-bd0f-e1972aea4511.jpg",
-      "text": "",
+      "text": "Wine Tram 2022",
       "date": "27th November 2022",
       "people": [
         "Mila Daly",
@@ -2169,9 +3402,19 @@
       ]
     },
     {
+      "filename": "f4536c0d-dcfc-477e-9393-1f641067838f.jpg",
+      "path": "Various/f4536c0d-dcfc-477e-9393-1f641067838f.jpg",
+      "text": "",
+      "date": "2nd November 2025",
+      "people": [
+        "Josh Finlay",
+        "Michael Ritchie"
+      ]
+    },
+    {
       "filename": "f84278a3-3642-4543-a7b1-b3606937e857.jpg",
       "path": "Various/f84278a3-3642-4543-a7b1-b3606937e857.jpg",
-      "text": "",
+      "text": "Rocklands 2022",
       "date": "2nd May 2022",
       "people": [
         "Tristan",
@@ -2180,11 +3423,34 @@
       ]
     },
     {
+      "filename": "fc364618-7095-454f-973c-60bba9790d17.jpg",
+      "path": "Various/fc364618-7095-454f-973c-60bba9790d17.jpg",
+      "text": "",
+      "date": "17th November 2025",
+      "people": [
+        "Michael Ritchie",
+        "Adam De Waal"
+      ]
+    },
+    {
       "filename": "fda8eab1-7bda-4fa4-b542-01340c9f7806.jpg",
       "path": "Various/fda8eab1-7bda-4fa4-b542-01340c9f7806.jpg",
-      "text": "",
+      "text": "Rocklands 2022",
       "date": "2nd May 2022",
       "people": [
+        "Adam De Waal"
+      ]
+    },
+    {
+      "filename": "ffc5e2b0-132f-483f-8ebf-f5abae25b13f.jpg",
+      "path": "Various/ffc5e2b0-132f-483f-8ebf-f5abae25b13f.jpg",
+      "text": "",
+      "date": "12th December 2025",
+      "people": [
+        "Josh Finlay",
+        "Michael Ritchie",
+        "Reg Grobler",
+        "Charl",
         "Adam De Waal"
       ]
     },
@@ -2193,12 +3459,52 @@
       "path": "Various/FullSizeRender.jpg",
       "text": "",
       "date": "23rd December 2023",
+      "people": []
+    },
+    {
+      "filename": "GOPR0261.JPG",
+      "path": "Various/GOPR0261.JPG",
+      "text": "",
+      "date": "21st December 2024",
       "people": [
-        "Michael Ritchie",
-        "Adam De Waal",
-        "Reg Grobler",
-        "Tim Terblanche"
+        "Adam De Waal"
       ]
+    },
+    {
+      "filename": "GOPR0271.JPG",
+      "path": "Various/GOPR0271.JPG",
+      "text": "",
+      "date": "21st December 2024",
+      "people": [
+        "Reg Grobler",
+        "Adam De Waal"
+      ]
+    },
+    {
+      "filename": "GOPR2842.JPG",
+      "path": "Various/GOPR2842.JPG",
+      "text": "",
+      "date": "5th January 2020",
+      "people": [
+        "Oscar De Waal",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "helena-cameron-webersburg-wedding-photography-stellenbosch(385).jpg",
+      "path": "Various/helena-cameron-webersburg-wedding-photography-stellenbosch(385).jpg",
+      "text": "",
+      "date": "28th February 2026",
+      "people": [
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "helena-cameron-webersburg-wedding-photography-stellenbosch(863).jpg",
+      "path": "Various/helena-cameron-webersburg-wedding-photography-stellenbosch(863).jpg",
+      "text": "",
+      "date": "28th February 2026",
+      "people": []
     },
     {
       "filename": "IMG-20160319-WA0002.jpg",
@@ -2206,27 +3512,30 @@
       "text": "Aandklas 2017",
       "date": "28th May 2017",
       "people": [
-        "Lucia Daly",
+        "Charl",
         "Liam",
         "Adam De Waal",
+        "Tristan",
+        "Reg Grobler",
         "Michael Ritchie",
-        "Reg Grobler"
+        "Lucia Daly"
       ]
     },
     {
       "filename": "IMG-20160419-WA0012 (1).jpg",
       "path": "Various/IMG-20160419-WA0012 (1).jpg",
-      "text": "",
+      "text": "Block 7 2nd Year",
       "date": "26th February 2023",
       "people": [
-        "Michael Ritchie",
-        "Reg Grobler"
+        "Charl",
+        "Reg Grobler",
+        "Michael Ritchie"
       ]
     },
     {
       "filename": "IMG-20160520-WA0007.jpg",
       "path": "Various/IMG-20160520-WA0007.jpg",
-      "text": "",
+      "text": "Block 7 2nd Year",
       "date": "26th February 2023",
       "people": [
         "Michael Ritchie"
@@ -2235,17 +3544,18 @@
     {
       "filename": "IMG-20160701-WA0000.jpg",
       "path": "Various/IMG-20160701-WA0000.jpg",
-      "text": "",
+      "text": "\"Just One Beer\"",
       "date": "28th May 2017",
       "people": []
     },
     {
       "filename": "IMG-20160723-WA0009.jpg",
       "path": "Various/IMG-20160723-WA0009.jpg",
-      "text": "",
+      "text": "Stellies 2017",
       "date": "28th May 2017",
       "people": [
-        "Michael Ritchie"
+        "Michael Ritchie",
+        "Tristan"
       ]
     },
     {
@@ -2254,25 +3564,35 @@
       "text": "Gordan's Bay 2017",
       "date": "28th May 2017",
       "people": [
-        "Michael Ritchie",
         "Reg Grobler",
         "Dani Du Toit",
-        "Liam"
+        "Liam",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "IMG-20160916-WA0002.jpg",
+      "path": "Various/IMG-20160916-WA0002.jpg",
+      "text": "",
+      "date": "28th May 2017",
+      "people": [
+        "Michael Ritchie"
       ]
     },
     {
       "filename": "IMG-20161021-WA0006.jpg",
       "path": "Various/IMG-20161021-WA0006.jpg",
-      "text": "",
+      "text": "Block 7 2nd Year",
       "date": "26th February 2023",
       "people": []
     },
     {
       "filename": "IMG-20161025-WA0004.jpg",
       "path": "Various/IMG-20161025-WA0004.jpg",
-      "text": "",
+      "text": "Movie Night",
       "date": "28th May 2017",
       "people": [
+        "Ant Cartwight",
         "Reg Grobler",
         "Michael Ritchie"
       ]
@@ -2280,23 +3600,26 @@
     {
       "filename": "IMG-20161031-WA0011.jpg",
       "path": "Various/IMG-20161031-WA0011.jpg",
-      "text": "",
+      "text": "Proposing To Reg",
       "date": "28th May 2017",
       "people": [
-        "Michael Ritchie"
+        "Michael Ritchie",
+        "Ant Cartwight"
       ]
     },
     {
       "filename": "IMG-20161117-WA0012.jpg",
       "path": "Various/IMG-20161117-WA0012.jpg",
-      "text": "",
+      "text": "Block 7 2nd Year",
       "date": "26th February 2023",
       "people": [
         "Liam",
+        "Ant Cartwight",
         "Adam De Waal",
         "Michael Ritchie",
         "CJ Louw",
-        "Reg Grobler"
+        "Reg Grobler",
+        "Charl"
       ]
     },
     {
@@ -2304,18 +3627,14 @@
       "path": "Various/IMG_0075.jpg",
       "text": "",
       "date": "14th October 2023",
-      "people": [
-        "Michael Ritchie"
-      ]
+      "people": []
     },
     {
       "filename": "IMG_0087.jpg",
       "path": "Various/IMG_0087.jpg",
       "text": "",
       "date": "14th October 2023",
-      "people": [
-        "Reg Grobler"
-      ]
+      "people": []
     },
     {
       "filename": "IMG_0110.jpg",
@@ -2325,41 +3644,48 @@
       "people": [
         "CJ Louw",
         "Lucia Daly",
+        "Ant Cartwight",
+        "Kirsty",
         "Adam De Waal",
         "Mikkel Du Plessis",
         "Michael Ritchie"
       ]
     },
     {
+      "filename": "IMG_0111.JPG",
+      "path": "Various/IMG_0111.JPG",
+      "text": "",
+      "date": "22nd October 2023",
+      "people": [
+        "Adam De Waal",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "IMG_0124.JPG",
+      "path": "Various/IMG_0124.JPG",
+      "text": "",
+      "date": "27th December 2022",
+      "people": []
+    },
+    {
       "filename": "IMG_0162.jpg",
       "path": "Various/IMG_0162.jpg",
       "text": "",
       "date": "31st May 2024",
-      "people": [
-        "Mila Daly",
-        "Michael Ritchie",
-        "Robs Jenkins",
-        "Dani Du Toit",
-        "Tristan",
-        "Amy Frost",
-        "Lucia Daly",
-        "Reg Grobler",
-        "CJ Louw",
-        "Tim Terblanche",
-        "Mikkel Du Plessis"
-      ]
+      "people": []
     },
     {
       "filename": "IMG_0245.JPG",
       "path": "Various/IMG_0245.JPG",
-      "text": "",
+      "text": "Swag Mike",
       "date": "8th July 2017",
       "people": []
     },
     {
       "filename": "IMG_0312.PNG",
       "path": "Various/IMG_0312.PNG",
-      "text": "",
+      "text": "The Boyz",
       "date": "16th December 2023",
       "people": [
         "CJ Louw",
@@ -2372,7 +3698,7 @@
     {
       "filename": "IMG_0327.jpg",
       "path": "Various/IMG_0327.jpg",
-      "text": "",
+      "text": "Rugby 7's 2022",
       "date": "10th December 2022",
       "people": [
         "Adam De Waal",
@@ -2383,17 +3709,17 @@
     {
       "filename": "IMG_0344.PNG",
       "path": "Various/IMG_0344.PNG",
-      "text": "",
+      "text": "Rugby 7's 2022",
       "date": "11th December 2022",
       "people": [
-        "Dani Du Toit",
-        "Michael Ritchie"
+        "Michael Ritchie",
+        "Dani Du Toit"
       ]
     },
     {
       "filename": "IMG_0359.jpg",
       "path": "Various/IMG_0359.jpg",
-      "text": "",
+      "text": "Rocklands 2022",
       "date": "1st May 2022",
       "people": [
         "Lucia Daly",
@@ -2401,6 +3727,22 @@
         "Michael Ritchie",
         "Reg Grobler",
         "Mikkel Du Plessis"
+      ]
+    },
+    {
+      "filename": "IMG_0455.jpg",
+      "path": "Various/IMG_0455.jpg",
+      "text": "",
+      "date": "26th March 2022",
+      "people": []
+    },
+    {
+      "filename": "IMG_0525.JPG",
+      "path": "Various/IMG_0525.JPG",
+      "text": "",
+      "date": "30th July 2017",
+      "people": [
+        "Michael Ritchie"
       ]
     },
     {
@@ -2426,6 +3768,7 @@
         "Amy Frost",
         "Reg Grobler",
         "Dani Du Toit",
+        "Charl",
         "CJ Louw",
         "Mikkel Du Plessis",
         "Michael Ritchie"
@@ -2434,7 +3777,7 @@
     {
       "filename": "IMG_0569.JPG",
       "path": "Various/IMG_0569.JPG",
-      "text": "",
+      "text": "Pub Golf 2017",
       "date": "3rd August 2017",
       "people": [
         "Reg Grobler",
@@ -2451,18 +3794,19 @@
     {
       "filename": "IMG_0570.JPG",
       "path": "Various/IMG_0570.JPG",
-      "text": "",
+      "text": "Pub Golf 2017",
       "date": "3rd August 2017",
       "people": [
         "Michael Ritchie",
         "Liam",
+        "Tristan",
         "Reg Grobler"
       ]
     },
     {
       "filename": "IMG_0615.JPG",
       "path": "Various/IMG_0615.JPG",
-      "text": "",
+      "text": "Coffee Bay 2023",
       "date": "1st January 2023",
       "people": [
         "Michael Ritchie"
@@ -2471,28 +3815,30 @@
     {
       "filename": "IMG_0616.JPG",
       "path": "Various/IMG_0616.JPG",
-      "text": "",
+      "text": "Weed Garden - Coffee Bay 2022",
       "date": "30th December 2022",
       "people": [
         "Mila Daly",
         "Michael Ritchie",
+        "Emma",
         "Tristan",
-        "Liam",
         "Reg Grobler",
-        "CJ Louw"
+        "CJ Louw",
+        "Liam"
       ]
     },
     {
       "filename": "IMG_0618.JPG",
       "path": "Various/IMG_0618.JPG",
-      "text": "",
+      "text": "Coffee Bay 2023",
       "date": "31st December 2022",
       "people": [
         "Reg Grobler",
         "Adam De Waal",
+        "Mikkel Du Plessis",
         "Tristan",
-        "Michael Ritchie",
-        "CJ Louw"
+        "CJ Louw",
+        "Michael Ritchie"
       ]
     },
     {
@@ -2501,6 +3847,26 @@
       "text": "",
       "date": "31st December 2023",
       "people": []
+    },
+    {
+      "filename": "IMG_0637.jpg",
+      "path": "Various/IMG_0637.jpg",
+      "text": "",
+      "date": "17th August 2021",
+      "people": [
+        "Tristan",
+        "Liam",
+        "Lucia Daly",
+        "Dani Du Toit",
+        "Reg Grobler",
+        "Klara",
+        "Adam De Waal",
+        "CJ Louw",
+        "Mila Daly",
+        "Michael Ritchie",
+        "Amy Frost",
+        "Charl"
+      ]
     },
     {
       "filename": "IMG_0658.JPG",
@@ -2525,9 +3891,7 @@
       "path": "Various/IMG_0700.jpg",
       "text": "",
       "date": "27th January 2024",
-      "people": [
-        "Adam De Waal"
-      ]
+      "people": []
     },
     {
       "filename": "IMG_0864.JPG",
@@ -2545,13 +3909,14 @@
       "text": "Liam's 21st",
       "date": "21st August 2017",
       "people": [
-        "Michael Ritchie"
+        "Michael Ritchie",
+        "Ant Cartwight"
       ]
     },
     {
       "filename": "IMG_0930.JPG",
       "path": "Various/IMG_0930.JPG",
-      "text": "",
+      "text": "Science",
       "date": "27th August 2017",
       "people": []
     },
@@ -2561,27 +3926,56 @@
       "text": "Rockfig 2018",
       "date": "14th July 2018",
       "people": [
+        "Klara",
         "Reg Grobler",
+        "Ant Cartwight",
         "Adam De Waal",
         "Michael Ritchie",
+        "Ross",
         "Liam",
         "Dani Du Toit"
       ]
     },
     {
+      "filename": "IMG_1088.jpg",
+      "path": "Various/IMG_1088.jpg",
+      "text": "",
+      "date": "4th January 2020",
+      "people": [
+        "Michael Ritchie",
+        "Tristan",
+        "Adam De Waal"
+      ]
+    },
+    {
+      "filename": "IMG_1099.jpg",
+      "path": "Various/IMG_1099.jpg",
+      "text": "",
+      "date": "5th January 2020",
+      "people": [
+        "Reg Grobler",
+        "Adam De Waal",
+        "Charl",
+        "Dani Du Toit",
+        "Michael Ritchie",
+        "Tristan"
+      ]
+    },
+    {
       "filename": "IMG_1168.JPG",
       "path": "Various/IMG_1168.JPG",
-      "text": "",
+      "text": "Rocklands 2023",
       "date": "8th April 2023",
       "people": [
         "Adam De Waal",
+        "Liam",
         "Michael Ritchie"
       ]
     },
     {
       "filename": "IMG_1173.JPG",
       "path": "Various/IMG_1173.JPG",
-      "text": "",
+      "text": "Rocklands 2023",
       "date": "8th April 2023",
       "people": [
         "Michael Ritchie"
@@ -2593,83 +3987,176 @@
       "text": "",
       "date": "23rd September 2017",
       "people": [
+        "Ant Cartwight",
         "Michael Ritchie",
         "Adam De Waal",
         "Liam"
       ]
     },
     {
+      "filename": "IMG_1358.jpg",
+      "path": "Various/IMG_1358.jpg",
+      "text": "",
+      "date": "3rd January 2020",
+      "people": [
+        "Reg Grobler",
+        "Adam De Waal",
+        "Michael Ritchie",
+        "Tristan"
+      ]
+    },
+    {
+      "filename": "IMG_1401.jpg",
+      "path": "Various/IMG_1401.jpg",
+      "text": "",
+      "date": "14th July 2024",
+      "people": []
+    },
+    {
       "filename": "IMG_1426.JPG",
       "path": "Various/IMG_1426.JPG",
-      "text": "",
+      "text": "Afrika Burn 2023",
       "date": "8th May 2023",
-      "people": []
+      "people": [
+        "Adam De Waal"
+      ]
     },
     {
       "filename": "IMG_1427.JPG",
       "path": "Various/IMG_1427.JPG",
-      "text": "",
+      "text": "Afrika Burn 2023",
       "date": "8th May 2023",
       "people": []
     },
     {
       "filename": "IMG_1428.JPG",
       "path": "Various/IMG_1428.JPG",
-      "text": "",
+      "text": "Afrika Burn 2023",
       "date": "8th May 2023",
       "people": [
-        "Michael Ritchie",
+        "Tristan",
         "Reg Grobler",
-        "Tristan"
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "IMG_1475.jpg",
+      "path": "Various/IMG_1475.jpg",
+      "text": "",
+      "date": "8th January 2026",
+      "people": [
+        "Adam De Waal",
+        "Jordan Wright",
+        "Michael Ritchie",
+        "Raph"
+      ]
+    },
+    {
+      "filename": "IMG_1490.jpg",
+      "path": "Various/IMG_1490.jpg",
+      "text": "",
+      "date": "22nd March 2025",
+      "people": []
+    },
+    {
+      "filename": "IMG_1495.JPG",
+      "path": "Various/IMG_1495.JPG",
+      "text": "",
+      "date": "11th January 2026",
+      "people": [
+        "Michael Ritchie",
+        "Raph"
+      ]
+    },
+    {
+      "filename": "IMG_1527.PNG",
+      "path": "Various/IMG_1527.PNG",
+      "text": "",
+      "date": "15th July 2020",
+      "people": []
+    },
+    {
+      "filename": "IMG_1541.jpg",
+      "path": "Various/IMG_1541.jpg",
+      "text": "",
+      "date": "18th July 2020",
+      "people": [
+        "Reg Grobler"
       ]
     },
     {
       "filename": "IMG_1733.JPG",
       "path": "Various/IMG_1733.JPG",
-      "text": "",
+      "text": "Origin 2024",
       "date": "11th October 2024",
       "people": [
         "Michael Ritchie",
+        "Jordan Wright",
+        "Josh Finlay",
         "Adam De Waal"
       ]
     },
     {
       "filename": "IMG_1737.JPG",
       "path": "Various/IMG_1737.JPG",
+      "text": "Pizza Party - Origin 2024",
+      "date": "11th October 2024",
+      "people": [
+        "Adam De Waal",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "IMG_1741.JPG",
+      "path": "Various/IMG_1741.JPG",
       "text": "",
       "date": "11th October 2024",
       "people": [
-        "Michael Ritchie",
-        "Adam De Waal"
+        "Adam De Waal",
+        "Tristan",
+        "Jordan Wright",
+        "Michael Ritchie"
       ]
     },
     {
       "filename": "IMG_1747.JPG",
       "path": "Various/IMG_1747.JPG",
-      "text": "",
+      "text": "Origin 2024",
       "date": "11th October 2024",
       "people": [
-        "Michael Ritchie",
-        "Adam De Waal"
+        "Jordan Wright",
+        "Adam De Waal",
+        "Michael Ritchie"
       ]
     },
     {
       "filename": "IMG_1750.jpg",
       "path": "Various/IMG_1750.jpg",
-      "text": "",
+      "text": "Rugby Game 2022",
       "date": "18th June 2022",
       "people": [
+        "Charl",
         "Lucia Daly",
         "CJ Louw",
+        "Klara",
         "Mikkel Du Plessis",
         "Dani Du Toit",
         "Mila Daly"
       ]
     },
     {
+      "filename": "IMG_1763.JPG",
+      "path": "Various/IMG_1763.JPG",
+      "text": "",
+      "date": "11th October 2024",
+      "people": [
+        "CJ Louw"
+      ]
+    },
+    {
       "filename": "IMG_1783.JPG",
       "path": "Various/IMG_1783.JPG",
-      "text": "",
+      "text": "Just A Normal Monday",
       "date": "21st August 2017",
       "people": []
     },
@@ -2687,12 +4174,61 @@
       ]
     },
     {
+      "filename": "IMG_1816(1).JPG",
+      "path": "Various/IMG_1816(1).JPG",
+      "text": "",
+      "date": "4th November 2023",
+      "people": []
+    },
+    {
       "filename": "IMG_1816.JPG",
       "path": "Various/IMG_1816.JPG",
       "text": "",
-      "date": "4th November 2023",
+      "date": "17th August 2017",
       "people": [
-        "CJ Louw"
+        "CJ Louw",
+        "Ant Cartwight"
+      ]
+    },
+    {
+      "filename": "IMG_1837.JPG",
+      "path": "Various/IMG_1837.JPG",
+      "text": "",
+      "date": "11th October 2024",
+      "people": [
+        "Adam De Waal",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "IMG_1874.JPG",
+      "path": "Various/IMG_1874.JPG",
+      "text": "",
+      "date": "11th October 2024",
+      "people": [
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "IMG_1890.JPG",
+      "path": "Various/IMG_1890.JPG",
+      "text": "",
+      "date": "11th October 2024",
+      "people": [
+        "Adam De Waal",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "IMG_1907.JPG",
+      "path": "Various/IMG_1907.JPG",
+      "text": "",
+      "date": "11th October 2024",
+      "people": [
+        "Josh Finlay",
+        "Adam De Waal",
+        "Jordan Wright",
+        "Michael Ritchie"
       ]
     },
     {
@@ -2703,6 +4239,7 @@
       "people": [
         "Oscar De Waal",
         "Michael Ritchie",
+        "Mary Wheeler",
         "Adam De Waal",
         "Amy Frost",
         "Reg Grobler"
@@ -2714,14 +4251,23 @@
       "text": "Bobbing on my Birthday 2024",
       "date": "11th October 2024",
       "people": [
-        "Michael Ritchie",
-        "Adam De Waal"
+        "Adam De Waal",
+        "Michael Ritchie"
       ]
     },
     {
       "filename": "IMG_1960.JPG",
       "path": "Various/IMG_1960.JPG",
-      "text": "Reg",
+      "text": "Reg Needs A Haircut",
+      "date": "11th October 2024",
+      "people": [
+        "Reg Grobler"
+      ]
+    },
+    {
+      "filename": "IMG_1961.JPG",
+      "path": "Various/IMG_1961.JPG",
+      "text": "",
       "date": "11th October 2024",
       "people": [
         "Reg Grobler"
@@ -2762,6 +4308,7 @@
       "text": "Habitat 2026",
       "date": "28th March 2026",
       "people": [
+        "Jade",
         "Reg Grobler"
       ]
     },
@@ -2771,6 +4318,8 @@
       "text": "Habitat 2026",
       "date": "28th March 2026",
       "people": [
+        "Josh Finlay",
+        "Jade",
         "Reg Grobler",
         "Michael Ritchie"
       ]
@@ -2780,12 +4329,14 @@
       "path": "Various/IMG_2164.jpg",
       "text": "Habitat 2026",
       "date": "28th March 2026",
-      "people": []
+      "people": [
+        "Josh Finlay"
+      ]
     },
     {
       "filename": "IMG_2256.JPG",
       "path": "Various/IMG_2256.JPG",
-      "text": "",
+      "text": "Zero Gravity 2023",
       "date": "1st September 2023",
       "people": [
         "Reg Grobler",
@@ -2793,23 +4344,15 @@
       ]
     },
     {
-      "filename": "IMG_2264.jpg",
-      "path": "Various/IMG_2264.jpg",
-      "text": "",
-      "date": "22nd August 2022",
-      "people": [
-        "Michael Ritchie"
-      ]
-    },
-    {
       "filename": "IMG_2274.jpg",
       "path": "Various/IMG_2274.jpg",
-      "text": "",
+      "text": "Klara's Birthday 2021",
       "date": "11th December 2021",
       "people": [
         "Dani Du Toit",
         "Mikkel Du Plessis",
-        "Michael Ritchie"
+        "Michael Ritchie",
+        "Klara"
       ]
     },
     {
@@ -2818,27 +4361,49 @@
       "text": "Another Day in the Office",
       "date": "1st November 2024",
       "people": [
-        "Michael Ritchie"
+        "Michael Ritchie",
+        "Mikkel Du Plessis",
+        "Tim Terblanche"
       ]
     },
     {
       "filename": "IMG_2314.jpg",
       "path": "Various/IMG_2314.jpg",
-      "text": "",
+      "text": "Wild Coast 2022",
       "date": "23rd August 2022",
       "people": []
     },
     {
+      "filename": "IMG_2366.JPG",
+      "path": "Various/IMG_2366.JPG",
+      "text": "",
+      "date": "10th January 2026",
+      "people": [
+        "Michael Ritchie"
+      ]
+    },
+    {
       "filename": "IMG_2501.JPG",
       "path": "Various/IMG_2501.JPG",
-      "text": "",
+      "text": "Baviaanskloof NYE 2021-2022",
       "date": "28th December 2021",
       "people": [
         "Adam De Waal",
         "Oscar De Waal",
+        "Charl",
         "CJ Louw",
         "Michael Ritchie",
         "Lucia Daly"
+      ]
+    },
+    {
+      "filename": "IMG_2541.jpg",
+      "path": "Various/IMG_2541.jpg",
+      "text": "",
+      "date": "26th August 2022",
+      "people": [
+        "Adam De Waal",
+        "Reg Grobler"
       ]
     },
     {
@@ -2883,7 +4448,7 @@
     {
       "filename": "IMG_2655.JPG",
       "path": "Various/IMG_2655.JPG",
-      "text": "",
+      "text": "Baviaanskloof NYE 2021-2022",
       "date": "1st January 2022",
       "people": [
         "Oscar De Waal",
@@ -2893,13 +4458,13 @@
     {
       "filename": "IMG_2663.JPG",
       "path": "Various/IMG_2663.JPG",
-      "text": "",
+      "text": "Baviaanskloof NYE 2021-2022",
       "date": "1st January 2022",
       "people": [
         "Adam De Waal",
         "Michael Ritchie",
-        "Reg Grobler",
-        "CJ Louw"
+        "CJ Louw",
+        "Reg Grobler"
       ]
     },
     {
@@ -2910,6 +4475,7 @@
       "people": [
         "CJ Louw",
         "Reg Grobler",
+        "Charl",
         "Adam De Waal",
         "Michael Ritchie",
         "Tristan"
@@ -2921,15 +4487,16 @@
       "text": "Baviaanskloof NYE 2021-2022",
       "date": "1st January 2022",
       "people": [
-        "CJ Louw",
         "Amy Frost",
         "Michael Ritchie",
         "Oscar De Waal",
+        "Charl",
         "Tristan",
         "Mila Daly",
         "Lucia Daly",
         "Reg Grobler",
-        "Adam De Waal"
+        "Adam De Waal",
+        "CJ Louw"
       ]
     },
     {
@@ -2974,6 +4541,7 @@
       "text": "Baviaanskloof NYE 2021-2022",
       "date": "1st January 2022",
       "people": [
+        "Charl",
         "Reg Grobler",
         "Michael Ritchie"
       ]
@@ -2983,11 +4551,7 @@
       "path": "Various/IMG_2846.jpg",
       "text": "",
       "date": "11th May 2024",
-      "people": [
-        "CJ Louw",
-        "Michael Ritchie",
-        "Adam De Waal"
-      ]
+      "people": []
     },
     {
       "filename": "IMG_2890.jpg",
@@ -2995,6 +4559,43 @@
       "text": "",
       "date": "28th November 2020",
       "people": []
+    },
+    {
+      "filename": "IMG_2947.JPG",
+      "path": "Various/IMG_2947.JPG",
+      "text": "",
+      "date": "10th January 2026",
+      "people": [
+        "Amber",
+        "Jordan Wright",
+        "Reg Grobler",
+        "CJ Louw",
+        "Dani Du Toit",
+        "Raph",
+        "Tim Terblanche",
+        "Michael Ritchie",
+        "Lucia Daly",
+        "John Winter",
+        "Mikkel Du Plessis",
+        "Mila Daly",
+        "Liam",
+        "Adam De Waal"
+      ]
+    },
+    {
+      "filename": "IMG_3096.JPG",
+      "path": "Various/IMG_3096.JPG",
+      "text": "",
+      "date": "10th January 2026",
+      "people": [
+        "John Winter",
+        "Amy Frost",
+        "Reg Grobler",
+        "CJ Louw",
+        "Tristan",
+        "Mikkel Du Plessis",
+        "Adam De Waal"
+      ]
     },
     {
       "filename": "IMG_3146.jpg",
@@ -3010,11 +4611,18 @@
     {
       "filename": "IMG_3332.PNG",
       "path": "Various/IMG_3332.PNG",
-      "text": "",
+      "text": "PhD Sorted",
       "date": "15th January 2021",
       "people": [
         "Michael Ritchie"
       ]
+    },
+    {
+      "filename": "IMG_3334.JPG",
+      "path": "Various/IMG_3334.JPG",
+      "text": "",
+      "date": "15th January 2021",
+      "people": []
     },
     {
       "filename": "IMG_3370.jpg",
@@ -3024,26 +4632,35 @@
       "people": []
     },
     {
-      "filename": "IMG_3592.JPG",
-      "path": "Various/IMG_3592.JPG",
-      "text": "Climbing in Knysna 2021",
+      "filename": "IMG_3603.JPG",
+      "path": "Various/IMG_3603.JPG",
+      "text": "",
       "date": "21st January 2021",
-      "people": []
+      "people": [
+        "Reg Grobler",
+        "Dani Du Toit",
+        "Adam De Waal",
+        "Mila Daly",
+        "Tim Terblanche",
+        "Michael Ritchie",
+        "Tristan"
+      ]
     },
     {
       "filename": "IMG_3630.jpg",
       "path": "Various/IMG_3630.jpg",
-      "text": "",
+      "text": "Meeting Damien",
       "date": "19th March 2026",
       "people": [
         "Reg Grobler",
+        "Josh Finlay",
         "Michael Ritchie"
       ]
     },
     {
       "filename": "IMG_3719.jpg",
       "path": "Various/IMG_3719.jpg",
-      "text": "",
+      "text": "Zero Gravity 2023",
       "date": "1st September 2023",
       "people": [
         "Adam De Waal",
@@ -3051,9 +4668,62 @@
       ]
     },
     {
+      "filename": "IMG_3866.jpg",
+      "path": "Various/IMG_3866.jpg",
+      "text": "",
+      "date": "16th February 2024",
+      "people": [
+        "John Winter",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "IMG_4169.jpg",
+      "path": "Various/IMG_4169.jpg",
+      "text": "",
+      "date": "28th March 2021",
+      "people": []
+    },
+    {
+      "filename": "IMG_4683.jpg",
+      "path": "Various/IMG_4683.jpg",
+      "text": "",
+      "date": "11th May 2021",
+      "people": []
+    },
+    {
+      "filename": "IMG_4871.JPG",
+      "path": "Various/IMG_4871.JPG",
+      "text": "",
+      "date": "31st December 2024",
+      "people": [
+        "Liam"
+      ]
+    },
+    {
+      "filename": "IMG_4901.JPG",
+      "path": "Various/IMG_4901.JPG",
+      "text": "",
+      "date": "31st December 2024",
+      "people": [
+        "Dirk",
+        "Leva De Waal"
+      ]
+    },
+    {
+      "filename": "IMG_4905.JPG",
+      "path": "Various/IMG_4905.JPG",
+      "text": "",
+      "date": "31st December 2024",
+      "people": [
+        "Emma",
+        "Liam"
+      ]
+    },
+    {
       "filename": "IMG_4936.jpg",
       "path": "Various/IMG_4936.jpg",
-      "text": "",
+      "text": "Rocklands 2021",
       "date": "19th June 2021",
       "people": []
     },
@@ -3063,17 +4733,42 @@
       "text": "",
       "date": "21st November 2018",
       "people": [
+        "Charl",
         "Michael Ritchie",
         "Reg Grobler"
       ]
     },
     {
+      "filename": "IMG_5273.jpg",
+      "path": "Various/IMG_5273.jpg",
+      "text": "",
+      "date": "11th July 2025",
+      "people": [
+        "CJ Louw",
+        "Reg Grobler",
+        "Michael Ritchie"
+      ]
+    },
+    {
       "filename": "IMG_5411.jpg",
       "path": "Various/IMG_5411.jpg",
-      "text": "",
+      "text": "Austria 2021",
       "date": "30th October 2021",
       "people": [
-        "Michael Ritchie"
+        "Michael Ritchie",
+        "Cameron Davies"
+      ]
+    },
+    {
+      "filename": "IMG_5454.JPG",
+      "path": "Various/IMG_5454.JPG",
+      "text": "",
+      "date": "4th January 2025",
+      "people": [
+        "Michael Ritchie",
+        "Tristan",
+        "Adam De Waal",
+        "Liam"
       ]
     },
     {
@@ -3089,14 +4784,16 @@
         "Lucia Daly",
         "Tristan",
         "CJ Louw",
-        "Reg Grobler",
-        "Amy Frost"
+        "Ant Cartwight",
+        "Amy Frost",
+        "Charl",
+        "Reg Grobler"
       ]
     },
     {
       "filename": "IMG_5724.jpg",
       "path": "Various/IMG_5724.jpg",
-      "text": "",
+      "text": "Wolfkop 2022",
       "date": "29th October 2022",
       "people": [
         "Tim Terblanche",
@@ -3107,19 +4804,31 @@
       ]
     },
     {
+      "filename": "IMG_6567.jpg",
+      "path": "Various/IMG_6567.jpg",
+      "text": "",
+      "date": "15th June 2024",
+      "people": [
+        "Mikkel Du Plessis",
+        "Tim Terblanche",
+        "Michael Ritchie"
+      ]
+    },
+    {
       "filename": "IMG_7162.png",
       "path": "Various/IMG_7162.png",
       "text": "Rocklands 2021",
-      "date": "19th March 2026",
+      "date": "19th March 2022",
       "people": [
         "Michael Ritchie",
-        "Adam De Waal"
+        "Adam De Waal",
+        "Dirk"
       ]
     },
     {
       "filename": "IMG_7169.JPG",
       "path": "Various/IMG_7169.JPG",
-      "text": "",
+      "text": "Rocklands 2021",
       "date": "22nd December 2021",
       "people": [
         "Michael Ritchie"
@@ -3128,7 +4837,7 @@
     {
       "filename": "IMG_7175.JPG",
       "path": "Various/IMG_7175.JPG",
-      "text": "",
+      "text": "Rocklands 2021",
       "date": "22nd December 2021",
       "people": [
         "Adam De Waal",
@@ -3138,7 +4847,7 @@
     {
       "filename": "IMG_7478.JPG",
       "path": "Various/IMG_7478.JPG",
-      "text": "",
+      "text": "Graduation 2022",
       "date": "2nd January 2022",
       "people": [
         "Michael Ritchie"
@@ -3147,15 +4856,18 @@
     {
       "filename": "IMG_7900.JPG",
       "path": "Various/IMG_7900.JPG",
-      "text": "",
+      "text": "Afrika Burn 2023",
       "date": "8th May 2023",
       "people": [
-        "Michael Ritchie",
         "Amy Frost",
         "Adam De Waal",
+        "Dean",
         "Dani Du Toit",
         "Reg Grobler",
-        "Tristan"
+        "Mickey",
+        "Leva De Waal",
+        "Tristan",
+        "Michael Ritchie"
       ]
     },
     {
@@ -3163,8 +4875,42 @@
       "path": "Various/IMG_7938.jpg",
       "text": "",
       "date": "22nd December 2023",
+      "people": []
+    },
+    {
+      "filename": "IMG_8048.jpg",
+      "path": "Various/IMG_8048.jpg",
+      "text": "",
+      "date": "31st August 2021",
+      "people": [
+        "Reg Grobler",
+        "Tristan",
+        "Mikkel Du Plessis",
+        "Robs Jenkins",
+        "Josh Finlay",
+        "Michael Ritchie",
+        "Dani Du Toit",
+        "Adam De Waal",
+        "Liam"
+      ]
+    },
+    {
+      "filename": "IMG_8491.JPG",
+      "path": "Various/IMG_8491.JPG",
+      "text": "",
+      "date": "7th June 2025",
       "people": [
         "Adam De Waal",
+        "Raph",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "IMG_8511.JPG",
+      "path": "Various/IMG_8511.JPG",
+      "text": "",
+      "date": "7th June 2025",
+      "people": [
         "Michael Ritchie"
       ]
     },
@@ -3179,18 +4925,94 @@
       ]
     },
     {
+      "filename": "IMG_8690.JPG",
+      "path": "Various/IMG_8690.JPG",
+      "text": "",
+      "date": "9th June 2025",
+      "people": [
+        "Michael Ritchie",
+        "Adam De Waal"
+      ]
+    },
+    {
+      "filename": "IMG_8888.JPG",
+      "path": "Various/IMG_8888.JPG",
+      "text": "",
+      "date": "9th June 2025",
+      "people": [
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "IMG_8908.JPG",
+      "path": "Various/IMG_8908.JPG",
+      "text": "",
+      "date": "10th June 2025",
+      "people": [
+        "Raph"
+      ]
+    },
+    {
+      "filename": "IMG_8975.JPG",
+      "path": "Various/IMG_8975.JPG",
+      "text": "",
+      "date": "11th June 2025",
+      "people": [
+        "Michael Ritchie",
+        "Raph",
+        "Adam De Waal"
+      ]
+    },
+    {
+      "filename": "IMG_9129.JPG",
+      "path": "Various/IMG_9129.JPG",
+      "text": "",
+      "date": "14th June 2025",
+      "people": [
+        "Michael Ritchie"
+      ]
+    },
+    {
       "filename": "IMG_9171.JPG",
       "path": "Various/IMG_9171.JPG",
-      "text": "",
+      "text": "Baviaanskloof NYE 2021-2022",
       "date": "1st January 2022",
       "people": [
         "Adam De Waal"
       ]
     },
     {
+      "filename": "IMG_9595.jpg",
+      "path": "Various/IMG_9595.jpg",
+      "text": "",
+      "date": "21st May 2021",
+      "people": [
+        "Tristan",
+        "Dani Du Toit",
+        "Amber",
+        "Amy Frost",
+        "Lucia Daly",
+        "Reg Grobler",
+        "John Winter",
+        "CJ Louw",
+        "Michael Ritchie"
+      ]
+    },
+    {
+      "filename": "IMG_9602.jpg",
+      "path": "Various/IMG_9602.jpg",
+      "text": "",
+      "date": "21st May 2021",
+      "people": [
+        "Adam De Waal",
+        "Michael Ritchie",
+        "Charl"
+      ]
+    },
+    {
       "filename": "IMG_9770.jpg",
       "path": "Various/IMG_9770.jpg",
-      "text": "",
+      "text": "Ane's Party 2019",
       "date": "13th July 2019",
       "people": [
         "Adam De Waal",
@@ -3198,7 +5020,27 @@
         "Michael Ritchie",
         "Lucia Daly",
         "Reg Grobler",
-        "Mikkel Du Plessis"
+        "Amber",
+        "Charl",
+        "Mikkel Du Plessis",
+        "Klara",
+        "John Winter"
+      ]
+    },
+    {
+      "filename": "Screenshot 2026-04-17 085803.png",
+      "path": "Various/Screenshot 2026-04-17 085803.png",
+      "text": "Evol 2025",
+      "date": "18th October 2025",
+      "people": []
+    },
+    {
+      "filename": "Screenshot 2026-04-17 090224.png",
+      "path": "Various/Screenshot 2026-04-17 090224.png",
+      "text": "",
+      "date": "13th August 2025",
+      "people": [
+        "Raph"
       ]
     }
   ],

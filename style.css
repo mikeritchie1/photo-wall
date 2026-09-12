@@ -102,6 +102,15 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
+.photo-container .photo-video {
+  display: none;
+}
+
+.photo-container.audio-active .photo {
+  border-color: #ffd34e;
+  box-shadow: 0 0 0 5px rgba(255, 211, 78, 0.9), 0 10px 30px rgba(255, 190, 50, 0.75);
+}
+
 .photo-container .photo-text {
   position: absolute;
   top: calc(100% - (var(--photo-caption-gap) / 2));
@@ -171,6 +180,31 @@ body {
 
 .control-group label {
   font-size: 14px;
+}
+
+.control-label {
+  font-size: 14px;
+}
+
+.media-mix-value {
+  min-height: 18px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+}
+
+.sound-toggle {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  font-size: 12px !important;
+}
+
+.sound-toggle input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
 }
 
 .controls select,

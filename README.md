@@ -34,3 +34,56 @@ After the workflow completes, your site will be live at:
 
 - Current test manifest is demo-only and points to `images/demo/test.jpg`.
 - This keeps the first deployment lightweight before adding cloud storage.
+- Add videos to the `videos/` folder and run `python build_manifest.py` to rebuild the manifests without changing video files. Choose `Videos` in the on-screen controls. Supported formats are MP4, WebM, MOV, M4V, AVI, and MKV. To compress videos over 20 MB with up to four parallel workers and progress output, run `python build_manifest.py --compress-videos`. Each completed video immediately replaces its original file; it is re-encoded progressively until it is below the 20 MB hard limit, and the manifest is updated as work completes. Videos already at or below 20 MB are skipped on later runs. Install FFmpeg for compression.
+
+## Windows Screensaver Build
+
+You can package this photo wall as a Windows screensaver (`.scr`) that behaves like a normal screensaver entry in Windows settings.
+
+### Prerequisites
+
+1. Windows with `.NET 8 SDK` installed.
+2. Microsoft Edge WebView2 Runtime (already present on most modern Windows PCs).
+
+### Build
+
+Run from the repo root:
+
+```powershell
+.\build-windows-screensaver.ps1
+```
+
+Output:
+
+- `dist/photo-wall-screensaver-windows/win-x64/PhotoWall.scr`
+
+Optional self-contained build (bigger output, fewer dependencies on target PCs):
+
+```powershell
+.\build-windows-screensaver.ps1 -SelfContained
+```
+
+If WebView2 initialization ever gets stuck on a machine, clear its local profile cache:
+
+```powershell
+.\reset-screensaver-webview.ps1
+```
+
+If a rebuild says files are locked, close Screen Saver Settings and run:
+
+```powershell
+Get-Process PhotoWall,PhotoWall.Screensaver,msedgewebview2 -ErrorAction SilentlyContinue | Stop-Process -Force
+```
+
+The build script also now attempts to stop local PhotoWall screensaver processes automatically before cleaning output.
+
+### Install on a PC
+
+1. Copy the full contents of `dist/photo-wall-screensaver-windows/win-x64/` to the target PC.
+2. Right-click `PhotoWall.scr` and choose `Install`.
+3. In Screen Saver Settings, select `PhotoWall` if needed and click `Preview` (preview is a lightweight placeholder pane).
+4. Use `Test` (or wait for timeout) to run the full screensaver experience.
+
+Multi-monitor behavior: the screensaver opens one independent full-screen window per monitor (not one stretched canvas across all displays).
+
+Important: keep the other files/folders next to `PhotoWall.scr` (`web`, `.dll`, etc.), because the screensaver loads local web assets from that folder.

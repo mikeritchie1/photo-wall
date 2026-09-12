@@ -4,5 +4,9 @@ images/**
 !images/groups.json
 !images/demo/
 !images/demo/**
+videos/**
 __pycache__/
 *.py[cod]
+dist/photo-wall-screensaver-windows/
+windows-screensaver/bin/
+windows-screensaver/obj/
