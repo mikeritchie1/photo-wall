@@ -485,6 +485,31 @@ def move_root_images_to_various_folder():
         )
 
 
+def compression_attempts_for_size(size_bytes: int):
+    """Choose a stronger starting profile for unusually large source videos."""
+    attempts = [
+        (28, 1280, "96k"),
+        (32, 1280, "96k"),
+        (36, 1280, "96k"),
+        (40, 960, "96k"),
+        (44, 720, "64k"),
+        (48, 540, "64k"),
+        (51, 360, "48k"),
+        (51, 240, "32k"),
+        (51, 160, "24k"),
+    ]
+    size_mb = size_bytes / (1024 * 1024)
+    if size_mb > 500:
+        return attempts[5:]
+    if size_mb > 250:
+        return attempts[4:]
+    if size_mb > 100:
+        return attempts[3:]
+    if size_mb > 50:
+        return attempts[2:]
+    return attempts
+
+
 def compress_large_video(video_file: Path) -> Path:
     """Compress an oversized video and replace the original with the result."""
     if video_file.name.endswith(COMPRESSED_VIDEO_SUFFIX) or video_file.stat().st_size <= COMPRESS_TRIGGER_BYTES:
@@ -504,17 +529,7 @@ def compress_large_video(video_file: Path) -> Path:
     duration_seconds = video_duration_seconds(video_file)
     source_for_attempt = video_file
     try:
-        compression_attempts = [
-            (28, 1280, "96k"),
-            (32, 1280, "96k"),
-            (36, 1280, "96k"),
-            (40, 960, "96k"),
-            (44, 720, "64k"),
-            (48, 540, "64k"),
-            (51, 360, "48k"),
-            (51, 240, "32k"),
-            (51, 160, "24k"),
-        ]
+        compression_attempts = compression_attempts_for_size(video_file.stat().st_size)
         attempt = 0
         while True:
             if attempt >= len(compression_attempts):

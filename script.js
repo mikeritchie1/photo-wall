@@ -131,7 +131,7 @@ let activeQueuePhotos = sortPhotosForQueue(getActivePhotos());
 let manifest = null;
 let imageManifest = null;
 let videoManifest = null;
-let mediaMixIndex = 3;
+let mediaMixIndex = 2;
 let selectedFolder = "all";
 let availablePeople = [];
 let selectedPeople = new Set();
@@ -149,7 +149,7 @@ let audibleVideoRoundKeys = new Set();
 let audioPlaybackStartedAt = 0;
 let audioMinimumHoldUntil = 0;
 let pendingAudioTarget = null;
-const MIN_AUDIO_HOLD_MS = 2000;
+const MIN_AUDIO_HOLD_MS = 4000;
 const AUDIO_END_SAFETY_SECONDS = 3;
 let soundEnabled = true;
 
@@ -406,9 +406,16 @@ function getMediaMix() {
 
 function getActiveManifests() {
   const mix = getMediaMix();
+  const videosAvailable = hasVideos();
   const manifests = [];
-  if (mix.photos > 0) manifests.push({ data: imageManifest, mediaType: "image" });
-  if (mix.videos > 0) manifests.push({ data: videoManifest, mediaType: "video" });
+  // Always fall back to photos when the selected video share cannot be
+  // fulfilled, including the 0% photos / 100% videos setting.
+  if (mix.photos > 0 || !videosAvailable) {
+    manifests.push({ data: imageManifest, mediaType: "image" });
+  }
+  if (mix.videos > 0 && videosAvailable) {
+    manifests.push({ data: videoManifest, mediaType: "video" });
+  }
   return manifests.filter((source) => source.data);
 }
 
@@ -1078,10 +1085,12 @@ function updateVideoAudio() {
     : null;
   const currentHasReachedSwitchHeight = currentCenterY !== null &&
     currentCenterY >= window.innerHeight * 0.5;
+  const currentHasLeftViewport = Boolean(audibleVideoPhoto && !currentAudibleEntry);
   let nextAudibleEntry = null;
 
   if (!audibleVideoPhoto ||
-      (minimumHoldComplete && currentHasReachedSwitchHeight)) {
+      (minimumHoldComplete && currentHasReachedSwitchHeight) ||
+      currentHasLeftViewport) {
     if (!currentAudibleEntry) {
       nextAudibleEntry = orderedVisibleVideos[0] || null;
     } else {
@@ -1180,7 +1189,7 @@ function resetControlsToDefaults() {
   soundEnabled = true;
   soundCheckbox.checked = true;
   updateVideoAudio();
-  mediaMixIndex = 3;
+  mediaMixIndex = 2;
   updateMediaMixControl();
   manifest = imageManifest;
   selectedFolder = DEFAULT_CONTROL_VALUES.folder;
@@ -1527,7 +1536,9 @@ function render(time) {
   lastRenderTimeSec = t;
 
   for (const photo of activeQueuePhotos) {
-    photo.y += verticalSpeed;
+    // Use the same time-based movement as the light streams. This keeps
+    // photos, videos, and lights synchronized at any display frame rate.
+    photo.y += verticalSpeed * 60 * deltaSeconds;
     wrapPhoto(photo);
 
     const sway = Math.sin(t + photo.swayOffset) * swayPower;
