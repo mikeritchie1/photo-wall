@@ -2,6 +2,7 @@ const controls = document.getElementById("controls");
 const sizeSlider = document.getElementById("sizeSlider");
 const speedSlider = document.getElementById("speedSlider");
 const folderSelect = document.getElementById("folderSelect");
+const filterSelect = document.getElementById("filterSelect");
 const backgroundSelect = document.getElementById("backgroundSelect");
 const lightColorSelect = document.getElementById("lightColorSelect");
 const stringColorSelect = document.getElementById("stringColorSelect");
@@ -25,11 +26,39 @@ const isLocalRuntime =
   location.protocol === "file:" ||
   location.hostname === "localhost" ||
   location.hostname === "127.0.0.1" ||
+  location.hostname === "::1" ||
+  location.hostname === "[::1]" ||
   location.hostname === "appassets.local";
 const PHOTO_BASE_URL = isLocalRuntime ? "images" : R2_BASE_URL;
 const MANIFEST_URL = isLocalRuntime ? "images/manifest.json" : `${R2_BASE_URL}/manifest.json`;
 const VIDEO_MANIFEST_URL = isLocalRuntime ? "videos/manifest.json" : `${R2_BASE_URL}/videos/manifest.json`;
+const AUDIO_MANIFEST_URL = isLocalRuntime ? "audio/manifest.json" : `${R2_BASE_URL}/audio/manifest.json`;
 const GROUPS_URL = isLocalRuntime ? "images/groups.json" : `${R2_BASE_URL}/groups.json`;
+console.log("[runtime-assets]", {
+  hostname: location.hostname,
+  isLocalRuntime,
+  imageManifest: MANIFEST_URL,
+  videoManifest: VIDEO_MANIFEST_URL,
+  audioManifest: AUDIO_MANIFEST_URL
+});
+// Temporary diagnostics for video handoff and screen-position debugging.
+// Set to false to restore normal video captions and hide the guide lines.
+const DEBUG_MODE = true;
+// TEMPORARY: restrict playback to manifest entries marked isMuted=true.
+// Set to false to restore the normal mixed media pool.
+// Video filtering is controlled by the Filter dropdown below.
+// Browser timing logs appear in the browser console, not the Python
+// HTTP-server terminal.
+const DEBUG_VIDEO_START = DEBUG_MODE;
+
+document.body.classList.toggle("debug-mode", DEBUG_MODE);
+
+function debugVideoStart(label, details) {
+  if (DEBUG_VIDEO_START) {
+    console.log(label, details);
+  }
+}
+
 const DEFAULT_CUSTOM_GROUPS = {
   Friends: ["michael"]
 };
@@ -60,8 +89,9 @@ const MOBILE_BREAKPOINT = 900;
 const PHOTO_WRAP_BUFFER_PX = 36;
 const DEFAULT_CONTROL_VALUES = {
   folder: "all",
+  filter: "all",
   size: "420",
-  speed: "1.75",
+  speed: "1.5",
   reverse: false,
   sway: "1.5",
   lightColumns: "3",
@@ -98,14 +128,43 @@ for (const photo of photos) {
   const videoEl = document.createElement("video");
   videoEl.className = "photo photo-video";
   videoEl.muted = true;
+  // Keep every assigned video cycling continuously.
   videoEl.loop = true;
-  videoEl.autoplay = true;
+  // Playback is started explicitly after the random seek completes. Native
+  // autoplay would begin at t=0 before that seek has taken effect.
+  videoEl.autoplay = false;
   videoEl.playsInline = true;
-  videoEl.preload = "metadata";
+  // Load enough media data for reliable random seeking, including MOV files.
+  videoEl.preload = "auto";
   videoEl.setAttribute("aria-hidden", "true");
+  videoEl.addEventListener("play", () => {
+    debugVideoStart("[video-play-position]", {
+      src: videoEl.currentSrc || videoEl.src,
+      currentTime: videoEl.currentTime,
+      duration: videoEl.duration
+    });
+  });
+  videoEl.addEventListener("seeked", () => {
+    debugVideoStart("[video-seeked-position]", {
+      src: videoEl.currentSrc || videoEl.src,
+      currentTime: videoEl.currentTime,
+      duration: videoEl.duration
+    });
+  });
   photo.container.insertBefore(videoEl, photo.imgEl);
   photo.videoEl = videoEl;
+  photo.debugVideoDuration = null;
+  photo.debugVideoStartTime = null;
+  photo.videoStartSeekComplete = false;
 }
+
+const backgroundAudio = document.createElement("audio");
+backgroundAudio.preload = "auto";
+backgroundAudio.loop = true;
+backgroundAudio.autoplay = false;
+backgroundAudio.muted = true;
+backgroundAudio.setAttribute("aria-hidden", "true");
+document.body.appendChild(backgroundAudio);
 
 textSelect.value = "auto";
 
@@ -131,8 +190,10 @@ let activeQueuePhotos = sortPhotosForQueue(getActivePhotos());
 let manifest = null;
 let imageManifest = null;
 let videoManifest = null;
+let audioManifest = [];
 let mediaMixIndex = 2;
 let selectedFolder = "all";
+let selectedFilter = DEFAULT_CONTROL_VALUES.filter;
 let availablePeople = [];
 let selectedPeople = new Set();
 let selectedGroupName = null;
@@ -143,15 +204,33 @@ let lastServedImageKey = null;
 let hasAvailableImages = true;
 let videoAssignmentSequence = 0;
 let audibleVideoPhoto = null;
+let endedVideoPhoto = null;
 let audioUnlocked = false;
 let videoRoundKeys = new Set();
 let audibleVideoRoundKeys = new Set();
 let audioPlaybackStartedAt = 0;
 let audioMinimumHoldUntil = 0;
 let pendingAudioTarget = null;
-const MIN_AUDIO_HOLD_MS = 4000;
-const AUDIO_END_SAFETY_SECONDS = 3;
+// Video handoff rules:
+// - A video normally gets at least four seconds of play time.
+// - Switch immediately when its center reaches 80% of the viewport.
+// - Only choose a replacement whose center is between 15% and 50% of the
+//   viewport height.
+const MIN_VIDEO_HOLD_MS = 4000;
+const MIN_VIDEO_PLAY_SECONDS = MIN_VIDEO_HOLD_MS / 1000;
+const RANDOM_START_END_BUFFER_SECONDS = 2;
+const VIDEO_SWITCH_CENTER_RATIO = 0.80;
+const NEXT_VIDEO_MIN_CENTER_RATIO = 0.15;
+const NEXT_VIDEO_MAX_CENTER_RATIO = 0.50;
+const VIDEO_FALLBACK_TRIGGER_RATIO = 0.95;
+const FALLBACK_VIDEO_MIN_CENTER_RATIO = 0.05;
+const FALLBACK_VIDEO_MAX_CENTER_RATIO = 0.95;
 let soundEnabled = true;
+let backgroundAudioPhoto = null;
+let backgroundAudioPrepared = false;
+let backgroundAudioPreparing = false;
+let backgroundAudioActive = false;
+let backgroundAudioItem = null;
 
 function isMobileViewport() {
   return window.innerWidth <= MOBILE_BREAKPOINT;
@@ -287,15 +366,26 @@ function initializeYearRangeFromManifest() {
 
 async function loadManifest() {
   try {
-    const [imageResponse, videoResponse] = await Promise.all([
+    const [imageResponse, videoResponse, audioResponse] = await Promise.all([
       fetch(MANIFEST_URL),
-      fetch(VIDEO_MANIFEST_URL).catch(() => null)
+      fetch(VIDEO_MANIFEST_URL).catch(() => null),
+      fetch(AUDIO_MANIFEST_URL).catch(() => null)
     ]);
     if (!imageResponse.ok) {
       throw new Error(`Image manifest request failed: ${imageResponse.status}`);
     }
     imageManifest = await imageResponse.json();
     videoManifest = videoResponse && videoResponse.ok ? await videoResponse.json() : {};
+    audioManifest = audioResponse && audioResponse.ok ? await audioResponse.json() : [];
+    prepareBackgroundAudio();
+    console.log("[manifest-load]", {
+      imageFolders: Object.keys(imageManifest || {}).length,
+      videoFolders: Object.keys(videoManifest || {}).length,
+      videoEntries: Object.values(videoManifest || {}).reduce((total, items) => total + items.length, 0),
+      audioEntries: Array.isArray(audioManifest) ? audioManifest.length : 0,
+      videoStatus: videoResponse ? videoResponse.status : "unavailable",
+      audioStatus: audioResponse ? audioResponse.status : "unavailable"
+    });
     manifest = imageManifest;
     updateMediaMixControl();
     await loadGroups();
@@ -447,6 +537,13 @@ folderSelect.addEventListener("change", (event) => {
   resetHideTimer();
 });
 
+filterSelect.addEventListener("change", (event) => {
+  selectedFilter = event.target.value;
+  resetImageCycle();
+  assignRandomImages();
+  resetHideTimer();
+});
+
 backgroundSelect.addEventListener("change", (event) => {
   applyBackground(event.target.value);
   resetHideTimer();
@@ -543,6 +640,14 @@ function buildPhotoUrl(relativePath, mediaType = "image") {
   return `${isLocalRuntime ? mediaFolder : R2_BASE_URL}/${storagePath}`;
 }
 
+function buildAudioUrl(relativePath) {
+  const encodedPath = relativePath
+    .split("/")
+    .map((part) => encodeURIComponent(part))
+    .join("/");
+  return isLocalRuntime ? `audio/${encodedPath}` : `${R2_BASE_URL}/audio/${encodedPath}`;
+}
+
 function imageMatchesActiveFilters(image, { ignorePerson = false } = {}) {
   const inYearRange =
     selectedStartYear === null ||
@@ -573,7 +678,12 @@ function buildImagePool({ ignorePerson = false } = {}) {
 
   const pool = [];
   for (const source of getActiveManifests()) {
-    const folders = selectedFolder === "all"
+    // The muted-video filter applies only to videos. Keep the existing folder
+    // behavior for photos, but do not let a selected photo folder hide the
+    // muted videos (which are stored in the Various video folder).
+    const folders = selectedFilter === "muted-videos" && source.mediaType === "video"
+      ? Object.entries(source.data)
+      : selectedFolder === "all"
       ? Object.entries(source.data)
       : [[selectedFolder, source.data[selectedFolder] || []]];
     for (const [folder, items] of folders) {
@@ -585,6 +695,7 @@ function buildImagePool({ ignorePerson = false } = {}) {
           hasAudio: item.hasAudio !== false,
           text: item.text || "",
           people: normalizePeopleField(item.people),
+          isMuted: item.isMuted === true,
           folder,
           date: item.date || "",
           year: extractYearFromDate(item.date),
@@ -594,7 +705,16 @@ function buildImagePool({ ignorePerson = false } = {}) {
     }
   }
 
-  return createWeightedMediaPool(pool.filter((image) => imageMatchesActiveFilters(image, { ignorePerson })));
+  const filteredPool = selectedFilter === "muted-videos"
+    ? pool.filter((image) => image.mediaType !== "video" || image.isMuted === true)
+    : pool;
+  const matchingPool = filteredPool.filter((image) => imageMatchesActiveFilters(image, { ignorePerson }));
+  console.log("[media-pool]", {
+    filter: selectedFilter,
+    photos: matchingPool.filter((image) => image.mediaType === "image").length,
+    videos: matchingPool.filter((image) => image.mediaType === "video").length
+  });
+  return createWeightedMediaPool(matchingPool);
 }
 
 function createWeightedMediaPool(pool) {
@@ -1002,10 +1122,15 @@ function assignRandomImageToPhoto(photo) {
     return;
   }
   const nextCaption = getDisplayTextForImage(imageData);
+  photo.audioStartPreparation?.();
   photo.currentMediaType = imageData.mediaType;
   photo.currentImageKey = imageData._key;
   photo.currentHasAudio = imageData.hasAudio !== false;
+  photo.currentIsMuted = imageData.mediaType === "video" && imageData.isMuted === true;
   photo.audioRandomStartApplied = false;
+  photo.debugVideoDuration = null;
+  photo.debugVideoStartTime = null;
+  photo.videoStartSeekComplete = false;
   const requestId = (photo.pendingRequestId || 0) + 1;
   photo.pendingRequestId = requestId;
 
@@ -1025,22 +1150,20 @@ function assignRandomImageToPhoto(photo) {
     photo.videoEl.style.display = "block";
     photo.videoEl.src = imageData.filename;
     photo.videoAssignmentId = ++videoAssignmentSequence;
-    let randomStartApplied = false;
-    const startVideoAtRandomPoint = () => {
-      if (randomStartApplied || !Number.isFinite(photo.videoEl.duration) || photo.videoEl.duration <= 0) {
-        return;
-      }
-      randomStartApplied = true;
-      const latestStart = Math.max(0, photo.videoEl.duration - AUDIO_END_SAFETY_SECONDS);
-      photo.videoEl.currentTime = Math.random() * latestStart;
-      photo.videoEl.play().catch(() => {});
-    };
-    photo.videoEl.addEventListener("loadedmetadata", startVideoAtRandomPoint, { once: true });
     photo.videoEl.load();
-    startVideoAtRandomPoint();
-    photo.videoEl.play().catch(() => {});
+    // Choose and apply the random start as soon as the video is assigned.
+    // The video stays paused while metadata is read and the seek completes,
+    // so it cannot visibly begin at 0 seconds first.
+    prepareVideoAudioStart(photo, () => {
+      if (photo.currentMediaType === "video" &&
+          photo.videoStartSeekComplete && !photo.videoEl.ended) {
+        photo.videoEl.play().catch(() => {});
+      }
+    });
     finalizeCaptionUpdate();
   } else {
+    photo.container.classList.remove("debug-video-text");
+    photo.textEl.style.fontSize = "";
     photo.videoEl.pause();
     photo.videoEl.removeAttribute("src");
     photo.videoEl.load();
@@ -1056,10 +1179,194 @@ function assignRandomImageToPhoto(photo) {
   }
 }
 
+function prepareVideoAudioStart(photo, onReady) {
+  const video = photo.videoEl;
+  if (photo.audioStartPreparation) {
+    return;
+  }
+  if (photo.audioRandomStartApplied) {
+    if (photo.videoStartSeekComplete) {
+      onReady();
+    }
+    return;
+  }
+
+  let finished = false;
+  let seekStarted = false;
+  let seekAttempts = 0;
+  let requestedStart = null;
+  const cleanup = () => {
+    video.removeEventListener("loadedmetadata", tryPrepare);
+    video.removeEventListener("durationchange", tryPrepare);
+    video.removeEventListener("loadeddata", tryPrepare);
+    video.removeEventListener("seeked", finishSeek);
+    video.removeEventListener("canplay", finishSeek);
+    photo.audioStartPreparation = null;
+  };
+  const finishSeek = () => {
+    if (!seekStarted || video.seeking) {
+      return;
+    }
+
+    const actualStart = video.currentTime;
+    const seekTolerance = 0.25;
+    if (requestedStart > seekTolerance &&
+        actualStart < requestedStart - seekTolerance &&
+        seekAttempts < 2) {
+      seekAttempts += 1;
+      video.currentTime = requestedStart;
+      return;
+    }
+
+    debugVideoStart("[video-seek-complete]", {
+      key: photo.currentImageKey,
+      requestedStart,
+      actualStart,
+      seekAttempts,
+      seekableStart: video.seekable.length ? video.seekable.start(0) : null,
+      seekableEnd: video.seekable.length ? video.seekable.end(video.seekable.length - 1) : null
+    });
+    finish();
+  };
+  const finish = () => {
+    if (finished) {
+      return;
+    }
+    finished = true;
+    photo.videoStartSeekComplete = true;
+    cleanup();
+    onReady();
+  };
+  const tryPrepare = () => {
+    if (photo.currentMediaType !== "video") {
+      cleanup();
+      return;
+    }
+    if (!Number.isFinite(video.duration) || video.duration <= 0) {
+      debugVideoStart("[video-start-skipped-no-duration]", {
+        key: photo.currentImageKey,
+        duration: video.duration,
+        phase: "audio-handoff"
+      });
+      return;
+    }
+    if (seekStarted) {
+      return;
+    }
+
+    seekStarted = true;
+    video.pause();
+    photo.debugVideoDuration = video.duration;
+    // Use the media duration rather than the initial seekable range. Some
+    // local MOV/MP4 files briefly report a seekable end near zero even though
+    // their full duration is already known.
+    const minimumDurationForRandomStart =
+      MIN_VIDEO_PLAY_SECONDS + RANDOM_START_END_BUFFER_SECONDS;
+    const latestSafeStart = Math.max(
+      0,
+      video.duration - minimumDurationForRandomStart
+    );
+    const randomStart = video.duration > minimumDurationForRandomStart
+      ? Math.random() * latestSafeStart
+      : 0;
+    requestedStart = randomStart;
+    photo.debugVideoStartTime = randomStart;
+    debugVideoStart("[video-start-calculated]", {
+      key: photo.currentImageKey,
+      duration: video.duration,
+      minimumPlaySeconds: MIN_VIDEO_PLAY_SECONDS,
+      endBufferSeconds: RANDOM_START_END_BUFFER_SECONDS,
+      latestStart: latestSafeStart,
+      randomStart,
+      phase: "audio-handoff"
+    });
+    if (randomStart > 0.001) {
+      video.addEventListener("seeked", finishSeek);
+    }
+    video.currentTime = randomStart;
+    photo.audioRandomStartApplied = true;
+    if (randomStart <= 0.001) {
+      finish();
+    }
+  };
+
+  photo.audioStartPreparation = cleanup;
+  video.addEventListener("loadedmetadata", tryPrepare);
+  video.addEventListener("durationchange", tryPrepare);
+  video.addEventListener("loadeddata", tryPrepare);
+  video.addEventListener("canplay", finishSeek);
+  tryPrepare();
+}
+
+function prepareBackgroundAudio() {
+  if (backgroundAudioPreparing || backgroundAudioPrepared || !audioManifest.length) {
+    return;
+  }
+
+  backgroundAudioPreparing = true;
+  backgroundAudioItem = audioManifest[Math.floor(Math.random() * audioManifest.length)];
+  backgroundAudio.src = buildAudioUrl(backgroundAudioItem.path || backgroundAudioItem.filename);
+  backgroundAudio.muted = true;
+  backgroundAudio.pause();
+  backgroundAudio.load();
+
+  let prepared = false;
+  const finishPreparation = () => {
+    if (prepared || !Number.isFinite(backgroundAudio.duration) || backgroundAudio.duration <= 0) {
+      return;
+    }
+    prepared = true;
+    const latestSafeStart = Math.max(0, backgroundAudio.duration - 10);
+    const randomStart = Math.random() * latestSafeStart;
+    const finishSeek = () => {
+      backgroundAudio.removeEventListener("seeked", finishSeek);
+      backgroundAudioPrepared = true;
+      backgroundAudioPreparing = false;
+      debugVideoStart("[startup-audio-prepared]", {
+        audio: backgroundAudioItem.path || backgroundAudioItem.filename,
+        duration: backgroundAudio.duration,
+        randomStart,
+        actualStart: backgroundAudio.currentTime
+      });
+      // Keep the song running continuously. It starts muted and is unmuted
+      // only when a muted video becomes the selected video.
+      backgroundAudio.muted = true;
+      backgroundAudio.play().catch(() => {});
+    };
+    backgroundAudio.addEventListener("seeked", finishSeek);
+    if (typeof backgroundAudio.fastSeek === "function" && randomStart > 0.01) {
+      backgroundAudio.fastSeek(randomStart);
+    } else {
+      backgroundAudio.currentTime = randomStart;
+    }
+    if (randomStart <= 0.01) {
+      finishSeek();
+    }
+  };
+
+  backgroundAudio.addEventListener("loadedmetadata", finishPreparation);
+  backgroundAudio.addEventListener("durationchange", finishPreparation);
+  backgroundAudio.addEventListener("loadeddata", finishPreparation);
+  finishPreparation();
+}
+
+function syncBackgroundAudio(photo) {
+  const mutedVideoSelected = Boolean(
+    photo && photo.currentMediaType === "video" && photo.currentIsMuted
+  );
+  backgroundAudioActive = mutedVideoSelected;
+
+  backgroundAudioPhoto = mutedVideoSelected ? photo : null;
+  backgroundAudio.muted = !(mutedVideoSelected && soundEnabled && audioUnlocked);
+  if (backgroundAudioPrepared && backgroundAudio.paused) {
+    backgroundAudio.play().catch(() => {});
+  }
+}
+
 function updateVideoAudio() {
   const visibleVideos = photos
     .map((photo) => {
-      if (photo.currentMediaType !== "video" || !photo.currentHasAudio || photo.container.style.display === "none") {
+      if (photo.currentMediaType !== "video" || photo.container.style.display === "none") {
         return null;
       }
       const bounds = photo.container.getBoundingClientRect();
@@ -1069,33 +1376,81 @@ function updateVideoAudio() {
       return { photo, bounds };
     })
     .filter(Boolean);
-  const readyVisibleVideos = visibleVideos.filter(({ bounds }) => {
-    // Do not hand audio to a card while it is clipped by either screen edge.
-    return bounds.top >= 0 && bounds.bottom <= window.innerHeight;
+  const allVideoEntries = photos
+    .map((photo) => {
+      if (photo.currentMediaType !== "video" || photo.container.style.display === "none") {
+        return null;
+      }
+      return { photo, bounds: photo.container.getBoundingClientRect() };
+    })
+    .filter(Boolean);
+  const videosInCenterRange = (entries, minimumRatio, maximumRatio) => entries.filter(({ bounds }) => {
+    const center = (bounds.top + bounds.bottom) / 2;
+    return center >= window.innerHeight * minimumRatio &&
+      center <= window.innerHeight * maximumRatio;
   });
-  const orderedVisibleVideos = [...readyVisibleVideos].sort((a, b) => {
-    const aCenter = (a.bounds.top + a.bounds.bottom) / 2;
-    const bCenter = (b.bounds.top + b.bounds.bottom) / 2;
-    return aCenter - bCenter;
-  });
+  const chooseRandomVideo = (entries) => entries.length
+    ? entries[Math.floor(Math.random() * entries.length)]
+    : null;
+  const orderedVisibleVideos = visibleVideos
+    .filter(({ bounds }) => {
+      const center = (bounds.top + bounds.bottom) / 2;
+      return center >= window.innerHeight * NEXT_VIDEO_MIN_CENTER_RATIO &&
+        center <= window.innerHeight * NEXT_VIDEO_MAX_CENTER_RATIO;
+    })
+    .sort((a, b) => {
+      const aCenter = (a.bounds.top + a.bounds.bottom) / 2;
+      const bCenter = (b.bounds.top + b.bounds.bottom) / 2;
+      return aCenter - bCenter;
+    });
+  const fallbackVisibleVideos = visibleVideos
+    .filter(({ bounds }) => {
+      const center = (bounds.top + bounds.bottom) / 2;
+      return center >= window.innerHeight * FALLBACK_VIDEO_MIN_CENTER_RATIO &&
+        center <= window.innerHeight * FALLBACK_VIDEO_MAX_CENTER_RATIO;
+    })
+    .sort((a, b) => {
+      const aCenter = (a.bounds.top + a.bounds.bottom) / 2;
+      const bCenter = (b.bounds.top + b.bounds.bottom) / 2;
+      return aCenter - bCenter;
+    });
   const currentAudibleEntry = visibleVideos.find(({ photo }) => photo === audibleVideoPhoto);
   const minimumHoldComplete = performance.now() >= audioMinimumHoldUntil;
   const currentCenterY = currentAudibleEntry
     ? (currentAudibleEntry.bounds.top + currentAudibleEntry.bounds.bottom) / 2
     : null;
   const currentHasReachedSwitchHeight = currentCenterY !== null &&
-    currentCenterY >= window.innerHeight * 0.5;
+    currentCenterY >= window.innerHeight * VIDEO_SWITCH_CENTER_RATIO;
   const currentHasLeftViewport = Boolean(audibleVideoPhoto && !currentAudibleEntry);
   let nextAudibleEntry = null;
 
-  if (!audibleVideoPhoto ||
-      (minimumHoldComplete && currentHasReachedSwitchHeight) ||
-      currentHasLeftViewport) {
-    if (!currentAudibleEntry) {
+  // The 75% center boundary is a hard handoff boundary. Do not let the
+  // minimum-play timer postpone a switch after the current video crosses it.
+  const currentVideoHasEnded = endedVideoPhoto === audibleVideoPhoto;
+  if (currentVideoHasEnded) {
+    endedVideoPhoto = null;
+  }
+
+  if (!audibleVideoPhoto || currentHasReachedSwitchHeight || currentHasLeftViewport || currentVideoHasEnded) {
+    if (!audibleVideoPhoto) {
+      // Startup selection uses a widening range so the wallpaper can begin
+      // playing immediately without weakening the normal handoff rules.
+      const startupCandidates = [
+        videosInCenterRange(visibleVideos, 0.15, 0.50),
+        videosInCenterRange(visibleVideos, 0.15, 0.80),
+        videosInCenterRange(visibleVideos, 0.05, 0.80),
+        videosInCenterRange(visibleVideos, 0.05, 0.95),
+        allVideoEntries
+      ];
+      nextAudibleEntry = startupCandidates
+        .map(chooseRandomVideo)
+        .find(Boolean) || null;
+    } else if (!currentAudibleEntry) {
       nextAudibleEntry = orderedVisibleVideos[0] || null;
     } else {
       // Choose the closest eligible video above the current one by actual
-      // position, even if the current video is not in the eligible list.
+      // position. The eligible list already excludes centers below the
+      // the 15%-50% next-video handoff range.
       const higherVideos = orderedVisibleVideos.filter((entry) => {
         const entryCenter = (entry.bounds.top + entry.bounds.bottom) / 2;
         return entry.photo !== audibleVideoPhoto && entryCenter < currentCenterY;
@@ -1106,6 +1461,21 @@ function updateVideoAudio() {
         const closestCenter = (closest.bounds.top + closest.bounds.bottom) / 2;
         return entryCenter > closestCenter ? entry : closest;
       }, null);
+
+      // If the normal 15%-50% range has no candidate, allow a fallback only
+      // after the current video reaches the 95% line.
+      if (!nextAudibleEntry && currentCenterY >= window.innerHeight * VIDEO_FALLBACK_TRIGGER_RATIO) {
+        const fallbackVideos = fallbackVisibleVideos.filter((entry) => {
+          const entryCenter = (entry.bounds.top + entry.bounds.bottom) / 2;
+          return entry.photo !== audibleVideoPhoto && entryCenter < currentCenterY;
+        });
+        nextAudibleEntry = fallbackVideos.reduce((closest, entry) => {
+          if (!closest) return entry;
+          const entryCenter = (entry.bounds.top + entry.bounds.bottom) / 2;
+          const closestCenter = (closest.bounds.top + closest.bounds.bottom) / 2;
+          return entryCenter > closestCenter ? entry : closest;
+        }, null);
+      }
     }
   }
 
@@ -1117,29 +1487,42 @@ function updateVideoAudio() {
     ? audibleVideoPhoto
     : null;
 
-  const randomizeAudioStart = (photo) => {
-    if (photo.audioRandomStartApplied || !Number.isFinite(photo.videoEl.duration) || photo.videoEl.duration <= 0) {
-      return;
+  syncBackgroundAudio(nextAudiblePhoto);
+
+  // All assigned videos keep playing. The selected video is still the one
+  // used for the active handoff/audio state, but selection does not pause the
+  // other visible videos.
+  for (const photo of photos) {
+    if (photo.currentMediaType !== "video") {
+      continue;
     }
-    const latestSafeStart = Math.max(0, photo.videoEl.duration - AUDIO_END_SAFETY_SECONDS);
-    const randomStart = Math.random() * latestSafeStart;
-    photo.videoEl.pause();
-    photo.videoEl.currentTime = randomStart;
-    photo.audioRandomStartApplied = true;
-  };
+    if (!photo.audioStartPreparation && !photo.videoEl.ended) {
+      photo.videoEl.play().catch(() => {});
+    }
+  }
 
   if (audibleVideoPhoto === nextAudiblePhoto && nextAudiblePhoto) {
-    nextAudiblePhoto.videoEl.muted = !soundEnabled || !audioUnlocked;
+    const audioStartPending = Boolean(nextAudiblePhoto.audioStartPreparation);
+    nextAudiblePhoto.videoEl.muted = audioStartPending || !soundEnabled || !audioUnlocked;
     nextAudiblePhoto.container.classList.toggle("audio-active", soundEnabled && audioUnlocked);
-    if (soundEnabled && audioUnlocked) {
-      randomizeAudioStart(nextAudiblePhoto);
+    if (soundEnabled && audioUnlocked && nextAudiblePhoto.videoStartSeekComplete && !nextAudiblePhoto.videoEl.ended) {
+      if (!nextAudiblePhoto.audioRandomStartApplied) {
+        nextAudiblePhoto.videoEl.muted = true;
+        prepareVideoAudioStart(nextAudiblePhoto, () => {
+          if (audibleVideoPhoto === nextAudiblePhoto && soundEnabled && audioUnlocked && nextAudiblePhoto.videoStartSeekComplete) {
+            nextAudiblePhoto.videoEl.muted = false;
+            nextAudiblePhoto.videoEl.play().catch(() => {});
+          }
+        });
+      } else if (!audioStartPending) {
+        nextAudiblePhoto.videoEl.play().catch(() => {});
+      }
       if (!audioPlaybackStartedAt) {
         audioPlaybackStartedAt = performance.now();
       }
       if (!audioMinimumHoldUntil) {
-        audioMinimumHoldUntil = performance.now() + MIN_AUDIO_HOLD_MS;
+        audioMinimumHoldUntil = performance.now() + MIN_VIDEO_HOLD_MS;
       }
-      nextAudiblePhoto.videoEl.play().catch(() => {});
     }
     return;
   }
@@ -1152,21 +1535,68 @@ function updateVideoAudio() {
     pendingAudioTarget = null;
   }
   audioPlaybackStartedAt = nextAudiblePhoto && soundEnabled && audioUnlocked ? performance.now() : 0;
-  audioMinimumHoldUntil = nextAudiblePhoto && soundEnabled && audioUnlocked
-    ? performance.now() + MIN_AUDIO_HOLD_MS
+  audioMinimumHoldUntil = nextAudiblePhoto
+    ? performance.now() + MIN_VIDEO_HOLD_MS
     : 0;
   for (const photo of photos) {
     const isAudible = photo === audibleVideoPhoto;
     photo.videoEl.muted = !isAudible || !soundEnabled || !audioUnlocked;
     photo.container.classList.toggle("audio-active", isAudible && soundEnabled && audioUnlocked);
     if (isAudible && soundEnabled && audioUnlocked) {
-      // Always choose a new random point at the exact sound handoff.
-      photo.audioRandomStartApplied = false;
-      randomizeAudioStart(photo);
+      // The random start was selected when this video was assigned. Reuse
+      // that seek instead of allowing a new playback start at 0 seconds.
+      photo.videoEl.muted = true;
+      prepareVideoAudioStart(photo, () => {
+        if (audibleVideoPhoto === photo && soundEnabled && audioUnlocked && photo.videoStartSeekComplete) {
+          photo.videoEl.muted = false;
+          photo.videoEl.play().catch(() => {});
+        }
+      });
       audioPlaybackStartedAt = performance.now();
       photo.videoEl.volume = 1;
-      photo.videoEl.play().catch(() => {});
     }
+  }
+}
+
+function updateDebugVideoOverlay() {
+  if (!DEBUG_MODE) {
+    return;
+  }
+
+  for (const photo of photos) {
+    if (photo.currentMediaType !== "video" || photo.container.style.display === "none") {
+      continue;
+    }
+
+    const bounds = photo.container.getBoundingClientRect();
+    const center = (bounds.top + bounds.bottom) / 2;
+    const centerPercent = (center / window.innerHeight) * 100;
+    const duration = Number.isFinite(photo.videoEl.duration)
+      ? photo.videoEl.duration
+      : photo.debugVideoDuration;
+    const selectedStart = Number.isFinite(photo.debugVideoStartTime)
+      ? photo.debugVideoStartTime
+      : null;
+    const playbackTime = Number.isFinite(photo.videoEl.currentTime)
+      ? photo.videoEl.currentTime
+      : null;
+
+    photo.container.classList.add("debug-video-text");
+    const normalTextSize = Math.max(12, Math.min(40, getEffectivePhotoWidth() / 18));
+    photo.textEl.style.fontSize = `${normalTextSize / 2}px`;
+
+    photo.textEl.textContent = [
+      `CENTER ${centerPercent.toFixed(1)}%`,
+      `Y ${center.toFixed(0)}px`,
+      `DURATION ${duration === null ? "--" : `${duration.toFixed(1)}s`}`,
+      `START ${selectedStart === null ? "--" : `${selectedStart.toFixed(1)}s`}`,
+      `SEEK ${photo.videoStartSeekComplete ? "READY" : "WAIT"}`,
+      `AUDIO ${photo.currentHasAudio ? "DETECTED" : "MISSING"}`,
+      `MUTED DETECTED ${photo.currentIsMuted ? "YES" : "NO"}`,
+      `MUTED ${photo.videoEl.muted ? "YES" : "NO"}`,
+      `MUSIC ${backgroundAudioPhoto === photo && !backgroundAudio.muted ? "ON" : "OFF"}`,
+      `TIME ${playbackTime === null ? "--" : `${playbackTime.toFixed(1)}s`}`
+    ].join("  |  ");
   }
 }
 
@@ -1174,7 +1604,6 @@ soundCheckbox.addEventListener("change", () => {
   soundEnabled = soundCheckbox.checked;
   if (!soundEnabled) {
     audioPlaybackStartedAt = 0;
-    audioMinimumHoldUntil = 0;
   }
   updateVideoAudio();
   resetHideTimer();
@@ -1194,6 +1623,8 @@ function resetControlsToDefaults() {
   manifest = imageManifest;
   selectedFolder = DEFAULT_CONTROL_VALUES.folder;
   folderSelect.value = DEFAULT_CONTROL_VALUES.folder;
+  selectedFilter = DEFAULT_CONTROL_VALUES.filter;
+  filterSelect.value = DEFAULT_CONTROL_VALUES.filter;
 
   sizeSlider.value = DEFAULT_CONTROL_VALUES.size;
   photoWidth = parseFloat(DEFAULT_CONTROL_VALUES.size);
@@ -1548,6 +1979,7 @@ function render(time) {
       `translate(${photo.x}px, ${photo.y + bob}px) translate(-50%, -50%) rotate(${photo.rotation + sway}deg)`;
   }
 
+  updateDebugVideoOverlay();
   updateVideoAudio();
 
   updateLights(time, deltaSeconds);

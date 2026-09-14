@@ -1,4 +1,5 @@
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -30,6 +31,8 @@ IMAGES_DIR = PROJECT_ROOT / "images"
 MANIFEST_PATH = IMAGES_DIR / "manifest.json"
 VIDEOS_DIR = PROJECT_ROOT / "videos"
 VIDEO_MANIFEST_PATH = VIDEOS_DIR / "manifest.json"
+AUDIO_DIR = PROJECT_ROOT / "audio"
+AUDIO_MANIFEST_PATH = AUDIO_DIR / "manifest.json"
 ROOT_MISC_FOLDER_NAME = "Various"
 TARGET_FOLDERS = None
 DELETE_ORIGINAL_HEIC = True
@@ -39,6 +42,8 @@ DELETE_CONSUMED_SIDECAR_JSON = False
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp", ".gif"}
 HEIC_EXTENSIONS = {".heic", ".heif"}
 VIDEO_EXTENSIONS = {".mp4", ".webm", ".mov", ".m4v", ".avi", ".mkv"}
+AUDIO_EXTENSIONS = {".mp3", ".wav", ".m4a", ".aac", ".ogg", ".oga", ".flac", ".opus", ".webm"}
+MUTED_MEAN_VOLUME_THRESHOLD_DB = -45.0
 MAX_VIDEO_BYTES = 20 * 1024 * 1024
 COMPRESS_TRIGGER_BYTES = MAX_VIDEO_BYTES
 # Kept only for migrating files created by older versions. New compressed
@@ -596,6 +601,7 @@ def video_has_audio(video_file: Path) -> bool:
     ffprobe = find_media_tool("ffprobe")
     if not ffprobe:
         return True
+
     try:
         result = subprocess.run(
             [
@@ -611,6 +617,39 @@ def video_has_audio(video_file: Path) -> bool:
         return True
 
 
+def video_is_muted(video_file: Path) -> bool:
+    """Return whether a video's measured audio is effectively silent."""
+    if not video_has_audio(video_file):
+        return True
+
+    ffmpeg = find_media_tool("ffmpeg")
+    if not ffmpeg:
+        # Preserve the safer stream-based behavior if volume analysis is not
+        # available; the manifest still reports that an audio stream exists.
+        return False
+
+    try:
+        result = subprocess.run(
+            [
+                ffmpeg, "-hide_banner", "-nostats", "-i", str(video_file),
+                "-map", "0:a:0", "-af", "volumedetect", "-f", "null", os.devnull,
+            ],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        diagnostic = f"{result.stdout}\n{result.stderr}"
+        match = re.search(
+            r"mean_volume:\s*(-?inf|[-+]?\d+(?:\.\d+)?)\s*dB",
+            diagnostic,
+            re.IGNORECASE,
+        )
+        if not match:
+            return False
+        mean_volume = float("-inf") if match.group(1).lower() == "-inf" else float(match.group(1))
+        return mean_volume <= MUTED_MEAN_VOLUME_THRESHOLD_DB
+    except (OSError, ValueError, subprocess.SubprocessError):
+        return False
 def video_duration_seconds(video_file: Path):
     """Read a video's duration for compression progress reporting."""
     ffprobe = find_media_tool("ffprobe")
@@ -663,6 +702,7 @@ def build_video_manifest():
                     "date": taken_time or format_file_mtime(file),
                     "people": people,
                     "hasAudio": video_has_audio(file),
+                    "isMuted": video_is_muted(file),
                 }
             )
 
@@ -670,6 +710,27 @@ def build_video_manifest():
     with open(VIDEO_MANIFEST_PATH, "w", encoding="utf-8") as f:
         json.dump(video_manifest, f, indent=2, ensure_ascii=False)
     print(f"Video manifest created: {VIDEO_MANIFEST_PATH}")
+
+
+def build_audio_manifest():
+    """Create the lightweight manifest used for music fallback playback."""
+    audio_manifest = []
+    if AUDIO_DIR.exists():
+        for file in sorted(AUDIO_DIR.rglob("*")):
+            if not file.is_file() or file.suffix.lower() not in AUDIO_EXTENSIONS:
+                continue
+            relative = file.relative_to(AUDIO_DIR)
+            audio_manifest.append(
+                {
+                    "filename": file.name,
+                    "path": "/".join(relative.parts),
+                }
+            )
+
+    AUDIO_DIR.mkdir(parents=True, exist_ok=True)
+    with open(AUDIO_MANIFEST_PATH, "w", encoding="utf-8") as f:
+        json.dump(audio_manifest, f, indent=2, ensure_ascii=False)
+    print(f"Audio manifest created: {AUDIO_MANIFEST_PATH}")
 
 
 def compress_videos():
@@ -827,6 +888,7 @@ def build_manifest():
         json.dump(manifest, f, indent=2, ensure_ascii=False)
 
     build_video_manifest()
+    build_audio_manifest()
 
     print(f"Manifest created: {MANIFEST_PATH}")
     manifest_preview = json.dumps(manifest, indent=2, ensure_ascii=False)

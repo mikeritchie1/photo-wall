@@ -36,6 +36,15 @@ After the workflow completes, your site will be live at:
 - This keeps the first deployment lightweight before adding cloud storage.
 - Add videos to the `videos/` folder and run `python build_manifest.py` to rebuild the manifests without changing video files. Choose `Videos` in the on-screen controls. Supported formats are MP4, WebM, MOV, M4V, AVI, and MKV. To compress videos over 20 MB with up to four parallel workers and progress output, run `python build_manifest.py --compress-videos`. Each completed video immediately replaces its original file; it is re-encoded progressively until it is below the 20 MB hard limit, and the manifest is updated as work completes. Videos already at or below 20 MB are skipped on later runs. Install FFmpeg for compression.
 
+### Video switching rules
+
+When video handoff is active:
+
+1. A video is kept active for at least 4 seconds.
+2. After the minimum hold, it switches when the current video’s center reaches 75% of the screen height—the bottom 25% of the screen.
+3. The replacement must be fully visible and have its center at or above 60% of the screen height—the replacement cannot be below the bottom 40%.
+4. If no eligible replacement is available yet, the current video remains active until one becomes eligible or leaves the viewport.
+
 ## Windows Screensaver Build
 
 You can package this photo wall as a Windows screensaver (`.scr`) that behaves like a normal screensaver entry in Windows settings.

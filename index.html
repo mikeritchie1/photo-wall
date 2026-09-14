@@ -7,13 +7,29 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20260914-video-fallback" />
 </head>
 <body>
   <div class="wall" id="wall">
     <div class="light-stream" id="lights-left"></div>
     <div class="light-stream" id="lights-center"></div>
     <div class="light-stream" id="lights-right"></div>
+
+    <div class="viewport-guide viewport-guide-15" aria-hidden="true">
+      <span>15% · minimum next-video line</span>
+    </div>
+    <div class="viewport-guide viewport-guide-5" aria-hidden="true">
+      <span>5% · fallback minimum</span>
+    </div>
+    <div class="viewport-guide viewport-guide-50" aria-hidden="true">
+      <span>50% · maximum next-video line</span>
+    </div>
+    <div class="viewport-guide viewport-guide-80" aria-hidden="true">
+      <span>80% · hard current-video cutoff</span>
+    </div>
+    <div class="viewport-guide viewport-guide-95" aria-hidden="true">
+      <span>95% · fallback trigger</span>
+    </div>
 
     <div class="photo-container" id="photo1-container">
       <img src="images/photo1.png" alt="Photo 1" class="photo" id="photo1" />
@@ -97,15 +113,19 @@
         <label for="mediaMixSlider">Photos / Videos</label>
         <input type="range" id="mediaMixSlider" min="0" max="4" step="1" value="3" />
         <div id="mediaMixValue" class="media-mix-value">25% photos · 75% videos</div>
-        <label class="sound-toggle" for="soundCheckbox">
-          <input type="checkbox" id="soundCheckbox" checked />
-          Sound On
-        </label>
       </div>
 
       <div class="control-group">
         <label for="folderSelect">Media Folder</label>
         <select id="folderSelect"></select>
+      </div>
+
+      <div class="control-group">
+        <label for="filterSelect">Filter</label>
+        <select id="filterSelect">
+          <option value="all">No filter</option>
+          <option value="muted-videos">Muted videos only</option>
+        </select>
       </div>
 
       <div class="control-group">
@@ -115,7 +135,7 @@
 
       <div class="control-group">
         <label for="speedSlider">Speed</label>
-        <input type="range" id="speedSlider" min="0" max="4" step="0.05" value="1.75" />
+        <input type="range" id="speedSlider" min="0" max="4" step="0.05" value="1.5" />
         <div style="display: flex; align-items: center; gap: 5px; margin-top: 5px;">
           <input type="checkbox" id="reverseCheckbox" />
           <label for="reverseCheckbox" style="font-size: 12px;">Reverse</label>
@@ -199,11 +219,15 @@
     </div>
 
     <div class="control-row">
+      <label class="sound-toggle" for="soundCheckbox">
+        <input type="checkbox" id="soundCheckbox" checked />
+        Sound On
+      </label>
       <button id="resetControlsBtn" type="button">Reset Controls</button>
     </div>
   </div>
 
   <script src="backgrounds.js"></script>
-  <script src="script.js"></script>
+  <script src="script.js?v=20260914-continuous-background-audio"></script>
 </body>
 </html>
