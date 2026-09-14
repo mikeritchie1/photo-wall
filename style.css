@@ -376,9 +376,16 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
 }
 
 #peopleFilterToggle:hover,
-.people-option-button:hover,
-.people-option-button.active {
+.people-option-button:hover {
   background: #4a4a4a;
+}
+
+.people-option-button.active {
+  background: #d8b56f;
+  color: #171717;
+  border-color: #ffe2a0;
+  box-shadow: 0 0 0 2px rgba(216, 181, 111, 0.28);
+  font-weight: 700;
 }
 
 .people-option {
