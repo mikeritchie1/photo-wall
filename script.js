@@ -15,6 +15,7 @@ const yearRangeValue = document.getElementById("yearRangeValue");
 const textSelect = document.getElementById("textSelect");
 const mediaMixSlider = document.getElementById("mediaMixSlider");
 const mediaMixValue = document.getElementById("mediaMixValue");
+const naturalMediaCheckbox = document.getElementById("naturalMediaCheckbox");
 const orderedCheckbox = document.getElementById("orderedCheckbox");
 const soundCheckbox = document.getElementById("soundCheckbox");
 const peopleFilterSummary = document.getElementById("peopleFilterSummary");
@@ -193,6 +194,7 @@ let imageManifest = null;
 let videoManifest = null;
 let audioManifest = [];
 let mediaMixIndex = 2;
+let naturalMediaMix = false;
 let selectedFolder = "all";
 let selectedOrder = "random";
 let availablePeople = [];
@@ -505,6 +507,15 @@ function getActiveManifests() {
   const mix = getMediaMix();
   const videosAvailable = hasVideos();
   const manifests = [];
+  if (naturalMediaMix) {
+    if (imageManifest) {
+      manifests.push({ data: imageManifest, mediaType: "image" });
+    }
+    if (videosAvailable) {
+      manifests.push({ data: videoManifest, mediaType: "video" });
+    }
+    return manifests;
+  }
   // Always fall back to photos when the selected video share cannot be
   // fulfilled, including the 0% photos / 100% videos setting.
   if (mix.photos > 0 || !videosAvailable) {
@@ -520,12 +531,27 @@ function updateMediaMixControl() {
   const mix = getMediaMix();
   mediaMixSlider.value = String(mediaMixIndex);
   mediaMixValue.textContent = `${mix.photos}% photos · ${mix.videos}% videos`;
-  mediaMixSlider.disabled = !hasVideos();
+  mediaMixValue.textContent = naturalMediaMix
+    ? "Natural mix - based on available media"
+    : `${mix.photos}% photos · ${mix.videos}% videos`;
+  mediaMixSlider.disabled = !hasVideos() || naturalMediaMix;
   mediaMixSlider.title = hasVideos() ? "Choose the photos and videos mix" : "Add videos to the videos folder first";
 }
 
 mediaMixSlider.addEventListener("input", () => {
   mediaMixIndex = parseInt(mediaMixSlider.value, 10) || 0;
+  manifest = imageManifest;
+  updateMediaMixControl();
+  populateFolderSelect();
+  initializeYearRangeFromManifest();
+  populatePeopleFilter();
+  resetImageCycle();
+  assignRandomImages();
+  resetHideTimer();
+});
+
+naturalMediaCheckbox.addEventListener("change", (event) => {
+  naturalMediaMix = event.target.checked;
   manifest = imageManifest;
   updateMediaMixControl();
   populateFolderSelect();
@@ -742,6 +768,10 @@ function buildImagePool({ ignorePerson = false } = {}) {
 }
 
 function createWeightedMediaPool(pool) {
+  if (naturalMediaMix) {
+    return orderMediaItems(pool);
+  }
+
   const mix = getMediaMix();
   if (mix.photos === 100 || mix.videos === 100) {
     return orderMediaItems(pool);
@@ -1645,6 +1675,8 @@ function resetControlsToDefaults() {
   soundCheckbox.textContent = "Sound On";
   updateVideoAudio();
   mediaMixIndex = 2;
+  naturalMediaMix = false;
+  naturalMediaCheckbox.checked = false;
   updateMediaMixControl();
   selectedOrder = "random";
   orderedCheckbox.checked = false;

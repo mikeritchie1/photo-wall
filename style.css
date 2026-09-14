@@ -255,6 +255,22 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   font-size: 12px;
 }
 
+.media-mix-toggle {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 7px;
+  margin-top: 2px;
+  cursor: pointer;
+  font-size: 13px !important;
+}
+
+.media-mix-toggle input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
 .sound-toggle {
   display: flex;
   flex-direction: row !important;

@@ -46,6 +46,7 @@ AUDIO_EXTENSIONS = {".mp3", ".wav", ".m4a", ".aac", ".ogg", ".oga", ".flac", ".o
 MUTED_MEAN_VOLUME_THRESHOLD_DB = -45.0
 MAX_VIDEO_BYTES = 20 * 1024 * 1024
 COMPRESS_TRIGGER_BYTES = MAX_VIDEO_BYTES
+MAX_IMAGE_BYTES = 8 * 1024 * 1024
 # Kept only for migrating files created by older versions. New compressed
 # videos are written back to their original filename.
 COMPRESSED_VIDEO_SUFFIX = ".compressed.mp4"
@@ -460,6 +461,135 @@ def ensure_heic_conversions():
         f"HEIC conversion complete: {converted_count} converted, {skipped_count} up-to-date, {deleted_count} originals deleted."
     )
 
+
+def compress_image_file(image_file: Path) -> bool:
+    """Re-encode an oversized image until it is below the 8 MiB limit."""
+    if Image is None or image_file.stat().st_size <= MAX_IMAGE_BYTES:
+        return False
+
+    image_format = None
+    try:
+        with Image.open(image_file) as source:
+            extension_format = image_file.suffix.lower()
+            image_format = {
+                ".jpg": "JPEG",
+                ".jpeg": "JPEG",
+                ".png": "PNG",
+                ".webp": "WEBP",
+                ".gif": "GIF",
+            }.get(extension_format, (source.format or "").upper())
+            original_size = image_file.stat().st_size
+            original_width, original_height = source.size
+            exif_bytes = source.info.get("exif")
+            has_alpha = source.mode in ("RGBA", "LA") or "transparency" in source.info
+
+            if image_format in {"JPEG", "JPG"}:
+                output_format = "JPEG"
+                base_image = source.convert("RGB")
+                qualities = (90, 82, 74, 66, 58, 50)
+            elif image_format == "WEBP":
+                output_format = "WEBP"
+                base_image = source.convert("RGBA" if has_alpha else "RGB")
+                qualities = (90, 82, 74, 66, 58, 50)
+            elif image_format == "PNG":
+                output_format = "PNG"
+                base_image = source.convert("RGBA" if has_alpha else "RGB")
+                qualities = (None,)
+            elif image_format == "GIF":
+                output_format = "GIF"
+                base_image = source.copy()
+                qualities = (None,)
+            else:
+                print(f"Skipping unsupported image format for compression: {image_file}")
+                return False
+
+            temporary_file = image_file.with_name(f"{image_file.name}.photo-compress.tmp")
+            compressed_size = None
+            compression_succeeded = False
+            for scale in (1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4):
+                width = max(1, round(original_width * scale))
+                height = max(1, round(original_height * scale))
+                resized = base_image if scale == 1.0 else base_image.resize((width, height), Image.Resampling.LANCZOS)
+
+                for quality in qualities:
+                    save_kwargs = {"optimize": True}
+                    if output_format == "JPEG":
+                        save_kwargs.update({"quality": quality, "progressive": True})
+                        if exif_bytes:
+                            save_kwargs["exif"] = exif_bytes
+                    elif output_format == "WEBP":
+                        save_kwargs.update({"quality": quality, "method": 6})
+                        if exif_bytes:
+                            save_kwargs["exif"] = exif_bytes
+                    elif output_format == "PNG":
+                        save_kwargs["compress_level"] = 9
+                        if exif_bytes:
+                            save_kwargs["exif"] = exif_bytes
+                    elif output_format == "GIF":
+                        save_kwargs["save_all"] = False
+
+                    resized.save(temporary_file, format=output_format, **save_kwargs)
+                    compressed_size = temporary_file.stat().st_size
+                    if compressed_size < MAX_IMAGE_BYTES and compressed_size < original_size:
+                        compression_succeeded = True
+                        break
+                if compression_succeeded:
+                    break
+
+        if compression_succeeded:
+            # Replace only after the source image has been closed. Windows
+            # otherwise may reject replacing a file that Pillow still has open.
+            temporary_file.replace(image_file)
+            print(
+                f"Compressed image: {image_file.name} "
+                f"{original_size / (1024 * 1024):.2f} MB -> "
+                f"{compressed_size / (1024 * 1024):.2f} MB"
+            )
+            return True
+        if temporary_file.exists():
+            temporary_file.unlink()
+    except Exception as error:
+        print(f"Failed to compress image {image_file}: {error}")
+        temporary_file = image_file.with_name(f"{image_file.name}.photo-compress.tmp")
+        if temporary_file.exists():
+            temporary_file.unlink()
+
+    print(
+        f"Warning: could not compress image below 8 MiB, leaving unchanged: {image_file}"
+    )
+    return False
+
+
+def compress_images():
+    """Compress image files above the 8 MiB threshold before manifest creation."""
+    if Image is None:
+        oversized_count = sum(
+            1
+            for file in IMAGES_DIR.rglob("*")
+            if file.is_file()
+            and file.suffix.lower() in IMAGE_EXTENSIONS
+            and file.stat().st_size > MAX_IMAGE_BYTES
+            and is_targeted_file(file)
+        )
+        if oversized_count:
+            print("Pillow is not installed. Skipping image compression.")
+        return
+
+    oversized_files = [
+        file
+        for file in sorted(IMAGES_DIR.rglob("*"))
+        if file.is_file()
+        and file.suffix.lower() in IMAGE_EXTENSIONS
+        and file.stat().st_size > MAX_IMAGE_BYTES
+        and is_targeted_file(file)
+    ]
+    compressed_count = sum(compress_image_file(file) for file in oversized_files)
+    if oversized_files:
+        print(
+            f"Image compression complete: {compressed_count}/{len(oversized_files)} "
+            "oversized image(s) reduced below 8 MiB."
+        )
+
 def move_root_images_to_various_folder():
     if TARGET_FOLDERS is not None and ROOT_MISC_FOLDER_NAME not in TARGET_FOLDERS:
         return
@@ -867,6 +997,7 @@ def build_manifest():
     migrate_videos_to_video_library()
     move_root_images_to_various_folder()
     ensure_heic_conversions()
+    compress_images()
 
     # Include images directly inside `images/` under a catch-all folder.
     # This supports sidecar metadata the same way album subfolders do.
