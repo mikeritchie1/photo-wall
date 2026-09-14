@@ -43,7 +43,7 @@ console.log("[runtime-assets]", {
 });
 // Temporary diagnostics for video handoff and screen-position debugging.
 // Set to false to restore normal video captions and hide the guide lines.
-const DEBUG_MODE = true;
+const DEBUG_MODE = false;
 // TEMPORARY: restrict playback to manifest entries marked isMuted=true.
 // Set to false to restore the normal mixed media pool.
 // Video filtering is controlled by the Filter dropdown below.
