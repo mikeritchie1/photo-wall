@@ -130,16 +130,19 @@ def extract_date_from_exif_mapping(exif_mapping) -> str | None:
     return None
 
 
-def get_capture_date(file: Path) -> str:
+def get_capture_date(file: Path, include_metadata: bool = False):
+    def result(value, from_metadata):
+        return (value, from_metadata) if include_metadata else value
+
     if Image is None:
-        return format_file_mtime(file)
+        return result(format_file_mtime(file), False)
 
     try:
         with Image.open(file) as img:
             # Primary EXIF route.
             parsed = extract_date_from_exif_mapping(img.getexif())
             if parsed:
-                return parsed
+                return result(parsed, True)
 
             # Some formats keep EXIF in a raw info blob.
             raw_exif = img.info.get("exif")
@@ -148,7 +151,7 @@ def get_capture_date(file: Path) -> str:
                 exif_obj.load(raw_exif)
                 parsed = extract_date_from_exif_mapping(exif_obj)
                 if parsed:
-                    return parsed
+                    return result(parsed, True)
 
             # Common metadata keys used by PIL readers for some formats/exporters.
             exif_like_keys = (
@@ -162,17 +165,17 @@ def get_capture_date(file: Path) -> str:
             for key in exif_like_keys:
                 parsed = parse_exif_datetime(img.info.get(key))
                 if parsed:
-                    return parsed
+                    return result(parsed, True)
 
             # XMP dates (e.g., xmp:CreateDate / photoshop:DateCreated).
             for key in ("XML:com.adobe.xmp", "xmp", "XMP"):
                 parsed = parse_xmp_datetime(img.info.get(key))
                 if parsed:
-                    return parsed
+                    return result(parsed, True)
     except Exception:
         pass
 
-    return format_file_mtime(file)
+    return result(format_file_mtime(file), False)
 
 def converted_heic_path(source_file: Path) -> Path:
     return source_file.with_suffix(".jpg")
@@ -700,6 +703,7 @@ def build_video_manifest():
                     "path": "/".join(relative.parts),
                     "text": text,
                     "date": taken_time or format_file_mtime(file),
+                    "hasDateMetadata": bool(taken_time),
                     "people": people,
                     "hasAudio": video_has_audio(file),
                     "isMuted": video_is_muted(file),
@@ -810,6 +814,7 @@ def build_manifest():
 
             sidecar_matches = find_matching_sidecars(file, root_json_sidecars)
             custom_text, taken_time, people, consumed = get_sidecar_metadata(sidecar_matches)
+            capture_date, capture_date_from_metadata = get_capture_date(file, include_metadata=True)
             for matched_sidecar in sidecar_matches:
                 root_consumed_sidecars.add(matched_sidecar)
             for parsed_sidecar in consumed:
@@ -820,7 +825,8 @@ def build_manifest():
                     "filename": file.name,
                     "path": file.name,
                     "text": custom_text,
-                    "date": taken_time or get_capture_date(file),
+                    "date": taken_time or capture_date,
+                    "hasDateMetadata": bool(taken_time or capture_date_from_metadata),
                     "people": people,
                 }
             )
@@ -859,6 +865,7 @@ def build_manifest():
 
             sidecar_matches = find_matching_sidecars(file, all_json_sidecars)
             custom_text, taken_time, people, consumed = get_sidecar_metadata(sidecar_matches)
+            capture_date, capture_date_from_metadata = get_capture_date(file, include_metadata=True)
             for matched_sidecar in sidecar_matches:
                 consumed_sidecars.add(matched_sidecar)
             for parsed_sidecar in consumed:
@@ -869,7 +876,8 @@ def build_manifest():
                     "filename": file.name,
                     "path": f"{folder.name}/{file.name}",
                     "text": custom_text,
-                    "date": taken_time or get_capture_date(file),
+                    "date": taken_time or capture_date,
+                    "hasDateMetadata": bool(taken_time or capture_date_from_metadata),
                     "people": people,
                 }
             )

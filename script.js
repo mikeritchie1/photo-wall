@@ -272,6 +272,13 @@ function extractYearFromDate(dateValue) {
   return null;
 }
 
+function getManifestItemYear(item, folder) {
+  const metadataYear = item && item.hasDateMetadata === true
+    ? extractYearFromDate(item.date)
+    : null;
+  return metadataYear ?? extractYearFromDate(folder);
+}
+
 function deriveAvailableYearBounds() {
   if (!manifest) {
     return null;
@@ -279,9 +286,9 @@ function deriveAvailableYearBounds() {
 
   const years = [];
   for (const source of getActiveManifests()) {
-    for (const images of Object.values(source.data)) {
+    for (const [folder, images] of Object.entries(source.data)) {
       for (const image of images) {
-      const year = extractYearFromDate(image.date);
+      const year = getManifestItemYear(image, folder);
       if (year !== null) {
         years.push(year);
       }
@@ -640,6 +647,13 @@ function buildAudioUrl(relativePath) {
 }
 
 function imageMatchesActiveFilters(image, { ignorePerson = false } = {}) {
+  const fullYearRangeSelected =
+    selectedStartYear === null ||
+    selectedEndYear === null ||
+    (selectedStartYear === minAvailableYear && selectedEndYear === maxAvailableYear);
+  if (!image.hasKnownYear && !fullYearRangeSelected) {
+    return false;
+  }
   const inYearRange =
     selectedStartYear === null ||
     selectedEndYear === null ||
@@ -684,7 +698,9 @@ function buildImagePool({ ignorePerson = false } = {}) {
           isMuted: item.isMuted === true,
           folder,
           date: item.date || "",
-          year: extractYearFromDate(item.date),
+          hasDateMetadata: item.hasDateMetadata === true,
+          year: getManifestItemYear(item, folder),
+          hasKnownYear: getManifestItemYear(item, folder) !== null,
           _key: `${source.mediaType}:${relativePath}`
         });
       }
