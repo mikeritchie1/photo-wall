@@ -121,14 +121,6 @@
       </div>
 
       <div class="control-group">
-        <label for="filterSelect">Filter</label>
-        <select id="filterSelect">
-          <option value="all">No filter</option>
-          <option value="muted-videos">Muted videos only</option>
-        </select>
-      </div>
-
-      <div class="control-group">
         <label for="sizeSlider">Photo Size</label>
         <input type="range" id="sizeSlider" min="120" max="720" value="420" />
       </div>
@@ -219,15 +211,12 @@
     </div>
 
     <div class="control-row">
-      <label class="sound-toggle" for="soundCheckbox">
-        <input type="checkbox" id="soundCheckbox" checked />
-        Sound On
-      </label>
+      <button id="soundCheckbox" type="button">Sound On</button>
       <button id="resetControlsBtn" type="button">Reset Controls</button>
     </div>
   </div>
 
   <script src="backgrounds.js"></script>
-  <script src="script.js?v=20260914-debug-off"></script>
+  <script src="script.js?v=20260914-control-polish"></script>
 </body>
 </html>

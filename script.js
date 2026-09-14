@@ -2,7 +2,6 @@ const controls = document.getElementById("controls");
 const sizeSlider = document.getElementById("sizeSlider");
 const speedSlider = document.getElementById("speedSlider");
 const folderSelect = document.getElementById("folderSelect");
-const filterSelect = document.getElementById("filterSelect");
 const backgroundSelect = document.getElementById("backgroundSelect");
 const lightColorSelect = document.getElementById("lightColorSelect");
 const stringColorSelect = document.getElementById("stringColorSelect");
@@ -89,7 +88,6 @@ const MOBILE_BREAKPOINT = 900;
 const PHOTO_WRAP_BUFFER_PX = 36;
 const DEFAULT_CONTROL_VALUES = {
   folder: "all",
-  filter: "all",
   size: "420",
   speed: "1.5",
   reverse: false,
@@ -193,7 +191,6 @@ let videoManifest = null;
 let audioManifest = [];
 let mediaMixIndex = 2;
 let selectedFolder = "all";
-let selectedFilter = DEFAULT_CONTROL_VALUES.filter;
 let availablePeople = [];
 let selectedPeople = new Set();
 let selectedGroupName = null;
@@ -537,13 +534,6 @@ folderSelect.addEventListener("change", (event) => {
   resetHideTimer();
 });
 
-filterSelect.addEventListener("change", (event) => {
-  selectedFilter = event.target.value;
-  resetImageCycle();
-  assignRandomImages();
-  resetHideTimer();
-});
-
 backgroundSelect.addEventListener("change", (event) => {
   applyBackground(event.target.value);
   resetHideTimer();
@@ -678,12 +668,7 @@ function buildImagePool({ ignorePerson = false } = {}) {
 
   const pool = [];
   for (const source of getActiveManifests()) {
-    // The muted-video filter applies only to videos. Keep the existing folder
-    // behavior for photos, but do not let a selected photo folder hide the
-    // muted videos (which are stored in the Various video folder).
-    const folders = selectedFilter === "muted-videos" && source.mediaType === "video"
-      ? Object.entries(source.data)
-      : selectedFolder === "all"
+    const folders = selectedFolder === "all"
       ? Object.entries(source.data)
       : [[selectedFolder, source.data[selectedFolder] || []]];
     for (const [folder, items] of folders) {
@@ -705,15 +690,7 @@ function buildImagePool({ ignorePerson = false } = {}) {
     }
   }
 
-  const filteredPool = selectedFilter === "muted-videos"
-    ? pool.filter((image) => image.mediaType !== "video" || image.isMuted === true)
-    : pool;
-  const matchingPool = filteredPool.filter((image) => imageMatchesActiveFilters(image, { ignorePerson }));
-  console.log("[media-pool]", {
-    filter: selectedFilter,
-    photos: matchingPool.filter((image) => image.mediaType === "image").length,
-    videos: matchingPool.filter((image) => image.mediaType === "video").length
-  });
+  const matchingPool = pool.filter((image) => imageMatchesActiveFilters(image, { ignorePerson }));
   return createWeightedMediaPool(matchingPool);
 }
 
@@ -1600,8 +1577,9 @@ function updateDebugVideoOverlay() {
   }
 }
 
-soundCheckbox.addEventListener("change", () => {
-  soundEnabled = soundCheckbox.checked;
+soundCheckbox.addEventListener("click", () => {
+  soundEnabled = !soundEnabled;
+  soundCheckbox.textContent = soundEnabled ? "Sound On" : "Sound Off";
   if (!soundEnabled) {
     audioPlaybackStartedAt = 0;
   }
@@ -1616,15 +1594,13 @@ document.addEventListener("pointerdown", () => {
 
 function resetControlsToDefaults() {
   soundEnabled = true;
-  soundCheckbox.checked = true;
+  soundCheckbox.textContent = "Sound On";
   updateVideoAudio();
   mediaMixIndex = 2;
   updateMediaMixControl();
   manifest = imageManifest;
   selectedFolder = DEFAULT_CONTROL_VALUES.folder;
   folderSelect.value = DEFAULT_CONTROL_VALUES.folder;
-  selectedFilter = DEFAULT_CONTROL_VALUES.filter;
-  filterSelect.value = DEFAULT_CONTROL_VALUES.filter;
 
   sizeSlider.value = DEFAULT_CONTROL_VALUES.size;
   photoWidth = parseFloat(DEFAULT_CONTROL_VALUES.size);

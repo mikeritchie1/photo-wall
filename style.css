@@ -281,6 +281,32 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   font-size: 14px;
 }
 
+.controls select {
+  background: #1f1f1f;
+  color: #ffffff;
+  border: 1px solid #5a5a5a;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.controls select option {
+  background: #1f1f1f;
+  color: #ffffff;
+}
+
+#soundCheckbox {
+  background: #2f2f2f;
+  color: #ffffff;
+  border: 1px solid #5a5a5a;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+#soundCheckbox:hover {
+  background: #3b3b3b;
+}
+
 .controls input[type="range"] {
   width: 100%;
 }
