@@ -1840,21 +1840,41 @@ function wrapPhoto(photo) {
 
 function showControls() {
   controls.classList.remove("hidden");
+  if (controls.matches(":hover")) {
+    clearTimeout(hideTimer);
+    return;
+  }
   resetHideTimer();
 }
 
 function hideControls() {
+  clearTimeout(hideTimer);
   controls.classList.add("hidden");
 }
 
 function resetHideTimer() {
   clearTimeout(hideTimer);
+  if (controls.matches(":hover")) {
+    return;
+  }
   hideTimer = setTimeout(() => {
     hideControls();
   }, 2500);
 }
 
-document.addEventListener("click", () => {
+controls.addEventListener("pointerenter", () => {
+  clearTimeout(hideTimer);
+});
+
+controls.addEventListener("pointerleave", () => {
+  resetHideTimer();
+});
+
+document.addEventListener("click", (event) => {
+  if (!controls.classList.contains("hidden") && !controls.contains(event.target)) {
+    hideControls();
+    return;
+  }
   showControls();
 });
 
