@@ -857,6 +857,17 @@ function setupClickListeners() {
         manuallySelectedVideoPhoto = photo;
         audioPlaybackStartedAt = 0;
         audioMinimumHoldUntil = 0;
+        for (const candidate of photos) {
+          if (candidate.currentMediaType !== "video") {
+            continue;
+          }
+          const isSelected = candidate === photo;
+          candidate.videoEl.muted = !isSelected || !soundEnabled || !audioUnlocked;
+          candidate.container.classList.toggle(
+            "audio-active",
+            isSelected && soundEnabled && audioUnlocked
+          );
+        }
         updateVideoAudio();
         return;
       }
