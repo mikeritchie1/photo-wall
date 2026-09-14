@@ -114,14 +114,6 @@
         <select id="folderSelect"></select>
       </div>
 
-      <div class="control-group">
-        <label for="orderSelect">Order</label>
-        <select id="orderSelect">
-          <option value="random">Random</option>
-          <option value="ascending">Ascending date</option>
-        </select>
-      </div>
-
       <div class="control-group media-mix-group">
         <label for="mediaMixSlider">Photos / Videos</label>
         <input type="range" id="mediaMixSlider" min="0" max="4" step="1" value="3" />
@@ -156,6 +148,10 @@
             <input type="range" id="yearEndSlider" />
           </div>
           <div id="yearRangeValue" class="year-range-value"></div>
+          <label class="year-order-toggle" for="orderedCheckbox">
+            <input type="checkbox" id="orderedCheckbox" />
+            Ordered
+          </label>
         </div>
       </div>
     </div>
@@ -226,6 +222,6 @@
   </div>
 
   <script src="backgrounds.js"></script>
-  <script src="script.js?v=20260914-ascending-media-order"></script>
+  <script src="script.js?v=20260914-ordered-year-checkbox"></script>
 </body>
 </html>

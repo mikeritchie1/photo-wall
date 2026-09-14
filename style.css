@@ -503,6 +503,22 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   color: #ddd;
 }
 
+.year-order-toggle {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 7px;
+  margin-top: 6px;
+  cursor: pointer;
+  font-size: 13px !important;
+}
+
+.year-order-toggle input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
 #resetControlsBtn {
   background: #2f2f2f;
   color: #ffffff;

@@ -15,7 +15,7 @@ const yearRangeValue = document.getElementById("yearRangeValue");
 const textSelect = document.getElementById("textSelect");
 const mediaMixSlider = document.getElementById("mediaMixSlider");
 const mediaMixValue = document.getElementById("mediaMixValue");
-const orderSelect = document.getElementById("orderSelect");
+const orderedCheckbox = document.getElementById("orderedCheckbox");
 const soundCheckbox = document.getElementById("soundCheckbox");
 const peopleFilterSummary = document.getElementById("peopleFilterSummary");
 const peopleFilterToggle = document.getElementById("peopleFilterToggle");
@@ -91,7 +91,6 @@ const MOBILE_BREAKPOINT = 900;
 const PHOTO_WRAP_BUFFER_PX = 36;
 const DEFAULT_CONTROL_VALUES = {
   folder: "all",
-  order: "random",
   size: "420",
   speed: "1.5",
   reverse: false,
@@ -195,7 +194,7 @@ let videoManifest = null;
 let audioManifest = [];
 let mediaMixIndex = 2;
 let selectedFolder = "all";
-let selectedOrder = DEFAULT_CONTROL_VALUES.order;
+let selectedOrder = "random";
 let availablePeople = [];
 let selectedPeople = new Set();
 let selectedGroupName = null;
@@ -537,8 +536,8 @@ mediaMixSlider.addEventListener("input", () => {
   resetHideTimer();
 });
 
-orderSelect.addEventListener("change", (event) => {
-  selectedOrder = event.target.value;
+orderedCheckbox.addEventListener("change", (event) => {
+  selectedOrder = event.target.checked ? "ascending" : "random";
   resetImageCycle();
   assignRandomImages();
   resetHideTimer();
@@ -1647,8 +1646,8 @@ function resetControlsToDefaults() {
   updateVideoAudio();
   mediaMixIndex = 2;
   updateMediaMixControl();
-  selectedOrder = DEFAULT_CONTROL_VALUES.order;
-  orderSelect.value = DEFAULT_CONTROL_VALUES.order;
+  selectedOrder = "random";
+  orderedCheckbox.checked = false;
   manifest = imageManifest;
   selectedFolder = DEFAULT_CONTROL_VALUES.folder;
   folderSelect.value = DEFAULT_CONTROL_VALUES.folder;
