@@ -3,25 +3,8 @@
 function populateBackgroundSelect() {
   backgroundSelect.innerHTML = "";
   
-  // Add "None" option
-  const noneOption = document.createElement("option");
-  noneOption.value = "none";
-  noneOption.textContent = "None";
-  noneOption.selected = true;
-  backgroundSelect.appendChild(noneOption);
-
-  // Add background options
-  const backgrounds = [
-    "space",
-    "forest",
-    "sunset",
-    "cityscape",
-    "mountain",
-    "clouds",
-    "galaxy",
-    "desert",
-    "aurora"
-  ];
+  // Space is the only available background.
+  const backgrounds = ["space"];
 
   for (const bg of backgrounds) {
     const option = document.createElement("option");

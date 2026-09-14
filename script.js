@@ -216,8 +216,6 @@ let pendingAudioTarget = null;
 // - Only choose a replacement whose center is between 15% and 50% of the
 //   viewport height.
 const MIN_VIDEO_HOLD_MS = 4000;
-const MIN_VIDEO_PLAY_SECONDS = MIN_VIDEO_HOLD_MS / 1000;
-const RANDOM_START_END_BUFFER_SECONDS = 2;
 const VIDEO_SWITCH_CENTER_RATIO = 0.80;
 const NEXT_VIDEO_MIN_CENTER_RATIO = 0.15;
 const NEXT_VIDEO_MAX_CENTER_RATIO = 0.50;
@@ -1208,26 +1206,16 @@ function prepareVideoAudioStart(photo, onReady) {
     seekStarted = true;
     video.pause();
     photo.debugVideoDuration = video.duration;
-    // Use the media duration rather than the initial seekable range. Some
-    // local MOV/MP4 files briefly report a seekable end near zero even though
-    // their full duration is already known.
-    const minimumDurationForRandomStart =
-      MIN_VIDEO_PLAY_SECONDS + RANDOM_START_END_BUFFER_SECONDS;
-    const latestSafeStart = Math.max(
-      0,
-      video.duration - minimumDurationForRandomStart
-    );
-    const randomStart = video.duration > minimumDurationForRandomStart
-      ? Math.random() * latestSafeStart
-      : 0;
+    // Start anywhere in the video, including near the beginning or end. The
+    // video element is looped and continues playing until this photo slot is
+    // destroyed/replaced.
+    const randomStart = Math.random() * video.duration;
     requestedStart = randomStart;
     photo.debugVideoStartTime = randomStart;
     debugVideoStart("[video-start-calculated]", {
       key: photo.currentImageKey,
       duration: video.duration,
-      minimumPlaySeconds: MIN_VIDEO_PLAY_SECONDS,
-      endBufferSeconds: RANDOM_START_END_BUFFER_SECONDS,
-      latestStart: latestSafeStart,
+      randomStartMax: video.duration,
       randomStart,
       phase: "audio-handoff"
     });
