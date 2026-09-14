@@ -17,6 +17,8 @@ const mediaMixSlider = document.getElementById("mediaMixSlider");
 const mediaMixValue = document.getElementById("mediaMixValue");
 const soundCheckbox = document.getElementById("soundCheckbox");
 const peopleFilterSummary = document.getElementById("peopleFilterSummary");
+const peopleFilterToggle = document.getElementById("peopleFilterToggle");
+const peopleOptionsRow = document.getElementById("peopleOptionsRow");
 const peopleOptions = document.getElementById("peopleOptions");
 const resetControlsBtn = document.getElementById("resetControlsBtn");
 const wall = document.getElementById("wall");
@@ -967,22 +969,18 @@ function getOrderedCustomGroupNames() {
 function renderPeopleOptions() {
   peopleOptions.innerHTML = "";
 
-  const allOptionRow = document.createElement("label");
-  allOptionRow.className = "people-option";
-  const allCheckbox = document.createElement("input");
-  allCheckbox.type = "checkbox";
-  allCheckbox.id = "peopleAllOption";
-  allCheckbox.checked = selectedPeople.size === 0;
-  const allText = document.createElement("span");
-  allText.textContent = "All";
-  allOptionRow.append(allCheckbox, allText);
-  peopleOptions.appendChild(allOptionRow);
+  const createPeopleButton = (label, active, onClick) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "people-option-button";
+    button.textContent = label;
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+    button.classList.toggle("active", active);
+    button.addEventListener("click", onClick);
+    peopleOptions.appendChild(button);
+  };
 
-  allCheckbox.addEventListener("change", () => {
-    if (!allCheckbox.checked) {
-      allCheckbox.checked = true;
-      return;
-    }
+  createPeopleButton("All", selectedPeople.size === 0, () => {
     selectedPeople.clear();
     selectedGroupName = null;
     renderPeopleOptions();
@@ -990,26 +988,7 @@ function renderPeopleOptions() {
   });
 
   for (const groupName of getOrderedCustomGroupNames()) {
-    const groupRow = document.createElement("label");
-    groupRow.className = "people-option";
-    const groupCheckbox = document.createElement("input");
-    groupCheckbox.type = "checkbox";
-    groupCheckbox.value = groupName;
-    groupCheckbox.checked = selectedGroupName === groupName;
-    const groupText = document.createElement("span");
-    groupText.textContent = groupName;
-    groupRow.append(groupCheckbox, groupText);
-    peopleOptions.appendChild(groupRow);
-
-    groupCheckbox.addEventListener("change", () => {
-      if (!groupCheckbox.checked) {
-        selectedGroupName = null;
-        selectedPeople.clear();
-        renderPeopleOptions();
-        applyPeopleFilterChange();
-        return;
-      }
-
+    createPeopleButton(groupName, selectedGroupName === groupName, () => {
       selectedGroupName = groupName;
       selectedPeople = new Set(getResolvedGroupMembers(groupName));
       renderPeopleOptions();
@@ -1018,29 +997,24 @@ function renderPeopleOptions() {
   }
 
   for (const person of availablePeople) {
-    const optionRow = document.createElement("label");
-    optionRow.className = "people-option";
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.value = person;
-    checkbox.checked = selectedPeople.has(person);
-    const text = document.createElement("span");
-    text.textContent = person;
-    optionRow.append(checkbox, text);
-    peopleOptions.appendChild(optionRow);
-
-    checkbox.addEventListener("change", () => {
+    createPeopleButton(person, selectedPeople.has(person), () => {
       selectedGroupName = null;
-      if (checkbox.checked) {
-        selectedPeople.add(person);
-      } else {
+      if (selectedPeople.has(person)) {
         selectedPeople.delete(person);
+      } else {
+        selectedPeople.add(person);
       }
       renderPeopleOptions();
       applyPeopleFilterChange();
     });
   }
 }
+
+peopleFilterToggle.addEventListener("click", () => {
+  const isOpen = !peopleOptionsRow.classList.contains("hidden");
+  peopleOptionsRow.classList.toggle("hidden", isOpen);
+  peopleFilterToggle.setAttribute("aria-expanded", isOpen ? "false" : "true");
+});
 
 function populatePeopleFilter() {
   availablePeople = [];

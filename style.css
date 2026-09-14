@@ -346,10 +346,39 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
 }
 
 .people-options {
-  max-height: 180px;
-  overflow-y: auto;
-  border-top: 1px solid #3f3f3f;
-  padding: 6px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+
+.people-options-row.hidden {
+  display: none;
+}
+
+.people-selector-row {
+  align-items: center;
+}
+
+.people-filter-summary {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+}
+
+#peopleFilterToggle,
+.people-option-button {
+  background: #2f2f2f;
+  color: #ffffff;
+  border: 1px solid #5a5a5a;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+#peopleFilterToggle:hover,
+.people-option-button:hover,
+.people-option-button.active {
+  background: #4a4a4a;
 }
 
 .people-option {

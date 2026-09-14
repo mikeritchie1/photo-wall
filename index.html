@@ -109,15 +109,15 @@
 
   <div id="controls" class="controls hidden">
     <div class="control-row">
+      <div class="control-group">
+        <label for="folderSelect">Media Folder</label>
+        <select id="folderSelect"></select>
+      </div>
+
       <div class="control-group media-mix-group">
         <label for="mediaMixSlider">Photos / Videos</label>
         <input type="range" id="mediaMixSlider" min="0" max="4" step="1" value="3" />
         <div id="mediaMixValue" class="media-mix-value">25% photos · 75% videos</div>
-      </div>
-
-      <div class="control-group">
-        <label for="folderSelect">Media Folder</label>
-        <select id="folderSelect"></select>
       </div>
 
       <div class="control-group">
@@ -152,15 +152,16 @@
       </div>
     </div>
 
-    <div class="control-row">
-      <div class="control-group">
-        <label for="peopleFilter">People</label>
-        <details id="peopleFilter" class="people-filter">
-          <summary id="peopleFilterSummary">All</summary>
-          <div id="peopleOptions" class="people-options"></div>
-        </details>
-      </div>
+    <div class="control-row people-selector-row">
+      <button id="peopleFilterToggle" type="button" aria-expanded="false">Select People</button>
+      <span id="peopleFilterSummary" class="people-filter-summary">All</span>
+    </div>
 
+    <div id="peopleOptionsRow" class="control-row people-options-row hidden">
+      <div id="peopleOptions" class="people-options"></div>
+    </div>
+
+    <div class="control-row">
       <div class="control-group">
         <label for="backgroundSelect">Background</label>
         <select id="backgroundSelect"></select>
@@ -217,6 +218,6 @@
   </div>
 
   <script src="backgrounds.js"></script>
-  <script src="script.js?v=20260914-control-polish"></script>
+  <script src="script.js?v=20260914-people-button-row"></script>
 </body>
 </html>
