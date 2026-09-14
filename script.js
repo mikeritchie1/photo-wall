@@ -1092,6 +1092,15 @@ function assignRandomImageToPhoto(photo) {
   if (!imageData) {
     return;
   }
+  // A photo can never retain the active-video highlight. If the selected
+  // video slot is replaced, clear the old selection before assigning media.
+  if (audibleVideoPhoto === photo) {
+    audibleVideoPhoto = null;
+    manuallySelectedVideoPhoto = null;
+    audioPlaybackStartedAt = 0;
+    audioMinimumHoldUntil = 0;
+  }
+  photo.container.classList.remove("audio-active");
   const nextCaption = getDisplayTextForImage(imageData);
   photo.audioStartPreparation?.();
   photo.currentMediaType = imageData.mediaType;
