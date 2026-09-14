@@ -203,6 +203,7 @@ let lastServedImageKey = null;
 let hasAvailableImages = true;
 let videoAssignmentSequence = 0;
 let audibleVideoPhoto = null;
+let manuallySelectedVideoPhoto = null;
 let endedVideoPhoto = null;
 let audioUnlocked = false;
 let videoRoundKeys = new Set();
@@ -849,6 +850,16 @@ function setupClickListeners() {
   for (const photo of photos) {
     photo.container.addEventListener("click", (event) => {
       event.stopPropagation();
+      if (photo.currentMediaType === "video") {
+        // Clicking a video selects it for active sound without replacing its
+        // media. Manual selections use the extended 95% cutoff below.
+        audibleVideoPhoto = photo;
+        manuallySelectedVideoPhoto = photo;
+        audioPlaybackStartedAt = 0;
+        audioMinimumHoldUntil = 0;
+        updateVideoAudio();
+        return;
+      }
       assignRandomImageToPhoto(photo);
     });
   }
@@ -1358,13 +1369,18 @@ function updateVideoAudio() {
   const currentCenterY = currentAudibleEntry
     ? (currentAudibleEntry.bounds.top + currentAudibleEntry.bounds.bottom) / 2
     : null;
+  const manualSelectionIsActive = manuallySelectedVideoPhoto === audibleVideoPhoto &&
+    Boolean(audibleVideoPhoto && audibleVideoPhoto.currentMediaType === "video");
+  const currentSwitchRatio = manualSelectionIsActive
+    ? VIDEO_FALLBACK_TRIGGER_RATIO
+    : VIDEO_SWITCH_CENTER_RATIO;
   const currentHasReachedSwitchHeight = currentCenterY !== null &&
-    currentCenterY >= window.innerHeight * VIDEO_SWITCH_CENTER_RATIO;
+    currentCenterY >= window.innerHeight * currentSwitchRatio;
   const currentHasLeftViewport = Boolean(audibleVideoPhoto && !currentAudibleEntry);
   let nextAudibleEntry = null;
 
-  // The 75% center boundary is a hard handoff boundary. Do not let the
-  // minimum-play timer postpone a switch after the current video crosses it.
+  // The automatic center boundary is hard. A manually selected video gets
+  // the extended 95% boundary before automatic handoff is considered.
   const currentVideoHasEnded = endedVideoPhoto === audibleVideoPhoto;
   if (currentVideoHasEnded) {
     endedVideoPhoto = null;
@@ -1425,6 +1441,10 @@ function updateVideoAudio() {
     : !minimumHoldComplete
     ? audibleVideoPhoto
     : null;
+
+  if (nextAudiblePhoto !== manuallySelectedVideoPhoto) {
+    manuallySelectedVideoPhoto = null;
+  }
 
   syncBackgroundAudio(nextAudiblePhoto);
 
