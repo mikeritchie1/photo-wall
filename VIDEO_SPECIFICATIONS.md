@@ -2,7 +2,7 @@
 
 This document describes the video file pipeline, manifest format, playback, looping, and screen-position-based transitions implemented by Photo Wall.
 
-## 1. Video manifest build
+## 1. Video manifest build and folder migration
 
 Run the following command from the project root:
 
@@ -10,7 +10,14 @@ Run the following command from the project root:
 python build_manifest.py
 ```
 
-The builder scans the `videos/` directory recursively. It includes files with these extensions:
+Before building manifests, the builder normalizes the media folders:
+
+- Videos found anywhere under `images/` are moved to the matching top-level folder under `videos/`. For example, `images/Afrikaburn 2023/clip.mp4` becomes `videos/Afrikaburn 2023/clip.mp4`.
+- Videos found directly in `videos/` are moved to `videos/Various/`.
+- Matching JSON sidecar metadata is moved with the video. Existing destination files are not overwritten.
+- Image and video folders with the same name remain separate on disk but are combined by the wallpaper when that media folder is selected.
+
+The builder then scans the `videos/` directory recursively. It includes files with these extensions:
 
 - `.mp4`
 - `.webm`
