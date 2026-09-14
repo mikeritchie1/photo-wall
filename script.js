@@ -15,6 +15,7 @@ const yearRangeValue = document.getElementById("yearRangeValue");
 const textSelect = document.getElementById("textSelect");
 const mediaMixSlider = document.getElementById("mediaMixSlider");
 const mediaMixValue = document.getElementById("mediaMixValue");
+const orderSelect = document.getElementById("orderSelect");
 const soundCheckbox = document.getElementById("soundCheckbox");
 const peopleFilterSummary = document.getElementById("peopleFilterSummary");
 const peopleFilterToggle = document.getElementById("peopleFilterToggle");
@@ -90,6 +91,7 @@ const MOBILE_BREAKPOINT = 900;
 const PHOTO_WRAP_BUFFER_PX = 36;
 const DEFAULT_CONTROL_VALUES = {
   folder: "all",
+  order: "random",
   size: "420",
   speed: "1.5",
   reverse: false,
@@ -193,6 +195,7 @@ let videoManifest = null;
 let audioManifest = [];
 let mediaMixIndex = 2;
 let selectedFolder = "all";
+let selectedOrder = DEFAULT_CONTROL_VALUES.order;
 let availablePeople = [];
 let selectedPeople = new Set();
 let selectedGroupName = null;
@@ -534,6 +537,13 @@ mediaMixSlider.addEventListener("input", () => {
   resetHideTimer();
 });
 
+orderSelect.addEventListener("change", (event) => {
+  selectedOrder = event.target.value;
+  resetImageCycle();
+  assignRandomImages();
+  resetHideTimer();
+});
+
 folderSelect.addEventListener("change", (event) => {
   selectedFolder = event.target.value;
   populatePeopleFilter();
@@ -676,6 +686,27 @@ function imageMatchesActiveFilters(image, { ignorePerson = false } = {}) {
   return true;
 }
 
+function getMediaDateSortValue(item) {
+  if (item.hasDateMetadata) {
+    const dateText = String(item.date || "").replace(/(\d{1,2})(st|nd|rd|th)\b/gi, "$1");
+    const timestamp = Date.parse(dateText);
+    if (Number.isFinite(timestamp)) {
+      return timestamp;
+    }
+  }
+  return item.year === null ? Number.POSITIVE_INFINITY : new Date(item.year, 0, 1).getTime();
+}
+
+function orderMediaItems(items) {
+  if (selectedOrder !== "ascending") {
+    return shuffleArray(items);
+  }
+  return [...items].sort((a, b) => {
+    const dateDifference = getMediaDateSortValue(a) - getMediaDateSortValue(b);
+    return dateDifference || a._key.localeCompare(b._key);
+  });
+}
+
 function buildImagePool({ ignorePerson = false } = {}) {
   if (!imageManifest) {
     return [];
@@ -714,11 +745,11 @@ function buildImagePool({ ignorePerson = false } = {}) {
 function createWeightedMediaPool(pool) {
   const mix = getMediaMix();
   if (mix.photos === 100 || mix.videos === 100) {
-    return shuffleArray(pool);
+    return orderMediaItems(pool);
   }
 
-  const photoItems = shuffleArray(pool.filter((item) => item.mediaType === "image"));
-  const videoItems = shuffleArray(pool.filter((item) => item.mediaType === "video"));
+  const photoItems = orderMediaItems(pool.filter((item) => item.mediaType === "image"));
+  const videoItems = orderMediaItems(pool.filter((item) => item.mediaType === "video"));
   if (!photoItems.length || !videoItems.length) {
     return pool;
   }
@@ -803,7 +834,7 @@ function resetImageCycle() {
   updateCenterPhotoVisibility();
 
   // Prevent the first image in the new cycle from repeating the previous image.
-  if (imageCycle.length > 1 && lastServedImageKey && imageCycle[0]._key === lastServedImageKey) {
+  if (selectedOrder !== "ascending" && imageCycle.length > 1 && lastServedImageKey && imageCycle[0]._key === lastServedImageKey) {
     const swapIndex = 1 + Math.floor(Math.random() * (imageCycle.length - 1));
     [imageCycle[0], imageCycle[swapIndex]] = [imageCycle[swapIndex], imageCycle[0]];
   }
@@ -824,7 +855,7 @@ function getNextImage() {
 
   let imageData = imageCycle[imageCycleIndex];
 
-  if (imageData.mediaType === "video") {
+  if (selectedOrder !== "ascending" && imageData.mediaType === "video") {
     const allVideoKeys = new Set(
       imageCycle.filter((item) => item.mediaType === "video").map((item) => item._key)
     );
@@ -1616,6 +1647,8 @@ function resetControlsToDefaults() {
   updateVideoAudio();
   mediaMixIndex = 2;
   updateMediaMixControl();
+  selectedOrder = DEFAULT_CONTROL_VALUES.order;
+  orderSelect.value = DEFAULT_CONTROL_VALUES.order;
   manifest = imageManifest;
   selectedFolder = DEFAULT_CONTROL_VALUES.folder;
   folderSelect.value = DEFAULT_CONTROL_VALUES.folder;
