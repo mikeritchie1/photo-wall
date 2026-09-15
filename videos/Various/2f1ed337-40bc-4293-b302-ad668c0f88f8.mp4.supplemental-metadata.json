@@ -1,0 +1,29 @@
+{
+  "title": "2f1ed337-40bc-4293-b302-ad668c0f88f8.mp4",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789165548",
+    "formatted": "Sep 11, 2026, 10:25:48 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1651518335",
+    "formatted": "May 2, 2022, 7:05:35 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Amy Frost"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipOhTR2ZeTzFYHRvAq6Wy4F0ehXVBGXXH_U-d1L7",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

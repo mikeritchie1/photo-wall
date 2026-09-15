@@ -1,0 +1,38 @@
+{
+  "title": "IMG_8888.JPG",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1749478514",
+    "formatted": "Jun 9, 2025, 2:15:14 PM UTC"
+  },
+  "geoData": {
+    "latitude": -24.519197199999997,
+    "longitude": 15.799569399999998,
+    "altitude": 777.6104951958611,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -24.519197199999997,
+    "longitude": 15.799569399999998,
+    "altitude": 777.6104951958611,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipOC5UQnrwZrlL_teDFR_-rvIc6sZ__Qvk46vIcO",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "title": "IMG_2172.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789163556",
+    "formatted": "Sep 11, 2026, 9:52:36 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1774751127",
+    "formatted": "Mar 29, 2026, 2:25:27 AM UTC"
+  },
+  "geoData": {
+    "latitude": -34.3772,
+    "longitude": 19.510099999999998,
+    "altitude": 288.44,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -34.3772,
+    "longitude": 19.510099999999998,
+    "altitude": 288.44,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Reg Grobler"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipO4GpgWKyY-0x_j2xqJUS3f-8YEmEZLRUxkGQzW",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

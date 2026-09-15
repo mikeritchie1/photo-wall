@@ -1,0 +1,39 @@
+{
+  "title": "7a7a2372-5b98-46dc-a1e2-b43356184c31.jpg",
+  "description": "Stellies",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1677400092",
+    "formatted": "Feb 26, 2023, 8:28:12 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Liam"
+  }, {
+    "name": "Kirsty"
+  }, {
+    "name": "Dani Du Toit"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Ross"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPfW3C6s7mHofTwl26SyrMt9NNvCq37lK__kT4q",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

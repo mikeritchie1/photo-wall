@@ -1,0 +1,33 @@
+{
+  "title": "IMG_4941.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789165837",
+    "formatted": "Sep 11, 2026, 10:30:37 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1624095865",
+    "formatted": "Jun 19, 2021, 9:44:25 AM UTC"
+  },
+  "geoData": {
+    "latitude": -32.1217,
+    "longitude": 19.055,
+    "altitude": 487.06,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -32.1217,
+    "longitude": 19.055,
+    "altitude": 487.06,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "url": "https://photos.google.com/photo/AF1QipMamPyU6fIra2H8WtM_IzhwvJLVw5sXsY5TZaRD",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

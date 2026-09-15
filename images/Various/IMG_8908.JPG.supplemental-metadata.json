@@ -1,0 +1,38 @@
+{
+  "title": "IMG_8908.JPG",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1749541621",
+    "formatted": "Jun 10, 2025, 7:47:01 AM UTC"
+  },
+  "geoData": {
+    "latitude": -24.1500833,
+    "longitude": 15.9279861,
+    "altitude": 1012.7329896907216,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -24.1500833,
+    "longitude": 15.9279861,
+    "altitude": 1012.7329896907216,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Raph"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNHe1Bw386d-o2L8SKaVE6NHpeCR3r4ZRrybL49",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

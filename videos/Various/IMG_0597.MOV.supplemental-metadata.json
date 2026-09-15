@@ -1,0 +1,38 @@
+{
+  "title": "IMG_0597.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789164233",
+    "formatted": "Sep 11, 2026, 10:03:53 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1734715617",
+    "formatted": "Dec 20, 2024, 5:26:57 PM UTC"
+  },
+  "geoData": {
+    "latitude": -28.8338,
+    "longitude": 19.247400000000003,
+    "altitude": 238.15,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -28.8338,
+    "longitude": 19.247400000000003,
+    "altitude": 238.15,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Raph"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipOfObtCBBPS5ixM2NxgD4_4nh7Rv1IXQ1FcojZW",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

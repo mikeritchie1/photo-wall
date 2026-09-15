@@ -1,0 +1,31 @@
+{
+  "title": "1460441973624.jpg",
+  "description": "Block 7 2016",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1461142886",
+    "formatted": "Apr 20, 2016, 9:01:26 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPrxGG3SSObpxvf2MiOSTpzmjk9hAa5lJoKDPd5",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "title": "IMG_1816.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789166033",
+    "formatted": "Sep 11, 2026, 10:33:53 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1596289132",
+    "formatted": "Aug 1, 2020, 1:38:52 PM UTC"
+  },
+  "geoData": {
+    "latitude": -34.1707,
+    "longitude": 18.846500000000002,
+    "altitude": 27.53,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -34.1707,
+    "longitude": 18.846500000000002,
+    "altitude": 27.53,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Dani Du Toit"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Reg Grobler"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipNY67lMx74mzZYpZSCoZzu5n4v8AzCZ9zdwsi-h",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

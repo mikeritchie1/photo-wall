@@ -1,0 +1,36 @@
+{
+  "title": "b01be35d-4819-4d9d-b3b4-67da39459ca4.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1616225577",
+    "formatted": "Mar 20, 2021, 7:32:57 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Tristan"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Reg Grobler"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNfq7po2ps3Gpa_8QaQ2UZIRbtvgJLZTDKJ6JCE",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

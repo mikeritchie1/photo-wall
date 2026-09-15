@@ -1,0 +1,34 @@
+{
+  "title": "IMG_3370.HEIC",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1611074799",
+    "formatted": "Jan 19, 2021, 4:46:39 PM UTC"
+  },
+  "geoData": {
+    "latitude": -32.1145778,
+    "longitude": 19.0662528,
+    "altitude": 467.00791452314996,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -32.1145778,
+    "longitude": 19.0662528,
+    "altitude": 467.00791452314996,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNEyXO70sqezFd2sWxabgU4_vSzSl4000VpnV6f",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

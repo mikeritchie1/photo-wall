@@ -1,0 +1,33 @@
+{
+  "title": "IMG_1680.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789164372",
+    "formatted": "Sep 11, 2026, 10:06:12 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1727111096",
+    "formatted": "Sep 23, 2024, 5:04:56 PM UTC"
+  },
+  "geoData": {
+    "latitude": -34.4086,
+    "longitude": 21.208600000000004,
+    "altitude": 13.98,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -34.4086,
+    "longitude": 21.208600000000004,
+    "altitude": 13.98,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "url": "https://photos.google.com/photo/AF1QipPQHXiphEqGl69BwZuVKMbEasiKONN9HP2H23x-",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

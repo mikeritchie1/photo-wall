@@ -1,0 +1,38 @@
+{
+  "title": "6ee7b72e-b763-4cd8-bb75-9816ac68b457.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1760340090",
+    "formatted": "Oct 13, 2025, 7:21:30 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Josh Finlay"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Raph"
+  }, {
+    "name": "John Winter"
+  }, {
+    "name": "Adam De Waal"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipObN4dLznHbsauv0mchT3ZHbYkAd4wrTKP93hrK",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

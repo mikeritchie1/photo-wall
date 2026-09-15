@@ -1,0 +1,31 @@
+{
+  "title": "IMG-20160916-WA0002.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1495953240",
+    "formatted": "May 28, 2017, 6:34:00 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNlU20zGGA510vEmGgp54-s8Y6g2zuIM-8iL2z-",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

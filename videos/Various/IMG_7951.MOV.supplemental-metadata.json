@@ -1,0 +1,33 @@
+{
+  "title": "IMG_7951.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789153030",
+    "formatted": "Sep 11, 2026, 6:57:10 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1703333765",
+    "formatted": "Dec 23, 2023, 12:16:05 PM UTC"
+  },
+  "geoData": {
+    "latitude": -34.0634,
+    "longitude": 23.042099999999998,
+    "altitude": 5.31,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -34.0634,
+    "longitude": 23.042099999999998,
+    "altitude": 5.31,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "url": "https://photos.google.com/photo/AF1QipMTz5SZj-cwMkOwyhW1SDZt9LR_kb1mpC8p7HGK",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

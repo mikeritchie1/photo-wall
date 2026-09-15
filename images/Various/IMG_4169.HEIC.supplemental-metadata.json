@@ -1,0 +1,34 @@
+{
+  "title": "IMG_4169.HEIC",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1616923800",
+    "formatted": "Mar 28, 2021, 9:30:00 AM UTC"
+  },
+  "geoData": {
+    "latitude": -34.075161099999995,
+    "longitude": 18.4075889,
+    "altitude": 411.1485279523652,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -34.075161099999995,
+    "longitude": 18.4075889,
+    "altitude": 411.1485279523652,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPGBdM9wraPfOwoft6vLqrJyV6Z6_yiFYjRdDAr",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "title": "68c08161-1e4c-4442-ac25-35663c1fb5be.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1721250861",
+    "formatted": "Jul 17, 2024, 9:14:21 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Reg Grobler"
+  }, {
+    "name": "Tim Terblanche"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipOoc-fWNQAxqu1FFLz8M7QWbJhdrShBpD5TWfBg",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

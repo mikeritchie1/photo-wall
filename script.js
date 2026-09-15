@@ -33,10 +33,10 @@ const isLocalRuntime =
   location.hostname === "[::1]" ||
   location.hostname === "appassets.local";
 const PHOTO_BASE_URL = isLocalRuntime ? "images" : R2_BASE_URL;
-const MANIFEST_URL = isLocalRuntime ? "images/manifest.json" : `${R2_BASE_URL}/manifest.json`;
-const VIDEO_MANIFEST_URL = isLocalRuntime ? "videos/manifest.json" : `${R2_BASE_URL}/videos/manifest.json`;
-const AUDIO_MANIFEST_URL = isLocalRuntime ? "audio/manifest.json" : `${R2_BASE_URL}/audio/manifest.json`;
-const GROUPS_URL = isLocalRuntime ? "images/groups.json" : `${R2_BASE_URL}/groups.json`;
+const MANIFEST_URL = "images/manifest.json";
+const VIDEO_MANIFEST_URL = "videos/manifest.json";
+const AUDIO_MANIFEST_URL = "audio/manifest.json";
+const GROUPS_URL = "images/groups.json";
 console.log("[runtime-assets]", {
   hostname: location.hostname,
   isLocalRuntime,
@@ -678,7 +678,7 @@ function buildAudioUrl(relativePath) {
     .split("/")
     .map((part) => encodeURIComponent(part))
     .join("/");
-  return isLocalRuntime ? `audio/${encodedPath}` : `${R2_BASE_URL}/audio/${encodedPath}`;
+  return `audio/${encodedPath}`;
 }
 
 function imageMatchesActiveFilters(image, { ignorePerson = false } = {}) {

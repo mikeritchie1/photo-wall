@@ -1,0 +1,48 @@
+{
+  "title": "IMG_1787.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789164165",
+    "formatted": "Sep 11, 2026, 10:02:45 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1744992160",
+    "formatted": "Apr 18, 2025, 4:02:40 PM UTC"
+  },
+  "geoData": {
+    "latitude": -34.091699999999996,
+    "longitude": 23.372799999999998,
+    "altitude": -1.21,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -34.091699999999996,
+    "longitude": 23.372799999999998,
+    "altitude": -1.21,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Tristan"
+  }, {
+    "name": "Lucia Daly"
+  }, {
+    "name": "Mikkel Du Plessis"
+  }, {
+    "name": "Tim Terblanche"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Liam"
+  }, {
+    "name": "Adam De Waal"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipN7GXvWoenrhyaHRakN3VVLYIYX3TAMWuEILW1f",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

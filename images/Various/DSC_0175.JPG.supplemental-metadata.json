@@ -1,0 +1,31 @@
+{
+  "title": "DSC_0175.JPG",
+  "description": "Toaster Party",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1455317356",
+    "formatted": "Feb 12, 2016, 10:49:16 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNhyEJr7EvQDuVxkyqN-W6UAjUYF4_XHXtv3gf1",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

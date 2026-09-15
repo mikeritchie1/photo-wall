@@ -1,0 +1,53 @@
+{
+  "title": "IMG_9595.heic",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1621629245",
+    "formatted": "May 21, 2021, 8:34:05 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9437861,
+    "longitude": 18.4069,
+    "altitude": 185.35016835016836,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9437861,
+    "longitude": 18.4069,
+    "altitude": 185.35016835016836,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Tristan"
+  }, {
+    "name": "Dani Du Toit"
+  }, {
+    "name": "Amber"
+  }, {
+    "name": "Amy Frost"
+  }, {
+    "name": "Lucia Daly"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "John Winter"
+  }, {
+    "name": "CJ Louw"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPemXgA4OJ4MoqFI-Zoz1sJcmLn_5UVEEmSelSs",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

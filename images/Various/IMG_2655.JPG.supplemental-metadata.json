@@ -1,0 +1,39 @@
+{
+  "title": "IMG_2655.JPG",
+  "description": "Baviaanskloof NYE 2021-2022",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1641057964",
+    "formatted": "Jan 1, 2022, 5:26:04 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.5235778,
+    "longitude": 23.6541917,
+    "altitude": 862.8024193548387,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.5235778,
+    "longitude": 23.6541917,
+    "altitude": 862.8024193548387,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Oscar De Waal"
+  }, {
+    "name": "Adam De Waal"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipOjzFC2UJ_RwSFb8w8Xye2gG9Ws81jD0Ckqr33b",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

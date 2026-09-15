@@ -1,0 +1,33 @@
+{
+  "title": "0dd2ab60-0f7e-47e4-badd-d9f17cc030c3.JPG",
+  "description": "Stellies 2020",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1579743400",
+    "formatted": "Jan 23, 2020, 1:36:40 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Reg Grobler"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipOziIZSBUPNn4zXQO_kA21YAXbJ0jdlHIySaM2m",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

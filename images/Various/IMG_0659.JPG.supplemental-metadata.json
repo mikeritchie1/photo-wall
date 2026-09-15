@@ -1,0 +1,34 @@
+{
+  "title": "IMG_0659.JPG",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1502207804",
+    "formatted": "Aug 8, 2017, 3:56:44 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Liam"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Reg Grobler"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipM0XQZesRMPzUuv8GUhOMKjKq2FYOtS_m8qr3x1",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "title": "IMG_0424.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789164672",
+    "formatted": "Sep 11, 2026, 10:11:12 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1703167863",
+    "formatted": "Dec 21, 2023, 2:11:03 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9887,
+    "longitude": 23.5369,
+    "altitude": 11.41,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9887,
+    "longitude": 23.5369,
+    "altitude": 11.41,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "url": "https://photos.google.com/photo/AF1QipP57r9RjY9fZFMoPquJZh4kP8WE4cSb5IeAlBLL",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "title": "VIDEO-2023-12-31-22-49-27.mp4",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789153016",
+    "formatted": "Sep 11, 2026, 6:56:56 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1704062212",
+    "formatted": "Dec 31, 2023, 10:36:52 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipNEo8WtUzgYnQIXa5LsW0j60NGs2feOthckbQFT",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

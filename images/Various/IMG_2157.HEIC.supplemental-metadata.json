@@ -1,0 +1,39 @@
+{
+  "title": "IMG_2157.HEIC",
+  "description": "Habitat 2026",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1774707377",
+    "formatted": "Mar 28, 2026, 2:16:17 PM UTC"
+  },
+  "geoData": {
+    "latitude": -34.377083299999995,
+    "longitude": 19.5097167,
+    "altitude": 286.974635979333,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -34.377083299999995,
+    "longitude": 19.5097167,
+    "altitude": 286.974635979333,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Jade"
+  }, {
+    "name": "Reg Grobler"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipP0TiPIO8X1nxj4sV8Q7axa1wpzyHy_lx61FVfK",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "title": "IMG_0608.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789152519",
+    "formatted": "Sep 11, 2026, 6:48:39 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1763149618",
+    "formatted": "Nov 14, 2025, 7:46:58 PM UTC"
+  },
+  "geoData": {
+    "latitude": -34.105,
+    "longitude": 19.237,
+    "altitude": 197.34,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -34.105,
+    "longitude": 19.237,
+    "altitude": 197.34,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }, {
+    "name": "Reg Grobler"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipP5BpPm-5Q-gl2ZRDYBazCFgp_fMG2ZyrAl9cV9",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

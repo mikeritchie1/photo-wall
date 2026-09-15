@@ -1,0 +1,35 @@
+{
+  "title": "464bf8d7-072b-4763-a5e4-871d6f232885.mp4",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789165726",
+    "formatted": "Sep 11, 2026, 10:28:46 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1630229949",
+    "formatted": "Aug 29, 2021, 9:39:09 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Kirsty"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Mary Wheeler"
+  }, {
+    "name": "Robs Jenkins"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipNLqV-N1x6aR3CmChx_2nwZdrFspBG6K11eU0b_",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

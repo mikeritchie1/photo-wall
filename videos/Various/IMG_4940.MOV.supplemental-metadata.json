@@ -1,0 +1,30 @@
+{
+  "title": "IMG_4940.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789165115",
+    "formatted": "Sep 11, 2026, 10:18:35 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1680992813",
+    "formatted": "Apr 8, 2023, 10:26:53 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Oscar De Waal"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipN1_YLYTqB1zzs6lYyOsmNdJArnObkU7id6mtng",
+  "googlePhotosOrigin": {
+    "fromSharedAlbum": {
+    }
+  }
+}

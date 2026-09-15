@@ -1,0 +1,47 @@
+{
+  "title": "IMG_2669.HEIC",
+  "description": "Baviaanskloof NYE 2021-2022",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1641058069",
+    "formatted": "Jan 1, 2022, 5:27:49 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.5235972,
+    "longitude": 23.6542194,
+    "altitude": 860.5069518716577,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.5235972,
+    "longitude": 23.6542194,
+    "altitude": 860.5069518716577,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "CJ Louw"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Charl"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Tristan"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNJcLTYxbaJQsnEmOOFVsXMoBr224ug-ymzZGjQ",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

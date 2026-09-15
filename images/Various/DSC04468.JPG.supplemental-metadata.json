@@ -1,0 +1,41 @@
+{
+  "title": "DSC04468.JPG",
+  "description": "                               ",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1734602100",
+    "formatted": "Dec 19, 2024, 9:55:00 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Karl Naude"
+  }, {
+    "name": "Chloe"
+  }, {
+    "name": "Oscar De Waal"
+  }, {
+    "name": "Raph"
+  }, {
+    "name": "Reg Grobler"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPqQKVIvAHX2BSZ09f6rFygnvGWdn_-ueHMiyJH",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "title": "IMG_4794.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789163235",
+    "formatted": "Sep 11, 2026, 9:47:15 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1783708033",
+    "formatted": "Jul 10, 2026, 6:27:13 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.930099999999996,
+    "longitude": 18.4083,
+    "altitude": 60.5,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.930099999999996,
+    "longitude": 18.4083,
+    "altitude": 60.5,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Josh Finlay"
+  }, {
+    "name": "Jade"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipOL2SHHLTgjSvnownQ7ldOi-8rF8-cURLMl6W-L",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

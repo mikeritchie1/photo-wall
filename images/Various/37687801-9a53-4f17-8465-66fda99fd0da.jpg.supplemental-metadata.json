@@ -1,0 +1,40 @@
+{
+  "title": "37687801-9a53-4f17-8465-66fda99fd0da.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1614889585",
+    "formatted": "Mar 4, 2021, 8:26:25 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Amy Frost"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Tristan"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Dani Du Toit"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipP_74WtZz5-DG0RdtV_h6WZh4cpqRGX9z8l2-6y",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

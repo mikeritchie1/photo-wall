@@ -1,0 +1,48 @@
+{
+  "title": "IMG_5298.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789152651",
+    "formatted": "Sep 11, 2026, 6:50:51 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1788011511",
+    "formatted": "Aug 29, 2026, 1:51:51 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.936099999999996,
+    "longitude": 18.4268,
+    "altitude": 81.29,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.936099999999996,
+    "longitude": 18.4268,
+    "altitude": 81.29,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }, {
+    "name": "Tim Terblanche"
+  }, {
+    "name": "Josh Finlay"
+  }, {
+    "name": "Jade"
+  }, {
+    "name": "Raph"
+  }, {
+    "name": "Mila Daly"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipP295AiLoeGAMBg8ThGLmxDt-z6DMd303Q__i9t",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

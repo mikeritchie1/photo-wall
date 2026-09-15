@@ -1,0 +1,30 @@
+{
+  "title": "06677934-e06b-4918-bbcf-0e716573f4f6.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1736579439",
+    "formatted": "Jan 11, 2025, 7:10:39 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Liam"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNXh6fWVqn0eQ4QHkYz68629yWcIa_3_RLUpQzr",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

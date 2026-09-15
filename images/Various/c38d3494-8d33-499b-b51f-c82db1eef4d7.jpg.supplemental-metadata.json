@@ -1,0 +1,32 @@
+{
+  "title": "c38d3494-8d33-499b-b51f-c82db1eef4d7.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1753256616",
+    "formatted": "Jul 23, 2025, 7:43:36 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Reg Grobler"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPmTtW_ZGRfDTSvgvqMMZq92xvhL8IywdoVJ-pv",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

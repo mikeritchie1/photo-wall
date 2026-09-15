@@ -1,0 +1,41 @@
+{
+  "title": "IMG_5143.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1542820564",
+    "formatted": "Nov 21, 2018, 5:16:04 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9405056,
+    "longitude": 18.8545306,
+    "altitude": 99.86585048189633,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9405056,
+    "longitude": 18.8545306,
+    "altitude": 99.86585048189633,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Charl"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Reg Grobler"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipMQGgBzZy1FM-CUXZYrvRSCYoX6ggNLhjytHVds",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

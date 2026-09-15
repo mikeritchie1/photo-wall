@@ -1,0 +1,39 @@
+{
+  "title": "525cfd83-55b1-4b2e-8ca8-13913d0f1146.mp4",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789165414",
+    "formatted": "Sep 11, 2026, 10:23:34 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1667207700",
+    "formatted": "Oct 31, 2022, 9:15:00 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Mila Daly"
+  }, {
+    "name": "Tim Terblanche"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "John Winter"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Dani Du Toit"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipMTiOeR74M9tURT5ewIKBVybk01lbPlo_LoNjWM",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

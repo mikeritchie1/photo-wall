@@ -1,0 +1,30 @@
+{
+  "title": "5d33c7ad-70f8-4178-a0e3-ce88e429b5a9.jpg",
+  "description": "Graduation 2021",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1639551762",
+    "formatted": "Dec 15, 2021, 7:02:42 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipMyUrX6bKknWbLFkAn_JEPG7Ie6Z78aoXeRhVbC",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

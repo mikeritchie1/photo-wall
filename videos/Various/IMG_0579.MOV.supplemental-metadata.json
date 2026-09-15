@@ -1,0 +1,33 @@
+{
+  "title": "IMG_0579.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789152934",
+    "formatted": "Sep 11, 2026, 6:55:34 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1734531959",
+    "formatted": "Dec 18, 2024, 2:25:59 PM UTC"
+  },
+  "geoData": {
+    "latitude": -29.203000000000003,
+    "longitude": 19.4242,
+    "altitude": 1040.04,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -29.203000000000003,
+    "longitude": 19.4242,
+    "altitude": 1040.04,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "url": "https://photos.google.com/photo/AF1QipPDq9I7pUUxT2NedkDZ07AtTocG_i7qsjxl3-qg",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

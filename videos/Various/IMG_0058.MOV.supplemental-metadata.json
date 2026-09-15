@@ -1,0 +1,42 @@
+{
+  "title": "IMG_0058.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789164921",
+    "formatted": "Sep 11, 2026, 10:15:21 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1697303597",
+    "formatted": "Oct 14, 2023, 5:13:17 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9113,
+    "longitude": 18.3965,
+    "altitude": 33.71,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9113,
+    "longitude": 18.3965,
+    "altitude": 33.71,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "John Winter"
+  }, {
+    "name": "Tim Terblanche"
+  }, {
+    "name": "Liam"
+  }, {
+    "name": "Reg Grobler"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipNesyEYDN1x3hNpoWVWXrKgy_VaZgfIpeEwoziT",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

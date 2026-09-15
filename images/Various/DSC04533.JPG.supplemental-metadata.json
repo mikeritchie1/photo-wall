@@ -1,0 +1,47 @@
+{
+  "title": "DSC04533.JPG",
+  "description": "                               ",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1734625741",
+    "formatted": "Dec 19, 2024, 4:29:01 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Chloe"
+  }, {
+    "name": "Abi"
+  }, {
+    "name": "Karl Naude"
+  }, {
+    "name": "Jeffrey Lewis"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Raph"
+  }, {
+    "name": "Oscar De Waal"
+  }, {
+    "name": "Werner De Waal"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNRxIqfIHV3vCuyfrpHh0nd7zY5pRP5cl7BqOYw",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

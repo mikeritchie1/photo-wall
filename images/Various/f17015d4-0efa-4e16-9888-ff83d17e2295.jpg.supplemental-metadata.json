@@ -1,0 +1,34 @@
+{
+  "title": "f17015d4-0efa-4e16-9888-ff83d17e2295.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1751222868",
+    "formatted": "Jun 29, 2025, 6:47:48 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Karl Naude"
+  }, {
+    "name": "Adam De Waal"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNzi7zf_cciUY1ZiXA-17fiJDesUX7p3LGmyo-q",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

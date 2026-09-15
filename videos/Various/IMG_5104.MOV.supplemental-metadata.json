@@ -1,0 +1,40 @@
+{
+  "title": "IMG_5104.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789164137",
+    "formatted": "Sep 11, 2026, 10:02:17 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1750450708",
+    "formatted": "Jun 20, 2025, 8:18:28 PM UTC"
+  },
+  "geoData": {
+    "latitude": -34.0144,
+    "longitude": 18.3874,
+    "altitude": 92.29,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -34.0144,
+    "longitude": 18.3874,
+    "altitude": 92.29,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Raph"
+  }, {
+    "name": "Lecia De Waal"
+  }, {
+    "name": "Adam De Waal"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipOezxRKHvXGRh2FPMpcMTL9RNTL6Wt9R8DNSVxG",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

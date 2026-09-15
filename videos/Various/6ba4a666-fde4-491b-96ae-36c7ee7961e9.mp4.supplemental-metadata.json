@@ -1,0 +1,29 @@
+{
+  "title": "6ba4a666-fde4-491b-96ae-36c7ee7961e9.mp4",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789152664",
+    "formatted": "Sep 11, 2026, 6:51:04 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1787665493",
+    "formatted": "Aug 25, 2026, 1:44:53 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Reg Grobler"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipOCsgNIvz61cbkAN3OXRwfh9vQKBBUUsrlKk01b",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

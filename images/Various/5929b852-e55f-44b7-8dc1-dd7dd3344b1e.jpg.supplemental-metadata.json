@@ -1,0 +1,32 @@
+{
+  "title": "5929b852-e55f-44b7-8dc1-dd7dd3344b1e.jpg",
+  "description": "Dean and Stacy's Wedding Party 2025",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1762863674",
+    "formatted": "Nov 11, 2025, 12:21:14 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Cameron Davies"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNKsaaP4dcBbuDOR7nBY6N4fmx2A5XynUyyf08k",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

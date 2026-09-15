@@ -1,0 +1,37 @@
+{
+  "title": "9874a695-3aa8-49e9-8b7e-77d663c0357e.mp4",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789165398",
+    "formatted": "Sep 11, 2026, 10:23:18 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1669476188",
+    "formatted": "Nov 26, 2022, 3:23:08 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "CJ Louw"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Jose"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Tristan"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipOqOBoxOAkx8Z8QiJqpB87bc-3Ia3XZ6znKFegT",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

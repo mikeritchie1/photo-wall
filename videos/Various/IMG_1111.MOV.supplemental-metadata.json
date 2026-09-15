@@ -1,0 +1,48 @@
+{
+  "title": "IMG_1111.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789163841",
+    "formatted": "Sep 11, 2026, 9:57:21 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1765816260",
+    "formatted": "Dec 15, 2025, 4:31:00 PM UTC"
+  },
+  "geoData": {
+    "latitude": -25.3402,
+    "longitude": 27.060299999999998,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -25.3402,
+    "longitude": 27.060299999999998,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Reg Grobler"
+  }, {
+    "name": "Tim Terblanche"
+  }, {
+    "name": "Mikkel Du Plessis"
+  }, {
+    "name": "CJ Louw"
+  }, {
+    "name": "Tristan"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Liam"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipNj989WH9ptvTqJZft4pyWYO5rdw8BRIHqy4WlP",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

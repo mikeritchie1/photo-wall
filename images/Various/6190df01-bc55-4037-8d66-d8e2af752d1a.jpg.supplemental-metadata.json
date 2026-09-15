@@ -1,0 +1,38 @@
+{
+  "title": "6190df01-bc55-4037-8d66-d8e2af752d1a.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1651518348",
+    "formatted": "May 2, 2022, 7:05:48 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }, {
+    "name": "Mikkel Du Plessis"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Lucia Daly"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipMSz9EDeg4TnnjhMdRuuHpbfUqcqDYEc2YrviLk",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

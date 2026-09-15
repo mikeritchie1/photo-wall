@@ -1,0 +1,33 @@
+{
+  "title": "IMG_1519.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789153093",
+    "formatted": "Sep 11, 2026, 6:58:13 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1685088090",
+    "formatted": "May 26, 2023, 8:01:30 AM UTC"
+  },
+  "geoData": {
+    "latitude": -34.042899999999996,
+    "longitude": 18.4799,
+    "altitude": 14.59,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -34.042899999999996,
+    "longitude": 18.4799,
+    "altitude": 14.59,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "url": "https://photos.google.com/photo/AF1QipPdkfW-DeFHw6Fz_-aYqFgHzA362hkRimrjADiW",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "title": "VIDEO-2023-12-31-22-47-57.mp4",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789164634",
+    "formatted": "Sep 11, 2026, 10:10:34 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1704062212",
+    "formatted": "Dec 31, 2023, 10:36:52 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipP0rKQjKo4FTSdFnE3eZIIfIhbY8xdsCxXOzKOH",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

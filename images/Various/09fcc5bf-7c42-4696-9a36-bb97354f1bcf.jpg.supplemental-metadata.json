@@ -1,0 +1,32 @@
+{
+  "title": "09fcc5bf-7c42-4696-9a36-bb97354f1bcf.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1615825443",
+    "formatted": "Mar 15, 2021, 4:24:03 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Josh Finlay"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipORgtkuStpwgDWQ3ir7o7GH3eQIgxjAbpXe6DfN",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

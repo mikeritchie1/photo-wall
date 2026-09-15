@@ -1,0 +1,55 @@
+{
+  "title": "IMG_2677.JPG",
+  "description": "Baviaanskloof NYE 2021-2022",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1641058127",
+    "formatted": "Jan 1, 2022, 5:28:47 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.5236444,
+    "longitude": 23.654208300000004,
+    "altitude": 871.8365366317793,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.5236444,
+    "longitude": 23.654208300000004,
+    "altitude": 871.8365366317793,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Amy Frost"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Oscar De Waal"
+  }, {
+    "name": "Charl"
+  }, {
+    "name": "Tristan"
+  }, {
+    "name": "Mila Daly"
+  }, {
+    "name": "Lucia Daly"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "CJ Louw"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipM5AN864SJ__K3MyN8HPf0DaO-FX4PAOFkmc-6u",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

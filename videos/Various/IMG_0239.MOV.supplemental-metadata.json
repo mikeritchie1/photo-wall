@@ -1,0 +1,33 @@
+{
+  "title": "IMG_0239.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789164742",
+    "formatted": "Sep 11, 2026, 10:12:22 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1699732444",
+    "formatted": "Nov 11, 2023, 7:54:04 PM UTC"
+  },
+  "geoData": {
+    "latitude": -34.0145,
+    "longitude": 18.3875,
+    "altitude": 89.02,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -34.0145,
+    "longitude": 18.3875,
+    "altitude": 89.02,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "url": "https://photos.google.com/photo/AF1QipMvBYPBpiFn0cPbizKBlpl2V4wVgmG7LfTFFzon",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

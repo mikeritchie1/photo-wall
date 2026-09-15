@@ -1,0 +1,32 @@
+{
+  "title": "b7a47e5e-0373-4fc9-8147-8ec03c6fda9c.jpg",
+  "description": "Fokoff Live 2026",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1774043010",
+    "formatted": "Mar 20, 2026, 9:43:30 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Lucia Daly"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipMvID9v6m3khfxGFVcOeQ4rdUvXwNcSnHi5Yhij",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "title": "IMG_1358.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1578060062",
+    "formatted": "Jan 3, 2020, 2:01:02 PM UTC"
+  },
+  "geoData": {
+    "latitude": -23.8511389,
+    "longitude": 35.5433611,
+    "altitude": 6.479563854792374,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -23.8511389,
+    "longitude": 35.5433611,
+    "altitude": 6.479563854792374,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Reg Grobler"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Tristan"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipOyEQDlRbbK_RVpYhM9TNWBPiB1YhBQh78DNzEh",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

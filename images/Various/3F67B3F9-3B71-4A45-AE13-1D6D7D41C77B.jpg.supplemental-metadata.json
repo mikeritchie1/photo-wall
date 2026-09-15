@@ -1,0 +1,39 @@
+{
+  "title": "3F67B3F9-3B71-4A45-AE13-1D6D7D41C77B.jpg",
+  "description": "Coffee Bay",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1677399606",
+    "formatted": "Feb 26, 2023, 8:20:06 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Tristan"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "CJ Louw"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipOfuv6iuyd7WghBGdVd0s796POaffpthZXSvbX1",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

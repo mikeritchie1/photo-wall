@@ -1,0 +1,40 @@
+{
+  "title": "497aff18-5f4f-4e9d-b179-b1f9ca9901df.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1762067933",
+    "formatted": "Nov 2, 2025, 7:18:53 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Mila Daly"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Stephan Ritchie"
+  }, {
+    "name": "Josh Finlay"
+  }, {
+    "name": "Tim Terblanche"
+  }, {
+    "name": "CJ Louw"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipMbJL2UwhKQmebcMSn__K9JX96AE7_TFF0UzpfG",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

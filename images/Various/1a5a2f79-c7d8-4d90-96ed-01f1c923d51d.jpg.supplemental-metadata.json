@@ -1,0 +1,30 @@
+{
+  "title": "1a5a2f79-c7d8-4d90-96ed-01f1c923d51d.jpg",
+  "description": "Weed Garden - Coffee Bay 2022",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1672329649",
+    "formatted": "Dec 29, 2022, 4:00:49 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Amy Frost"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipMgJO7cxVhahTRDnXDJJvEv4_KU3EiEXIjH1IFO",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

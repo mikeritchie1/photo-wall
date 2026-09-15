@@ -1,0 +1,36 @@
+{
+  "title": "IMG_9050.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789163305",
+    "formatted": "Sep 11, 2026, 9:48:25 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1781875747",
+    "formatted": "Jun 19, 2026, 1:29:07 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.946,
+    "longitude": 18.3628,
+    "altitude": 0.22,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.946,
+    "longitude": 18.3628,
+    "altitude": 0.22,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipN6y12Tw2WR1on4x8MXzEMw4PaUb49ESjJ46uW9",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

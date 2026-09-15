@@ -1,0 +1,36 @@
+{
+  "title": "IMG_6926.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789165675",
+    "formatted": "Sep 11, 2026, 10:27:55 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1638172311",
+    "formatted": "Nov 29, 2021, 7:51:51 AM UTC"
+  },
+  "geoData": {
+    "latitude": 47.494499999999995,
+    "longitude": 9.738999999999999,
+    "altitude": 384.18,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": 47.494499999999995,
+    "longitude": 9.738999999999999,
+    "altitude": 384.18,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipNJxwZNcnM0ocbiSgBSK_JEN2wBmZeK9OVA0x_f",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

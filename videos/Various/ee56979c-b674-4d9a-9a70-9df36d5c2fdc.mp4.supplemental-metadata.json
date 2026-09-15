@@ -1,0 +1,33 @@
+{
+  "title": "ee56979c-b674-4d9a-9a70-9df36d5c2fdc.mp4",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789166056",
+    "formatted": "Sep 11, 2026, 10:34:16 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1595187872",
+    "formatted": "Jul 19, 2020, 7:44:32 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Tristan"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Adam De Waal"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipM0WGJ4ljCHhysmQclCLiTt6Pj4VZc89WcswIKH",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

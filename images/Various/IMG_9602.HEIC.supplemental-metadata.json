@@ -1,0 +1,41 @@
+{
+  "title": "IMG_9602.HEIC",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1621629500",
+    "formatted": "May 21, 2021, 8:38:20 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9437222,
+    "longitude": 18.4069167,
+    "altitude": 184.09597503088628,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9437222,
+    "longitude": 18.4069167,
+    "altitude": 184.09597503088628,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Charl"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipM5xxPhclZUzrYsSm11msd54FXe1cbGbSQQMgvE",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

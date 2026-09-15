@@ -1,0 +1,32 @@
+{
+  "title": "c9e07a05-2c44-408d-8b86-33397c2e0554.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1613311511",
+    "formatted": "Feb 14, 2021, 2:05:11 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }, {
+    "name": "Liam"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPhpctkxd42XXQERupuKNw1lLLTcrb9wrrYHtaV",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

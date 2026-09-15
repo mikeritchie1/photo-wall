@@ -1,0 +1,36 @@
+{
+  "title": "IMG_6270.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789165872",
+    "formatted": "Sep 11, 2026, 10:31:12 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1620233194",
+    "formatted": "May 5, 2021, 4:46:34 PM UTC"
+  },
+  "geoData": {
+    "latitude": -29.281899999999997,
+    "longitude": 31.443199999999997,
+    "altitude": 7.62,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -29.281899999999997,
+    "longitude": 31.443199999999997,
+    "altitude": 7.62,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipN0pXiGJUXcZ-iJ1678rUoLfYQQwGcnSx9lBCVA",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

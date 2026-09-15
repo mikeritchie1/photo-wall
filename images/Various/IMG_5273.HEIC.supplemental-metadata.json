@@ -1,0 +1,41 @@
+{
+  "title": "IMG_5273.HEIC",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1752256958",
+    "formatted": "Jul 11, 2025, 6:02:38 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9112444,
+    "longitude": 18.3963722,
+    "altitude": 31.674259681093393,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9112444,
+    "longitude": 18.3963722,
+    "altitude": 31.674259681093393,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "CJ Louw"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPczLJPoabM760LNSgY_xyomOQqbaKiGHk7ZLUh",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

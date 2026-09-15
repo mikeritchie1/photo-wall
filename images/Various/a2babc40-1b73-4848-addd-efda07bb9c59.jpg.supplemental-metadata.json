@@ -1,0 +1,40 @@
+{
+  "title": "a2babc40-1b73-4848-addd-efda07bb9c59.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1765586672",
+    "formatted": "Dec 13, 2025, 12:44:32 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Mikkel Du Plessis"
+  }, {
+    "name": "Charl"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Paul"
+  }, {
+    "name": "Ant Cartwight"
+  }, {
+    "name": "CJ Louw"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPB2XEkV8C5scR_uvvTuGkwjyIJVrR0mzGovsTt",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

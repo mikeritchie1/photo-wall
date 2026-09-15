@@ -1,0 +1,43 @@
+{
+  "title": "IMG_2274.HEIC",
+  "description": "Klara's Birthday 2021",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1639252763",
+    "formatted": "Dec 11, 2021, 7:59:23 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9089556,
+    "longitude": 18.4226056,
+    "altitude": 7.04612747389746,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9089556,
+    "longitude": 18.4226056,
+    "altitude": 7.04612747389746,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Dani Du Toit"
+  }, {
+    "name": "Mikkel Du Plessis"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Klara"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipOqMqMmqDrshUuMmKqbKetiJMdQHIryzbRCmpfi",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "title": "GOPR0271.JPG",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1734771977",
+    "formatted": "Dec 21, 2024, 9:06:17 AM UTC"
+  },
+  "geoData": {
+    "latitude": -28.836147399999998,
+    "longitude": 19.248658499999998,
+    "altitude": 369.836,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -28.836147399999998,
+    "longitude": 19.248658499999998,
+    "altitude": 369.836,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Reg Grobler"
+  }, {
+    "name": "Adam De Waal"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipMH9eP-y9PJLNh7Gw9wlz3ZkkIC-GJ_krlSWGa6",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

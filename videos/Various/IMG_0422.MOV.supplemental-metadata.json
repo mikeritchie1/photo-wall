@@ -1,0 +1,36 @@
+{
+  "title": "IMG_0422.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789164684",
+    "formatted": "Sep 11, 2026, 10:11:24 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1703167583",
+    "formatted": "Dec 21, 2023, 2:06:23 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9884,
+    "longitude": 23.5364,
+    "altitude": 8.32,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9884,
+    "longitude": 23.5364,
+    "altitude": 8.32,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipPs81Ye8T4iMH5ZBk6EgrgEG5az-MmbT5Sd7IOU",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

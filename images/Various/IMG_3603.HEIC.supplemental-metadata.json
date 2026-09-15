@@ -1,0 +1,49 @@
+{
+  "title": "IMG_3603.HEIC",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1647013832",
+    "formatted": "Mar 11, 2022, 3:50:32 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.7609528,
+    "longitude": 18.890913899999997,
+    "altitude": 173.1544585987261,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.7609528,
+    "longitude": 18.890913899999997,
+    "altitude": 173.1544585987261,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Reg Grobler"
+  }, {
+    "name": "Dani Du Toit"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Mila Daly"
+  }, {
+    "name": "Tim Terblanche"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Tristan"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipOs1JPK5ayAmPaqV20i2nAgB9kWQHJi6Mdb3cfX",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

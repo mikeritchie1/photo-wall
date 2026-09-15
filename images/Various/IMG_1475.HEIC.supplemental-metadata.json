@@ -1,0 +1,43 @@
+{
+  "title": "IMG_1475.HEIC",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1767892532",
+    "formatted": "Jan 8, 2026, 5:15:32 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.934149999999995,
+    "longitude": 18.4073833,
+    "altitude": 72.70009996667777,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.934149999999995,
+    "longitude": 18.4073833,
+    "altitude": 72.70009996667777,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }, {
+    "name": "Jordan Wright"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Raph"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNw7up0xG8fNiRxf0SjaQNEKS11pnQVk2GhHFR2",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

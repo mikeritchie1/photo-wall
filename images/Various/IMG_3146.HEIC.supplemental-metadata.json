@@ -1,0 +1,41 @@
+{
+  "title": "IMG_3146.HEIC",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1609327456",
+    "formatted": "Dec 30, 2020, 11:24:16 AM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9733722,
+    "longitude": 22.723297199999998,
+    "altitude": 57.18208340483954,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9733722,
+    "longitude": 22.723297199999998,
+    "altitude": 57.18208340483954,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Tristan"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPAIxu2S6RQUk2zREJiccY3PizMRobLZ3DeR_Oi",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

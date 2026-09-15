@@ -1,0 +1,40 @@
+{
+  "title": "IMG_5106.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789152877",
+    "formatted": "Sep 11, 2026, 6:54:37 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1750451919",
+    "formatted": "Jun 20, 2025, 8:38:39 PM UTC"
+  },
+  "geoData": {
+    "latitude": -34.0145,
+    "longitude": 18.3874,
+    "altitude": 91.32,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -34.0145,
+    "longitude": 18.3874,
+    "altitude": 91.32,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Oscar De Waal"
+  }, {
+    "name": "Raph"
+  }, {
+    "name": "Adam De Waal"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipP_t1uEUHmeuvhozL6HtP6Z5xglk1yiYkyj4DUM",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "cfcbbb8f-e56d-44d0-a94c-d3de01e4ca1c.jpg",
+  "description": "Passenger Princess",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1766923014",
+    "formatted": "Dec 28, 2025, 11:56:54 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Oscar De Waal"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNhrX6RjraskNOqI2NrkdiKQOZPhpgaohLzTTSB",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

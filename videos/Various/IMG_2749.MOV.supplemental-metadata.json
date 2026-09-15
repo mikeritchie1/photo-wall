@@ -1,0 +1,44 @@
+{
+  "title": "IMG_2749.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789153396",
+    "formatted": "Sep 11, 2026, 7:03:16 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1641059083",
+    "formatted": "Jan 1, 2022, 5:44:43 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.5236,
+    "longitude": 23.654100000000003,
+    "altitude": 853.58,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.5236,
+    "longitude": 23.654100000000003,
+    "altitude": 853.58,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Charl"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Oscar De Waal"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipO2GxdJVhhgwQPqu5CAB1YJYcuOnOBKP4Mui32k",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

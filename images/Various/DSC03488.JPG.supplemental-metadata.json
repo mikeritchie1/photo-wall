@@ -1,0 +1,33 @@
+{
+  "title": "DSC03488.JPG",
+  "description": "Greyton 2023",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1700898544",
+    "formatted": "Nov 25, 2023, 7:49:04 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Mikkel Du Plessis"
+  }, {
+    "name": "Lucia Daly"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPy3spduWFGuC-Y62rzATuZMX1ZQu4gVP1Ui-kO",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

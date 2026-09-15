@@ -1,0 +1,55 @@
+{
+  "title": "IMG_0566.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1628521876",
+    "formatted": "Aug 9, 2021, 3:11:16 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.917899999999996,
+    "longitude": 18.5474917,
+    "altitude": 27.159999847397557,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.917899999999996,
+    "longitude": 18.5474917,
+    "altitude": 27.159999847397557,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }, {
+    "name": "Lucia Daly"
+  }, {
+    "name": "Tristan"
+  }, {
+    "name": "Amy Frost"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Dani Du Toit"
+  }, {
+    "name": "Charl"
+  }, {
+    "name": "CJ Louw"
+  }, {
+    "name": "Mikkel Du Plessis"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipOWMKkSey9aPH27RArrpQmsxuD_3Bk_0MpdJT6M",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

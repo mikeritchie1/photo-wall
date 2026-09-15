@@ -1,0 +1,38 @@
+{
+  "title": "IMG_9129.JPG",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1749897591",
+    "formatted": "Jun 14, 2025, 10:39:51 AM UTC"
+  },
+  "geoData": {
+    "latitude": -27.524063899999998,
+    "longitude": 17.8147722,
+    "altitude": 824.762719110731,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -27.524063899999998,
+    "longitude": 17.8147722,
+    "altitude": 824.762719110731,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipOcE2DC7BhMfKU5W2AEhJI6DT_nX3NeFX-ujdpd",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

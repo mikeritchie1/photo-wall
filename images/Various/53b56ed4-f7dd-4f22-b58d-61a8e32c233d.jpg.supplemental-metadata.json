@@ -1,0 +1,32 @@
+{
+  "title": "53b56ed4-f7dd-4f22-b58d-61a8e32c233d.jpg",
+  "description": "Josh is in his...",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1774861154",
+    "formatted": "Mar 30, 2026, 8:59:14 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Reg Grobler"
+  }, {
+    "name": "Josh Finlay"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipOJL3Y7Jv8MlpFEW5cHDjR0TF_HR-YIECFAsFsQ",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "title": "IMG_4936.HEIC",
+  "description": "Rocklands 2021",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1624091212",
+    "formatted": "Jun 19, 2021, 8:26:52 AM UTC"
+  },
+  "geoData": {
+    "latitude": -32.121719399999996,
+    "longitude": 19.0550389,
+    "altitude": 477.68142681426815,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -32.121719399999996,
+    "longitude": 19.0550389,
+    "altitude": 477.68142681426815,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPl1-kD-pyGiHohWMKohi0rE6nHosh4br8EEfgO",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

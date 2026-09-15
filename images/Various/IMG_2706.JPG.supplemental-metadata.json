@@ -1,0 +1,37 @@
+{
+  "title": "IMG_2706.JPG",
+  "description": "Baviaanskloof NYE 2021-2022",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1641058384",
+    "formatted": "Jan 1, 2022, 5:33:04 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.523463899999996,
+    "longitude": 23.6541639,
+    "altitude": 865.7964970809007,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.523463899999996,
+    "longitude": 23.6541639,
+    "altitude": 865.7964970809007,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPLIXmNwfCi9biGqF9hGAEG4xQBNPAeaQZ_vSqX",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

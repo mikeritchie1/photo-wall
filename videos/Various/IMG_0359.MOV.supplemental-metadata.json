@@ -1,0 +1,33 @@
+{
+  "title": "IMG_0359.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789164291",
+    "formatted": "Sep 11, 2026, 10:04:51 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1733423805",
+    "formatted": "Dec 5, 2024, 6:36:45 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9078,
+    "longitude": 18.4177,
+    "altitude": 7.42,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9078,
+    "longitude": 18.4177,
+    "altitude": 7.42,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "url": "https://photos.google.com/photo/AF1QipMXIXWnhq_wdoIa1_pGGcu98w1z2UrsMGzan-vo",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

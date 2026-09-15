@@ -1,0 +1,46 @@
+{
+  "title": "IMG_2361.MP4",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789164765",
+    "formatted": "Sep 11, 2026, 10:12:45 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1700919220",
+    "formatted": "Nov 25, 2023, 1:33:40 PM UTC"
+  },
+  "geoData": {
+    "latitude": -34.1023,
+    "longitude": 19.6697,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -34.1023,
+    "longitude": 19.6697,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Mikkel Du Plessis"
+  }, {
+    "name": "Tim Terblanche"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "John Winter"
+  }, {
+    "name": "Tristan"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipNdZhpBCCFC7xt2kxEfDpLB7G1RH9ipTdALb0Xt",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

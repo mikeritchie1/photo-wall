@@ -1,0 +1,35 @@
+{
+  "title": "58c52b4d-6cbb-4c45-b8a8-b6a758b87394.jpg",
+  "description": "Tristan's 21st",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1520048714",
+    "formatted": "Mar 3, 2018, 3:45:14 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Liam"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipN1YiTPO8XYE4f-oidaqZ_k5lpVwx_4nXEAzqyk",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

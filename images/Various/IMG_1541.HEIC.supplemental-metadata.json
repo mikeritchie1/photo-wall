@@ -1,0 +1,37 @@
+{
+  "title": "IMG_1541.HEIC",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1595105125",
+    "formatted": "Jul 18, 2020, 8:45:25 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9428528,
+    "longitude": 18.8599194,
+    "altitude": 94.37302779864763,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9428528,
+    "longitude": 18.8599194,
+    "altitude": 94.37302779864763,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Reg Grobler"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipO4ea6f-VshifZnK4o-ROe-FFAWqhoV83DoQ02v",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

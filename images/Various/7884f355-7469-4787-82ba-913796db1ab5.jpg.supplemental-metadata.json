@@ -1,0 +1,36 @@
+{
+  "title": "7884f355-7469-4787-82ba-913796db1ab5.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1746094181",
+    "formatted": "May 1, 2025, 10:09:41 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Mila Daly"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Emma"
+  }, {
+    "name": "Liam"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPY6phlGA5CyFnUIt2QuoIH3qpvrIrIEMyXE_LU",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

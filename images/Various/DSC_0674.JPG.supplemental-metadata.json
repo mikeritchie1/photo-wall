@@ -1,0 +1,42 @@
+{
+  "title": "DSC_0674.JPG",
+  "description": "Dalapa 2017",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1487362536",
+    "formatted": "Feb 17, 2017, 8:15:36 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.935163300000006,
+    "longitude": 18.8598367,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.935163300000006,
+    "longitude": 18.8598367,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Mikkel Du Plessis"
+  }, {
+    "name": "Ant Cartwight"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNSZXzZnzBe3VzDB_SymlT3f6jeiyF2Wk04GLM5",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "title": "IMG_2164.HEIC",
+  "description": "Habitat 2026",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1774708176",
+    "formatted": "Mar 28, 2026, 2:29:36 PM UTC"
+  },
+  "geoData": {
+    "latitude": -34.3767389,
+    "longitude": 19.5101306,
+    "altitude": 281.7497827975673,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -34.3767389,
+    "longitude": 19.5101306,
+    "altitude": 281.7497827975673,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Josh Finlay"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPafL26A_BepqsPjOQ9XlYqPoCO2aIseoW3fWgO",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

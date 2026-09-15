@@ -1,0 +1,31 @@
+{
+  "title": "9714d1d7-d1c9-4ee1-9049-13d65297cfdc.mp4",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789163457",
+    "formatted": "Sep 11, 2026, 9:50:57 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1777216285",
+    "formatted": "Apr 26, 2026, 3:11:25 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Raph"
+  }, {
+    "name": "Reg Grobler"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipNTrdrbES03qq6flK3fOsn9REzIs1oVLYfXP5Nj",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

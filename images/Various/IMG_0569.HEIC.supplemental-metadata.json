@@ -1,0 +1,51 @@
+{
+  "title": "IMG_0569.HEIC",
+  "description": "Lucia's Place 2022",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1652036173",
+    "formatted": "May 8, 2022, 6:56:13 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9291722,
+    "longitude": 18.4020056,
+    "altitude": 109.34655951783023,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9291722,
+    "longitude": 18.4020056,
+    "altitude": 109.34655951783023,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Reg Grobler"
+  }, {
+    "name": "Tristan"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Lucia Daly"
+  }, {
+    "name": "Amy Frost"
+  }, {
+    "name": "CJ Louw"
+  }, {
+    "name": "Mikkel Du Plessis"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipP-QOor3RbSK39KDRup8g2u6Ooe3pl7cGdb0EKU",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

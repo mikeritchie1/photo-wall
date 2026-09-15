@@ -1,0 +1,40 @@
+{
+  "title": "IMG_0157.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789163987",
+    "formatted": "Sep 11, 2026, 9:59:47 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1760235602",
+    "formatted": "Oct 12, 2025, 2:20:02 AM UTC"
+  },
+  "geoData": {
+    "latitude": -34.3429,
+    "longitude": 19.0357,
+    "altitude": 12.78,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -34.3429,
+    "longitude": 19.0357,
+    "altitude": 12.78,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Tim Terblanche"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Reg Grobler"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipPHWk_QyRL0eZTdSd-qPcPWs2Mu-0IMAfQdWcEn",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

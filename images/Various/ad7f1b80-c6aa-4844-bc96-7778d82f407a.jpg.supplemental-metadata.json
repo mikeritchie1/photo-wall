@@ -1,0 +1,48 @@
+{
+  "title": "ad7f1b80-c6aa-4844-bc96-7778d82f407a.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1628698826",
+    "formatted": "Aug 11, 2021, 4:20:26 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "CJ Louw"
+  }, {
+    "name": "Emma"
+  }, {
+    "name": "Liam"
+  }, {
+    "name": "Ant Cartwight"
+  }, {
+    "name": "John Winter"
+  }, {
+    "name": "Paul"
+  }, {
+    "name": "Amber"
+  }, {
+    "name": "Charl"
+  }, {
+    "name": "Lucia Daly"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipMjzP0NFjyMcChGIxBU9ERf8xty_4kcoNqS4Rdx",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

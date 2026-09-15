@@ -1,0 +1,30 @@
+{
+  "title": "1ced3b87-2e26-486e-a836-68e071ff1763.jpg",
+  "description": "Bromance",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1632510367",
+    "formatted": "Sep 24, 2021, 7:06:07 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Ant Cartwight"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipOJwvUtOtwrc5oMwxwBotCQZargXK-h5iYhuXoy",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

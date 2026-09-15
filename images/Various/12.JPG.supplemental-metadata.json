@@ -1,0 +1,60 @@
+{
+  "title": "12.JPG",
+  "description": "Boho's 2017",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1509880710",
+    "formatted": "Nov 5, 2017, 11:18:30 AM UTC"
+  },
+  "geoData": {
+    "latitude": -33.926205599999996,
+    "longitude": 18.8685667,
+    "altitude": 95.80035650623886,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.926205599999996,
+    "longitude": 18.8685667,
+    "altitude": 95.80035650623886,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Lucia Daly"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Mikkel Du Plessis"
+  }, {
+    "name": "Klara"
+  }, {
+    "name": "Jeffrey Lewis"
+  }, {
+    "name": "Charl"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Liam"
+  }, {
+    "name": "Ant Cartwight"
+  }, {
+    "name": "CJ Louw"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Tim Terblanche"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNBUQWIT2Op-SoXILTnVe0CFZOqRVlSs5K7zKfh",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

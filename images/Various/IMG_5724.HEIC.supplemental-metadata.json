@@ -1,0 +1,45 @@
+{
+  "title": "IMG_5724.HEIC",
+  "description": "Wolfkop 2022",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1667073546",
+    "formatted": "Oct 29, 2022, 7:59:06 PM UTC"
+  },
+  "geoData": {
+    "latitude": -32.7396056,
+    "longitude": 19.0605222,
+    "altitude": 202.84886172006745,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -32.7396056,
+    "longitude": 19.0605222,
+    "altitude": 202.84886172006745,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Tim Terblanche"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Tristan"
+  }, {
+    "name": "Mila Daly"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNuw_ZnJzcEZb4Nu2wL9_RvleveHpWG9XTL8ggd",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "title": "IMG_3102.MP4",
+  "description": "",
+  "imageViews": "2",
+  "creationTime": {
+    "timestamp": "1789152728",
+    "formatted": "Sep 11, 2026, 6:52:08 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1768072166",
+    "formatted": "Jan 10, 2026, 7:09:26 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.951699999999995,
+    "longitude": 23.3158,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.951699999999995,
+    "longitude": 23.3158,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Adam De Waal"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipPAQMj8PWtGi2c2Ece8AbH0j5wQ8yCh_Ur_yXQP",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

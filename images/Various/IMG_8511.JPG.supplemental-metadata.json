@@ -1,0 +1,38 @@
+{
+  "title": "IMG_8511.JPG",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1749314191",
+    "formatted": "Jun 7, 2025, 4:36:31 PM UTC"
+  },
+  "geoData": {
+    "latitude": -26.6563611,
+    "longitude": 16.2343972,
+    "altitude": 1388.2886627906976,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -26.6563611,
+    "longitude": 16.2343972,
+    "altitude": 1388.2886627906976,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipOgfgmpUbicZREfE1veJSL6RMmk961x7ruBbwJ2",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

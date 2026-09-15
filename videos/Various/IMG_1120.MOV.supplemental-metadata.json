@@ -1,0 +1,38 @@
+{
+  "title": "IMG_1120.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789152761",
+    "formatted": "Sep 11, 2026, 6:52:41 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1765821868",
+    "formatted": "Dec 15, 2025, 6:04:28 PM UTC"
+  },
+  "geoData": {
+    "latitude": -25.34,
+    "longitude": 27.060100000000002,
+    "altitude": 1130.59,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -25.34,
+    "longitude": 27.060100000000002,
+    "altitude": 1130.59,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }, {
+    "name": "Tristan"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipPCc_1JGmvfYb7cLekKEIhw3Bdnqh5f_XmLQmlO",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

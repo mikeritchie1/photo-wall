@@ -1,0 +1,36 @@
+{
+  "title": "IMG_1104.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789163852",
+    "formatted": "Sep 11, 2026, 9:57:32 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1765768908",
+    "formatted": "Dec 15, 2025, 3:21:48 AM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9397,
+    "longitude": 18.417199999999998,
+    "altitude": 89.5,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9397,
+    "longitude": 18.417199999999998,
+    "altitude": 89.5,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipOFb_cQpnPw1yIGXk_XQtX-9AXJRIsY_X6IWMI-",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

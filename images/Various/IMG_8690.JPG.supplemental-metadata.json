@@ -1,0 +1,40 @@
+{
+  "title": "IMG_8690.JPG",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1749461242",
+    "formatted": "Jun 9, 2025, 9:27:22 AM UTC"
+  },
+  "geoData": {
+    "latitude": -24.7688,
+    "longitude": 15.303133299999999,
+    "altitude": 801.4308342133052,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -24.7688,
+    "longitude": 15.303133299999999,
+    "altitude": 801.4308342133052,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Adam De Waal"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPSxsGCvf1w7skAxQPPXwwI3oPGrUyaAH0FFr12",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

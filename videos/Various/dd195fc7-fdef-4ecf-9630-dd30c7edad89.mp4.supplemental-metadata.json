@@ -1,0 +1,33 @@
+{
+  "title": "dd195fc7-fdef-4ecf-9630-dd30c7edad89.mp4",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789165927",
+    "formatted": "Sep 11, 2026, 10:32:07 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1617810800",
+    "formatted": "Apr 7, 2021, 3:53:20 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Mikkel Du Plessis"
+  }, {
+    "name": "CJ Louw"
+  }, {
+    "name": "Reg Grobler"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipPnpySX7EcQkdbWg6-nOqPVfvYDe4MG3aoI8QZy",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

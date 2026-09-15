@@ -1,0 +1,31 @@
+{
+  "title": "c6de763a-6afb-4410-9720-88b455d361a0.mp4",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789164421",
+    "formatted": "Sep 11, 2026, 10:07:01 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1722193725",
+    "formatted": "Jul 28, 2024, 7:08:45 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }, {
+    "name": "Tim Terblanche"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipNYMrXgyrts3zj8lM4HS6ZztW-ZdrV2LDCjrY5D",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

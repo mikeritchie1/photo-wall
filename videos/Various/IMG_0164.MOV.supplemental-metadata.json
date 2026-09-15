@@ -1,0 +1,38 @@
+{
+  "title": "IMG_0164.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789164828",
+    "formatted": "Sep 11, 2026, 10:13:48 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1698962476",
+    "formatted": "Nov 2, 2023, 10:01:16 PM UTC"
+  },
+  "geoData": {
+    "latitude": -34.108,
+    "longitude": 18.468999999999998,
+    "altitude": 11.69,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -34.108,
+    "longitude": 18.468999999999998,
+    "altitude": 11.69,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Tim Terblanche"
+  }, {
+    "name": "Adam De Waal"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipNNQRHZLZQ4XAs-jSTas7tnMzR73gdWQzaK_tz1",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

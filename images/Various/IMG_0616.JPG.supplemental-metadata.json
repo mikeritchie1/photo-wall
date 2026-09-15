@@ -1,0 +1,49 @@
+{
+  "title": "IMG_0616.JPG",
+  "description": "Weed Garden - Coffee Bay 2022",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1672408405",
+    "formatted": "Dec 30, 2022, 1:53:25 PM UTC"
+  },
+  "geoData": {
+    "latitude": -31.988175,
+    "longitude": 29.1468417,
+    "altitude": 4.780178066119125,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -31.988175,
+    "longitude": 29.1468417,
+    "altitude": 4.780178066119125,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Mila Daly"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Emma"
+  }, {
+    "name": "Tristan"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "CJ Louw"
+  }, {
+    "name": "Liam"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipN1oNFOBWPa-HeJWjtmZMr1ThV_ZWVppp8k2MHd",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "title": "IMG_8491.JPG",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1749311132",
+    "formatted": "Jun 7, 2025, 3:45:32 PM UTC"
+  },
+  "geoData": {
+    "latitude": -26.661566699999998,
+    "longitude": 16.223933300000002,
+    "altitude": 1489.9731285988485,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -26.661566699999998,
+    "longitude": 16.223933300000002,
+    "altitude": 1489.9731285988485,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }, {
+    "name": "Raph"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipOcu1mJEAWAm3ZYV-GK0ktb2tGogP_QKJ7dMlda",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

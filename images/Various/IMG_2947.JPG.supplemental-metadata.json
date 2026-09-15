@@ -1,0 +1,64 @@
+{
+  "title": "IMG_2947.JPG",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1768058675",
+    "formatted": "Jan 10, 2026, 3:24:35 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.951738899999995,
+    "longitude": 23.3157528,
+    "altitude": 248.25537294563844,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.951738899999995,
+    "longitude": 23.3157528,
+    "altitude": 248.25537294563844,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Amber"
+  }, {
+    "name": "Jordan Wright"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "CJ Louw"
+  }, {
+    "name": "Dani Du Toit"
+  }, {
+    "name": "Raph"
+  }, {
+    "name": "Tim Terblanche"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Lucia Daly"
+  }, {
+    "name": "John Winter"
+  }, {
+    "name": "Mikkel Du Plessis"
+  }, {
+    "name": "Mila Daly"
+  }, {
+    "name": "Liam"
+  }, {
+    "name": "Adam De Waal"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPPskeIj4QMLyQXSRApQum4Y0B0kKZDfTT3GVWT",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

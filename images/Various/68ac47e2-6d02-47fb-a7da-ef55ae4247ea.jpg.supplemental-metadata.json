@@ -1,0 +1,30 @@
+{
+  "title": "68ac47e2-6d02-47fb-a7da-ef55ae4247ea.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1748436278",
+    "formatted": "May 28, 2025, 12:44:38 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "CJ Louw"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipMK0lFhgLjyfwX8EG0nK7BuRm6GkCRHsQW9jHP0",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

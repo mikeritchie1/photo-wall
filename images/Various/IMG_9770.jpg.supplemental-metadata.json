@@ -1,0 +1,55 @@
+{
+  "title": "IMG_9770.jpg",
+  "description": "Ane's Party 2019",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1563042372",
+    "formatted": "Jul 13, 2019, 6:26:12 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.944527799999996,
+    "longitude": 18.408788899999998,
+    "altitude": 197.96028187059576,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.944527799999996,
+    "longitude": 18.408788899999998,
+    "altitude": 197.96028187059576,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }, {
+    "name": "CJ Louw"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Lucia Daly"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Amber"
+  }, {
+    "name": "Charl"
+  }, {
+    "name": "Mikkel Du Plessis"
+  }, {
+    "name": "Klara"
+  }, {
+    "name": "John Winter"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNvgBu69aPjIMQGQsu4DCKIx9_5FPkYAddlT-a4",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

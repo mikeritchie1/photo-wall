@@ -1,0 +1,35 @@
+{
+  "title": "25397722-5b96-45c8-9f8d-a678c457fb1f.JPG",
+  "description": "Kelsey's Birthday 2020",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1582550809",
+    "formatted": "Feb 24, 2020, 1:26:49 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Ross"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Josh Finlay"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNynuMnhdLP7GHIZx3PqTNgMBBR5sjMOczEcwxG",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

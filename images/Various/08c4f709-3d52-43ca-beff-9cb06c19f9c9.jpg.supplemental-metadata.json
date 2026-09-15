@@ -1,0 +1,38 @@
+{
+  "title": "08c4f709-3d52-43ca-beff-9cb06c19f9c9.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1764513146",
+    "formatted": "Nov 30, 2025, 2:32:26 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Raph"
+  }, {
+    "name": "Jade"
+  }, {
+    "name": "Josh Finlay"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Adam De Waal"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNm2mfpIJtaJRNGI_1u4T6MZCOhH7dFNmIPS88Q",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

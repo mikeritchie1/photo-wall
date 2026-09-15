@@ -1,0 +1,50 @@
+{
+  "title": "827eec71-799c-44a9-b5e8-c9bd4ba81601.jpg",
+  "description": "Bazique 2022",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1647596578",
+    "formatted": "Mar 18, 2022, 9:42:58 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }, {
+    "name": "Robs Jenkins"
+  }, {
+    "name": "Mary Wheeler"
+  }, {
+    "name": "Amy Frost"
+  }, {
+    "name": "Mila Daly"
+  }, {
+    "name": "Tim Terblanche"
+  }, {
+    "name": "Lucia Daly"
+  }, {
+    "name": "Kirsty"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Dani Du Toit"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPbRkTSP4DhYI7Q9R0qFftcCZCf9bS1Nr95MC_k",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "title": "IMG_3866.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1708104583",
+    "formatted": "Feb 16, 2024, 5:29:43 PM UTC"
+  },
+  "geoData": {
+    "latitude": -34.0124889,
+    "longitude": 18.3740694,
+    "altitude": 107.09957498482089,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -34.0124889,
+    "longitude": 18.3740694,
+    "altitude": 107.09957498482089,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "John Winter"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipMP2I8AxCrBR5r--RRyOQva9-NfOYLQMUNYWxL9",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "title": "IMG_0747.mov",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789164560",
+    "formatted": "Sep 11, 2026, 10:09:20 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1707482022",
+    "formatted": "Feb 9, 2024, 12:33:42 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.8989,
+    "longitude": 18.4817,
+    "altitude": 5.4,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.8989,
+    "longitude": 18.4817,
+    "altitude": 5.4,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "url": "https://photos.google.com/photo/AF1QipPucrZGS74FwRJbH7bml11ZiwNVvvgOmI6z-I7-",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

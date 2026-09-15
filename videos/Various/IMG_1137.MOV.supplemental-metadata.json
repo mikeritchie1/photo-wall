@@ -1,0 +1,42 @@
+{
+  "title": "IMG_1137.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789152577",
+    "formatted": "Sep 11, 2026, 6:49:37 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1765830101",
+    "formatted": "Dec 15, 2025, 8:21:41 PM UTC"
+  },
+  "geoData": {
+    "latitude": -25.3401,
+    "longitude": 27.060299999999998,
+    "altitude": 1130.48,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -25.3401,
+    "longitude": 27.060299999999998,
+    "altitude": 1130.48,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Tristan"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipMcdwrmDd2w_bZMcWgT1fZh9Id3rgbrYkq_WELP",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

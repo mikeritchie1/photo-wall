@@ -1,0 +1,29 @@
+{
+  "title": "e125c9aa-7c20-4006-b8e0-761f31567237.mp4",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789152737",
+    "formatted": "Sep 11, 2026, 6:52:17 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1766923013",
+    "formatted": "Dec 28, 2025, 11:56:53 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Oscar De Waal"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipOQGa908Wm4OzeNApRQCQynEiy4P77t3S0fSV65",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

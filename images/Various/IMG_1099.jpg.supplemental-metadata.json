@@ -1,0 +1,48 @@
+{
+  "title": "IMG_1099.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1578209443",
+    "formatted": "Jan 5, 2020, 7:30:43 AM UTC"
+  },
+  "geoData": {
+    "latitude": -23.7846194,
+    "longitude": 35.4794056,
+    "altitude": 2.0699996945912105,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -23.7846194,
+    "longitude": 35.4794056,
+    "altitude": 2.0699996945912105,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Reg Grobler"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Charl"
+  }, {
+    "name": "Dani Du Toit"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Tristan"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipO8Y9C_oyZqq04nu-AgQPPbVUqSkfUeoODNlrSx",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

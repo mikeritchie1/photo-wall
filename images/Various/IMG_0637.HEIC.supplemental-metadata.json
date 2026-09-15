@@ -1,0 +1,59 @@
+{
+  "title": "IMG_0637.HEIC",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1629218914",
+    "formatted": "Aug 17, 2021, 4:48:34 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.928775,
+    "longitude": 18.4107333,
+    "altitude": 45.53090287667331,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.928775,
+    "longitude": 18.4107333,
+    "altitude": 45.53090287667331,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Tristan"
+  }, {
+    "name": "Liam"
+  }, {
+    "name": "Lucia Daly"
+  }, {
+    "name": "Dani Du Toit"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Klara"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "CJ Louw"
+  }, {
+    "name": "Mila Daly"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Amy Frost"
+  }, {
+    "name": "Charl"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipO5-eBovHhtKGQ-UWg46oevoIFWKyN9hTac06pc",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

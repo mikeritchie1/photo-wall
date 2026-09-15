@@ -1,0 +1,39 @@
+{
+  "title": "IMG_2256.JPG",
+  "description": "Zero Gravity 2023",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1693583599",
+    "formatted": "Sep 1, 2023, 3:53:19 PM UTC"
+  },
+  "geoData": {
+    "latitude": -31.953727799999996,
+    "longitude": 18.905930599999998,
+    "altitude": 335.72201138519927,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -31.953727799999996,
+    "longitude": 18.905930599999998,
+    "altitude": 335.72201138519927,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Reg Grobler"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNPvJ8H98_vg4LmMOdLXKWR7R8xNTL9X8_NeHwG",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "title": "555609002_31827487680228201_3278591342149447564_n.jpg",
+  "description": "Fam",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1484901060",
+    "formatted": "Jan 20, 2017, 8:31:00 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Leonie Grabe"
+  }, {
+    "name": "Stephan Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipOHDx_xNRCpbbaG4CbzusNaXQJtECKXxgvh89Xb",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

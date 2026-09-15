@@ -1,0 +1,36 @@
+{
+  "title": "IMG_1491.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789163654",
+    "formatted": "Sep 11, 2026, 9:54:14 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1768101672",
+    "formatted": "Jan 11, 2026, 3:21:12 AM UTC"
+  },
+  "geoData": {
+    "latitude": -33.949999999999996,
+    "longitude": 23.311899999999998,
+    "altitude": 252.88,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.949999999999996,
+    "longitude": 23.311899999999998,
+    "altitude": 252.88,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Liam"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipMMFsXXs89dXUGX9G1rP8l6mvtd9bw6pYO_xlz7",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "title": "IMG_2163.HEIC",
+  "description": "Habitat 2026",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1774707426",
+    "formatted": "Mar 28, 2026, 2:17:06 PM UTC"
+  },
+  "geoData": {
+    "latitude": -34.3770861,
+    "longitude": 19.509697199999998,
+    "altitude": 286.3710174717369,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -34.3770861,
+    "longitude": 19.509697199999998,
+    "altitude": 286.3710174717369,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Josh Finlay"
+  }, {
+    "name": "Jade"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipM7PMtb9a4cFsxUasqqt0_tJnrFweciL_EyrPA_",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

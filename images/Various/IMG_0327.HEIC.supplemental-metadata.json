@@ -1,0 +1,41 @@
+{
+  "title": "IMG_0327.HEIC",
+  "description": "Rugby 7's 2022",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1670672584",
+    "formatted": "Dec 10, 2022, 11:43:04 AM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9053111,
+    "longitude": 18.4108,
+    "altitude": 15.018089602704988,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9053111,
+    "longitude": 18.4108,
+    "altitude": 15.018089602704988,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }, {
+    "name": "CJ Louw"
+  }, {
+    "name": "Tim Terblanche"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipOCbFNT9a_SxaWjPOX6BlZp8ll-QY5dlGYgt8Y6",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

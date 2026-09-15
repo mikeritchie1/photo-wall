@@ -1,0 +1,44 @@
+{
+  "title": "000027.jpg",
+  "description": "Clay Cafe 2022",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1640999160",
+    "formatted": "Jan 1, 2022, 1:06:00 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Mary Wheeler"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Mikkel Du Plessis"
+  }, {
+    "name": "Tristan"
+  }, {
+    "name": "Lucia Daly"
+  }, {
+    "name": "Mila Daly"
+  }, {
+    "name": "Amy Frost"
+  }, {
+    "name": "Tim Terblanche"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPXo3sC3295cH5pEAnOCn-HOfOZEcW0J9bqQBIK",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

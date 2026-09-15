@@ -1,0 +1,37 @@
+{
+  "title": "IMG_1816.JPG",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1699111845",
+    "formatted": "Nov 4, 2023, 3:30:45 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9298139,
+    "longitude": 18.4005278,
+    "altitude": 131.99618138424822,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9298139,
+    "longitude": 18.4005278,
+    "altitude": 131.99618138424822,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "CJ Louw"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipOC6sPuJSPCK-uCnEb22I30d-djSQrtMGY6G5dr",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

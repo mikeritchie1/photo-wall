@@ -1,0 +1,43 @@
+{
+  "title": "IMG-20161117-WA0012.jpg",
+  "description": "Block 7 2nd Year",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1677400232",
+    "formatted": "Feb 26, 2023, 8:30:32 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Liam"
+  }, {
+    "name": "Ant Cartwight"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "CJ Louw"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Charl"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPlaovDEN_GVR65RaamUFfTLC3qvGMr7SPxzRbN",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

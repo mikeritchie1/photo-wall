@@ -1,0 +1,40 @@
+{
+  "title": "IMG_3719.jpg",
+  "description": "Zero Gravity 2023",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1693583658",
+    "formatted": "Sep 1, 2023, 3:54:18 PM UTC"
+  },
+  "geoData": {
+    "latitude": -31.9537611,
+    "longitude": 18.905930599999998,
+    "altitude": 332.22854240731334,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -31.9537611,
+    "longitude": 18.905930599999998,
+    "altitude": 332.22854240731334,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }, {
+    "name": "Reg Grobler"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipM_inu4B1znxTdbHFb4N_71_82UVuFHb__BAwy6",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

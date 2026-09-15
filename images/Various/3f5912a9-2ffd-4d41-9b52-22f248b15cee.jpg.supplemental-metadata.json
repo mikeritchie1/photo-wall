@@ -1,0 +1,32 @@
+{
+  "title": "3f5912a9-2ffd-4d41-9b52-22f248b15cee.jpg",
+  "description": "Rocklands 2022",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1651517565",
+    "formatted": "May 2, 2022, 6:52:45 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Dani Du Toit"
+  }, {
+    "name": "Amy Frost"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNq7rmrbusCoxSPIZJgalwuIZpYfjplaS9sA21P",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

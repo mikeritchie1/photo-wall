@@ -1,0 +1,34 @@
+{
+  "title": "f3634ce9-7886-4efe-bd0f-e1972aea4511.jpg",
+  "description": "Wine Tram 2022",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1669565806",
+    "formatted": "Nov 27, 2022, 4:16:46 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Mila Daly"
+  }, {
+    "name": "Dani Du Toit"
+  }, {
+    "name": "Amy Frost"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipO12BripmECYYdlMI7TfWo4K7Wea7apb3A4F9U0",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

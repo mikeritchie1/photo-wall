@@ -1,0 +1,31 @@
+{
+  "title": "f91941e2-e040-4abe-b565-1e3dc44c83f0.mp4",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789153194",
+    "formatted": "Sep 11, 2026, 6:59:54 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1651518343",
+    "formatted": "May 2, 2022, 7:05:43 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Mikkel Du Plessis"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipNhiCOBlOD9TWtZm6cYqJpiWDUaOXqVEJj0NN13",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "title": "IMG_4844.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789165192",
+    "formatted": "Sep 11, 2026, 10:19:52 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1680948323",
+    "formatted": "Apr 8, 2023, 10:05:23 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Liam"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipPD9tQvkgGHlhJJq3k096eSM86jWUkhdFmMTuTw",
+  "googlePhotosOrigin": {
+    "fromSharedAlbum": {
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "title": "IMG_3630.HEIC",
+  "description": "Meeting Damien",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1773940636",
+    "formatted": "Mar 19, 2026, 5:17:16 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9299056,
+    "longitude": 18.40825,
+    "altitude": 61.426013691416536,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9299056,
+    "longitude": 18.40825,
+    "altitude": 61.426013691416536,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Reg Grobler"
+  }, {
+    "name": "Josh Finlay"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipO2DzBIEuoltQZbI7TdQqonZi3Z-nMRbVF-sZZx",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

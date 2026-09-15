@@ -1,0 +1,39 @@
+{
+  "title": "IMG_1495.JPG",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1768102666",
+    "formatted": "Jan 11, 2026, 3:37:46 AM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9501194,
+    "longitude": 23.3118444,
+    "altitude": 251.3681906614786,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9501194,
+    "longitude": 23.3118444,
+    "altitude": 251.3681906614786,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Raph"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNefa4sj7ikXsNn0E9tCn014goGs7aQ5iY6BR0V",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

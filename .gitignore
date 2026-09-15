@@ -2,9 +2,12 @@ images/**
 !images/.gitkeep
 !images/manifest.json
 !images/groups.json
-!images/demo/
-!images/demo/**
+!images/**/
+!images/**/*.json
 videos/**
+!videos/**/
+!videos/**/*.json
+.wrangler/
 __pycache__/
 *.py[cod]
 dist/photo-wall-screensaver-windows/

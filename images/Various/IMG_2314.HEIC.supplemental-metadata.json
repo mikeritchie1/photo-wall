@@ -1,0 +1,35 @@
+{
+  "title": "IMG_2314.HEIC",
+  "description": "Wild Coast 2022",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1661232708",
+    "formatted": "Aug 23, 2022, 5:31:48 AM UTC"
+  },
+  "geoData": {
+    "latitude": -31.446583300000004,
+    "longitude": 29.7657194,
+    "altitude": 4.076697311062195,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -31.446583300000004,
+    "longitude": 29.7657194,
+    "altitude": 4.076697311062195,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPw9hXdV6w0LQiGL1KBOP2pFOR5lFcD-P-t9-HV",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

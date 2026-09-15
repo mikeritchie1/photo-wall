@@ -1,0 +1,50 @@
+{
+  "title": "IMG_3096.JPG",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1768064957",
+    "formatted": "Jan 10, 2026, 5:09:17 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.951738899999995,
+    "longitude": 23.3158056,
+    "altitude": 248.3220102373197,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.951738899999995,
+    "longitude": 23.3158056,
+    "altitude": 248.3220102373197,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "John Winter"
+  }, {
+    "name": "Amy Frost"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "CJ Louw"
+  }, {
+    "name": "Tristan"
+  }, {
+    "name": "Mikkel Du Plessis"
+  }, {
+    "name": "Adam De Waal"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipN-Jaaq4DcvN8WMXJk03uDJGm2UF4IUCAj6leim",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "title": "GOPR0261.JPG",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1734771888",
+    "formatted": "Dec 21, 2024, 9:04:48 AM UTC"
+  },
+  "geoData": {
+    "latitude": -28.836149499999998,
+    "longitude": 19.2486489,
+    "altitude": 371.024,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -28.836149499999998,
+    "longitude": 19.2486489,
+    "altitude": 371.024,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipP8hvYPA9LlNjpZJzCJtFoqBZlEvP-LDXYvm-Bh",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

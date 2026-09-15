@@ -1,0 +1,29 @@
+{
+  "title": "97e151f9-4148-4616-8f61-66fa22712f3d.mp4",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789163884",
+    "formatted": "Sep 11, 2026, 9:58:04 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1763305382",
+    "formatted": "Nov 16, 2025, 3:03:02 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Raph"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipNhR95RdvpVH7kKD3b9hb1R8MYXJ3lJCDRhlEKg",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

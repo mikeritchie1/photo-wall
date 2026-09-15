@@ -1,0 +1,30 @@
+{
+  "title": "be6024ea-2975-4d7a-9eca-ef227f90fd47.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1770459765",
+    "formatted": "Feb 7, 2026, 10:22:45 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Cameron Davies"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipPdoyYjYOnlvAj8B6PMynvfMPhovbFY_lDC5SME",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

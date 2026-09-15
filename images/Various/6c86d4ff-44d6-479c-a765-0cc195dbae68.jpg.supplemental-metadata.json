@@ -1,0 +1,38 @@
+{
+  "title": "6c86d4ff-44d6-479c-a765-0cc195dbae68.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1760198451",
+    "formatted": "Oct 11, 2025, 4:00:51 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "CJ Louw"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Josh Finlay"
+  }, {
+    "name": "Tim Terblanche"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipOcTt493uq3dTratN0amRvRyflyGje-b4PcpDTL",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

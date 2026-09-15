@@ -1,0 +1,50 @@
+{
+  "title": "IMG_1750.HEIC",
+  "description": "Rugby Game 2022",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1655573438",
+    "formatted": "Jun 18, 2022, 5:30:38 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.90315,
+    "longitude": 18.4119556,
+    "altitude": 21.691232562481662,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.90315,
+    "longitude": 18.4119556,
+    "altitude": 21.691232562481662,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Charl"
+  }, {
+    "name": "Lucia Daly"
+  }, {
+    "name": "CJ Louw"
+  }, {
+    "name": "Klara"
+  }, {
+    "name": "Mikkel Du Plessis"
+  }, {
+    "name": "Dani Du Toit"
+  }, {
+    "name": "Mila Daly"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipMtq4voUhzRm2JjLPIPiHtI3sgvrYZXCjNJinkf",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

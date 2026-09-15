@@ -1,0 +1,33 @@
+{
+  "title": "IMG_1392.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789154420",
+    "formatted": "Sep 11, 2026, 7:20:20 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1767204629",
+    "formatted": "Dec 31, 2025, 6:10:29 PM UTC"
+  },
+  "geoData": {
+    "latitude": -34.0145,
+    "longitude": 18.3874,
+    "altitude": 89.26,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -34.0145,
+    "longitude": 18.3874,
+    "altitude": 89.26,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "url": "https://photos.google.com/photo/AF1QipPzg84phLIdGw0dRMphl8rjJgqp32u499AowGV_",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

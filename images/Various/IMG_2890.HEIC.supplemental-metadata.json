@@ -1,0 +1,34 @@
+{
+  "title": "IMG_2890.HEIC",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1606562776",
+    "formatted": "Nov 28, 2020, 11:26:16 AM UTC"
+  },
+  "geoData": {
+    "latitude": -33.937683299999996,
+    "longitude": 18.863536099999997,
+    "altitude": 116.9255141745414,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.937683299999996,
+    "longitude": 18.863536099999997,
+    "altitude": 116.9255141745414,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipP4F9lJgrBn5iv3mwX8KnwU5t4keayque0IPOsU",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

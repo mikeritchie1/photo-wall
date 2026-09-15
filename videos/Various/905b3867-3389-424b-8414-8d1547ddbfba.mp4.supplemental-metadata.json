@@ -1,0 +1,31 @@
+{
+  "title": "905b3867-3389-424b-8414-8d1547ddbfba.mp4",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789165444",
+    "formatted": "Sep 11, 2026, 10:24:04 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1663440334",
+    "formatted": "Sep 17, 2022, 6:45:34 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "CJ Louw"
+  }, {
+    "name": "Tristan"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipNzXDg0H1djR9BlO0Rmt7VWOF8pOV-hTuVkoY9Y",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

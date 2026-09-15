@@ -1,0 +1,40 @@
+{
+  "title": "IMG_1602.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789163673",
+    "formatted": "Sep 11, 2026, 9:54:33 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1769271126",
+    "formatted": "Jan 24, 2026, 4:12:06 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.928999999999995,
+    "longitude": 18.4131,
+    "altitude": 35.11,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.928999999999995,
+    "longitude": 18.4131,
+    "altitude": 35.11,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Raph"
+  }, {
+    "name": "Mila Daly"
+  }, {
+    "name": "Adam De Waal"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipNybjpMiLhVBvcBkJm4gLhxTackPntoCgqE1XWp",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

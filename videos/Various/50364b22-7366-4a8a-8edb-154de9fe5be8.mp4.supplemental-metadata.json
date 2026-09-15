@@ -1,0 +1,31 @@
+{
+  "title": "50364b22-7366-4a8a-8edb-154de9fe5be8.mp4",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789165645",
+    "formatted": "Sep 11, 2026, 10:27:25 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1640367621",
+    "formatted": "Dec 24, 2021, 5:40:21 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Oscar De Waal"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipMYVN4qp-uLbWJh3pxm_7lR5LBY3z6OS6C48icj",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

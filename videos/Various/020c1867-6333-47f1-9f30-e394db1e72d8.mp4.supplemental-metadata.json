@@ -1,0 +1,29 @@
+{
+  "title": "020c1867-6333-47f1-9f30-e394db1e72d8.mp4",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789163523",
+    "formatted": "Sep 11, 2026, 9:52:03 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1774861151",
+    "formatted": "Mar 30, 2026, 8:59:11 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Josh Finlay"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipP9dqnQocdXR2j1yylB2fSaBcG-u51cqzIxEWAj",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

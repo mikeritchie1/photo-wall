@@ -1,0 +1,57 @@
+{
+  "title": "IMG_5655.HEIC",
+  "description": "Choomah Fest 2021",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1595092122",
+    "formatted": "Jul 18, 2020, 5:08:42 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9429194,
+    "longitude": 18.8599778,
+    "altitude": 108.25780862667328,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9429194,
+    "longitude": 18.8599778,
+    "altitude": 108.25780862667328,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Dani Du Toit"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Liam"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Lucia Daly"
+  }, {
+    "name": "Tristan"
+  }, {
+    "name": "CJ Louw"
+  }, {
+    "name": "Ant Cartwight"
+  }, {
+    "name": "Amy Frost"
+  }, {
+    "name": "Charl"
+  }, {
+    "name": "Reg Grobler"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipP7g_VI3ZXVmuWTcSvMTSzDsM-aCszU4c9I4jzM",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

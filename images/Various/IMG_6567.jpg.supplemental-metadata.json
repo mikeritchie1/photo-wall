@@ -1,0 +1,41 @@
+{
+  "title": "IMG_6567.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1718485433",
+    "formatted": "Jun 15, 2024, 9:03:53 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9319194,
+    "longitude": 18.408688899999998,
+    "altitude": 56.93093793747084,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9319194,
+    "longitude": 18.408688899999998,
+    "altitude": 56.93093793747084,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Mikkel Du Plessis"
+  }, {
+    "name": "Tim Terblanche"
+  }, {
+    "name": "Michael Ritchie"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipP6SzHDvz3d29d3CCJIwiIA7OmD1FBAyVTV_YrZ",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "title": "IMG_0359.HEIC",
+  "description": "Rocklands 2022",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1651421620",
+    "formatted": "May 1, 2022, 4:13:40 PM UTC"
+  },
+  "geoData": {
+    "latitude": -32.1142222,
+    "longitude": 19.0665472,
+    "altitude": 467.1066168844638,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -32.1142222,
+    "longitude": 19.0665472,
+    "altitude": 467.1066168844638,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Lucia Daly"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Reg Grobler"
+  }, {
+    "name": "Mikkel Du Plessis"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipNe5yLSvrgkJ0TXe-DBr5kHdIGz1pcK8ARkiw5f",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

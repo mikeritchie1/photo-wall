@@ -1,0 +1,68 @@
+{
+  "title": "IMG_0154.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789163972",
+    "formatted": "Sep 11, 2026, 9:59:32 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1760214671",
+    "formatted": "Oct 11, 2025, 8:31:11 PM UTC"
+  },
+  "geoData": {
+    "latitude": -34.3429,
+    "longitude": 19.0356,
+    "altitude": 12.54,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -34.3429,
+    "longitude": 19.0356,
+    "altitude": 12.54,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "CJ Louw"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Lucia Daly"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Tim Terblanche"
+  }, {
+    "name": "Mary Wheeler"
+  }, {
+    "name": "Tristan"
+  }, {
+    "name": "Amy Frost"
+  }, {
+    "name": "Dani Du Toit"
+  }, {
+    "name": "Mila Daly"
+  }, {
+    "name": "Raph"
+  }, {
+    "name": "Oscar De Waal"
+  }, {
+    "name": "Josh Finlay"
+  }, {
+    "name": "Leva De Waal"
+  }, {
+    "name": "Charl"
+  }, {
+    "name": "Liam"
+  }, {
+    "name": "Reg Grobler"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipMFfzQJ-6mDBTmyJRGL0VMI2P19cPxFjkAAE4pt",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

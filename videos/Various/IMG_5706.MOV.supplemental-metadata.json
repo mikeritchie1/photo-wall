@@ -1,0 +1,38 @@
+{
+  "title": "IMG_5706.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789163951",
+    "formatted": "Sep 11, 2026, 9:59:11 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1757440534",
+    "formatted": "Sep 9, 2025, 5:55:34 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9212,
+    "longitude": 18.418,
+    "altitude": 29.55,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9212,
+    "longitude": 18.418,
+    "altitude": 29.55,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Reg Grobler"
+  }, {
+    "name": "CJ Louw"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipNotEuvGD_GTjZeJM5hIU9iAtoOO0vht0Jh7C4Y",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

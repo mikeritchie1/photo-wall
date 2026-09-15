@@ -1,0 +1,28 @@
+{
+  "title": "IMG_4878.MOV",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789165159",
+    "formatted": "Sep 11, 2026, 10:19:19 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1680953473",
+    "formatted": "Apr 8, 2023, 11:31:13 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipOOQKngS3pR_tCJ-tv0jakXonAVxXfoVGW2gb6E",
+  "googlePhotosOrigin": {
+    "fromSharedAlbum": {
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "title": "IMG_8048.HEIC",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1630425827",
+    "formatted": "Aug 31, 2021, 4:03:47 PM UTC"
+  },
+  "geoData": {
+    "latitude": -33.9694472,
+    "longitude": 18.597666699999998,
+    "altitude": 48.06489945155393,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -33.9694472,
+    "longitude": 18.597666699999998,
+    "altitude": 48.06489945155393,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Reg Grobler"
+  }, {
+    "name": "Tristan"
+  }, {
+    "name": "Mikkel Du Plessis"
+  }, {
+    "name": "Robs Jenkins"
+  }, {
+    "name": "Josh Finlay"
+  }, {
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Dani Du Toit"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Liam"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipMrIzoF7C9lbiQ7EFui_ZHsYOVdYreRoZ0f-zuf",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

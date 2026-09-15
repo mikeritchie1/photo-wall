@@ -1,0 +1,30 @@
+{
+  "title": "IMG_1816.JPG",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1503008541",
+    "formatted": "Aug 17, 2017, 10:22:21 PM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Ant Cartwight"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipMBE0wxPf2yZQTSH1CUp56IKnsHRFuQQGGp5SNZ",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

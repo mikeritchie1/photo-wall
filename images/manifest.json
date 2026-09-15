@@ -137,6 +137,632 @@
       "people": []
     }
   ],
+  "Climbing": [
+    {
+      "filename": "0272b2e2-7243-48a1-8c63-42d620e7590a.jpg",
+      "path": "Climbing/0272b2e2-7243-48a1-8c63-42d620e7590a.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "04750d0b-bc73-418b-af06-7a796bc084a8.jpg",
+      "path": "Climbing/04750d0b-bc73-418b-af06-7a796bc084a8.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "0e621f37-e654-43b6-ab9b-a350f63fd550.jpg",
+      "path": "Climbing/0e621f37-e654-43b6-ab9b-a350f63fd550.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "0fd74181-dd47-4fb2-9674-47cdcf8bda08.jpg",
+      "path": "Climbing/0fd74181-dd47-4fb2-9674-47cdcf8bda08.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "1dc05699-6e97-4461-ab5e-0ec46dd8bfb3.jpg",
+      "path": "Climbing/1dc05699-6e97-4461-ab5e-0ec46dd8bfb3.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "1e08ea74-0168-4822-9883-5accd2f7eb49.jpg",
+      "path": "Climbing/1e08ea74-0168-4822-9883-5accd2f7eb49.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "1e6e901c-f68a-40f5-9a38-a25417ac7a3a.jpg",
+      "path": "Climbing/1e6e901c-f68a-40f5-9a38-a25417ac7a3a.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "1f3ef817-69b6-47f7-96f8-56994ddf8317.jpg",
+      "path": "Climbing/1f3ef817-69b6-47f7-96f8-56994ddf8317.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "249c6750-b129-488c-a49c-afc8c9970598.jpg",
+      "path": "Climbing/249c6750-b129-488c-a49c-afc8c9970598.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "28c6ca0a-3ddf-4383-9fbc-db59675279c2.jpg",
+      "path": "Climbing/28c6ca0a-3ddf-4383-9fbc-db59675279c2.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "2a560b8f-7a43-4a7e-8155-123459b1842c.jpg",
+      "path": "Climbing/2a560b8f-7a43-4a7e-8155-123459b1842c.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "2faf201f-5746-4565-b878-e10214fd270e.jpg",
+      "path": "Climbing/2faf201f-5746-4565-b878-e10214fd270e.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "35939e40-a454-41b5-9017-c24a244123a5.jpg",
+      "path": "Climbing/35939e40-a454-41b5-9017-c24a244123a5.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "363A1367.JPG",
+      "path": "Climbing/363A1367.JPG",
+      "text": "",
+      "date": "8th April 2023",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "363A1388.JPG",
+      "path": "Climbing/363A1388.JPG",
+      "text": "",
+      "date": "8th April 2023",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "363A1450.JPG",
+      "path": "Climbing/363A1450.JPG",
+      "text": "",
+      "date": "8th April 2023",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "363A1474.JPG",
+      "path": "Climbing/363A1474.JPG",
+      "text": "",
+      "date": "8th April 2023",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "363A1475.JPG",
+      "path": "Climbing/363A1475.JPG",
+      "text": "",
+      "date": "8th April 2023",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "363A1479.JPG",
+      "path": "Climbing/363A1479.JPG",
+      "text": "",
+      "date": "8th April 2023",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "363A1491.JPG",
+      "path": "Climbing/363A1491.JPG",
+      "text": "",
+      "date": "8th April 2023",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "363A1515.JPG",
+      "path": "Climbing/363A1515.JPG",
+      "text": "",
+      "date": "8th April 2023",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "36a1da88-56be-47cb-a578-d20be5b2ef38.jpg",
+      "path": "Climbing/36a1da88-56be-47cb-a578-d20be5b2ef38.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "3c50e0ce-ef75-41d0-ba4c-183db7944003.jpg",
+      "path": "Climbing/3c50e0ce-ef75-41d0-ba4c-183db7944003.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "3f80a187-1d1f-47eb-949a-4f9f1d7b95ad.jpg",
+      "path": "Climbing/3f80a187-1d1f-47eb-949a-4f9f1d7b95ad.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "45a4041e-a47e-4460-9a22-c5a36ce7abb0.jpg",
+      "path": "Climbing/45a4041e-a47e-4460-9a22-c5a36ce7abb0.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "4bfbfdad-96bc-4348-afbc-202332618b4f.jpg",
+      "path": "Climbing/4bfbfdad-96bc-4348-afbc-202332618b4f.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "4c4c9cd5-888d-4341-98c2-a47124262fb0.jpg",
+      "path": "Climbing/4c4c9cd5-888d-4341-98c2-a47124262fb0.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "4c7b60d1-e8e0-49dc-a20f-ddea6308538e.jpg",
+      "path": "Climbing/4c7b60d1-e8e0-49dc-a20f-ddea6308538e.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "55339123-b68e-40f4-9f9d-900e52e69f70.jpg",
+      "path": "Climbing/55339123-b68e-40f4-9f9d-900e52e69f70.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "595e1b58-590f-4ad0-b388-3e08fbea8ecf.jpg",
+      "path": "Climbing/595e1b58-590f-4ad0-b388-3e08fbea8ecf.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "596f329f-9ce1-49a7-a2ad-186d503e68e0.jpg",
+      "path": "Climbing/596f329f-9ce1-49a7-a2ad-186d503e68e0.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "62549807-fd3e-4d25-a7bd-48c7df5c6195.jpg",
+      "path": "Climbing/62549807-fd3e-4d25-a7bd-48c7df5c6195.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "64521859-4921-4460-b6f4-c9323cae41fe.jpg",
+      "path": "Climbing/64521859-4921-4460-b6f4-c9323cae41fe.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "7fb62cf6-de69-4341-aa9c-597f62b1b7a6.jpg",
+      "path": "Climbing/7fb62cf6-de69-4341-aa9c-597f62b1b7a6.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "802b28b3-c576-4335-9429-4134e131bd97.jpg",
+      "path": "Climbing/802b28b3-c576-4335-9429-4134e131bd97.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "91f08a91-08ca-4dad-a5eb-547e3961da4d.jpg",
+      "path": "Climbing/91f08a91-08ca-4dad-a5eb-547e3961da4d.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "95f53471-78fc-4955-aeea-06d9f1ac0b06.jpg",
+      "path": "Climbing/95f53471-78fc-4955-aeea-06d9f1ac0b06.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "9a86f490-6c33-4aab-9457-e628de94b98b.jpg",
+      "path": "Climbing/9a86f490-6c33-4aab-9457-e628de94b98b.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "9cc7f6b0-1ee7-4a8f-aa2f-6be517b9f91a.jpg",
+      "path": "Climbing/9cc7f6b0-1ee7-4a8f-aa2f-6be517b9f91a.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "a0893ae8-e3c6-4230-ab2d-0820e096aa2c.jpg",
+      "path": "Climbing/a0893ae8-e3c6-4230-ab2d-0820e096aa2c.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "a2e776be-3c49-46dc-a42a-ac377b12a399.jpg",
+      "path": "Climbing/a2e776be-3c49-46dc-a42a-ac377b12a399.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "ae8d32fc-d63d-44e7-b033-069f6fa30e88.jpg",
+      "path": "Climbing/ae8d32fc-d63d-44e7-b033-069f6fa30e88.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "bf7509b8-7f93-43e6-a654-3e38c622af97.jpg",
+      "path": "Climbing/bf7509b8-7f93-43e6-a654-3e38c622af97.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "c25017ac-d18c-40eb-b1f6-e029678d32e1.jpg",
+      "path": "Climbing/c25017ac-d18c-40eb-b1f6-e029678d32e1.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "c51f82a2-ccde-46a8-9795-730d956a3da8.jpg",
+      "path": "Climbing/c51f82a2-ccde-46a8-9795-730d956a3da8.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "c7d34a5e-56f3-4d9e-9671-eefce5f6243b.jpg",
+      "path": "Climbing/c7d34a5e-56f3-4d9e-9671-eefce5f6243b.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "cd7b20b5-ca67-4e61-8e6d-379fb22fb2af.jpg",
+      "path": "Climbing/cd7b20b5-ca67-4e61-8e6d-379fb22fb2af.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "cecfbf9e-cc78-4fd4-b556-05bb8e69ec84.jpg",
+      "path": "Climbing/cecfbf9e-cc78-4fd4-b556-05bb8e69ec84.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "ChatGPT Image Apr 23, 2026, 03_21_04 PM.png",
+      "path": "Climbing/ChatGPT Image Apr 23, 2026, 03_21_04 PM.png",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "ChatGPT Image Apr 23, 2026, 03_25_05 PM.png",
+      "path": "Climbing/ChatGPT Image Apr 23, 2026, 03_25_05 PM.png",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "ChatGPT Image Mar 17, 2026, 09_34_09 AM.png",
+      "path": "Climbing/ChatGPT Image Mar 17, 2026, 09_34_09 AM.png",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "e36953c2-a7dd-4319-9250-cbe8d4f2d22e.jpg",
+      "path": "Climbing/e36953c2-a7dd-4319-9250-cbe8d4f2d22e.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "ef268257-9ec1-4491-9227-73eac5d9d780.jpg",
+      "path": "Climbing/ef268257-9ec1-4491-9227-73eac5d9d780.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "f6eceb13-8b4d-46e1-b411-f3f0747f7894.jpg",
+      "path": "Climbing/f6eceb13-8b4d-46e1-b411-f3f0747f7894.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "f71fd6f8-580b-4c55-9dbf-bfea8bf7d9f2.jpg",
+      "path": "Climbing/f71fd6f8-580b-4c55-9dbf-bfea8bf7d9f2.jpg",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "IMG_1097.jpg",
+      "path": "Climbing/IMG_1097.jpg",
+      "text": "",
+      "date": "17th June 2024",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "IMG_1126.jpg",
+      "path": "Climbing/IMG_1126.jpg",
+      "text": "",
+      "date": "8th April 2023",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "IMG_1166.JPG",
+      "path": "Climbing/IMG_1166.JPG",
+      "text": "",
+      "date": "8th April 2023",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "IMG_2222.PNG",
+      "path": "Climbing/IMG_2222.PNG",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "IMG_3125.jpg",
+      "path": "Climbing/IMG_3125.jpg",
+      "text": "",
+      "date": "30th December 2020",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "IMG_3350.jpg",
+      "path": "Climbing/IMG_3350.jpg",
+      "text": "",
+      "date": "19th January 2021",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "IMG_3569.jpg",
+      "path": "Climbing/IMG_3569.jpg",
+      "text": "",
+      "date": "21st January 2021",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "IMG_3593.JPG",
+      "path": "Climbing/IMG_3593.JPG",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "IMG_3601.JPG",
+      "path": "Climbing/IMG_3601.JPG",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "IMG_3603.JPG",
+      "path": "Climbing/IMG_3603.JPG",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "IMG_3604.JPG",
+      "path": "Climbing/IMG_3604.JPG",
+      "text": "",
+      "date": "15th September 2026",
+      "hasDateMetadata": false,
+      "people": []
+    },
+    {
+      "filename": "IMG_4142.jpg",
+      "path": "Climbing/IMG_4142.jpg",
+      "text": "",
+      "date": "28th March 2021",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "IMG_4151.jpg",
+      "path": "Climbing/IMG_4151.jpg",
+      "text": "",
+      "date": "28th March 2021",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "IMG_4153.jpg",
+      "path": "Climbing/IMG_4153.jpg",
+      "text": "",
+      "date": "28th March 2021",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "IMG_4161.jpg",
+      "path": "Climbing/IMG_4161.jpg",
+      "text": "",
+      "date": "28th March 2021",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "IMG_4855.JPG",
+      "path": "Climbing/IMG_4855.JPG",
+      "text": "",
+      "date": "8th April 2023",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "IMG_5011.JPG",
+      "path": "Climbing/IMG_5011.JPG",
+      "text": "",
+      "date": "19th June 2021",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "IMG_5228.jpg",
+      "path": "Climbing/IMG_5228.jpg",
+      "text": "",
+      "date": "23rd August 2026",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "IMG_7169.JPG",
+      "path": "Climbing/IMG_7169.JPG",
+      "text": "",
+      "date": "22nd December 2021",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "IMG_7175.JPG",
+      "path": "Climbing/IMG_7175.JPG",
+      "text": "",
+      "date": "22nd December 2021",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "IMG_7176.JPG",
+      "path": "Climbing/IMG_7176.JPG",
+      "text": "",
+      "date": "22nd December 2021",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "IMG_7179.JPG",
+      "path": "Climbing/IMG_7179.JPG",
+      "text": "",
+      "date": "22nd December 2021",
+      "hasDateMetadata": true,
+      "people": []
+    },
+    {
+      "filename": "IMG_7999.PNG",
+      "path": "Climbing/IMG_7999.PNG",
+      "text": "",
+      "date": "11th April 2022",
+      "hasDateMetadata": true,
+      "people": []
+    }
+  ],
   "Greyton Weekend 2023": [
     {
       "filename": "DSC03485.JPG",

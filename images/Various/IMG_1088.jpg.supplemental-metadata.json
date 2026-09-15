@@ -1,0 +1,42 @@
+{
+  "title": "IMG_1088.jpg",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1578155480",
+    "formatted": "Jan 4, 2020, 4:31:20 PM UTC"
+  },
+  "geoData": {
+    "latitude": -23.853663899999997,
+    "longitude": 35.549763899999995,
+    "altitude": 1.6900005355899523,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -23.853663899999997,
+    "longitude": 35.549763899999995,
+    "altitude": 1.6900005355899523,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Michael Ritchie"
+  }, {
+    "name": "Tristan"
+  }, {
+    "name": "Adam De Waal"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipOd0z4-aVa4jQMfn7KITPXmcZ5DBDZP9tt4TERT",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

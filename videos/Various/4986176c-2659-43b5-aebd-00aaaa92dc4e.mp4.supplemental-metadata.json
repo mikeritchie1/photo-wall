@@ -1,0 +1,31 @@
+{
+  "title": "4986176c-2659-43b5-aebd-00aaaa92dc4e.mp4",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789165429",
+    "formatted": "Sep 11, 2026, 10:23:49 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1667205665",
+    "formatted": "Oct 31, 2022, 8:41:05 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Mila Daly"
+  }, {
+    "name": "Tim Terblanche"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipOVDP4qkONbVsGl2YYJv43Ox68l7bMOEqFohxD6",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}

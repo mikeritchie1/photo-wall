@@ -1,0 +1,40 @@
+{
+  "title": "IMG_2541.HEIC",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789150891",
+    "formatted": "Sep 11, 2026, 6:21:31 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1661523373",
+    "formatted": "Aug 26, 2022, 2:16:13 PM UTC"
+  },
+  "geoData": {
+    "latitude": -31.153675,
+    "longitude": 30.1038139,
+    "altitude": 122.15535307517084,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "geoDataExif": {
+    "latitude": -31.153675,
+    "longitude": 30.1038139,
+    "altitude": 122.15535307517084,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Adam De Waal"
+  }, {
+    "name": "Reg Grobler"
+  }],
+  "favorited": true,
+  "url": "https://photos.google.com/photo/AF1QipO_NGJdF0F5Ix9Yq53WLMQvTWaIJjyeRg5EPS6R",
+  "googlePhotosOrigin": {
+    "webUpload": {
+      "computerUpload": {
+      }
+    }
+  }
+}

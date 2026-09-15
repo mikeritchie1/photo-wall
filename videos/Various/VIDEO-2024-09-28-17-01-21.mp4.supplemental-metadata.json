@@ -1,0 +1,33 @@
+{
+  "title": "VIDEO-2024-09-28-17-01-21.mp4",
+  "description": "",
+  "imageViews": "0",
+  "creationTime": {
+    "timestamp": "1789152956",
+    "formatted": "Sep 11, 2026, 6:55:56 PM UTC"
+  },
+  "photoTakenTime": {
+    "timestamp": "1727573849",
+    "formatted": "Sep 29, 2024, 1:37:29 AM UTC"
+  },
+  "geoData": {
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "altitude": 0.0,
+    "latitudeSpan": 0.0,
+    "longitudeSpan": 0.0
+  },
+  "people": [{
+    "name": "Reg Grobler"
+  }, {
+    "name": "Adam De Waal"
+  }, {
+    "name": "Raph"
+  }],
+  "url": "https://photos.google.com/photo/AF1QipNYAeDMOVU7Pt8WNemUefCL1lup0zwaHxWW3zBQ",
+  "googlePhotosOrigin": {
+    "mobileUpload": {
+      "deviceType": "IOS_PHONE"
+    }
+  }
+}
