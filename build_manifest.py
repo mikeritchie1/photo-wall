@@ -647,6 +647,31 @@ def move_video_file_with_sidecars(source_file: Path, destination_dir: Path, side
     return True
 
 
+def move_image_file_with_sidecars(source_file: Path, destination_dir: Path, sidecar_files):
+    """Move an image and its matching metadata sidecars into an image folder."""
+    destination_dir.mkdir(parents=True, exist_ok=True)
+    destination_file = destination_dir / source_file.name
+    if destination_file.exists():
+        print(f"Skipped moving image because destination exists: {destination_file}")
+        return False
+
+    try:
+        source_file.rename(destination_file)
+    except OSError as error:
+        print(f"Failed to move image {source_file} to {destination_file}: {error}")
+        return False
+
+    for sidecar in sidecar_files:
+        destination_sidecar = destination_dir / sidecar.name
+        if destination_sidecar.exists():
+            continue
+        try:
+            sidecar.rename(destination_sidecar)
+        except OSError as error:
+            print(f"Failed to move image metadata {sidecar} to {destination_sidecar}: {error}")
+    return True
+
+
 def migrate_videos_to_video_library():
     """Move videos out of images and normalize root videos into Various."""
     VIDEOS_DIR.mkdir(parents=True, exist_ok=True)
@@ -694,6 +719,56 @@ def migrate_videos_to_video_library():
         print(
             f"Video migration complete: {moved_from_images} moved from images, "
             f"{moved_to_various} moved into videos/{ROOT_MISC_FOLDER_NAME}."
+        )
+
+
+def migrate_images_to_image_library():
+    """Move images out of videos and normalize root images into Various."""
+    IMAGES_DIR.mkdir(parents=True, exist_ok=True)
+    moved_from_videos = 0
+    moved_to_various = 0
+
+    video_image_files = [
+        file
+        for file in sorted(VIDEOS_DIR.rglob("*"))
+        if file.is_file() and file.suffix.lower() in IMAGE_EXTENSIONS
+    ] if VIDEOS_DIR.exists() else []
+
+    for source_file in video_image_files:
+        relative = source_file.relative_to(VIDEOS_DIR)
+        folder = relative.parts[0] if len(relative.parts) > 1 else ROOT_MISC_FOLDER_NAME
+        sidecar_files = [
+            candidate
+            for candidate in source_file.parent.iterdir()
+            if candidate.is_file()
+            and candidate.suffix.lower() == ".json"
+            and candidate.name.lower() not in {"manifest.json", "metadata.json"}
+        ]
+        matches = find_matching_sidecars(source_file, sidecar_files)
+        if move_image_file_with_sidecars(source_file, IMAGES_DIR / folder, matches):
+            moved_from_videos += 1
+
+    root_image_files = [
+        file
+        for file in sorted(IMAGES_DIR.iterdir())
+        if file.is_file() and file.suffix.lower() in IMAGE_EXTENSIONS
+    ]
+    for source_file in root_image_files:
+        sidecar_files = [
+            candidate
+            for candidate in source_file.parent.iterdir()
+            if candidate.is_file()
+            and candidate.suffix.lower() == ".json"
+            and candidate.name.lower() not in {"manifest.json", "metadata.json"}
+        ]
+        matches = find_matching_sidecars(source_file, sidecar_files)
+        if move_image_file_with_sidecars(source_file, IMAGES_DIR / ROOT_MISC_FOLDER_NAME, matches):
+            moved_to_various += 1
+
+    if moved_from_videos or moved_to_various:
+        print(
+            f"Image migration complete: {moved_from_videos} moved from videos, "
+            f"{moved_to_various} moved into images/{ROOT_MISC_FOLDER_NAME}."
         )
 
 
@@ -995,6 +1070,7 @@ def build_manifest():
         return
 
     migrate_videos_to_video_library()
+    migrate_images_to_image_library()
     move_root_images_to_various_folder()
     ensure_heic_conversions()
     compress_images()
