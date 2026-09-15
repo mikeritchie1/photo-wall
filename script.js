@@ -205,6 +205,10 @@ let imageCycle = [];
 let imageCycleIndex = 0;
 let lastServedImageKey = null;
 let hasAvailableImages = true;
+// Media can exist in the GitHub manifest before it has been uploaded to R2.
+// Keep failed keys out of the current session so a missing object cannot be
+// selected repeatedly.
+const unavailableMediaKeys = new Set();
 let videoAssignmentSequence = 0;
 let audibleVideoPhoto = null;
 let manuallySelectedVideoPhoto = null;
@@ -763,7 +767,9 @@ function buildImagePool({ ignorePerson = false } = {}) {
     }
   }
 
-  const matchingPool = pool.filter((image) => imageMatchesActiveFilters(image, { ignorePerson }));
+  const matchingPool = pool
+    .filter((image) => !unavailableMediaKeys.has(image._key))
+    .filter((image) => imageMatchesActiveFilters(image, { ignorePerson }));
   return createWeightedMediaPool(matchingPool);
 }
 
@@ -956,6 +962,32 @@ function assignRandomImages() {
   for (const photo of activeQueuePhotos) {
     assignRandomImageToPhoto(photo);
   }
+}
+
+function handleUnavailableMedia(photo, imageData, requestId) {
+  if (photo.pendingRequestId !== requestId || photo.currentImageKey !== imageData._key) {
+    return;
+  }
+
+  console.warn("Skipping unavailable media:", imageData.filename);
+  unavailableMediaKeys.add(imageData._key);
+  photo.imgEl.onload = null;
+  photo.imgEl.onerror = null;
+  photo.videoEl.onerror = null;
+  photo.videoEl.pause();
+  photo.videoEl.removeAttribute("src");
+  photo.videoEl.load();
+
+  resetImageCycle();
+  if (imageCycle.length > 0) {
+    assignRandomImageToPhoto(photo);
+    return;
+  }
+
+  photo.currentMediaType = null;
+  photo.currentImageKey = null;
+  hasAvailableImages = false;
+  updateCenterPhotoVisibility();
 }
 
 function normalizePeopleField(rawPeople) {
@@ -1202,6 +1234,7 @@ function assignRandomImageToPhoto(photo) {
   if (imageData.mediaType === "video") {
     photo.imgEl.onload = null;
     photo.imgEl.onerror = null;
+    photo.videoEl.onerror = () => handleUnavailableMedia(photo, imageData, requestId);
     photo.imgEl.style.display = "none";
     photo.videoEl.style.display = "block";
     photo.videoEl.src = imageData.filename;
@@ -1221,12 +1254,13 @@ function assignRandomImageToPhoto(photo) {
     photo.container.classList.remove("debug-video-text");
     photo.textEl.style.fontSize = "";
     photo.videoEl.pause();
+    photo.videoEl.onerror = null;
     photo.videoEl.removeAttribute("src");
     photo.videoEl.load();
     photo.videoEl.style.display = "none";
     photo.imgEl.style.display = "block";
     photo.imgEl.onload = finalizeCaptionUpdate;
-    photo.imgEl.onerror = finalizeCaptionUpdate;
+    photo.imgEl.onerror = () => handleUnavailableMedia(photo, imageData, requestId);
     photo.imgEl.src = imageData.filename;
 
     if (photo.imgEl.complete) {
