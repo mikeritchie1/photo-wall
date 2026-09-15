@@ -91,7 +91,7 @@ const lightBulbSpacing = 95;
 const MOBILE_BREAKPOINT = 900;
 const PHOTO_WRAP_BUFFER_PX = 36;
 const DEFAULT_CONTROL_VALUES = {
-  folder: "all",
+  folder: "Various",
   size: "420",
   speed: "1.5",
   reverse: false,
@@ -195,7 +195,7 @@ let videoManifest = null;
 let audioManifest = [];
 let mediaMixIndex = 2;
 let naturalMediaMix = false;
-let selectedFolder = "all";
+let selectedFolder = "Various";
 let selectedOrder = "random";
 let availablePeople = [];
 let selectedPeople = new Set();
@@ -475,7 +475,7 @@ function populateFolderSelect() {
   const allOption = document.createElement("option");
   allOption.value = "all";
   allOption.textContent = "All";
-  allOption.selected = true;
+  allOption.selected = selectedFolder === "all";
   folderSelect.appendChild(allOption);
 
   // Add individual folders from both media libraries.
@@ -749,8 +749,16 @@ function buildImagePool({ ignorePerson = false } = {}) {
     for (const [folder, items] of folders) {
       for (const item of items) {
         const relativePath = resolveImagePath(item, folder);
+        // The local build keeps root videos in videos/Various/, but the
+        // manually managed R2 bucket stores those files directly in videos/.
+        // Keep the local layout untouched while mapping the deployed URL.
+        const mediaPath = !isLocalRuntime &&
+          source.mediaType === "video" &&
+          folder === "Various"
+          ? item.filename
+          : relativePath;
         pool.push({
-          filename: buildPhotoUrl(relativePath, source.mediaType),
+          filename: buildPhotoUrl(mediaPath, source.mediaType),
           mediaType: source.mediaType,
           hasAudio: item.hasAudio !== false,
           text: item.text || "",
