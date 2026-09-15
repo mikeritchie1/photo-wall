@@ -4,6 +4,7 @@ import re
 import shutil
 import subprocess
 import sys
+from time import perf_counter
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from datetime import datetime, timezone
@@ -50,6 +51,21 @@ MAX_IMAGE_BYTES = 8 * 1024 * 1024
 # Kept only for migrating files created by older versions. New compressed
 # videos are written back to their original filename.
 COMPRESSED_VIDEO_SUFFIX = ".compressed.mp4"
+
+
+def build_progress(message: str):
+    """Print a flushed progress message so long-running builds are observable."""
+    print(f"[build] {message}", flush=True)
+
+
+def run_build_step(label: str, action):
+    """Run one build phase and report how long it took."""
+    build_progress(f"Starting {label}...")
+    started = perf_counter()
+    result = action()
+    elapsed = perf_counter() - started
+    build_progress(f"Finished {label} in {elapsed:.1f}s.")
+    return result
 
 
 def find_media_tool(tool_name: str):
@@ -731,7 +747,11 @@ def migrate_images_to_image_library():
     video_image_files = [
         file
         for file in sorted(VIDEOS_DIR.rglob("*"))
-        if file.is_file() and file.suffix.lower() in IMAGE_EXTENSIONS
+        if file.is_file()
+        and (
+            file.suffix.lower() in IMAGE_EXTENSIONS
+            or file.suffix.lower() in HEIC_EXTENSIONS
+        )
     ] if VIDEOS_DIR.exists() else []
 
     for source_file in video_image_files:
@@ -1064,19 +1084,24 @@ def compress_videos():
 
 def build_manifest():
     manifest = {}
+    build_started = perf_counter()
+
+    build_progress("Build started.")
 
     if not IMAGES_DIR.exists():
         print(f"Images folder not found: {IMAGES_DIR}")
         return
 
-    migrate_videos_to_video_library()
-    migrate_images_to_image_library()
-    move_root_images_to_various_folder()
-    ensure_heic_conversions()
-    compress_images()
+    run_build_step("video migration", migrate_videos_to_video_library)
+    run_build_step("image migration", migrate_images_to_image_library)
+    run_build_step("root image organization", move_root_images_to_various_folder)
+    run_build_step("HEIC conversion", ensure_heic_conversions)
+    run_build_step("image compression", compress_images)
 
     # Include images directly inside `images/` under a catch-all folder.
     # This supports sidecar metadata the same way album subfolders do.
+    build_progress("Scanning image files for metadata...")
+    image_scan_started = perf_counter()
     if TARGET_FOLDERS is None:
         root_json_sidecars = [
             file
@@ -1116,6 +1141,11 @@ def build_manifest():
         if root_image_files:
             manifest[ROOT_MISC_FOLDER_NAME] = root_image_files
 
+        build_progress(
+            f"Scanned images root: {len(root_image_files)} image(s) in "
+            f"{perf_counter() - image_scan_started:.1f}s."
+        )
+
         if DELETE_CONSUMED_SIDECAR_JSON:
             for sidecar in sorted(root_consumed_sidecars):
                 try:
@@ -1123,11 +1153,22 @@ def build_manifest():
                 except OSError as error:
                     print(f"Failed to delete sidecar {sidecar}: {error}")
 
-    for folder in sorted(IMAGES_DIR.iterdir()):
+    folders_to_scan = [
+        folder
+        for folder in sorted(IMAGES_DIR.iterdir())
+        if folder.is_dir()
+        and (TARGET_FOLDERS is None or folder.name in TARGET_FOLDERS)
+    ]
+    build_progress(f"Scanning {len(folders_to_scan)} image folder(s)...")
+
+    for folder in folders_to_scan:
         if not folder.is_dir():
             continue
         if TARGET_FOLDERS is not None and folder.name not in TARGET_FOLDERS:
             continue
+
+        folder_started = perf_counter()
+        build_progress(f"Scanning folder: {folder.name}")
 
         all_json_sidecars = [
             file
@@ -1167,6 +1208,11 @@ def build_manifest():
         if image_files:
             manifest[folder.name] = image_files
 
+        build_progress(
+            f"Finished folder {folder.name}: {len(image_files)} image(s) in "
+            f"{perf_counter() - folder_started:.1f}s."
+        )
+
         if DELETE_CONSUMED_SIDECAR_JSON:
             for sidecar in sorted(consumed_sidecars):
                 try:
@@ -1174,18 +1220,19 @@ def build_manifest():
                 except OSError as error:
                     print(f"Failed to delete sidecar {sidecar}: {error}")
 
+    build_progress("Writing image manifest...")
     with open(MANIFEST_PATH, "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
 
-    build_video_manifest()
-    build_audio_manifest()
+    run_build_step("video manifest creation", build_video_manifest)
+    run_build_step("audio manifest creation", build_audio_manifest)
 
-    print(f"Manifest created: {MANIFEST_PATH}")
-    manifest_preview = json.dumps(manifest, indent=2, ensure_ascii=False)
-    try:
-        print(manifest_preview)
-    except UnicodeEncodeError:
-        print(manifest_preview.encode("ascii", errors="replace").decode("ascii"))
+    image_count = sum(len(items) for items in manifest.values())
+    build_progress(
+        f"Build complete in {perf_counter() - build_started:.1f}s: "
+        f"{image_count} image(s) across {len(manifest)} folder(s)."
+    )
+    print(f"Manifest created: {MANIFEST_PATH}", flush=True)
 
 if __name__ == "__main__":
     if "--compress-videos" in sys.argv[1:]:
