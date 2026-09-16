@@ -216,7 +216,6 @@ let stickerManifest = [];
 let mediaMixIndex = 2;
 let naturalMediaMix = false;
 let stickersEnabled = false;
-let lastStickerLayoutTime = 0;
 let stickerCycleTimer = null;
 let selectedFolder = "Various";
 let selectedOrder = "random";
@@ -255,7 +254,6 @@ const VIDEO_FALLBACK_TRIGGER_RATIO = 0.95;
 const FALLBACK_VIDEO_MIN_CENTER_RATIO = 0.05;
 const FALLBACK_VIDEO_MAX_CENTER_RATIO = 0.95;
 const VIDEO_AUDIO_UPDATE_INTERVAL_MS = 150;
-const STICKER_LAYOUT_INTERVAL_MS = 650;
 const MEDIA_CAPTION_REVEAL_DELAY_MS = 90;
 const MEDIA_ASSIGNMENT_STAGGER_MS = 85;
 const MEDIA_REVEAL_STAGGER_MS = 140;
@@ -758,7 +756,6 @@ stickersToggle.addEventListener("click", () => {
   stickersToggle.setAttribute("aria-pressed", String(stickersEnabled));
   stickersToggle.textContent = stickersEnabled ? "Stickers: On" : "Stickers: Off";
   if (stickersEnabled) {
-    lastStickerLayoutTime = 0;
     layoutStickers();
     scheduleStickerCycle();
   } else {
@@ -768,7 +765,6 @@ stickersToggle.addEventListener("click", () => {
       element.removeAttribute("src");
       delete element.dataset.stickerUrl;
       delete element.dataset.stickerIndex;
-      delete element.dataset.stickerRotation;
     }
   }
 });
@@ -820,7 +816,7 @@ function stickerRectOverlaps(rect, other, margin = 14) {
     rect.bottom > other.top - margin;
 }
 
-function layoutStickers(now = performance.now()) {
+function layoutStickers() {
   if (!stickersEnabled || stickerManifest.length === 0) {
     return;
   }
@@ -873,7 +869,10 @@ function layoutStickers(now = performance.now()) {
       if (chosen) {
         break;
       }
-      const left = 12 + Math.random() * Math.max(1, window.innerWidth - stickerWidth - 24);
+      const sideWidth = window.innerWidth * 0.32;
+      const left = index === 0
+        ? 12 + Math.random() * Math.max(1, sideWidth - stickerWidth - 12)
+        : window.innerWidth - sideWidth + Math.random() * Math.max(1, sideWidth - stickerWidth - 12);
       const top = 12 + Math.random() * Math.max(1, window.innerHeight - stickerHeight - 24);
       const candidate = {
         left,
@@ -895,10 +894,6 @@ function layoutStickers(now = performance.now()) {
     placedRects.push(chosen);
     element.style.left = `${chosen.left}px`;
     element.style.top = `${chosen.top}px`;
-    if (!element.dataset.stickerRotation) {
-      element.dataset.stickerRotation = String(Math.round(-15 + Math.random() * 30));
-    }
-    element.style.setProperty("--sticker-rotation", `${element.dataset.stickerRotation}deg`);
     if (element.complete && element.naturalWidth > 0) {
       element.style.opacity = "1";
     }
@@ -922,11 +917,9 @@ function scheduleStickerCycle() {
         element.removeAttribute("src");
         delete element.dataset.stickerUrl;
         delete element.dataset.stickerIndex;
-        delete element.dataset.stickerRotation;
         element.style.left = "";
         element.style.top = "";
       }
-      lastStickerLayoutTime = 0;
       layoutStickers();
       scheduleStickerCycle();
     }, 380);
@@ -2119,7 +2112,6 @@ function resetControlsToDefaults() {
     element.removeAttribute("src");
     delete element.dataset.stickerUrl;
     delete element.dataset.stickerIndex;
-    delete element.dataset.stickerRotation;
   }
   updateVideoAudio();
   mediaMixIndex = 2;
@@ -2718,11 +2710,6 @@ function render(time) {
   }
 
   updateLights(time, deltaSeconds);
-
-  if (stickersEnabled && time - lastStickerLayoutTime >= STICKER_LAYOUT_INTERVAL_MS) {
-    lastStickerLayoutTime = time;
-    layoutStickers(time);
-  }
 
   if (currentLightColor === 'rainbow') {
     const t = time * 0.001;

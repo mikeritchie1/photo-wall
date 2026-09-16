@@ -233,19 +233,7 @@ body.debug-mode .viewport-guide {
   z-index: 1;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.35s ease, left 0.8s ease, top 0.8s ease;
-  animation: sticker-bob 3.2s ease-in-out infinite alternate;
-}
-
-@keyframes sticker-bob {
-  from {
-    margin-left: -5px;
-    transform: rotate(var(--sticker-rotation, 0deg));
-  }
-  to {
-    margin-left: 5px;
-    transform: rotate(var(--sticker-rotation, 0deg));
-  }
+  transition: opacity 0.35s ease;
 }
 
 body.debug-mode .photo-container.debug-video-text .photo-text {
