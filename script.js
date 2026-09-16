@@ -25,6 +25,11 @@ const peopleFilterToggle = document.getElementById("peopleFilterToggle");
 const peopleOptionsRow = document.getElementById("peopleOptionsRow");
 const peopleOptions = document.getElementById("peopleOptions");
 const resetControlsBtn = document.getElementById("resetControlsBtn");
+const stickersToggle = document.getElementById("stickersToggle");
+const stickerElements = [
+  document.getElementById("sticker1"),
+  document.getElementById("sticker2")
+];
 const wall = document.getElementById("wall");
 const R2_BASE_URL = "https://pub-bd90151148dc4ad4a6dcce4b188be9ac.r2.dev";
 const isLocalRuntime =
@@ -38,6 +43,7 @@ const PHOTO_BASE_URL = isLocalRuntime ? "images" : R2_BASE_URL;
 const MANIFEST_URL = "images/manifest.json";
 const VIDEO_MANIFEST_URL = "videos/manifest.json";
 const AUDIO_MANIFEST_URL = "audio/manifest.json";
+const STICKER_MANIFEST_URL = "stickers/manifest.json";
 const GROUPS_URL = "images/groups.json";
 console.log("[runtime-assets]", {
   hostname: location.hostname,
@@ -206,8 +212,11 @@ let manifest = null;
 let imageManifest = null;
 let videoManifest = null;
 let audioManifest = [];
+let stickerManifest = [];
 let mediaMixIndex = 2;
 let naturalMediaMix = false;
+let stickersEnabled = false;
+let lastStickerLayoutTime = 0;
 let selectedFolder = "Various";
 let selectedOrder = "random";
 let availablePeople = [];
@@ -245,6 +254,7 @@ const VIDEO_FALLBACK_TRIGGER_RATIO = 0.95;
 const FALLBACK_VIDEO_MIN_CENTER_RATIO = 0.05;
 const FALLBACK_VIDEO_MAX_CENTER_RATIO = 0.95;
 const VIDEO_AUDIO_UPDATE_INTERVAL_MS = 150;
+const STICKER_LAYOUT_INTERVAL_MS = 650;
 const MEDIA_CAPTION_REVEAL_DELAY_MS = 90;
 const MEDIA_ASSIGNMENT_STAGGER_MS = 85;
 const MEDIA_REVEAL_STAGGER_MS = 140;
@@ -400,10 +410,11 @@ function initializeYearRangeFromManifest() {
 
 async function loadManifest() {
   try {
-    const [imageResponse, videoResponse, audioResponse] = await Promise.all([
+    const [imageResponse, videoResponse, audioResponse, stickerResponse] = await Promise.all([
       fetch(MANIFEST_URL),
       fetch(VIDEO_MANIFEST_URL).catch(() => null),
-      fetch(AUDIO_MANIFEST_URL).catch(() => null)
+      fetch(AUDIO_MANIFEST_URL).catch(() => null),
+      fetch(STICKER_MANIFEST_URL).catch(() => null)
     ]);
     if (!imageResponse.ok) {
       throw new Error(`Image manifest request failed: ${imageResponse.status}`);
@@ -411,6 +422,10 @@ async function loadManifest() {
     imageManifest = await imageResponse.json();
     videoManifest = videoResponse && videoResponse.ok ? await videoResponse.json() : {};
     audioManifest = audioResponse && audioResponse.ok ? await audioResponse.json() : [];
+    stickerManifest = stickerResponse && stickerResponse.ok ? await stickerResponse.json() : [];
+    if (!Array.isArray(stickerManifest)) {
+      stickerManifest = stickerManifest?.stickers || [];
+    }
     prepareBackgroundAudio();
     console.log("[manifest-load]", {
       imageFolders: Object.keys(imageManifest || {}).length,
@@ -736,6 +751,24 @@ resetControlsBtn.addEventListener("click", () => {
   resetControlsToDefaults();
 });
 
+stickersToggle.addEventListener("click", () => {
+  stickersEnabled = !stickersEnabled;
+  stickersToggle.classList.toggle("active", stickersEnabled);
+  stickersToggle.setAttribute("aria-pressed", String(stickersEnabled));
+  stickersToggle.textContent = stickersEnabled ? "Stickers: On" : "Stickers: Off";
+  if (stickersEnabled) {
+    lastStickerLayoutTime = 0;
+    layoutStickers();
+  } else {
+    for (const element of stickerElements) {
+      element.style.opacity = "0";
+      element.removeAttribute("src");
+      delete element.dataset.stickerUrl;
+      delete element.dataset.stickerIndex;
+    }
+  }
+});
+
 function shuffleArray(items) {
   const shuffled = [...items];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -763,6 +796,92 @@ function buildPhotoUrl(relativePath, mediaType = "image") {
   const mediaFolder = mediaType === "video" ? "videos" : "images";
   const storagePath = isLocalRuntime ? encodedPath : `${mediaFolder}/${encodedPath}`;
   return `${isLocalRuntime ? mediaFolder : R2_BASE_URL}/${storagePath}`;
+}
+
+function buildStickerUrl(sticker) {
+  const relativePath = typeof sticker === "string"
+    ? sticker
+    : sticker?.path || sticker?.filename || "";
+  const encodedPath = relativePath
+    .split("/")
+    .map((part) => encodeURIComponent(part))
+    .join("/");
+  return `${isLocalRuntime ? "stickers" : `${R2_BASE_URL}/stickers`}/${encodedPath}`;
+}
+
+function stickerRectOverlaps(rect, other, margin = 14) {
+  return rect.left < other.right + margin &&
+    rect.right > other.left - margin &&
+    rect.top < other.bottom + margin &&
+    rect.bottom > other.top - margin;
+}
+
+function layoutStickers(now = performance.now()) {
+  if (!stickersEnabled || stickerManifest.length === 0) {
+    return;
+  }
+
+  const photoRects = activeQueuePhotos
+    .filter((photo) => photo.currentImageData)
+    .map((photo) => photo.container.getBoundingClientRect())
+    .filter((rect) => rect.width > 0 && rect.height > 0);
+  const placedRects = [];
+  const stickerSize = Math.min(150, Math.max(64, Math.min(window.innerWidth, window.innerHeight) * 0.13));
+
+  stickerElements.forEach((element, index) => {
+    if (!element.dataset.stickerIndex) {
+      element.dataset.stickerIndex = String(Math.floor(Math.random() * stickerManifest.length));
+    }
+    const sticker = stickerManifest[Number(element.dataset.stickerIndex) % stickerManifest.length];
+    const url = buildStickerUrl(sticker);
+    if (!url || element.dataset.stickerUrl !== url) {
+      element.dataset.stickerUrl = url;
+      element.style.width = `${stickerSize}px`;
+      element.style.opacity = "0";
+      element.onload = () => {
+        if (stickersEnabled && element.dataset.stickerUrl === url) {
+          element.style.opacity = "1";
+        }
+      };
+      element.onerror = () => {
+        element.style.opacity = "0";
+      };
+      element.src = url;
+    }
+
+    const stickerWidth = stickerSize;
+    const stickerHeight = element.naturalWidth > 0
+      ? stickerSize * (element.naturalHeight / element.naturalWidth)
+      : stickerSize;
+    let chosen = null;
+    for (let attempt = 0; attempt < 80; attempt += 1) {
+      const left = 12 + Math.random() * Math.max(1, window.innerWidth - stickerWidth - 24);
+      const top = 12 + Math.random() * Math.max(1, window.innerHeight - stickerHeight - 24);
+      const candidate = {
+        left,
+        top,
+        right: left + stickerWidth,
+        bottom: top + stickerHeight
+      };
+      if (!photoRects.some((rect) => stickerRectOverlaps(candidate, rect)) &&
+          !placedRects.some((rect) => stickerRectOverlaps(candidate, rect, 10))) {
+        chosen = candidate;
+        break;
+      }
+    }
+
+    if (!chosen) {
+      element.style.opacity = "0";
+      return;
+    }
+    placedRects.push(chosen);
+    element.style.left = `${chosen.left}px`;
+    element.style.top = `${chosen.top}px`;
+    element.style.transform = `rotate(${Math.round(-15 + Math.random() * 30)}deg)`;
+    if (element.complete && element.naturalWidth > 0) {
+      element.style.opacity = "1";
+    }
+  });
 }
 
 function buildAudioUrl(relativePath) {
@@ -1941,6 +2060,16 @@ function resetControlsToDefaults() {
   fastPointerDirection = 1;
   fastPointerButton = 0;
   heldArrowKeys.clear();
+  stickersEnabled = false;
+  stickersToggle.classList.remove("active");
+  stickersToggle.setAttribute("aria-pressed", "false");
+  stickersToggle.textContent = "Stickers: Off";
+  for (const element of stickerElements) {
+    element.style.opacity = "0";
+    element.removeAttribute("src");
+    delete element.dataset.stickerUrl;
+    delete element.dataset.stickerIndex;
+  }
   updateVideoAudio();
   mediaMixIndex = 2;
   naturalMediaMix = false;
@@ -2538,6 +2667,11 @@ function render(time) {
   }
 
   updateLights(time, deltaSeconds);
+
+  if (stickersEnabled && time - lastStickerLayoutTime >= STICKER_LAYOUT_INTERVAL_MS) {
+    lastStickerLayoutTime = time;
+    layoutStickers(time);
+  }
 
   if (currentLightColor === 'rainbow') {
     const t = time * 0.001;

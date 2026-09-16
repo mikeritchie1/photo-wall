@@ -15,6 +15,9 @@
     <div class="light-stream" id="lights-center"></div>
     <div class="light-stream" id="lights-right"></div>
 
+    <img class="sticker" id="sticker1" alt="" aria-hidden="true" />
+    <img class="sticker" id="sticker2" alt="" aria-hidden="true" />
+
     <div id="quickControls" class="quick-controls hidden" aria-label="Playback controls">
       <button id="quickSoundButton" type="button" aria-label="Turn sound off" aria-pressed="true">🔊</button>
       <button id="quickPauseButton" type="button" aria-label="Pause" aria-pressed="false">⏸</button>
@@ -207,6 +210,8 @@
 
     <div class="control-row bottom-actions-row">
       <button id="resetControlsBtn" type="button">Reset Controls</button>
+      <button id="stickersToggle" class="stickers-toggle" type="button"
+        aria-pressed="false">Stickers: Off</button>
       <div class="control-group media-file-group">
         <label for="folderSelect">Select Media File</label>
         <select id="folderSelect"></select>
@@ -236,6 +241,6 @@
   </div>
 
   <script src="backgrounds.js"></script>
-  <script src="script.js?v=20260916-fade-sequence"></script>
+  <script src="script.js?v=20260916-stickers"></script>
 </body>
 </html>

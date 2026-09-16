@@ -222,6 +222,20 @@ body.debug-mode .viewport-guide {
   text-overflow: ellipsis;
 }
 
+.sticker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  max-width: 24vw;
+  max-height: 24vh;
+  object-fit: contain;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
 body.debug-mode .photo-container.debug-video-text .photo-text {
   font-family: Arial, sans-serif;
   line-height: 1.15;
@@ -752,6 +766,22 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
 
 #resetControlsBtn:hover {
   background: #3b3b3b;
+}
+
+.stickers-toggle {
+  background: #1f1f1f;
+  color: #ffffff;
+  border: 1px solid #5a5a5a;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.stickers-toggle:hover,
+.stickers-toggle.active {
+  background: rgba(216, 181, 111, 0.2);
+  border-color: #d8b56f;
+  color: #d8b56f;
 }
 
 @media (max-width: 900px) {
