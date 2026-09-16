@@ -2225,6 +2225,8 @@ function getConfiguredSpeed() {
 function updateReverseButton() {
   reverseButton.classList.toggle("active", reverseEnabled);
   reverseButton.setAttribute("aria-pressed", String(reverseEnabled));
+  reverseButton.textContent = reverseEnabled ? "↑" : "↓";
+  reverseButton.title = reverseEnabled ? "Move upward" : "Move downward";
 }
 
 function applyMotionSpeed() {
