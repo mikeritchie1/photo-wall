@@ -1945,6 +1945,13 @@ function getColumnX(column, width) {
 }
 
 function layoutPhotos() {
+  // Mobile browsers can report a temporary zero/partial viewport while the
+  // page is starting. Do not calculate column positions until dimensions are
+  // usable, otherwise getColumnX() clamps every column to the same X value.
+  if (window.innerWidth <= 0 || window.innerHeight <= 0) {
+    return;
+  }
+
   const spacing = getSpacing();
   const streamHeight = spacing * photosPerColumn;
   const startY = window.innerHeight / 2 - streamHeight / 2;
@@ -1957,6 +1964,22 @@ function layoutPhotos() {
   }
 
   layoutLights();
+}
+
+let layoutFramePending = false;
+function scheduleLayout() {
+  if (layoutFramePending) {
+    return;
+  }
+
+  layoutFramePending = true;
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      layoutFramePending = false;
+      syncPhotoScaleVars();
+      layoutPhotos();
+    });
+  });
 }
 
 function layoutLights() {
@@ -2118,13 +2141,12 @@ function render(time) {
   requestAnimationFrame(render);
 }
 
-window.addEventListener("resize", () => {
-  syncPhotoScaleVars();
-  layoutPhotos();
-});
+window.addEventListener("resize", scheduleLayout);
+window.addEventListener("orientationchange", scheduleLayout);
+window.visualViewport?.addEventListener("resize", scheduleLayout);
+window.addEventListener("load", scheduleLayout);
 
-syncPhotoScaleVars();
-layoutPhotos();
+scheduleLayout();
 updateYearRangeDisplay();
 hideControls();
 
@@ -2133,6 +2155,7 @@ loadManifest().then(() => {
   resetImageCycle();
   setupClickListeners();
   assignRandomImages();
+  scheduleLayout();
 });
 
 // Populate background selector
