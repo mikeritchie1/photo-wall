@@ -300,6 +300,11 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   min-height: 20px;
 }
 
+.media-mix-toggle input,
+.year-order-toggle input {
+  accent-color: #d8b56f;
+}
+
 .media-mix-toggle {
   display: flex;
   flex-direction: row !important;
@@ -575,6 +580,13 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   max-width: 280px;
 }
 
+.year-range-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 20px;
+}
+
 .year-range-track {
   position: relative;
   height: 18px;
@@ -663,7 +675,7 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   flex-direction: row !important;
   align-items: center;
   gap: 7px;
-  margin-top: 6px;
+  margin-top: 0;
   cursor: pointer;
   font-size: 13px !important;
 }

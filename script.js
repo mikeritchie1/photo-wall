@@ -14,7 +14,6 @@ const yearRangeActive = document.getElementById("yearRangeActive");
 const yearRangeValue = document.getElementById("yearRangeValue");
 const textSelect = document.getElementById("textSelect");
 const mediaMixSlider = document.getElementById("mediaMixSlider");
-const mediaMixValue = document.getElementById("mediaMixValue");
 const naturalMediaCheckbox = document.getElementById("naturalMediaCheckbox");
 const orderedCheckbox = document.getElementById("orderedCheckbox");
 const volumeSlider = document.getElementById("volumeSlider");
@@ -617,12 +616,7 @@ function getActiveManifests() {
 }
 
 function updateMediaMixControl() {
-  const mix = getMediaMix();
   mediaMixSlider.value = String(mediaMixIndex);
-  mediaMixValue.textContent = `${mix.photos}% photos · ${mix.videos}% videos`;
-  mediaMixValue.textContent = naturalMediaMix
-    ? "Natural mix - based on available media"
-    : `${mix.photos}% photos · ${mix.videos}% videos`;
   mediaMixSlider.disabled = !hasVideos() || naturalMediaMix;
   mediaMixSlider.title = hasVideos() ? "Choose the photos and videos mix" : "Add videos to the videos folder first";
 }

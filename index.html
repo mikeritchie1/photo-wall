@@ -116,14 +116,12 @@
     <div class="control-row">
       <div class="control-group media-mix-group">
         <div class="media-mix-label">
-          <label for="mediaMixSlider">Photos / Videos</label>
-          <label class="media-mix-toggle" for="naturalMediaCheckbox">
-            <input type="checkbox" id="naturalMediaCheckbox" checked />
-            Natural
+          <label for="mediaMixSlider">Photo/Video Ratio</label>
+          <label class="media-mix-toggle" for="naturalMediaCheckbox" aria-label="Use natural media mix" title="Use natural media mix">
+            <input type="checkbox" id="naturalMediaCheckbox" checked aria-label="Use natural media mix" />
           </label>
         </div>
         <input type="range" id="mediaMixSlider" min="0" max="4" step="1" value="3" />
-        <div id="mediaMixValue" class="media-mix-value">25% photos · 75% videos</div>
       </div>
 
       <div class="control-group">
@@ -218,7 +216,13 @@
         <span id="peopleFilterSummary" class="people-filter-summary">All</span>
       </div>
       <div class="control-group year-range-control-group">
-        <label for="yearStartSlider">Year Range</label>
+        <div class="year-range-label">
+          <label for="yearStartSlider">Year Range</label>
+          <label class="year-order-toggle" for="orderedCheckbox">
+            <input type="checkbox" id="orderedCheckbox" />
+            Chronological
+          </label>
+        </div>
         <div class="year-range-group">
           <div class="year-range-track">
             <div id="yearRangeActive" class="year-range-active"></div>
@@ -226,10 +230,6 @@
             <input type="range" id="yearEndSlider" />
           </div>
           <div id="yearRangeValue" class="year-range-value"></div>
-          <label class="year-order-toggle" for="orderedCheckbox">
-            <input type="checkbox" id="orderedCheckbox" />
-            Ordered
-          </label>
         </div>
       </div>
     </div>
