@@ -996,9 +996,9 @@ function handleUnavailableMedia(photo, imageData, requestId) {
   photo.videoEl.pause();
   photo.videoEl.removeAttribute("src");
   photo.videoEl.load();
-  photo.imgEl.style.visibility = "hidden";
-  photo.videoEl.style.visibility = "hidden";
-  photo.textEl.style.visibility = "hidden";
+  photo.imgEl.style.opacity = "0";
+  photo.videoEl.style.opacity = "0";
+  photo.textEl.style.opacity = "0";
 
   resetImageCycle();
   if (imageCycle.length > 0) {
@@ -1232,9 +1232,9 @@ function assignRandomImageToPhoto(photo) {
     audioMinimumHoldUntil = 0;
   }
   photo.container.classList.remove("audio-active");
-  photo.imgEl.style.visibility = "hidden";
-  photo.videoEl.style.visibility = "hidden";
-  photo.textEl.style.visibility = "hidden";
+  photo.imgEl.style.opacity = "0";
+  photo.videoEl.style.opacity = "0";
+  photo.textEl.style.opacity = "0";
   const nextCaption = getDisplayTextForImage(imageData);
   photo.audioStartPreparation?.();
   photo.currentMediaType = imageData.mediaType;
@@ -1254,8 +1254,8 @@ function assignRandomImageToPhoto(photo) {
       return;
     }
     photo.textEl.textContent = nextCaption;
-    photo.imgEl.style.visibility = "visible";
-    photo.textEl.style.visibility = "visible";
+    photo.imgEl.style.opacity = "1";
+    photo.textEl.style.opacity = "1";
     photo.imgEl.onload = null;
     photo.imgEl.onerror = null;
   };
@@ -1269,8 +1269,8 @@ function assignRandomImageToPhoto(photo) {
       }
       photo.videoEl.onloadeddata = null;
       photo.videoEl.oncanplay = null;
-      photo.videoEl.style.visibility = "visible";
-      photo.textEl.style.visibility = "visible";
+      photo.videoEl.style.opacity = "1";
+      photo.textEl.style.opacity = "1";
       finalizeCaptionUpdate();
     };
     photo.videoEl.onloadeddata = revealLoadedVideo;
