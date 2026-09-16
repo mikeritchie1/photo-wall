@@ -330,6 +330,27 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   min-height: 36px;
 }
 
+.reverse-button {
+  align-self: flex-start;
+  width: 38px;
+  min-height: 28px !important;
+  padding: 0;
+  border: 1px solid rgba(255, 211, 78, 0.55);
+  border-radius: 7px;
+  background: rgba(45, 35, 62, 0.9);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 22px !important;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.reverse-button:hover,
+.reverse-button.active {
+  background: rgba(255, 211, 78, 0.22);
+  border-color: #ffd34e;
+  color: #ffd34e;
+}
+
 .controls select,
 .controls button {
   font-size: 14px;

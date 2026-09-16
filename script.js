@@ -5,7 +5,7 @@ const folderSelect = document.getElementById("folderSelect");
 const backgroundSelect = document.getElementById("backgroundSelect");
 const lightColorSelect = document.getElementById("lightColorSelect");
 const stringColorSelect = document.getElementById("stringColorSelect");
-const reverseCheckbox = document.getElementById("reverseCheckbox");
+const reverseButton = document.getElementById("reverseButton");
 const swaySlider = document.getElementById("swaySlider");
 const lightColumnsSelect = document.getElementById("lightColumnsSelect");
 const yearStartSlider = document.getElementById("yearStartSlider");
@@ -88,6 +88,7 @@ let lightOffsetY = 0;
 let lastRenderTimeSec = null;
 let isPaused = false;
 let pausedSpeed = null;
+let reverseEnabled = false;
 let fastPointerActive = false;
 const heldArrowKeys = new Set();
 let pendingMediaAssignmentTimers = [];
@@ -1935,7 +1936,8 @@ function resetControlsToDefaults() {
   syncPhotoScaleVars();
 
   speedSlider.value = DEFAULT_CONTROL_VALUES.speed;
-  reverseCheckbox.checked = DEFAULT_CONTROL_VALUES.reverse;
+  reverseEnabled = DEFAULT_CONTROL_VALUES.reverse;
+  updateReverseButton();
   applyMotionSpeed();
 
   swaySlider.value = DEFAULT_CONTROL_VALUES.sway;
@@ -2217,7 +2219,12 @@ function wrapPhoto(photo) {
 
 function getConfiguredSpeed() {
   const speed = parseFloat(speedSlider.value) || 0;
-  return reverseCheckbox.checked ? -speed : speed;
+  return reverseEnabled ? -speed : speed;
+}
+
+function updateReverseButton() {
+  reverseButton.classList.toggle("active", reverseEnabled);
+  reverseButton.setAttribute("aria-pressed", String(reverseEnabled));
 }
 
 function applyMotionSpeed() {
@@ -2233,7 +2240,7 @@ function applyMotionSpeed() {
   }
 
   if (fastPointerActive) {
-    verticalSpeed = parseFloat(speedSlider.max) * (reverseCheckbox.checked ? -1 : 1);
+    verticalSpeed = parseFloat(speedSlider.max) * (reverseEnabled ? -1 : 1);
     return;
   }
 
@@ -2253,7 +2260,8 @@ function setPaused(nextPaused) {
     isPaused = false;
     const restoreSpeed = pausedSpeed === null ? getConfiguredSpeed() : pausedSpeed;
     pausedSpeed = null;
-    reverseCheckbox.checked = restoreSpeed < 0;
+    reverseEnabled = restoreSpeed < 0;
+    updateReverseButton();
     speedSlider.value = String(Math.abs(restoreSpeed));
   }
 
@@ -2372,7 +2380,9 @@ speedSlider.addEventListener("input", () => {
   resetHideTimer();
 });
 
-reverseCheckbox.addEventListener("change", () => {
+reverseButton.addEventListener("click", () => {
+  reverseEnabled = !reverseEnabled;
+  updateReverseButton();
   applyMotionSpeed();
   resetHideTimer();
 });
