@@ -89,7 +89,6 @@ let lastRenderTimeSec = null;
 let isPaused = false;
 let pausedSpeed = null;
 let fastPointerActive = false;
-let selectedMediaPhoto = null;
 const heldArrowKeys = new Set();
 
 const leftXRatio = 0.24;
@@ -951,7 +950,6 @@ function setupClickListeners() {
   for (const photo of photos) {
     photo.container.addEventListener("click", (event) => {
       event.stopPropagation();
-      selectedMediaPhoto = photo;
       if (photo.currentMediaType === "video") {
         // Clicking a video selects it for active sound without replacing its
         // media. Manual selections use the extended 95% cutoff below.
@@ -1678,6 +1676,10 @@ function updateDebugVideoOverlay() {
   if (!debugMode) {
     for (const photo of photos) {
       photo.container.classList.remove("debug-video-text");
+      photo.textEl.style.fontSize = "";
+      photo.textEl.textContent = photo.currentImageData
+        ? getDisplayTextForImage(photo.currentImageData)
+        : "";
     }
     return;
   }
@@ -1700,8 +1702,7 @@ function updateDebugVideoOverlay() {
       photo.textEl.textContent = [
         `FILE ${mediaFilename}`,
         `FOLDER ${mediaFolder}`,
-        `CENTER ${centerPercent.toFixed(1)}%`,
-        `Y ${center.toFixed(0)}px`
+        `Y ${centerPercent.toFixed(1)}%`
       ].join("  |  ");
       continue;
     }
@@ -1723,15 +1724,10 @@ function updateDebugVideoOverlay() {
     photo.textEl.textContent = [
       `FILE ${mediaFilename}`,
       `FOLDER ${mediaFolder}`,
-      `CENTER ${centerPercent.toFixed(1)}%`,
-      `Y ${center.toFixed(0)}px`,
+      `Y ${centerPercent.toFixed(1)}%`,
       `DURATION ${duration === null ? "--" : `${duration.toFixed(1)}s`}`,
       `START ${selectedStart === null ? "--" : `${selectedStart.toFixed(1)}s`}`,
       `SEEK ${photo.videoStartSeekComplete ? "READY" : "WAIT"}`,
-      `AUDIO ${photo.currentHasAudio ? "DETECTED" : "MISSING"}`,
-      `MUTED DETECTED ${photo.currentIsMuted ? "YES" : "NO"}`,
-      `MUTED ${photo.videoEl.muted ? "YES" : "NO"}`,
-      `MUSIC ${backgroundAudioPhoto === photo && !backgroundAudio.muted ? "ON" : "OFF"}`,
       `TIME ${playbackTime === null ? "--" : `${playbackTime.toFixed(1)}s`}`
     ].join("  |  ");
   }
@@ -2157,18 +2153,14 @@ function setDebugMode(nextDebugMode) {
   }
 }
 
-function cycleSelectedMedia(direction) {
-  const photo = selectedMediaPhoto ||
-    activeQueuePhotos.find((candidate) => isPhotoInViewport(candidate)) ||
-    activeQueuePhotos[0];
-  if (!photo || imageCycle.length === 0) {
+function cycleMediaFolder(direction) {
+  if (!folderSelect.options.length) {
     return;
   }
-
-  if (direction < 0 && imageCycle.length > 1) {
-    imageCycleIndex = (imageCycleIndex - 2 + imageCycle.length) % imageCycle.length;
-  }
-  assignRandomImageToPhoto(photo);
+  const nextIndex = (folderSelect.selectedIndex + direction + folderSelect.options.length) %
+    folderSelect.options.length;
+  folderSelect.selectedIndex = nextIndex;
+  folderSelect.dispatchEvent(new Event("change", { bubbles: true }));
 }
 
 function showControls() {
@@ -2301,7 +2293,7 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
     event.preventDefault();
     if (!event.repeat) {
-      cycleSelectedMedia(event.key === "ArrowLeft" ? -1 : 1);
+      cycleMediaFolder(event.key === "ArrowLeft" ? -1 : 1);
     }
   }
 });

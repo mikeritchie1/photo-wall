@@ -463,6 +463,16 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   align-self: flex-end;
 }
 
+.bottom-actions-row .media-file-group {
+  flex: 0 1 220px;
+  min-width: 170px;
+}
+
+.bottom-actions-row .year-range-control-group {
+  flex: 1 1 280px;
+  min-width: 240px;
+}
+
 .people-filter-summary {
   color: rgba(255, 255, 255, 0.78);
   font-size: 13px;
