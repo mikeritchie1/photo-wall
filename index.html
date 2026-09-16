@@ -7,13 +7,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260916-landscape-controls" />
+  <link rel="stylesheet" href="style.css?v=20260916-shortcuts-volume" />
 </head>
 <body>
   <div class="wall" id="wall">
     <div class="light-stream" id="lights-left"></div>
     <div class="light-stream" id="lights-center"></div>
     <div class="light-stream" id="lights-right"></div>
+
+    <div id="quickControls" class="quick-controls hidden" aria-label="Playback controls">
+      <button id="quickSoundButton" type="button" aria-label="Turn sound off" aria-pressed="true">🔊</button>
+      <button id="quickPauseButton" type="button" aria-label="Pause" aria-pressed="false">⏸</button>
+    </div>
 
     <div class="viewport-guide viewport-guide-15" aria-hidden="true">
       <span>15% · minimum next-video line</span>
@@ -208,6 +213,11 @@
           <option value="3" selected>3</option>
         </select>
       </div>
+
+      <div class="control-group">
+        <label for="volumeSlider">Volume</label>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" />
+      </div>
     </div>
 
     <div class="control-row people-selector-row">
@@ -220,12 +230,11 @@
     </div>
 
     <div class="control-row">
-      <button id="soundCheckbox" type="button">Sound On</button>
       <button id="resetControlsBtn" type="button">Reset Controls</button>
     </div>
   </div>
 
   <script src="backgrounds.js"></script>
-  <script src="script.js?v=20260916-video-performance"></script>
+  <script src="script.js?v=20260916-shortcuts-volume"></script>
 </body>
 </html>

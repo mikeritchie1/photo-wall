@@ -17,7 +17,10 @@ const mediaMixSlider = document.getElementById("mediaMixSlider");
 const mediaMixValue = document.getElementById("mediaMixValue");
 const naturalMediaCheckbox = document.getElementById("naturalMediaCheckbox");
 const orderedCheckbox = document.getElementById("orderedCheckbox");
-const soundCheckbox = document.getElementById("soundCheckbox");
+const volumeSlider = document.getElementById("volumeSlider");
+const quickControls = document.getElementById("quickControls");
+const quickSoundButton = document.getElementById("quickSoundButton");
+const quickPauseButton = document.getElementById("quickPauseButton");
 const peopleFilterSummary = document.getElementById("peopleFilterSummary");
 const peopleFilterToggle = document.getElementById("peopleFilterToggle");
 const peopleOptionsRow = document.getElementById("peopleOptionsRow");
@@ -73,6 +76,7 @@ const lightsRight = document.getElementById("lights-right");
 let hideTimer;
 let photoWidth = parseFloat(sizeSlider.value);
 let verticalSpeed = parseFloat(speedSlider.value);
+let volumeLevel = parseFloat(volumeSlider.value);
 let currentLightColor = 'warm';
 let swayPower = parseFloat(swaySlider.value);
 let textMode = 'auto';
@@ -83,6 +87,10 @@ let selectedStartYear = null;
 let selectedEndYear = null;
 let lightOffsetY = 0;
 let lastRenderTimeSec = null;
+let isPaused = false;
+let pausedSpeed = null;
+let fastPointerActive = false;
+const heldArrowKeys = new Set();
 
 const leftXRatio = 0.24;
 const rightXRatio = 0.76;
@@ -1706,24 +1714,52 @@ function updateDebugVideoOverlay() {
   }
 }
 
-soundCheckbox.addEventListener("click", () => {
-  soundEnabled = !soundEnabled;
-  soundCheckbox.textContent = soundEnabled ? "Sound On" : "Sound Off";
-  if (!soundEnabled) {
-    audioPlaybackStartedAt = 0;
-  }
-  updateVideoAudio();
+quickSoundButton.addEventListener("click", () => {
+  setSoundEnabled(!soundEnabled);
   resetHideTimer();
 });
 
-document.addEventListener("pointerdown", () => {
+quickPauseButton.addEventListener("click", () => {
+  setPaused(!isPaused);
+  resetHideTimer();
+});
+
+volumeSlider.addEventListener("input", (event) => {
+  setVolume(event.target.value);
+  resetHideTimer();
+});
+
+quickControls.addEventListener("click", (event) => {
+  event.stopPropagation();
+});
+
+document.addEventListener("pointerdown", (event) => {
   audioUnlocked = true;
   updateVideoAudio();
+  if (!controls.contains(event.target) && !quickControls.contains(event.target) && !isPaused) {
+    fastPointerActive = true;
+    applyMotionSpeed();
+  }
 }, { passive: true });
 
+function releaseFastPointer() {
+  if (!fastPointerActive) {
+    return;
+  }
+  fastPointerActive = false;
+  applyMotionSpeed();
+}
+
+document.addEventListener("pointerup", releaseFastPointer, { passive: true });
+document.addEventListener("pointercancel", releaseFastPointer, { passive: true });
+document.addEventListener("pointerleave", releaseFastPointer, { passive: true });
+
 function resetControlsToDefaults() {
-  soundEnabled = true;
-  soundCheckbox.textContent = "Sound On";
+  setSoundEnabled(true);
+  setPaused(false);
+  setVolume(1);
+  fastPointerActive = false;
+  heldArrowKeys.clear();
   updateVideoAudio();
   mediaMixIndex = 2;
   naturalMediaMix = false;
@@ -1741,7 +1777,7 @@ function resetControlsToDefaults() {
 
   speedSlider.value = DEFAULT_CONTROL_VALUES.speed;
   reverseCheckbox.checked = DEFAULT_CONTROL_VALUES.reverse;
-  verticalSpeed = parseFloat(DEFAULT_CONTROL_VALUES.speed);
+  applyMotionSpeed();
 
   swaySlider.value = DEFAULT_CONTROL_VALUES.sway;
   swayPower = parseFloat(DEFAULT_CONTROL_VALUES.sway);
@@ -2020,9 +2056,78 @@ function wrapPhoto(photo) {
   }
 }
 
+function getConfiguredSpeed() {
+  const speed = parseFloat(speedSlider.value) || 0;
+  return reverseCheckbox.checked ? -speed : speed;
+}
+
+function applyMotionSpeed() {
+  if (isPaused) {
+    verticalSpeed = 0;
+    return;
+  }
+
+  if (heldArrowKeys.size > 0) {
+    const direction = heldArrowKeys.has("ArrowUp") ? -1 : 1;
+    verticalSpeed = parseFloat(speedSlider.max) * direction;
+    return;
+  }
+
+  if (fastPointerActive) {
+    verticalSpeed = parseFloat(speedSlider.max) * (reverseCheckbox.checked ? -1 : 1);
+    return;
+  }
+
+  verticalSpeed = getConfiguredSpeed();
+}
+
+function setPaused(nextPaused) {
+  if (nextPaused === isPaused) {
+    return;
+  }
+
+  if (nextPaused) {
+    pausedSpeed = getConfiguredSpeed();
+    isPaused = true;
+    speedSlider.value = "0";
+  } else {
+    isPaused = false;
+    const restoreSpeed = pausedSpeed === null ? getConfiguredSpeed() : pausedSpeed;
+    pausedSpeed = null;
+    reverseCheckbox.checked = restoreSpeed < 0;
+    speedSlider.value = String(Math.abs(restoreSpeed));
+  }
+
+  applyMotionSpeed();
+  quickPauseButton.textContent = isPaused ? "▶" : "⏸";
+  quickPauseButton.setAttribute("aria-label", isPaused ? "Play" : "Pause");
+  quickPauseButton.setAttribute("aria-pressed", String(isPaused));
+}
+
+function setSoundEnabled(nextEnabled) {
+  soundEnabled = nextEnabled;
+  quickSoundButton.textContent = soundEnabled ? "🔊" : "🔇";
+  quickSoundButton.setAttribute("aria-label", soundEnabled ? "Turn sound off" : "Turn sound on");
+  quickSoundButton.setAttribute("aria-pressed", String(soundEnabled));
+  if (!soundEnabled) {
+    audioPlaybackStartedAt = 0;
+  }
+  updateVideoAudio();
+}
+
+function setVolume(nextVolume) {
+  volumeLevel = Math.max(0, Math.min(1, Number(nextVolume)));
+  volumeSlider.value = String(volumeLevel);
+  backgroundAudio.volume = volumeLevel;
+  for (const photo of photos) {
+    photo.videoEl.volume = volumeLevel;
+  }
+}
+
 function showControls() {
   controls.classList.remove("hidden");
-  if (controls.matches(":hover")) {
+  quickControls.classList.remove("hidden");
+  if (!isTouchDevice() && controls.matches(":hover")) {
     clearTimeout(hideTimer);
     return;
   }
@@ -2036,6 +2141,7 @@ function isTouchDevice() {
 function hideControls() {
   clearTimeout(hideTimer);
   controls.classList.add("hidden");
+  quickControls.classList.add("hidden");
 }
 
 function resetHideTimer() {
@@ -2083,14 +2189,12 @@ sizeSlider.addEventListener("input", () => {
 });
 
 speedSlider.addEventListener("input", () => {
-  const speed = parseFloat(speedSlider.value);
-  verticalSpeed = reverseCheckbox.checked ? -speed : speed;
+  applyMotionSpeed();
   resetHideTimer();
 });
 
 reverseCheckbox.addEventListener("change", () => {
-  const speed = parseFloat(speedSlider.value);
-  verticalSpeed = reverseCheckbox.checked ? -speed : speed;
+  applyMotionSpeed();
   resetHideTimer();
 });
 
@@ -2104,6 +2208,54 @@ swaySlider.addEventListener("input", () => {
   slider.addEventListener("mousemove", resetHideTimer);
   slider.addEventListener("touchstart", resetHideTimer);
   slider.addEventListener("touchmove", resetHideTimer);
+});
+
+function isTextEntryTarget(target) {
+  return target instanceof HTMLElement &&
+    Boolean(target.closest("input, select, textarea, button"));
+}
+
+document.addEventListener("keydown", (event) => {
+  if (isTextEntryTarget(event.target)) {
+    return;
+  }
+
+  if (event.code === "Space") {
+    event.preventDefault();
+    if (!event.repeat) {
+      setPaused(!isPaused);
+    }
+    return;
+  }
+
+  if (event.key.toLowerCase() === "s") {
+    event.preventDefault();
+    if (!event.repeat) {
+      setSoundEnabled(!soundEnabled);
+    }
+    return;
+  }
+
+  if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+    event.preventDefault();
+    heldArrowKeys.add(event.key);
+    applyMotionSpeed();
+  }
+});
+
+document.addEventListener("keyup", (event) => {
+  if (event.key !== "ArrowUp" && event.key !== "ArrowDown") {
+    return;
+  }
+  event.preventDefault();
+  heldArrowKeys.delete(event.key);
+  applyMotionSpeed();
+});
+
+window.addEventListener("blur", () => {
+  fastPointerActive = false;
+  heldArrowKeys.clear();
+  applyMotionSpeed();
 });
 
 function updateLights(time, deltaSeconds) {

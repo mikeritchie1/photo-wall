@@ -26,6 +26,34 @@ body {
   overflow: hidden;
 }
 
+.quick-controls {
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top));
+  right: max(12px, env(safe-area-inset-right));
+  display: flex;
+  gap: 8px;
+  z-index: 1100;
+  transition: opacity 0.35s ease;
+}
+
+.quick-controls button {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  background: rgba(20, 20, 20, 0.88);
+  color: white;
+  font-size: 21px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.quick-controls button:hover {
+  background: rgba(65, 65, 65, 0.95);
+}
+
 /* Temporary viewport guides for checking video handoff positions. */
 .viewport-guide {
   position: absolute;
@@ -230,7 +258,8 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   width: 100%;
 }
 
-.controls.hidden {
+.controls.hidden,
+.quick-controls.hidden {
   opacity: 0;
   pointer-events: none;
 }
@@ -310,19 +339,6 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
 .controls select option {
   background: #1f1f1f;
   color: #ffffff;
-}
-
-#soundCheckbox {
-  background: #2f2f2f;
-  color: #ffffff;
-  border: 1px solid #5a5a5a;
-  border-radius: 8px;
-  padding: 8px 14px;
-  cursor: pointer;
-}
-
-#soundCheckbox:hover {
-  background: #3b3b3b;
 }
 
 .controls input[type="range"] {
