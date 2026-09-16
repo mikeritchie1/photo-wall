@@ -89,6 +89,7 @@ let isPaused = false;
 let pausedSpeed = null;
 let reverseEnabled = false;
 let fastPointerActive = false;
+let fastPointerDirection = 1;
 const heldArrowKeys = new Set();
 let pendingMediaAssignmentTimers = [];
 
@@ -1895,6 +1896,7 @@ document.addEventListener("pointerdown", (event) => {
   updateVideoAudio();
   if (!controls.contains(event.target) && !quickControls.contains(event.target) && !isPaused) {
     fastPointerActive = true;
+    fastPointerDirection = event.button === 2 ? -1 : 1;
     applyMotionSpeed();
   }
 }, { passive: true });
@@ -1904,18 +1906,23 @@ function releaseFastPointer() {
     return;
   }
   fastPointerActive = false;
+  fastPointerDirection = 1;
   applyMotionSpeed();
 }
 
 document.addEventListener("pointerup", releaseFastPointer, { passive: true });
 document.addEventListener("pointercancel", releaseFastPointer, { passive: true });
 document.addEventListener("pointerleave", releaseFastPointer, { passive: true });
+document.addEventListener("contextmenu", (event) => {
+  event.preventDefault();
+});
 
 function resetControlsToDefaults() {
   setSoundEnabled(true);
   setPaused(false);
   setVolume(1);
   fastPointerActive = false;
+  fastPointerDirection = 1;
   heldArrowKeys.clear();
   updateVideoAudio();
   mediaMixIndex = 2;
@@ -2238,7 +2245,8 @@ function applyMotionSpeed() {
   }
 
   if (fastPointerActive) {
-    verticalSpeed = parseFloat(speedSlider.max) * (reverseEnabled ? -1 : 1);
+    verticalSpeed = parseFloat(speedSlider.max) *
+      (reverseEnabled ? -1 : 1) * fastPointerDirection;
     return;
   }
 
@@ -2457,6 +2465,7 @@ document.addEventListener("keyup", (event) => {
 
 window.addEventListener("blur", () => {
   fastPointerActive = false;
+  fastPointerDirection = 1;
   heldArrowKeys.clear();
   applyMotionSpeed();
 });
