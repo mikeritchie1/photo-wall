@@ -1059,6 +1059,10 @@ function assignRandomImages() {
   const hadExistingMedia = activeQueuePhotos.some((photo) => Boolean(photo.currentImageData));
   for (const photo of activeQueuePhotos) {
     const hadMedia = Boolean(photo.currentImageData);
+    // Invalidate any pending load/reveal callbacks from the previous folder.
+    // Otherwise an old reveal timer can turn the frame back on while its
+    // source is already being cleared, briefly showing an empty frame.
+    photo.pendingRequestId = (photo.pendingRequestId || 0) + 1;
     photo.audioStartPreparation?.();
     photo.videoEl.pause();
     photo.currentMediaType = null;
@@ -1070,6 +1074,7 @@ function assignRandomImages() {
     photo.imgEl.style.opacity = "0";
     photo.videoEl.style.opacity = "0";
     photo.textEl.style.opacity = "0";
+    photo.mediaRevealAt = 0;
     setTimeout(() => {
       if (!photo.currentImageData) {
         photo.videoEl.removeAttribute("src");
