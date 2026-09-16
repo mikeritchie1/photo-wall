@@ -90,6 +90,10 @@ let pausedSpeed = null;
 let reverseEnabled = false;
 let fastPointerActive = false;
 let fastPointerDirection = 1;
+let fastPointerButton = 0;
+let pointerDownAt = 0;
+let pointerMoved = false;
+let suppressNextCanvasClick = false;
 const heldArrowKeys = new Set();
 let pendingMediaAssignmentTimers = [];
 
@@ -1895,9 +1899,18 @@ document.addEventListener("pointerdown", (event) => {
   audioUnlocked = true;
   updateVideoAudio();
   if (!controls.contains(event.target) && !quickControls.contains(event.target) && !isPaused) {
+    pointerDownAt = performance.now();
+    pointerMoved = false;
     fastPointerActive = true;
+    fastPointerButton = event.button;
     fastPointerDirection = event.button === 2 ? -1 : 1;
     applyMotionSpeed();
+  }
+}, { passive: true });
+
+document.addEventListener("pointermove", (event) => {
+  if (fastPointerActive && (Math.abs(event.movementX) > 2 || Math.abs(event.movementY) > 2)) {
+    pointerMoved = true;
   }
 }, { passive: true });
 
@@ -1905,8 +1918,11 @@ function releaseFastPointer() {
   if (!fastPointerActive) {
     return;
   }
+  suppressNextCanvasClick = fastPointerButton === 0 &&
+    (performance.now() - pointerDownAt >= 250 || pointerMoved);
   fastPointerActive = false;
   fastPointerDirection = 1;
+  fastPointerButton = 0;
   applyMotionSpeed();
 }
 
@@ -1923,6 +1939,7 @@ function resetControlsToDefaults() {
   setVolume(1);
   fastPointerActive = false;
   fastPointerDirection = 1;
+  fastPointerButton = 0;
   heldArrowKeys.clear();
   updateVideoAudio();
   mediaMixIndex = 2;
@@ -2362,6 +2379,10 @@ controls.addEventListener("pointerleave", (event) => {
 });
 
 document.addEventListener("click", (event) => {
+  if (suppressNextCanvasClick && !controls.contains(event.target)) {
+    suppressNextCanvasClick = false;
+    return;
+  }
   if (!controls.classList.contains("hidden") && !controls.contains(event.target)) {
     hideControls();
     return;
