@@ -834,8 +834,6 @@ function spawnSticker() {
     x: window.innerWidth * (0.125 + Math.random() * 0.75),
     y: window.innerHeight * (0.125 + Math.random() * 0.75)
   };
-  const angle = Math.random() * Math.PI * 2;
-  const direction = { x: Math.cos(angle), y: Math.sin(angle) };
   const margin = size + 24;
   const distanceToEdge = (component, directionComponent, limit) => {
     if (Math.abs(directionComponent) < 0.001) {
@@ -845,22 +843,51 @@ function spawnSticker() {
       ? (limit + margin - component) / directionComponent
       : (component + margin) / -directionComponent;
   };
-  const startDistance = Math.min(
-    distanceToEdge(target.x, -direction.x, window.innerWidth),
-    distanceToEdge(target.y, -direction.y, window.innerHeight)
-  ) + 20;
-  const endDistance = Math.min(
-    distanceToEdge(target.x, direction.x, window.innerWidth),
-    distanceToEdge(target.y, direction.y, window.innerHeight)
-  ) + 20;
-  const start = {
-    x: target.x - direction.x * startDistance,
-    y: target.y - direction.y * startDistance
+  const getPath = (angle) => {
+    const direction = { x: Math.cos(angle), y: Math.sin(angle) };
+    const startDistance = Math.min(
+      distanceToEdge(target.x, -direction.x, window.innerWidth),
+      distanceToEdge(target.y, -direction.y, window.innerHeight)
+    ) + 20;
+    const endDistance = Math.min(
+      distanceToEdge(target.x, direction.x, window.innerWidth),
+      distanceToEdge(target.y, direction.y, window.innerHeight)
+    ) + 20;
+    const start = {
+      x: target.x - direction.x * startDistance,
+      y: target.y - direction.y * startDistance
+    };
+    const end = {
+      x: target.x + direction.x * endDistance,
+      y: target.y + direction.y * endDistance
+    };
+    const spawnSide = start.x < -size * 0.5
+      ? "left"
+      : start.x > window.innerWidth + size * 0.5
+      ? "right"
+      : start.y < -size * 0.5
+      ? "top"
+      : "bottom";
+    return { direction, start, end, spawnSide };
   };
-  const end = {
-    x: target.x + direction.x * endDistance,
-    y: target.y + direction.y * endDistance
-  };
+
+  let path = getPath(Math.random() * Math.PI * 2);
+  for (let attempt = 0; attempt < 6; attempt += 1) {
+    const crowded = Array.from(activeStickers).some((activeFlight) => {
+      const sameSide = activeFlight.dataset.spawnSide === path.spawnSide;
+      const sameDirection = Number(activeFlight.dataset.directionX) * path.direction.x +
+        Number(activeFlight.dataset.directionY) * path.direction.y > 0.65;
+      return sameSide && sameDirection;
+    });
+    if (!crowded || Math.random() > 0.75) {
+      break;
+    }
+    path = getPath(Math.random() * Math.PI * 2);
+  }
+  const { direction, start, end, spawnSide } = path;
+  flight.dataset.spawnSide = spawnSide;
+  flight.dataset.directionX = String(direction.x);
+  flight.dataset.directionY = String(direction.y);
 
   flight.style.width = `${size}px`;
   flight.style.height = `${size}px`;
@@ -879,7 +906,7 @@ function spawnSticker() {
     if (!stickersEnabled || !activeStickers.has(flight)) {
       return;
     }
-    const duration = 8000 + Math.random() * 10000;
+    const duration = 6500 + Math.random() * 9000;
     const animation = flight.animate([
       { transform: `translate(${start.x}px, ${start.y}px)` },
       { transform: `translate(${end.x}px, ${end.y}px)` }
@@ -915,7 +942,7 @@ function scheduleStickerSpawn() {
   stickerSpawnTimer = setTimeout(() => {
     spawnSticker();
     scheduleStickerSpawn();
-  }, 3000 + Math.random() * 4000);
+  }, 2000 + Math.random() * 2000);
 }
 
 function buildAudioUrl(relativePath) {
