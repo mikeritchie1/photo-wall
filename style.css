@@ -222,6 +222,27 @@ body.debug-mode .viewport-guide {
   text-overflow: ellipsis;
 }
 
+.sticker-flight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.sticker-trail {
+  position: absolute;
+  height: 8px;
+  border-radius: 999px;
+  transform-origin: center;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.85), rgba(255, 230, 170, 0.38), transparent);
+  filter: blur(3px);
+  opacity: 0.8;
+  z-index: 0;
+}
+
 .sticker {
   position: absolute;
   top: 0;
@@ -236,10 +257,8 @@ body.debug-mode .viewport-guide {
     drop-shadow(0 1px 0 #ffffff)
     drop-shadow(0 -1px 0 #ffffff)
     drop-shadow(0 4px 7px rgba(0, 0, 0, 0.45));
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.35s ease;
 }
 
 #stickerLayer {

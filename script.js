@@ -807,13 +807,18 @@ function buildStickerUrl(sticker) {
 }
 
 function createStickerElement() {
-  const element = document.createElement("img");
-  element.className = "sticker";
-  element.alt = "";
-  element.setAttribute("aria-hidden", "true");
-  stickerLayer.appendChild(element);
-  activeStickers.add(element);
-  return element;
+  const flight = document.createElement("div");
+  const trail = document.createElement("span");
+  const image = document.createElement("img");
+  flight.className = "sticker-flight";
+  trail.className = "sticker-trail";
+  image.className = "sticker";
+  image.alt = "";
+  image.setAttribute("aria-hidden", "true");
+  flight.append(trail, image);
+  stickerLayer.appendChild(flight);
+  activeStickers.add(flight);
+  return { flight, trail, image };
 }
 
 function spawnSticker() {
@@ -821,7 +826,7 @@ function spawnSticker() {
     return;
   }
 
-  const element = createStickerElement();
+  const { flight, trail, image } = createStickerElement();
   const sticker = stickerManifest[Math.floor(Math.random() * stickerManifest.length)];
   const url = buildStickerUrl(sticker);
   const size = Math.min(220, Math.max(84, Math.min(window.innerWidth, window.innerHeight) * 0.18));
@@ -857,10 +862,16 @@ function spawnSticker() {
     y: target.y + direction.y * endDistance
   };
 
-  element.style.width = `${size}px`;
-  element.style.opacity = "0";
+  flight.style.width = `${size}px`;
+  flight.style.height = `${size}px`;
+  flight.style.opacity = "0";
+  trail.style.width = `${size * 1.15}px`;
+  trail.style.left = `${size / 2 - direction.x * size * 0.65 - size * 0.575}px`;
+  trail.style.top = `${size / 2 - direction.y * size * 0.65 - 4}px`;
+  trail.style.transform = `rotate(${Math.atan2(direction.y, direction.x)}rad)`;
+  image.style.width = `${size}px`;
   let animationStarted = false;
-  element.onload = () => {
+  image.onload = () => {
     if (animationStarted) {
       return;
     }
@@ -868,27 +879,31 @@ function spawnSticker() {
     if (!stickersEnabled || !activeStickers.has(element)) {
       return;
     }
-    element.style.opacity = "1";
-    const duration = 12000 + Math.random() * 6000;
-    const animation = element.animate([
+    const duration = 8000 + Math.random() * 10000;
+    const animation = flight.animate([
       { transform: `translate(${start.x}px, ${start.y}px)` },
       { transform: `translate(${end.x}px, ${end.y}px)` }
-    ], { duration, easing: "linear" });
+    ], { duration, easing: "linear", fill: "both" });
+    requestAnimationFrame(() => {
+      if (stickersEnabled && activeStickers.has(flight)) {
+        flight.style.opacity = "1";
+      }
+    });
     animation.onfinish = () => {
-      element.style.opacity = "0";
+      flight.style.opacity = "0";
       setTimeout(() => {
-        activeStickers.delete(element);
-        element.remove();
+        activeStickers.delete(flight);
+        flight.remove();
       }, 380);
     };
   };
-  element.onerror = () => {
-    activeStickers.delete(element);
-    element.remove();
+  image.onerror = () => {
+    activeStickers.delete(flight);
+    flight.remove();
   };
-  element.src = url;
-  if (element.complete && element.naturalWidth > 0) {
-    element.onload();
+  image.src = url;
+  if (image.complete && image.naturalWidth > 0) {
+    image.onload();
   }
 }
 
