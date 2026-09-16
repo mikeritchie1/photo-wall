@@ -243,7 +243,8 @@ const VIDEO_AUDIO_UPDATE_INTERVAL_MS = 150;
 const MEDIA_CAPTION_REVEAL_DELAY_MS = 90;
 const MEDIA_ASSIGNMENT_STAGGER_MS = 85;
 const MEDIA_REVEAL_STAGGER_MS = 140;
-const MEDIA_FADE_OUT_MS = 240;
+// Keep the source attached until the full CSS fade-out has completed.
+const MEDIA_FADE_OUT_MS = 380;
 let soundEnabled = true;
 let backgroundAudioPhoto = null;
 let backgroundAudioPrepared = false;
