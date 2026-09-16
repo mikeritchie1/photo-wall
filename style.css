@@ -185,6 +185,7 @@ body.debug-mode .viewport-guide {
   object-fit: contain;
   display: block;
   opacity: 0;
+  transition: opacity 0.35s ease;
   border: var(--photo-frame-border) solid white;
   border-bottom: var(--photo-caption-gap) solid white;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
@@ -215,6 +216,7 @@ body.debug-mode .viewport-guide {
   font-weight: 400;
   z-index: 3;
   pointer-events: none;
+  transition: opacity 0.35s ease;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
