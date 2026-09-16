@@ -214,6 +214,7 @@ let mediaMixIndex = 2;
 let naturalMediaMix = false;
 let stickersEnabled = false;
 let stickerSpawnTimer = null;
+let stickerDeck = [];
 const activeStickers = new Set();
 let selectedFolder = "Various";
 let selectedOrder = "random";
@@ -754,8 +755,10 @@ stickersToggle.addEventListener("click", () => {
   stickersToggle.setAttribute("aria-pressed", String(stickersEnabled));
   stickersToggle.textContent = stickersEnabled ? "Stickers: On" : "Stickers: Off";
   if (stickersEnabled) {
+    stickerDeck = [];
     scheduleStickerSpawn(true);
   } else {
+    stickerDeck = [];
     clearTimeout(stickerSpawnTimer);
     fadeOutActiveStickers();
   }
@@ -822,7 +825,10 @@ function spawnSticker() {
   }
 
   const { flight, trail, image } = createStickerElement();
-  const sticker = stickerManifest[Math.floor(Math.random() * stickerManifest.length)];
+  if (stickerDeck.length === 0) {
+    stickerDeck = shuffleArray(stickerManifest);
+  }
+  const sticker = stickerDeck.pop();
   const url = buildStickerUrl(sticker);
   const size = Math.min(220, Math.max(84, Math.min(window.innerWidth, window.innerHeight) * 0.18));
   const target = {
@@ -2139,6 +2145,7 @@ function resetControlsToDefaults() {
   fastPointerButton = 0;
   heldArrowKeys.clear();
   stickersEnabled = false;
+  stickerDeck = [];
   clearTimeout(stickerSpawnTimer);
   stickersToggle.classList.remove("active");
   stickersToggle.setAttribute("aria-pressed", "false");
