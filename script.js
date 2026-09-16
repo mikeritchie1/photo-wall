@@ -1285,13 +1285,12 @@ function assignRandomImageToPhoto(photo) {
     // The video stays paused while metadata is read and the seek completes,
     // so it cannot visibly begin at 0 seconds first.
     prepareVideoAudioStart(photo, () => {
-      if (photo.currentMediaType !== "video" || !photo.videoStartSeekComplete || photo.videoEl.ended) {
-        return;
-      }
-      if (isPhotoInViewport(photo)) {
+      if (photo.currentMediaType === "video" &&
+          photo.videoStartSeekComplete && !photo.videoEl.ended) {
         photo.videoEl.play().catch(() => {});
       }
     });
+    photo.textEl.textContent = nextCaption;
   } else {
     photo.container.classList.remove("debug-video-text");
     photo.textEl.style.fontSize = "";
