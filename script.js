@@ -620,7 +620,6 @@ function updateMediaMixControl() {
   const mediaMixDisabled = !hasVideos() || naturalMediaMix;
   mediaMixSlider.disabled = mediaMixDisabled;
   mediaMixSlider.classList.toggle("disabled", mediaMixDisabled);
-  mediaMixSlider.title = hasVideos() ? "Choose the photos and videos mix" : "Add videos to the videos folder first";
 }
 
 mediaMixSlider.addEventListener("input", () => {
@@ -2223,8 +2222,7 @@ function getConfiguredSpeed() {
 function updateReverseButton() {
   reverseButton.classList.toggle("active", reverseEnabled);
   reverseButton.setAttribute("aria-pressed", String(reverseEnabled));
-  reverseButton.textContent = reverseEnabled ? "↑" : "↓";
-  reverseButton.title = reverseEnabled ? "Move upward" : "Move downward";
+  reverseButton.textContent = reverseEnabled ? "▲" : "▼";
 }
 
 function applyMotionSpeed() {

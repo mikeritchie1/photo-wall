@@ -391,9 +391,9 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   padding: 0;
   border: 1px solid rgba(255, 211, 78, 0.55);
   border-radius: 7px;
-  background: rgba(45, 35, 62, 0.9);
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 16px !important;
+  background: #1f1f1f;
+  color: #ffffff;
+  font-size: 13px !important;
   line-height: 1;
   cursor: pointer;
 }
@@ -709,7 +709,7 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
 
 .year-range-active {
   position: absolute;
-  top: 8px;
+  top: 16px;
   height: 4px;
   border-radius: 999px;
   background: #d8b56f;
