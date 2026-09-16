@@ -887,16 +887,19 @@ function spawnSticker() {
   flight.style.width = `${size}px`;
   flight.style.height = `${size}px`;
   flight.style.opacity = "0";
-  trail.style.width = `${size * 1.8}px`;
-  trail.style.left = `${size / 2 - direction.x * size * 0.9 - size * 0.9}px`;
-  trail.style.top = `${size / 2 - direction.y * size * 0.9 - 8}px`;
+  trail.style.width = `${size * 2.2}px`;
+  trail.style.height = `${size * 0.28}px`;
+  trail.style.left = `${size / 2 - direction.x * size * 1.1 - size * 1.1}px`;
+  trail.style.top = `${size / 2 - direction.y * size * 1.1 - size * 0.14}px`;
   trail.style.transform = `rotate(${Math.atan2(direction.y, direction.x)}rad)`;
   const trailColors = [
-    ["#ffffff", "#ffd36a"],
-    ["#d9f7ff", "#6dd5ff"],
-    ["#ffe6f5", "#ff78c8"],
-    ["#e9ddff", "#a47cff"]
-  ][Math.floor(Math.random() * 4)];
+    ["#f4ffd8", "#49d66b"],
+    ["#ffe0db", "#ff3b30"],
+    ["#fff4c2", "#ff9f0a"],
+    ["#e1fff5", "#00b878"],
+    ["#fff0d5", "#ff6b35"],
+    ["#ffffff", "#ffd34e"]
+  ][Math.floor(Math.random() * 6)];
   trail.style.setProperty("--trail-hot", trailColors[0]);
   trail.style.setProperty("--trail-glow", trailColors[1]);
   image.style.width = `${size}px`;
