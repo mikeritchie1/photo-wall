@@ -90,6 +90,7 @@ let isPaused = false;
 let pausedSpeed = null;
 let fastPointerActive = false;
 const heldArrowKeys = new Set();
+let pendingMediaAssignmentTimers = [];
 
 const leftXRatio = 0.24;
 const rightXRatio = 0.76;
@@ -239,6 +240,8 @@ const VIDEO_FALLBACK_TRIGGER_RATIO = 0.95;
 const FALLBACK_VIDEO_MIN_CENTER_RATIO = 0.05;
 const FALLBACK_VIDEO_MAX_CENTER_RATIO = 0.95;
 const VIDEO_AUDIO_UPDATE_INTERVAL_MS = 150;
+const MEDIA_CAPTION_REVEAL_DELAY_MS = 90;
+const MEDIA_ASSIGNMENT_STAGGER_MS = 85;
 let soundEnabled = true;
 let backgroundAudioPhoto = null;
 let backgroundAudioPrepared = false;
@@ -1046,9 +1049,45 @@ function setupClickListeners() {
 }
 
 function assignRandomImages() {
-  for (const photo of activeQueuePhotos) {
-    assignRandomImageToPhoto(photo);
+  for (const timer of pendingMediaAssignmentTimers) {
+    clearTimeout(timer);
   }
+  pendingMediaAssignmentTimers = [];
+
+  for (const photo of activeQueuePhotos) {
+    photo.audioStartPreparation?.();
+    photo.videoEl.pause();
+    photo.videoEl.removeAttribute("src");
+    photo.videoEl.load();
+    photo.imgEl.removeAttribute("src");
+    photo.currentMediaType = null;
+    photo.currentImageData = null;
+    photo.currentImageKey = null;
+    photo.imgEl.style.opacity = "0";
+    photo.videoEl.style.opacity = "0";
+    photo.textEl.style.opacity = "0";
+  }
+
+  const candidates = activeQueuePhotos.filter(isPhotoNearViewport);
+  candidates.forEach((photo, index) => {
+    photo.assignmentQueued = true;
+    const timer = setTimeout(() => {
+      photo.assignmentQueued = false;
+      if (!photo.currentImageData && getActivePhotos().includes(photo)) {
+        assignRandomImageToPhoto(photo);
+      }
+    }, index * MEDIA_ASSIGNMENT_STAGGER_MS);
+    pendingMediaAssignmentTimers.push(timer);
+  });
+}
+
+function isPhotoNearViewport(photo) {
+  if (!Number.isFinite(photo.y)) {
+    return false;
+  }
+  const margin = window.innerHeight * 0.25;
+  const halfHeight = getPhotoHeight(photo) / 2;
+  return photo.y + halfHeight > -margin && photo.y - halfHeight < window.innerHeight + margin;
 }
 
 function handleUnavailableMedia(photo, imageData, requestId) {
@@ -1291,6 +1330,7 @@ function assignRandomImageToPhoto(photo) {
   if (!imageData) {
     return;
   }
+  photo.assignmentQueued = false;
   // A photo can never retain the active-video highlight. If the selected
   // video slot is replaced, clear the old selection before assigning media.
   if (audibleVideoPhoto === photo) {
@@ -1323,7 +1363,11 @@ function assignRandomImageToPhoto(photo) {
     }
     photo.textEl.textContent = nextCaption;
     photo.imgEl.style.opacity = "1";
-    photo.textEl.style.opacity = "1";
+    setTimeout(() => {
+      if (photo.pendingRequestId === requestId) {
+        photo.textEl.style.opacity = "1";
+      }
+    }, MEDIA_CAPTION_REVEAL_DELAY_MS);
     photo.imgEl.onload = null;
     photo.imgEl.onerror = null;
   };
@@ -1338,7 +1382,6 @@ function assignRandomImageToPhoto(photo) {
       photo.videoEl.onloadeddata = null;
       photo.videoEl.oncanplay = null;
       photo.videoEl.style.opacity = "1";
-      photo.textEl.style.opacity = "1";
       finalizeCaptionUpdate();
     };
     photo.videoEl.onloadeddata = revealLoadedVideo;
@@ -2402,6 +2445,10 @@ function render(time) {
   lastRenderTimeSec = t;
 
   for (const photo of activeQueuePhotos) {
+    if (!photo.currentImageData && !photo.assignmentQueued && isPhotoNearViewport(photo)) {
+      assignRandomImageToPhoto(photo);
+    }
+
     // Use the same time-based movement as the light streams. This keeps
     // photos, videos, and lights synchronized at any display frame rate.
     photo.y += verticalSpeed * 60 * deltaSeconds;
