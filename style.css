@@ -343,6 +343,60 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
 
 .controls input[type="range"] {
   width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 30px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  color-scheme: dark;
+}
+
+.controls input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  border: 1px solid #62576b;
+  border-radius: 999px;
+  background: #332f3a;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.65);
+}
+
+.controls input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  margin-top: -7px;
+  border: 2px solid #ffe6a3;
+  border-radius: 50%;
+  background: #d8b56f;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+}
+
+.controls input[type="range"]::-moz-range-track {
+  height: 6px;
+  border: 1px solid #62576b;
+  border-radius: 999px;
+  background: #332f3a;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.65);
+}
+
+.controls input[type="range"]::-moz-range-progress {
+  height: 6px;
+  border-radius: 999px;
+  background: #b89450;
+}
+
+.controls input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ffe6a3;
+  border-radius: 50%;
+  background: #d8b56f;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+}
+
+.controls input[type="range"]:focus-visible {
+  outline: 2px solid #ffe6a3;
+  outline-offset: 3px;
 }
 
 .people-filter {

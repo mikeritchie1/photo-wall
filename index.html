@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260916-shortcuts-volume" />
+  <link rel="stylesheet" href="style.css?v=20260916-dark-sliders" />
 </head>
 <body>
   <div class="wall" id="wall">
@@ -114,11 +114,6 @@
 
   <div id="controls" class="controls hidden">
     <div class="control-row">
-      <div class="control-group">
-        <label for="folderSelect">Media Folder</label>
-        <select id="folderSelect"></select>
-      </div>
-
       <div class="control-group media-mix-group">
         <label for="mediaMixSlider">Photos / Videos</label>
         <input type="range" id="mediaMixSlider" min="0" max="4" step="1" value="3" />
@@ -149,23 +144,18 @@
       </div>
 
       <div class="control-group">
-        <label for="yearStartSlider">Year Range</label>
-        <div class="year-range-group">
-          <div class="year-range-track">
-            <div id="yearRangeActive" class="year-range-active"></div>
-            <input type="range" id="yearStartSlider" />
-            <input type="range" id="yearEndSlider" />
-          </div>
-          <div id="yearRangeValue" class="year-range-value"></div>
-          <label class="year-order-toggle" for="orderedCheckbox">
-            <input type="checkbox" id="orderedCheckbox" />
-            Ordered
-          </label>
-        </div>
+        <label for="volumeSlider">Volume</label>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" />
       </div>
+
     </div>
 
     <div class="control-row">
+      <div class="control-group">
+        <label for="folderSelect">Select Media File</label>
+        <select id="folderSelect"></select>
+      </div>
+
       <div class="control-group">
         <label for="backgroundSelect">Background</label>
         <select id="backgroundSelect"></select>
@@ -215,8 +205,19 @@
       </div>
 
       <div class="control-group">
-        <label for="volumeSlider">Volume</label>
-        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" />
+        <label for="yearStartSlider">Year Range</label>
+        <div class="year-range-group">
+          <div class="year-range-track">
+            <div id="yearRangeActive" class="year-range-active"></div>
+            <input type="range" id="yearStartSlider" />
+            <input type="range" id="yearEndSlider" />
+          </div>
+          <div id="yearRangeValue" class="year-range-value"></div>
+          <label class="year-order-toggle" for="orderedCheckbox">
+            <input type="checkbox" id="orderedCheckbox" />
+            Ordered
+          </label>
+        </div>
       </div>
     </div>
 
