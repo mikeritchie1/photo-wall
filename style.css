@@ -261,6 +261,44 @@ body.debug-mode .viewport-guide {
   background: linear-gradient(to left, var(--trail-hot, #ffffff), var(--trail-glow, #ffd36a), transparent);
   filter: blur(1px);
   transform: translateY(-50%);
+  animation: rocket-core-flicker 0.22s ease-in-out infinite alternate;
+}
+
+.sticker-trail::before {
+  content: "";
+  position: absolute;
+  right: -2px;
+  top: 50%;
+  width: 42%;
+  height: 145%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at right center, var(--trail-hot, #ffffff) 0%, var(--trail-glow, #ffd36a) 34%, transparent 76%);
+  filter: blur(5px);
+  transform: translateY(-50%) scaleX(0.9) scaleY(0.82);
+  transform-origin: right center;
+  animation: rocket-flame-flicker 0.16s ease-in-out infinite alternate;
+}
+
+@keyframes rocket-core-flicker {
+  from {
+    opacity: 0.65;
+    transform: translateY(-50%) scaleX(0.82);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scaleX(1.06);
+  }
+}
+
+@keyframes rocket-flame-flicker {
+  from {
+    opacity: 0.5;
+    transform: translateY(-50%) scaleX(0.72) scaleY(0.72);
+  }
+  to {
+    opacity: 0.95;
+    transform: translateY(-50%) scaleX(1.12) scaleY(1.08);
+  }
 }
 
 .sticker {
