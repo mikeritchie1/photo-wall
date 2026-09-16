@@ -215,7 +215,9 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   opacity: 1;
   transition: opacity 0.35s ease;
   width: min(94vw, 1140px);
+  box-sizing: border-box;
   max-height: calc(100vh - 32px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  max-height: calc(100dvh - 32px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
   overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
@@ -552,22 +554,30 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
 @media (max-width: 900px) {
   .controls {
     bottom: max(10px, env(safe-area-inset-bottom));
-    width: min(96vw, 700px);
-    padding: 14px;
+    width: calc(100vw - 20px);
+    max-height: calc(82vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    max-height: calc(82dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    padding: 10px;
     border-radius: 12px;
   }
 
   .control-row {
-    gap: 10px;
+    gap: 7px;
   }
 
   .control-group {
-    min-width: calc(50% - 8px);
-    flex: 1 1 calc(50% - 8px);
+    min-width: 0;
+    flex: 1 1 calc(50% - 4px);
   }
 
   .control-group label {
-    font-size: 13px;
+    font-size: 12px;
+  }
+
+  .controls select,
+  .controls button,
+  .controls input[type="range"] {
+    min-height: 30px;
   }
 
   #resetControlsBtn {
@@ -577,12 +587,14 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
 
 @media (max-width: 560px) {
   .controls {
-    width: min(97vw, 420px);
-    padding: 12px;
+    width: calc(100vw - 12px);
+    max-height: calc(82vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    max-height: calc(82dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    padding: 8px;
   }
 
   .control-group {
-    min-width: 100%;
-    flex-basis: 100%;
+    min-width: 0;
+    flex-basis: calc(50% - 4px);
   }
 }
