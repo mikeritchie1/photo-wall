@@ -293,19 +293,26 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   font-size: 12px;
 }
 
+.media-mix-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 20px;
+}
+
 .media-mix-toggle {
   display: flex;
   flex-direction: row !important;
   align-items: center;
   gap: 7px;
-  margin-top: 2px;
+  margin-top: 0;
   cursor: pointer;
   font-size: 13px !important;
 }
 
 .media-mix-toggle input {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   margin: 0;
 }
 
@@ -331,14 +338,15 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
 }
 
 .reverse-button {
-  width: 28px;
-  min-height: 28px !important;
+  width: 24px;
+  height: 20px;
+  min-height: 20px !important;
   padding: 0;
   border: 1px solid rgba(255, 211, 78, 0.55);
   border-radius: 7px;
   background: rgba(45, 35, 62, 0.9);
   color: rgba(255, 255, 255, 0.8);
-  font-size: 22px !important;
+  font-size: 16px !important;
   line-height: 1;
   cursor: pointer;
 }
@@ -347,7 +355,7 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   display: flex;
   align-items: center;
   gap: 7px;
-  min-height: 28px;
+  min-height: 20px;
 }
 
 .speed-label label {

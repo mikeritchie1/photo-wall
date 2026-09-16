@@ -115,13 +115,15 @@
   <div id="controls" class="controls hidden">
     <div class="control-row">
       <div class="control-group media-mix-group">
-        <label for="mediaMixSlider">Photos / Videos</label>
+        <div class="media-mix-label">
+          <label for="mediaMixSlider">Photos / Videos</label>
+          <label class="media-mix-toggle" for="naturalMediaCheckbox">
+            <input type="checkbox" id="naturalMediaCheckbox" checked />
+            Natural
+          </label>
+        </div>
         <input type="range" id="mediaMixSlider" min="0" max="4" step="1" value="3" />
         <div id="mediaMixValue" class="media-mix-value">25% photos · 75% videos</div>
-        <label class="media-mix-toggle" for="naturalMediaCheckbox">
-          <input type="checkbox" id="naturalMediaCheckbox" />
-          Natural
-        </label>
       </div>
 
       <div class="control-group">

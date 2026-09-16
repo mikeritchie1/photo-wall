@@ -640,7 +640,9 @@ mediaMixSlider.addEventListener("input", () => {
 });
 
 naturalMediaCheckbox.addEventListener("change", (event) => {
-  naturalMediaMix = event.target.checked;
+  // Checked means the explicit Photos/Videos ratio is active. Unchecked
+  // switches to the natural mix and disables the ratio slider.
+  naturalMediaMix = !event.target.checked;
   manifest = imageManifest;
   updateMediaMixControl();
   populateFolderSelect();
@@ -1923,7 +1925,7 @@ function resetControlsToDefaults() {
   updateVideoAudio();
   mediaMixIndex = 2;
   naturalMediaMix = false;
-  naturalMediaCheckbox.checked = false;
+  naturalMediaCheckbox.checked = true;
   updateMediaMixControl();
   selectedOrder = "random";
   orderedCheckbox.checked = false;
