@@ -216,7 +216,7 @@ let stickerManifest = [];
 let mediaMixIndex = 2;
 let naturalMediaMix = false;
 let stickersEnabled = false;
-let stickerCycleTimer = null;
+let stickerCycleTimers = [null, null];
 let selectedFolder = "Various";
 let selectedOrder = "random";
 let availablePeople = [];
@@ -757,9 +757,9 @@ stickersToggle.addEventListener("click", () => {
   stickersToggle.textContent = stickersEnabled ? "Stickers: On" : "Stickers: Off";
   if (stickersEnabled) {
     layoutStickers();
-    scheduleStickerCycle();
+    stickerElements.forEach((_, index) => scheduleStickerCycle(index));
   } else {
-    clearTimeout(stickerCycleTimer);
+    stickerCycleTimers.forEach((timer) => clearTimeout(timer));
     for (const element of stickerElements) {
       element.style.opacity = "0";
       element.removeAttribute("src");
@@ -826,7 +826,7 @@ function layoutStickers() {
     .map((photo) => photo.container.getBoundingClientRect())
     .filter((rect) => rect.width > 0 && rect.height > 0);
   const placedRects = [];
-  const stickerSize = Math.min(150, Math.max(64, Math.min(window.innerWidth, window.innerHeight) * 0.13));
+  const stickerSize = Math.min(220, Math.max(84, Math.min(window.innerWidth, window.innerHeight) * 0.18));
 
   stickerElements.forEach((element, index) => {
     if (!element.dataset.stickerIndex) {
@@ -900,28 +900,25 @@ function layoutStickers() {
   });
 }
 
-function scheduleStickerCycle() {
-  clearTimeout(stickerCycleTimer);
+function scheduleStickerCycle(index) {
+  clearTimeout(stickerCycleTimers[index]);
   if (!stickersEnabled) {
     return;
   }
-  stickerCycleTimer = setTimeout(() => {
-    for (const element of stickerElements) {
-      element.style.opacity = "0";
-    }
-    stickerCycleTimer = setTimeout(() => {
+  stickerCycleTimers[index] = setTimeout(() => {
+    const element = stickerElements[index];
+    element.style.opacity = "0";
+    stickerCycleTimers[index] = setTimeout(() => {
       if (!stickersEnabled) {
         return;
       }
-      for (const element of stickerElements) {
-        element.removeAttribute("src");
-        delete element.dataset.stickerUrl;
-        delete element.dataset.stickerIndex;
-        element.style.left = "";
-        element.style.top = "";
-      }
+      element.removeAttribute("src");
+      delete element.dataset.stickerUrl;
+      delete element.dataset.stickerIndex;
+      element.style.left = "";
+      element.style.top = "";
       layoutStickers();
-      scheduleStickerCycle();
+      scheduleStickerCycle(index);
     }, 380);
   }, 3000 + Math.random() * 4000);
 }
@@ -2103,7 +2100,7 @@ function resetControlsToDefaults() {
   fastPointerButton = 0;
   heldArrowKeys.clear();
   stickersEnabled = false;
-  clearTimeout(stickerCycleTimer);
+  stickerCycleTimers.forEach((timer) => clearTimeout(timer));
   stickersToggle.classList.remove("active");
   stickersToggle.setAttribute("aria-pressed", "false");
   stickersToggle.textContent = "Stickers: Off";
