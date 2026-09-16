@@ -242,6 +242,7 @@ const FALLBACK_VIDEO_MAX_CENTER_RATIO = 0.95;
 const VIDEO_AUDIO_UPDATE_INTERVAL_MS = 150;
 const MEDIA_CAPTION_REVEAL_DELAY_MS = 90;
 const MEDIA_ASSIGNMENT_STAGGER_MS = 85;
+const MEDIA_REVEAL_STAGGER_MS = 260;
 let soundEnabled = true;
 let backgroundAudioPhoto = null;
 let backgroundAudioPrepared = false;
@@ -1063,13 +1064,18 @@ function assignRandomImages() {
     photo.currentMediaType = null;
     photo.currentImageData = null;
     photo.currentImageKey = null;
+    photo.imgEl.style.transition = "none";
+    photo.videoEl.style.transition = "none";
+    photo.textEl.style.transition = "none";
     photo.imgEl.style.opacity = "0";
     photo.videoEl.style.opacity = "0";
     photo.textEl.style.opacity = "0";
   }
 
   const candidates = activeQueuePhotos.filter(isPhotoNearViewport);
+  const revealBatchStart = performance.now() + 40;
   candidates.forEach((photo, index) => {
+    photo.mediaRevealAt = revealBatchStart + index * MEDIA_REVEAL_STAGGER_MS;
     photo.assignmentQueued = true;
     const timer = setTimeout(() => {
       photo.assignmentQueued = false;
@@ -1340,6 +1346,9 @@ function assignRandomImageToPhoto(photo) {
     audioMinimumHoldUntil = 0;
   }
   photo.container.classList.remove("audio-active");
+  photo.imgEl.style.transition = "none";
+  photo.videoEl.style.transition = "none";
+  photo.textEl.style.transition = "none";
   photo.imgEl.style.opacity = "0";
   photo.videoEl.style.opacity = "0";
   photo.textEl.style.opacity = "0";
@@ -1362,14 +1371,24 @@ function assignRandomImageToPhoto(photo) {
       return;
     }
     photo.textEl.textContent = nextCaption;
-    photo.imgEl.style.opacity = "1";
-    setTimeout(() => {
-      if (photo.pendingRequestId === requestId) {
-        photo.textEl.style.opacity = "1";
-      }
-    }, MEDIA_CAPTION_REVEAL_DELAY_MS);
     photo.imgEl.onload = null;
     photo.imgEl.onerror = null;
+    const activeMedia = photo.currentMediaType === "video" ? photo.videoEl : photo.imgEl;
+    const reveal = () => {
+      if (photo.pendingRequestId !== requestId) {
+        return;
+      }
+      activeMedia.style.transition = "";
+      photo.textEl.style.transition = "";
+      activeMedia.style.opacity = "1";
+      setTimeout(() => {
+        if (photo.pendingRequestId === requestId) {
+          photo.textEl.style.opacity = "1";
+        }
+      }, MEDIA_CAPTION_REVEAL_DELAY_MS);
+    };
+    const revealDelay = Math.max(0, (photo.mediaRevealAt || 0) - performance.now());
+    setTimeout(reveal, revealDelay);
   };
 
   if (imageData.mediaType === "video") {
@@ -1381,7 +1400,6 @@ function assignRandomImageToPhoto(photo) {
       }
       photo.videoEl.onloadeddata = null;
       photo.videoEl.oncanplay = null;
-      photo.videoEl.style.opacity = "1";
       finalizeCaptionUpdate();
     };
     photo.videoEl.onloadeddata = revealLoadedVideo;
