@@ -231,12 +231,14 @@ const NEXT_VIDEO_MAX_CENTER_RATIO = 0.50;
 const VIDEO_FALLBACK_TRIGGER_RATIO = 0.95;
 const FALLBACK_VIDEO_MIN_CENTER_RATIO = 0.05;
 const FALLBACK_VIDEO_MAX_CENTER_RATIO = 0.95;
+const VIDEO_AUDIO_UPDATE_INTERVAL_MS = 150;
 let soundEnabled = true;
 let backgroundAudioPhoto = null;
 let backgroundAudioPrepared = false;
 let backgroundAudioPreparing = false;
 let backgroundAudioActive = false;
 let backgroundAudioItem = null;
+let lastVideoAudioUpdateMs = -Infinity;
 
 function isMobileViewport() {
   return window.innerWidth <= MOBILE_BREAKPOINT;
@@ -1254,7 +1256,8 @@ function assignRandomImageToPhoto(photo) {
     // so it cannot visibly begin at 0 seconds first.
     prepareVideoAudioStart(photo, () => {
       if (photo.currentMediaType === "video" &&
-          photo.videoStartSeekComplete && !photo.videoEl.ended) {
+          photo.videoStartSeekComplete && !photo.videoEl.ended &&
+          isPhotoInViewport(photo)) {
         photo.videoEl.play().catch(() => {});
       }
     });
@@ -1452,19 +1455,15 @@ function syncBackgroundAudio(photo) {
   }
 }
 
+function isPhotoInViewport(photo) {
+  if (photo.currentMediaType !== "video" || photo.container.style.display === "none") {
+    return false;
+  }
+  const bounds = photo.container.getBoundingClientRect();
+  return bounds.bottom > 32 && bounds.top < window.innerHeight - 32;
+}
+
 function updateVideoAudio() {
-  const visibleVideos = photos
-    .map((photo) => {
-      if (photo.currentMediaType !== "video" || photo.container.style.display === "none") {
-        return null;
-      }
-      const bounds = photo.container.getBoundingClientRect();
-      if (bounds.bottom <= 32 || bounds.top >= window.innerHeight - 32) {
-        return null;
-      }
-      return { photo, bounds };
-    })
-    .filter(Boolean);
   const allVideoEntries = photos
     .map((photo) => {
       if (photo.currentMediaType !== "video" || photo.container.style.display === "none") {
@@ -1473,6 +1472,10 @@ function updateVideoAudio() {
       return { photo, bounds: photo.container.getBoundingClientRect() };
     })
     .filter(Boolean);
+  const visibleVideos = allVideoEntries.filter(({ bounds }) =>
+    bounds.bottom > 32 && bounds.top < window.innerHeight - 32
+  );
+  const visibleVideoPhotos = new Set(visibleVideos.map(({ photo }) => photo));
   const videosInCenterRange = (entries, minimumRatio, maximumRatio) => entries.filter(({ bounds }) => {
     const center = (bounds.top + bounds.bottom) / 2;
     return center >= window.innerHeight * minimumRatio &&
@@ -1587,14 +1590,19 @@ function updateVideoAudio() {
 
   syncBackgroundAudio(nextAudiblePhoto);
 
-  // All assigned videos keep playing. The selected video is still the one
-  // used for the active handoff/audio state, but selection does not pause the
-  // other visible videos.
+  // Only visible videos keep playing. Off-screen videos are paused so mobile
+  // devices and TVs do not have to decode invisible video streams.
   for (const photo of photos) {
     if (photo.currentMediaType !== "video") {
       continue;
     }
-    if (!photo.audioStartPreparation && !photo.videoEl.ended) {
+    if (!visibleVideoPhotos.has(photo)) {
+      if (!photo.videoEl.paused) {
+        photo.videoEl.pause();
+      }
+      continue;
+    }
+    if (!photo.audioStartPreparation && !photo.videoEl.ended && photo.videoEl.paused) {
       photo.videoEl.play().catch(() => {});
     }
   }
@@ -1612,7 +1620,7 @@ function updateVideoAudio() {
             nextAudiblePhoto.videoEl.play().catch(() => {});
           }
         });
-      } else if (!audioStartPending) {
+      } else if (!audioStartPending && nextAudiblePhoto.videoEl.paused) {
         nextAudiblePhoto.videoEl.play().catch(() => {});
       }
       if (!audioPlaybackStartedAt) {
@@ -2135,7 +2143,10 @@ function render(time) {
   }
 
   updateDebugVideoOverlay();
-  updateVideoAudio();
+  if (time - lastVideoAudioUpdateMs >= VIDEO_AUDIO_UPDATE_INTERVAL_MS) {
+    lastVideoAudioUpdateMs = time;
+    updateVideoAudio();
+  }
 
   updateLights(time, deltaSeconds);
 
