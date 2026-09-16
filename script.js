@@ -754,15 +754,10 @@ stickersToggle.addEventListener("click", () => {
   stickersToggle.setAttribute("aria-pressed", String(stickersEnabled));
   stickersToggle.textContent = stickersEnabled ? "Stickers: On" : "Stickers: Off";
   if (stickersEnabled) {
-    scheduleStickerSpawn();
+    scheduleStickerSpawn(true);
   } else {
     clearTimeout(stickerSpawnTimer);
-    for (const element of activeStickers) {
-      element.style.opacity = "0";
-      element.getAnimations().forEach((animation) => animation.cancel());
-      activeStickers.delete(element);
-      element.remove();
-    }
+    fadeOutActiveStickers();
   }
 });
 
@@ -892,10 +887,18 @@ function spawnSticker() {
   flight.style.width = `${size}px`;
   flight.style.height = `${size}px`;
   flight.style.opacity = "0";
-  trail.style.width = `${size * 1.15}px`;
-  trail.style.left = `${size / 2 - direction.x * size * 0.65 - size * 0.575}px`;
-  trail.style.top = `${size / 2 - direction.y * size * 0.65 - 4}px`;
+  trail.style.width = `${size * 1.8}px`;
+  trail.style.left = `${size / 2 - direction.x * size * 0.9 - size * 0.9}px`;
+  trail.style.top = `${size / 2 - direction.y * size * 0.9 - 8}px`;
   trail.style.transform = `rotate(${Math.atan2(direction.y, direction.x)}rad)`;
+  const trailColors = [
+    ["#ffffff", "#ffd36a"],
+    ["#d9f7ff", "#6dd5ff"],
+    ["#ffe6f5", "#ff78c8"],
+    ["#e9ddff", "#a47cff"]
+  ][Math.floor(Math.random() * 4)];
+  trail.style.setProperty("--trail-hot", trailColors[0]);
+  trail.style.setProperty("--trail-glow", trailColors[1]);
   image.style.width = `${size}px`;
   let animationStarted = false;
   image.onload = () => {
@@ -934,7 +937,18 @@ function spawnSticker() {
   }
 }
 
-function scheduleStickerSpawn() {
+function fadeOutActiveStickers() {
+  for (const flight of activeStickers) {
+    flight.getAnimations().forEach((animation) => animation.pause());
+    flight.style.opacity = "0";
+    setTimeout(() => {
+      activeStickers.delete(flight);
+      flight.remove();
+    }, 1000);
+  }
+}
+
+function scheduleStickerSpawn(firstSpawn = false) {
   clearTimeout(stickerSpawnTimer);
   if (!stickersEnabled) {
     return;
@@ -942,7 +956,7 @@ function scheduleStickerSpawn() {
   stickerSpawnTimer = setTimeout(() => {
     spawnSticker();
     scheduleStickerSpawn();
-  }, 2000 + Math.random() * 2000);
+  }, firstSpawn ? 350 + Math.random() * 450 : 2000 + Math.random() * 2000);
 }
 
 function buildAudioUrl(relativePath) {
@@ -2128,9 +2142,11 @@ function resetControlsToDefaults() {
   stickersToggle.textContent = "Stickers: Off";
   for (const element of activeStickers) {
     element.style.opacity = "0";
-    element.getAnimations().forEach((animation) => animation.cancel());
-    activeStickers.delete(element);
-    element.remove();
+    element.getAnimations().forEach((animation) => animation.pause());
+    setTimeout(() => {
+      activeStickers.delete(element);
+      element.remove();
+    }, 1000);
   }
   updateVideoAudio();
   mediaMixIndex = 2;

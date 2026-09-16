@@ -237,11 +237,12 @@ body.debug-mode .viewport-guide {
   height: 10px;
   border-radius: 999px;
   transform-origin: center;
+  clip-path: polygon(0 50%, 100% 0, 100% 100%);
   background: linear-gradient(
     to left,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(255, 238, 190, 0.72) 18%,
-    rgba(255, 196, 100, 0.28) 58%,
+    var(--trail-hot, #ffffff) 0%,
+    color-mix(in srgb, var(--trail-hot, #ffffff) 72%, transparent) 18%,
+    color-mix(in srgb, var(--trail-glow, #ffd36a) 28%, transparent) 58%,
     transparent 100%
   );
   filter: blur(4px);
@@ -257,7 +258,7 @@ body.debug-mode .viewport-guide {
   width: 82%;
   height: 3px;
   border-radius: inherit;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0.9), rgba(255, 220, 140, 0.2), transparent);
+  background: linear-gradient(to left, var(--trail-hot, #ffffff), var(--trail-glow, #ffd36a), transparent);
   filter: blur(1px);
 }
 
