@@ -303,6 +303,38 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
 .media-mix-toggle input,
 .year-order-toggle input {
   accent-color: #d8b56f;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  border: 1px solid #d8b56f;
+  border-radius: 3px;
+  background: rgba(216, 181, 111, 0.14);
+  display: inline-grid;
+  place-content: center;
+  flex: 0 0 auto;
+}
+
+.media-mix-toggle input::after,
+.year-order-toggle input::after {
+  content: "";
+  width: 7px;
+  height: 4px;
+  border-left: 2px solid #211b27;
+  border-bottom: 2px solid #211b27;
+  transform: rotate(-45deg) scale(0);
+  transition: transform 0.12s ease;
+}
+
+.media-mix-toggle input:checked,
+.year-order-toggle input:checked {
+  background: #d8b56f;
+}
+
+.media-mix-toggle input:checked::after,
+.year-order-toggle input:checked::after {
+  transform: rotate(-45deg) scale(1);
 }
 
 #mediaMixSlider {
@@ -604,6 +636,7 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   height: 18px;
   margin-top: 4px;
   width: 100%;
+  isolation: isolate;
 }
 
 .year-range-track::before {
@@ -621,7 +654,7 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   margin: 0;
   pointer-events: none;
   background: transparent;
-  z-index: 2;
+  z-index: 3;
 }
 
 .year-range-track input[type="range"]::-webkit-slider-thumb {
@@ -690,12 +723,12 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   margin-top: 0;
   cursor: pointer;
   font-size: 13px !important;
+  color: #d8b56f;
 }
 
 .year-order-toggle input {
-  width: 16px;
-  height: 16px;
-  margin: 0;
+  width: 14px;
+  height: 14px;
 }
 
 #resetControlsBtn {
