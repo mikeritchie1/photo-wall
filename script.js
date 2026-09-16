@@ -2027,7 +2027,8 @@ function hideControls() {
 
 function resetHideTimer() {
   clearTimeout(hideTimer);
-  if (controls.matches(":hover")) {
+  const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+  if (!isTouchDevice && controls.matches(":hover")) {
     return;
   }
   hideTimer = setTimeout(() => {
@@ -2035,11 +2036,17 @@ function resetHideTimer() {
   }, 2500);
 }
 
-controls.addEventListener("pointerenter", () => {
+controls.addEventListener("pointerenter", (event) => {
+  if (event.pointerType === "touch") {
+    return;
+  }
   clearTimeout(hideTimer);
 });
 
-controls.addEventListener("pointerleave", () => {
+controls.addEventListener("pointerleave", (event) => {
+  if (event.pointerType === "touch") {
+    return;
+  }
   resetHideTimer();
 });
 

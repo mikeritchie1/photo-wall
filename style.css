@@ -585,6 +585,17 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   }
 }
 
+@media (max-width: 900px) and (orientation: landscape) {
+  .controls {
+    max-height: calc(88vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    max-height: calc(88dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  }
+
+  .control-group {
+    flex-basis: calc(33.333% - 5px);
+  }
+}
+
 @media (max-width: 560px) {
   .controls {
     width: calc(100vw - 12px);
