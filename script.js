@@ -998,6 +998,7 @@ function handleUnavailableMedia(photo, imageData, requestId) {
   photo.videoEl.load();
   photo.imgEl.style.visibility = "hidden";
   photo.videoEl.style.visibility = "hidden";
+  photo.textEl.style.visibility = "hidden";
 
   resetImageCycle();
   if (imageCycle.length > 0) {
@@ -1233,6 +1234,7 @@ function assignRandomImageToPhoto(photo) {
   photo.container.classList.remove("audio-active");
   photo.imgEl.style.visibility = "hidden";
   photo.videoEl.style.visibility = "hidden";
+  photo.textEl.style.visibility = "hidden";
   const nextCaption = getDisplayTextForImage(imageData);
   photo.audioStartPreparation?.();
   photo.currentMediaType = imageData.mediaType;
@@ -1253,6 +1255,7 @@ function assignRandomImageToPhoto(photo) {
     }
     photo.textEl.textContent = nextCaption;
     photo.imgEl.style.visibility = "visible";
+    photo.textEl.style.visibility = "visible";
     photo.imgEl.onload = null;
     photo.imgEl.onerror = null;
   };
@@ -1260,6 +1263,18 @@ function assignRandomImageToPhoto(photo) {
   if (imageData.mediaType === "video") {
     photo.imgEl.onload = null;
     photo.imgEl.onerror = null;
+    const revealLoadedVideo = () => {
+      if (photo.pendingRequestId !== requestId || photo.currentMediaType !== "video") {
+        return;
+      }
+      photo.videoEl.onloadeddata = null;
+      photo.videoEl.oncanplay = null;
+      photo.videoEl.style.visibility = "visible";
+      photo.textEl.style.visibility = "visible";
+      finalizeCaptionUpdate();
+    };
+    photo.videoEl.onloadeddata = revealLoadedVideo;
+    photo.videoEl.oncanplay = revealLoadedVideo;
     photo.videoEl.onerror = () => handleUnavailableMedia(photo, imageData, requestId);
     photo.imgEl.style.display = "none";
     photo.videoEl.style.display = "block";
@@ -1273,8 +1288,6 @@ function assignRandomImageToPhoto(photo) {
       if (photo.currentMediaType !== "video" || !photo.videoStartSeekComplete || photo.videoEl.ended) {
         return;
       }
-      photo.videoEl.style.visibility = "visible";
-      finalizeCaptionUpdate();
       if (isPhotoInViewport(photo)) {
         photo.videoEl.play().catch(() => {});
       }
@@ -1283,6 +1296,8 @@ function assignRandomImageToPhoto(photo) {
     photo.container.classList.remove("debug-video-text");
     photo.textEl.style.fontSize = "";
     photo.videoEl.pause();
+    photo.videoEl.onloadeddata = null;
+    photo.videoEl.oncanplay = null;
     photo.videoEl.onerror = null;
     photo.videoEl.removeAttribute("src");
     photo.videoEl.load();
