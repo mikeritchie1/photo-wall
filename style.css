@@ -222,7 +222,7 @@ body.debug-mode .viewport-guide {
 body.debug-mode .photo-container.debug-video-text .photo-text {
   font-family: Arial, sans-serif;
   line-height: 1.15;
-  white-space: normal;
+  white-space: pre-line;
   overflow: visible;
   text-overflow: clip;
 }

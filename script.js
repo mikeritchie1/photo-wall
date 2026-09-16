@@ -585,6 +585,7 @@ orderedCheckbox.addEventListener("change", (event) => {
 
 folderSelect.addEventListener("change", (event) => {
   selectedFolder = event.target.value;
+  selectedOrder = orderedCheckbox.checked ? "ascending" : "random";
   populatePeopleFilter();
   resetImageCycle();
   assignRandomImages();
@@ -1684,6 +1685,7 @@ function updateDebugVideoOverlay() {
     return;
   }
 
+  const debugTextSize = Math.max(8, Math.min(12, getEffectivePhotoWidth() / 32));
   for (const photo of photos) {
     if (photo.container.style.display === "none") {
       continue;
@@ -1699,11 +1701,12 @@ function updateDebugVideoOverlay() {
 
     if (photo.currentMediaType !== "video") {
       photo.container.classList.add("debug-video-text");
+      photo.textEl.style.fontSize = `${debugTextSize}px`;
       photo.textEl.textContent = [
-        `FILE ${mediaFilename}`,
-        `FOLDER ${mediaFolder}`,
-        `Y ${centerPercent.toFixed(1)}%`
-      ].join("  |  ");
+        mediaFilename,
+        `${mediaFolder} | Y ${centerPercent.toFixed(1)}%`,
+        "Dur: -- | St: -- | T: --"
+      ].join("\n");
       continue;
     }
 
@@ -1718,18 +1721,15 @@ function updateDebugVideoOverlay() {
       : null;
 
     photo.container.classList.add("debug-video-text");
-    const normalTextSize = Math.max(12, Math.min(40, getEffectivePhotoWidth() / 18));
-    photo.textEl.style.fontSize = `${normalTextSize / 2}px`;
+    photo.textEl.style.fontSize = `${debugTextSize}px`;
 
     photo.textEl.textContent = [
-      `FILE ${mediaFilename}`,
-      `FOLDER ${mediaFolder}`,
-      `Y ${centerPercent.toFixed(1)}%`,
-      `DURATION ${duration === null ? "--" : `${duration.toFixed(1)}s`}`,
-      `START ${selectedStart === null ? "--" : `${selectedStart.toFixed(1)}s`}`,
-      `SEEK ${photo.videoStartSeekComplete ? "READY" : "WAIT"}`,
-      `TIME ${playbackTime === null ? "--" : `${playbackTime.toFixed(1)}s`}`
-    ].join("  |  ");
+      mediaFilename,
+      `${mediaFolder} | Y ${centerPercent.toFixed(1)}%`,
+      `Dur: ${duration === null ? "--" : `${duration.toFixed(1)}s`} | ` +
+        `St: ${selectedStart === null ? "--" : `${selectedStart.toFixed(1)}s`} | ` +
+        `T: ${playbackTime === null ? "--" : `${playbackTime.toFixed(1)}s`}`
+    ].join("\n");
   }
 }
 
