@@ -477,7 +477,71 @@ async function loadGroups() {
   }
 }
 
-function populateFolderSelect() {
+function getManifestMediaUrl(source, folder, item) {
+  const relativePath = resolveImagePath(item, folder);
+  const mediaPath = !isLocalRuntime &&
+    source.mediaType === "video" &&
+    folder === "Various"
+    ? item.filename
+    : relativePath;
+  return buildPhotoUrl(mediaPath, source.mediaType);
+}
+
+async function isMediaUrlAvailable(url) {
+  try {
+    const response = await fetch(url, { method: "HEAD", cache: "no-store" });
+    if (response.ok) {
+      return true;
+    }
+    if (response.status !== 405) {
+      return false;
+    }
+  } catch (error) {
+    return false;
+  }
+
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: { Range: "bytes=0-0" },
+      cache: "no-store"
+    });
+    return response.ok;
+  } catch (error) {
+    return false;
+  }
+}
+
+async function getAvailableFolders(folders) {
+  if (isLocalRuntime) {
+    return folders;
+  }
+
+  const results = await Promise.all(folders.map(async (folder) => {
+    const sources = getActiveManifests();
+    const checks = [];
+    for (const source of sources) {
+      const items = source.data[folder] || [];
+      if (!items.length) {
+        continue;
+      }
+      const sampleIndexes = [...new Set([
+        0,
+        Math.floor(items.length / 2),
+        items.length - 1
+      ])];
+      checks.push(...sampleIndexes.map((index) =>
+        isMediaUrlAvailable(getManifestMediaUrl(source, folder, items[index]))
+      ));
+    }
+    const availability = await Promise.all(checks);
+    return availability.some(Boolean) ? folder : null;
+  }));
+
+  return results.filter(Boolean);
+}
+
+async function populateFolderSelect() {
   folderSelect.innerHTML = "";
   if (!manifest) return;
 
@@ -485,12 +549,16 @@ function populateFolderSelect() {
   const allOption = document.createElement("option");
   allOption.value = "all";
   allOption.textContent = "All";
-  allOption.selected = selectedFolder === "all";
   folderSelect.appendChild(allOption);
 
   // Add individual folders from both media libraries.
   const folders = new Set(getActiveManifests().flatMap((source) => Object.keys(source.data)));
-  for (const folder of Array.from(folders).sort()) {
+  const availableFolders = await getAvailableFolders(Array.from(folders).sort());
+  if (selectedFolder !== "all" && !availableFolders.includes(selectedFolder)) {
+    selectedFolder = availableFolders.includes("Various") ? "Various" : "all";
+  }
+  allOption.selected = selectedFolder === "all";
+  for (const folder of availableFolders) {
     const option = document.createElement("option");
     option.value = folder;
     option.textContent = folder;
@@ -996,6 +1064,9 @@ function handleUnavailableMedia(photo, imageData, requestId) {
   photo.videoEl.pause();
   photo.videoEl.removeAttribute("src");
   photo.videoEl.load();
+  photo.imgEl.style.opacity = "0";
+  photo.videoEl.style.opacity = "0";
+  photo.textEl.style.opacity = "0";
 
   resetImageCycle();
   if (imageCycle.length > 0) {
@@ -1229,6 +1300,9 @@ function assignRandomImageToPhoto(photo) {
     audioMinimumHoldUntil = 0;
   }
   photo.container.classList.remove("audio-active");
+  photo.imgEl.style.opacity = "0";
+  photo.videoEl.style.opacity = "0";
+  photo.textEl.style.opacity = "0";
   const nextCaption = getDisplayTextForImage(imageData);
   photo.audioStartPreparation?.();
   photo.currentMediaType = imageData.mediaType;
@@ -1248,6 +1322,8 @@ function assignRandomImageToPhoto(photo) {
       return;
     }
     photo.textEl.textContent = nextCaption;
+    photo.imgEl.style.opacity = "1";
+    photo.textEl.style.opacity = "1";
     photo.imgEl.onload = null;
     photo.imgEl.onerror = null;
   };
@@ -1261,6 +1337,8 @@ function assignRandomImageToPhoto(photo) {
       }
       photo.videoEl.onloadeddata = null;
       photo.videoEl.oncanplay = null;
+      photo.videoEl.style.opacity = "1";
+      photo.textEl.style.opacity = "1";
       finalizeCaptionUpdate();
     };
     photo.videoEl.onloadeddata = revealLoadedVideo;
