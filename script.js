@@ -26,10 +26,7 @@ const peopleOptionsRow = document.getElementById("peopleOptionsRow");
 const peopleOptions = document.getElementById("peopleOptions");
 const resetControlsBtn = document.getElementById("resetControlsBtn");
 const stickersToggle = document.getElementById("stickersToggle");
-const stickerElements = [
-  document.getElementById("sticker1"),
-  document.getElementById("sticker2")
-];
+const stickerLayer = document.getElementById("stickerLayer");
 const wall = document.getElementById("wall");
 const R2_BASE_URL = "https://pub-bd90151148dc4ad4a6dcce4b188be9ac.r2.dev";
 const isLocalRuntime =
@@ -216,7 +213,8 @@ let stickerManifest = [];
 let mediaMixIndex = 2;
 let naturalMediaMix = false;
 let stickersEnabled = false;
-let stickerCycleTimers = [null, null];
+let stickerSpawnTimer = null;
+const activeStickers = new Set();
 let selectedFolder = "Various";
 let selectedOrder = "random";
 let availablePeople = [];
@@ -756,15 +754,14 @@ stickersToggle.addEventListener("click", () => {
   stickersToggle.setAttribute("aria-pressed", String(stickersEnabled));
   stickersToggle.textContent = stickersEnabled ? "Stickers: On" : "Stickers: Off";
   if (stickersEnabled) {
-    layoutStickers();
-    stickerElements.forEach((_, index) => scheduleStickerCycle(index));
+    scheduleStickerSpawn();
   } else {
-    stickerCycleTimers.forEach((timer) => clearTimeout(timer));
-    for (const element of stickerElements) {
+    clearTimeout(stickerSpawnTimer);
+    for (const element of activeStickers) {
       element.style.opacity = "0";
-      element.removeAttribute("src");
-      delete element.dataset.stickerUrl;
-      delete element.dataset.stickerIndex;
+      element.getAnimations().forEach((animation) => animation.cancel());
+      activeStickers.delete(element);
+      element.remove();
     }
   }
 });
@@ -809,117 +806,100 @@ function buildStickerUrl(sticker) {
   return `${isLocalRuntime ? "stickers" : `${R2_BASE_URL}/stickers`}/${encodedPath}`;
 }
 
-function stickerRectOverlaps(rect, other, margin = 14) {
-  return rect.left < other.right + margin &&
-    rect.right > other.left - margin &&
-    rect.top < other.bottom + margin &&
-    rect.bottom > other.top - margin;
+function createStickerElement() {
+  const element = document.createElement("img");
+  element.className = "sticker";
+  element.alt = "";
+  element.setAttribute("aria-hidden", "true");
+  stickerLayer.appendChild(element);
+  activeStickers.add(element);
+  return element;
 }
 
-function layoutStickers() {
+function spawnSticker() {
   if (!stickersEnabled || stickerManifest.length === 0) {
     return;
   }
 
-  const photoRects = activeQueuePhotos
-    .filter((photo) => photo.currentImageData)
-    .map((photo) => photo.container.getBoundingClientRect())
-    .filter((rect) => rect.width > 0 && rect.height > 0);
-  const placedRects = [];
-  const stickerSize = Math.min(220, Math.max(84, Math.min(window.innerWidth, window.innerHeight) * 0.18));
+  const element = createStickerElement();
+  const sticker = stickerManifest[Math.floor(Math.random() * stickerManifest.length)];
+  const url = buildStickerUrl(sticker);
+  const size = Math.min(220, Math.max(84, Math.min(window.innerWidth, window.innerHeight) * 0.18));
+  const target = {
+    x: window.innerWidth * (0.125 + Math.random() * 0.75),
+    y: window.innerHeight * (0.125 + Math.random() * 0.75)
+  };
+  const angle = Math.random() * Math.PI * 2;
+  const direction = { x: Math.cos(angle), y: Math.sin(angle) };
+  const margin = size + 24;
+  const distanceToEdge = (component, directionComponent, limit) => {
+    if (Math.abs(directionComponent) < 0.001) {
+      return Infinity;
+    }
+    return directionComponent > 0
+      ? (limit + margin - component) / directionComponent
+      : (component + margin) / -directionComponent;
+  };
+  const startDistance = Math.min(
+    distanceToEdge(target.x, -direction.x, window.innerWidth),
+    distanceToEdge(target.y, -direction.y, window.innerHeight)
+  ) + 20;
+  const endDistance = Math.min(
+    distanceToEdge(target.x, direction.x, window.innerWidth),
+    distanceToEdge(target.y, direction.y, window.innerHeight)
+  ) + 20;
+  const start = {
+    x: target.x - direction.x * startDistance,
+    y: target.y - direction.y * startDistance
+  };
+  const end = {
+    x: target.x + direction.x * endDistance,
+    y: target.y + direction.y * endDistance
+  };
 
-  stickerElements.forEach((element, index) => {
-    if (!element.dataset.stickerIndex) {
-      element.dataset.stickerIndex = String(Math.floor(Math.random() * stickerManifest.length));
-    }
-    const sticker = stickerManifest[Number(element.dataset.stickerIndex) % stickerManifest.length];
-    const url = buildStickerUrl(sticker);
-    if (!url || element.dataset.stickerUrl !== url) {
-      element.dataset.stickerUrl = url;
-      element.style.width = `${stickerSize}px`;
-      element.style.opacity = "0";
-      element.onload = () => {
-        if (stickersEnabled && element.dataset.stickerUrl === url) {
-          element.style.opacity = "1";
-        }
-      };
-      element.onerror = () => {
-        element.style.opacity = "0";
-      };
-      element.src = url;
-    }
-
-    const stickerWidth = stickerSize;
-    const stickerHeight = element.naturalWidth > 0
-      ? stickerSize * (element.naturalHeight / element.naturalWidth)
-      : stickerSize;
-    let chosen = null;
-    const currentRect = element.getBoundingClientRect();
-    if (element.style.left && element.style.top && currentRect.width > 0 &&
-        !photoRects.some((rect) => stickerRectOverlaps(currentRect, rect)) &&
-        !placedRects.some((rect) => stickerRectOverlaps(currentRect, rect, 10))) {
-      chosen = {
-        left: currentRect.left,
-        top: currentRect.top,
-        right: currentRect.right,
-        bottom: currentRect.bottom
-      };
-    }
-    for (let attempt = 0; attempt < 80; attempt += 1) {
-      if (chosen) {
-        break;
-      }
-      const sideWidth = window.innerWidth * 0.32;
-      const left = index === 0
-        ? 12 + Math.random() * Math.max(1, sideWidth - stickerWidth - 12)
-        : window.innerWidth - sideWidth + Math.random() * Math.max(1, sideWidth - stickerWidth - 12);
-      const top = 12 + Math.random() * Math.max(1, window.innerHeight - stickerHeight - 24);
-      const candidate = {
-        left,
-        top,
-        right: left + stickerWidth,
-        bottom: top + stickerHeight
-      };
-      if (!photoRects.some((rect) => stickerRectOverlaps(candidate, rect)) &&
-          !placedRects.some((rect) => stickerRectOverlaps(candidate, rect, 10))) {
-        chosen = candidate;
-        break;
-      }
-    }
-
-    if (!chosen) {
-      element.style.opacity = "0";
+  element.style.width = `${size}px`;
+  element.style.opacity = "0";
+  let animationStarted = false;
+  element.onload = () => {
+    if (animationStarted) {
       return;
     }
-    placedRects.push(chosen);
-    element.style.left = `${chosen.left}px`;
-    element.style.top = `${chosen.top}px`;
-    if (element.complete && element.naturalWidth > 0) {
-      element.style.opacity = "1";
+    animationStarted = true;
+    if (!stickersEnabled || !activeStickers.has(element)) {
+      return;
     }
-  });
+    element.style.opacity = "1";
+    const duration = 12000 + Math.random() * 6000;
+    const animation = element.animate([
+      { transform: `translate(${start.x}px, ${start.y}px)` },
+      { transform: `translate(${end.x}px, ${end.y}px)` }
+    ], { duration, easing: "linear" });
+    animation.onfinish = () => {
+      element.style.opacity = "0";
+      setTimeout(() => {
+        activeStickers.delete(element);
+        element.remove();
+      }, 380);
+    };
+  };
+  element.onerror = () => {
+    activeStickers.delete(element);
+    element.remove();
+  };
+  element.src = url;
+  if (element.complete && element.naturalWidth > 0) {
+    element.onload();
+  }
 }
 
-function scheduleStickerCycle(index) {
-  clearTimeout(stickerCycleTimers[index]);
+function scheduleStickerSpawn() {
+  clearTimeout(stickerSpawnTimer);
   if (!stickersEnabled) {
     return;
   }
-  stickerCycleTimers[index] = setTimeout(() => {
-    const element = stickerElements[index];
-    element.style.opacity = "0";
-    stickerCycleTimers[index] = setTimeout(() => {
-      if (!stickersEnabled) {
-        return;
-      }
-      element.removeAttribute("src");
-      delete element.dataset.stickerUrl;
-      delete element.dataset.stickerIndex;
-      element.style.left = "";
-      element.style.top = "";
-      layoutStickers();
-      scheduleStickerCycle(index);
-    }, 380);
+  stickerSpawnTimer = setTimeout(() => {
+    spawnSticker();
+    scheduleStickerSpawn();
   }, 3000 + Math.random() * 4000);
 }
 
@@ -2100,15 +2080,15 @@ function resetControlsToDefaults() {
   fastPointerButton = 0;
   heldArrowKeys.clear();
   stickersEnabled = false;
-  stickerCycleTimers.forEach((timer) => clearTimeout(timer));
+  clearTimeout(stickerSpawnTimer);
   stickersToggle.classList.remove("active");
   stickersToggle.setAttribute("aria-pressed", "false");
   stickersToggle.textContent = "Stickers: Off";
-  for (const element of stickerElements) {
+  for (const element of activeStickers) {
     element.style.opacity = "0";
-    element.removeAttribute("src");
-    delete element.dataset.stickerUrl;
-    delete element.dataset.stickerIndex;
+    element.getAnimations().forEach((animation) => animation.cancel());
+    activeStickers.delete(element);
+    element.remove();
   }
   updateVideoAudio();
   mediaMixIndex = 2;
