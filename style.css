@@ -654,7 +654,15 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   margin: 0;
   pointer-events: none;
   background: transparent;
+  z-index: 2;
+}
+
+#yearStartSlider {
   z-index: 3;
+}
+
+#yearEndSlider {
+  z-index: 4;
 }
 
 .year-range-track input[type="range"]::-webkit-slider-thumb {
@@ -705,7 +713,8 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   height: 4px;
   border-radius: 999px;
   background: #d8b56f;
-  z-index: 1;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .year-range-value {
