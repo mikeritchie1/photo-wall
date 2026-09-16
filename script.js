@@ -876,7 +876,7 @@ function spawnSticker() {
       return;
     }
     animationStarted = true;
-    if (!stickersEnabled || !activeStickers.has(element)) {
+    if (!stickersEnabled || !activeStickers.has(flight)) {
       return;
     }
     const duration = 8000 + Math.random() * 10000;
