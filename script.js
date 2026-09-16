@@ -248,7 +248,8 @@ function getEffectivePhotoWidth() {
   const gap = isMobileViewport() ? 18 : 28;
   const availableWidth = window.innerWidth - (edgePadding * 2) - (gap * (activeColumns - 1));
   const maxPerColumn = Math.floor(availableWidth / activeColumns);
-  return Math.max(120, Math.min(photoWidth, maxPerColumn));
+  const minimumPhotoWidth = isMobileViewport() ? 80 : 120;
+  return Math.min(maxPerColumn, Math.max(minimumPhotoWidth, photoWidth));
 }
 
 function syncPhotoScaleVars() {
@@ -2020,6 +2021,10 @@ function showControls() {
   resetHideTimer();
 }
 
+function isTouchDevice() {
+  return window.matchMedia("(hover: none), (pointer: coarse)").matches;
+}
+
 function hideControls() {
   clearTimeout(hideTimer);
   controls.classList.add("hidden");
@@ -2027,8 +2032,7 @@ function hideControls() {
 
 function resetHideTimer() {
   clearTimeout(hideTimer);
-  const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
-  if (!isTouchDevice && controls.matches(":hover")) {
+  if (!isTouchDevice() && controls.matches(":hover")) {
     return;
   }
   hideTimer = setTimeout(() => {
@@ -2037,14 +2041,14 @@ function resetHideTimer() {
 }
 
 controls.addEventListener("pointerenter", (event) => {
-  if (event.pointerType === "touch") {
+  if (isTouchDevice() || event.pointerType === "touch") {
     return;
   }
   clearTimeout(hideTimer);
 });
 
 controls.addEventListener("pointerleave", (event) => {
-  if (event.pointerType === "touch") {
+  if (isTouchDevice() || event.pointerType === "touch") {
     return;
   }
   resetHideTimer();
@@ -2060,6 +2064,7 @@ document.addEventListener("click", (event) => {
 
 controls.addEventListener("click", (event) => {
   event.stopPropagation();
+  resetHideTimer();
 });
 
 sizeSlider.addEventListener("input", () => {
