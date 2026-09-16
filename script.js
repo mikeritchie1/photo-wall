@@ -49,18 +49,17 @@ console.log("[runtime-assets]", {
 });
 // Temporary diagnostics for video handoff and screen-position debugging.
 // Set to false to restore normal video captions and hide the guide lines.
-const DEBUG_MODE = false;
 // TEMPORARY: restrict playback to manifest entries marked isMuted=true.
 // Set to false to restore the normal mixed media pool.
 // Video filtering is controlled by the Filter dropdown below.
 // Browser timing logs appear in the browser console, not the Python
 // HTTP-server terminal.
-const DEBUG_VIDEO_START = DEBUG_MODE;
+let debugMode = false;
 
-document.body.classList.toggle("debug-mode", DEBUG_MODE);
+document.body.classList.toggle("debug-mode", debugMode);
 
 function debugVideoStart(label, details) {
-  if (DEBUG_VIDEO_START) {
+  if (debugMode) {
     console.log(label, details);
   }
 }
@@ -90,6 +89,7 @@ let lastRenderTimeSec = null;
 let isPaused = false;
 let pausedSpeed = null;
 let fastPointerActive = false;
+let selectedMediaPhoto = null;
 const heldArrowKeys = new Set();
 
 const leftXRatio = 0.24;
@@ -951,6 +951,7 @@ function setupClickListeners() {
   for (const photo of photos) {
     photo.container.addEventListener("click", (event) => {
       event.stopPropagation();
+      selectedMediaPhoto = photo;
       if (photo.currentMediaType === "video") {
         // Clicking a video selects it for active sound without replacing its
         // media. Manual selections use the extended 95% cutoff below.
@@ -1231,6 +1232,7 @@ function assignRandomImageToPhoto(photo) {
   const nextCaption = getDisplayTextForImage(imageData);
   photo.audioStartPreparation?.();
   photo.currentMediaType = imageData.mediaType;
+  photo.currentImageData = imageData;
   photo.currentImageKey = imageData._key;
   photo.currentHasAudio = imageData.hasAudio !== false;
   photo.currentIsMuted = imageData.mediaType === "video" && imageData.isMuted === true;
@@ -1673,18 +1675,37 @@ function updateVideoAudio() {
 }
 
 function updateDebugVideoOverlay() {
-  if (!DEBUG_MODE) {
+  if (!debugMode) {
+    for (const photo of photos) {
+      photo.container.classList.remove("debug-video-text");
+    }
     return;
   }
 
   for (const photo of photos) {
-    if (photo.currentMediaType !== "video" || photo.container.style.display === "none") {
+    if (photo.container.style.display === "none") {
       continue;
     }
 
     const bounds = photo.container.getBoundingClientRect();
     const center = (bounds.top + bounds.bottom) / 2;
     const centerPercent = (center / window.innerHeight) * 100;
+    const mediaFilename = photo.currentImageData?.filename
+      ? photo.currentImageData.filename.split("/").pop()
+      : "--";
+    const mediaFolder = photo.currentImageData?.folder || "--";
+
+    if (photo.currentMediaType !== "video") {
+      photo.container.classList.add("debug-video-text");
+      photo.textEl.textContent = [
+        `FILE ${mediaFilename}`,
+        `FOLDER ${mediaFolder}`,
+        `CENTER ${centerPercent.toFixed(1)}%`,
+        `Y ${center.toFixed(0)}px`
+      ].join("  |  ");
+      continue;
+    }
+
     const duration = Number.isFinite(photo.videoEl.duration)
       ? photo.videoEl.duration
       : photo.debugVideoDuration;
@@ -1700,6 +1721,8 @@ function updateDebugVideoOverlay() {
     photo.textEl.style.fontSize = `${normalTextSize / 2}px`;
 
     photo.textEl.textContent = [
+      `FILE ${mediaFilename}`,
+      `FOLDER ${mediaFolder}`,
       `CENTER ${centerPercent.toFixed(1)}%`,
       `Y ${center.toFixed(0)}px`,
       `DURATION ${duration === null ? "--" : `${duration.toFixed(1)}s`}`,
@@ -2062,14 +2085,14 @@ function getConfiguredSpeed() {
 }
 
 function applyMotionSpeed() {
-  if (isPaused) {
-    verticalSpeed = 0;
-    return;
-  }
-
   if (heldArrowKeys.size > 0) {
     const direction = heldArrowKeys.has("ArrowUp") ? -1 : 1;
     verticalSpeed = parseFloat(speedSlider.max) * direction;
+    return;
+  }
+
+  if (isPaused) {
+    verticalSpeed = 0;
     return;
   }
 
@@ -2122,6 +2145,30 @@ function setVolume(nextVolume) {
   for (const photo of photos) {
     photo.videoEl.volume = volumeLevel;
   }
+}
+
+function setDebugMode(nextDebugMode) {
+  debugMode = nextDebugMode;
+  document.body.classList.toggle("debug-mode", debugMode);
+  if (!debugMode) {
+    for (const photo of photos) {
+      photo.container.classList.remove("debug-video-text");
+    }
+  }
+}
+
+function cycleSelectedMedia(direction) {
+  const photo = selectedMediaPhoto ||
+    activeQueuePhotos.find((candidate) => isPhotoInViewport(candidate)) ||
+    activeQueuePhotos[0];
+  if (!photo || imageCycle.length === 0) {
+    return;
+  }
+
+  if (direction < 0 && imageCycle.length > 1) {
+    imageCycleIndex = (imageCycleIndex - 2 + imageCycle.length) % imageCycle.length;
+  }
+  assignRandomImageToPhoto(photo);
 }
 
 function showControls() {
@@ -2220,6 +2267,14 @@ document.addEventListener("keydown", (event) => {
     return;
   }
 
+  if (event.ctrlKey && event.key.toLowerCase() === "d") {
+    event.preventDefault();
+    if (!event.repeat) {
+      setDebugMode(!debugMode);
+    }
+    return;
+  }
+
   if (event.code === "Space") {
     event.preventDefault();
     if (!event.repeat) {
@@ -2240,6 +2295,14 @@ document.addEventListener("keydown", (event) => {
     event.preventDefault();
     heldArrowKeys.add(event.key);
     applyMotionSpeed();
+    return;
+  }
+
+  if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+    event.preventDefault();
+    if (!event.repeat) {
+      cycleSelectedMedia(event.key === "ArrowLeft" ? -1 : 1);
+    }
   }
 });
 
