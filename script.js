@@ -617,7 +617,9 @@ function getActiveManifests() {
 
 function updateMediaMixControl() {
   mediaMixSlider.value = String(mediaMixIndex);
-  mediaMixSlider.disabled = !hasVideos() || naturalMediaMix;
+  const mediaMixDisabled = !hasVideos() || naturalMediaMix;
+  mediaMixSlider.disabled = mediaMixDisabled;
+  mediaMixSlider.classList.toggle("disabled", mediaMixDisabled);
   mediaMixSlider.title = hasVideos() ? "Choose the photos and videos mix" : "Add videos to the videos folder first";
 }
 

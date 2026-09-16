@@ -305,6 +305,16 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   accent-color: #d8b56f;
 }
 
+#mediaMixSlider {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+#mediaMixSlider.disabled {
+  opacity: 0.28;
+  cursor: not-allowed;
+}
+
 .media-mix-toggle {
   display: flex;
   flex-direction: row !important;
@@ -583,8 +593,9 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
 .year-range-label {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: space-between;
   min-height: 20px;
+  width: 100%;
 }
 
 .year-range-track {
@@ -602,7 +613,7 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   top: 8px;
   height: 4px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.25);
+  background: transparent;
   z-index: 0;
 }
 
@@ -675,6 +686,7 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   flex-direction: row !important;
   align-items: center;
   gap: 7px;
+  margin-left: auto;
   margin-top: 0;
   cursor: pointer;
   font-size: 13px !important;
