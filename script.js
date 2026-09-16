@@ -217,6 +217,7 @@ let mediaMixIndex = 2;
 let naturalMediaMix = false;
 let stickersEnabled = false;
 let lastStickerLayoutTime = 0;
+let stickerCycleTimer = null;
 let selectedFolder = "Various";
 let selectedOrder = "random";
 let availablePeople = [];
@@ -759,12 +760,15 @@ stickersToggle.addEventListener("click", () => {
   if (stickersEnabled) {
     lastStickerLayoutTime = 0;
     layoutStickers();
+    scheduleStickerCycle();
   } else {
+    clearTimeout(stickerCycleTimer);
     for (const element of stickerElements) {
       element.style.opacity = "0";
       element.removeAttribute("src");
       delete element.dataset.stickerUrl;
       delete element.dataset.stickerIndex;
+      delete element.dataset.stickerRotation;
     }
   }
 });
@@ -854,7 +858,21 @@ function layoutStickers(now = performance.now()) {
       ? stickerSize * (element.naturalHeight / element.naturalWidth)
       : stickerSize;
     let chosen = null;
+    const currentRect = element.getBoundingClientRect();
+    if (element.style.left && element.style.top && currentRect.width > 0 &&
+        !photoRects.some((rect) => stickerRectOverlaps(currentRect, rect)) &&
+        !placedRects.some((rect) => stickerRectOverlaps(currentRect, rect, 10))) {
+      chosen = {
+        left: currentRect.left,
+        top: currentRect.top,
+        right: currentRect.right,
+        bottom: currentRect.bottom
+      };
+    }
     for (let attempt = 0; attempt < 80; attempt += 1) {
+      if (chosen) {
+        break;
+      }
       const left = 12 + Math.random() * Math.max(1, window.innerWidth - stickerWidth - 24);
       const top = 12 + Math.random() * Math.max(1, window.innerHeight - stickerHeight - 24);
       const candidate = {
@@ -877,11 +895,42 @@ function layoutStickers(now = performance.now()) {
     placedRects.push(chosen);
     element.style.left = `${chosen.left}px`;
     element.style.top = `${chosen.top}px`;
-    element.style.transform = `rotate(${Math.round(-15 + Math.random() * 30)}deg)`;
+    if (!element.dataset.stickerRotation) {
+      element.dataset.stickerRotation = String(Math.round(-15 + Math.random() * 30));
+    }
+    element.style.setProperty("--sticker-rotation", `${element.dataset.stickerRotation}deg`);
     if (element.complete && element.naturalWidth > 0) {
       element.style.opacity = "1";
     }
   });
+}
+
+function scheduleStickerCycle() {
+  clearTimeout(stickerCycleTimer);
+  if (!stickersEnabled) {
+    return;
+  }
+  stickerCycleTimer = setTimeout(() => {
+    for (const element of stickerElements) {
+      element.style.opacity = "0";
+    }
+    stickerCycleTimer = setTimeout(() => {
+      if (!stickersEnabled) {
+        return;
+      }
+      for (const element of stickerElements) {
+        element.removeAttribute("src");
+        delete element.dataset.stickerUrl;
+        delete element.dataset.stickerIndex;
+        delete element.dataset.stickerRotation;
+        element.style.left = "";
+        element.style.top = "";
+      }
+      lastStickerLayoutTime = 0;
+      layoutStickers();
+      scheduleStickerCycle();
+    }, 380);
+  }, 3000 + Math.random() * 4000);
 }
 
 function buildAudioUrl(relativePath) {
@@ -2061,6 +2110,7 @@ function resetControlsToDefaults() {
   fastPointerButton = 0;
   heldArrowKeys.clear();
   stickersEnabled = false;
+  clearTimeout(stickerCycleTimer);
   stickersToggle.classList.remove("active");
   stickersToggle.setAttribute("aria-pressed", "false");
   stickersToggle.textContent = "Stickers: Off";
@@ -2069,6 +2119,7 @@ function resetControlsToDefaults() {
     element.removeAttribute("src");
     delete element.dataset.stickerUrl;
     delete element.dataset.stickerIndex;
+    delete element.dataset.stickerRotation;
   }
   updateVideoAudio();
   mediaMixIndex = 2;
