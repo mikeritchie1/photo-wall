@@ -184,6 +184,7 @@ body.debug-mode .viewport-guide {
   height: auto;
   object-fit: contain;
   display: block;
+  visibility: hidden;
   border: var(--photo-frame-border) solid white;
   border-bottom: var(--photo-caption-gap) solid white;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);

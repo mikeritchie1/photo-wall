@@ -996,6 +996,8 @@ function handleUnavailableMedia(photo, imageData, requestId) {
   photo.videoEl.pause();
   photo.videoEl.removeAttribute("src");
   photo.videoEl.load();
+  photo.imgEl.style.visibility = "hidden";
+  photo.videoEl.style.visibility = "hidden";
 
   resetImageCycle();
   if (imageCycle.length > 0) {
@@ -1004,6 +1006,7 @@ function handleUnavailableMedia(photo, imageData, requestId) {
   }
 
   photo.currentMediaType = null;
+  photo.currentImageData = null;
   photo.currentImageKey = null;
   hasAvailableImages = false;
   updateCenterPhotoVisibility();
@@ -1228,6 +1231,8 @@ function assignRandomImageToPhoto(photo) {
     audioMinimumHoldUntil = 0;
   }
   photo.container.classList.remove("audio-active");
+  photo.imgEl.style.visibility = "hidden";
+  photo.videoEl.style.visibility = "hidden";
   const nextCaption = getDisplayTextForImage(imageData);
   photo.audioStartPreparation?.();
   photo.currentMediaType = imageData.mediaType;
@@ -1247,6 +1252,7 @@ function assignRandomImageToPhoto(photo) {
       return;
     }
     photo.textEl.textContent = nextCaption;
+    photo.imgEl.style.visibility = "visible";
     photo.imgEl.onload = null;
     photo.imgEl.onerror = null;
   };
@@ -1264,13 +1270,15 @@ function assignRandomImageToPhoto(photo) {
     // The video stays paused while metadata is read and the seek completes,
     // so it cannot visibly begin at 0 seconds first.
     prepareVideoAudioStart(photo, () => {
-      if (photo.currentMediaType === "video" &&
-          photo.videoStartSeekComplete && !photo.videoEl.ended &&
-          isPhotoInViewport(photo)) {
+      if (photo.currentMediaType !== "video" || !photo.videoStartSeekComplete || photo.videoEl.ended) {
+        return;
+      }
+      photo.videoEl.style.visibility = "visible";
+      finalizeCaptionUpdate();
+      if (isPhotoInViewport(photo)) {
         photo.videoEl.play().catch(() => {});
       }
     });
-    finalizeCaptionUpdate();
   } else {
     photo.container.classList.remove("debug-video-text");
     photo.textEl.style.fontSize = "";
@@ -1699,36 +1707,11 @@ function updateDebugVideoOverlay() {
       : "--";
     const mediaFolder = photo.currentImageData?.folder || "--";
 
-    if (photo.currentMediaType !== "video") {
-      photo.container.classList.add("debug-video-text");
-      photo.textEl.style.fontSize = `${debugTextSize}px`;
-      photo.textEl.textContent = [
-        mediaFilename,
-        `${mediaFolder} | Y ${centerPercent.toFixed(1)}%`,
-        "Dur: -- | St: -- | T: --"
-      ].join("\n");
-      continue;
-    }
-
-    const duration = Number.isFinite(photo.videoEl.duration)
-      ? photo.videoEl.duration
-      : photo.debugVideoDuration;
-    const selectedStart = Number.isFinite(photo.debugVideoStartTime)
-      ? photo.debugVideoStartTime
-      : null;
-    const playbackTime = Number.isFinite(photo.videoEl.currentTime)
-      ? photo.videoEl.currentTime
-      : null;
-
     photo.container.classList.add("debug-video-text");
     photo.textEl.style.fontSize = `${debugTextSize}px`;
-
     photo.textEl.textContent = [
       mediaFilename,
-      `${mediaFolder} | Y ${centerPercent.toFixed(1)}%`,
-      `Dur: ${duration === null ? "--" : `${duration.toFixed(1)}s`} | ` +
-        `St: ${selectedStart === null ? "--" : `${selectedStart.toFixed(1)}s`} | ` +
-        `T: ${playbackTime === null ? "--" : `${playbackTime.toFixed(1)}s`}`
+      `${mediaFolder} | Y ${centerPercent.toFixed(1)}%`
     ].join("\n");
   }
 }
