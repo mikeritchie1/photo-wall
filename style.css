@@ -596,6 +596,7 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
   justify-content: space-between;
   min-height: 20px;
   width: 100%;
+  max-width: 280px;
 }
 
 .year-range-track {
@@ -606,15 +607,7 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
 }
 
 .year-range-track::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 8px;
-  height: 4px;
-  border-radius: 999px;
-  background: transparent;
-  z-index: 0;
+  display: none;
 }
 
 .year-range-track input[type="range"] {
@@ -644,7 +637,7 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
 
 .year-range-track input[type="range"]::-webkit-slider-runnable-track {
   height: 4px;
-  background: transparent;
+  background: transparent !important;
 }
 
 .year-range-track input[type="range"]::-moz-range-thumb {
@@ -658,12 +651,19 @@ body.debug-mode .photo-container.debug-video-text .photo-text {
 
 .year-range-track input[type="range"]::-moz-range-track {
   height: 4px;
-  background: transparent;
+  background: transparent !important;
 }
 
 .year-range-track input[type="range"]::-moz-range-progress {
   height: 4px;
+  background: transparent !important;
+}
+
+.year-range-track input[type="range"]::-ms-track {
+  height: 4px;
   background: transparent;
+  border-color: transparent;
+  color: transparent;
 }
 
 .year-range-active {
