@@ -242,7 +242,8 @@ const FALLBACK_VIDEO_MAX_CENTER_RATIO = 0.95;
 const VIDEO_AUDIO_UPDATE_INTERVAL_MS = 150;
 const MEDIA_CAPTION_REVEAL_DELAY_MS = 90;
 const MEDIA_ASSIGNMENT_STAGGER_MS = 85;
-const MEDIA_REVEAL_STAGGER_MS = 260;
+const MEDIA_REVEAL_STAGGER_MS = 140;
+const MEDIA_FADE_OUT_MS = 240;
 let soundEnabled = true;
 let backgroundAudioPhoto = null;
 let backgroundAudioPrepared = false;
@@ -1055,25 +1056,32 @@ function assignRandomImages() {
   }
   pendingMediaAssignmentTimers = [];
 
+  const hadExistingMedia = activeQueuePhotos.some((photo) => Boolean(photo.currentImageData));
   for (const photo of activeQueuePhotos) {
+    const hadMedia = Boolean(photo.currentImageData);
     photo.audioStartPreparation?.();
     photo.videoEl.pause();
-    photo.videoEl.removeAttribute("src");
-    photo.videoEl.load();
-    photo.imgEl.removeAttribute("src");
     photo.currentMediaType = null;
     photo.currentImageData = null;
     photo.currentImageKey = null;
-    photo.imgEl.style.transition = "none";
-    photo.videoEl.style.transition = "none";
-    photo.textEl.style.transition = "none";
+    photo.imgEl.style.transition = "";
+    photo.videoEl.style.transition = "";
+    photo.textEl.style.transition = "";
     photo.imgEl.style.opacity = "0";
     photo.videoEl.style.opacity = "0";
     photo.textEl.style.opacity = "0";
+    setTimeout(() => {
+      if (!photo.currentImageData) {
+        photo.videoEl.removeAttribute("src");
+        photo.videoEl.load();
+        photo.imgEl.removeAttribute("src");
+      }
+    }, hadMedia ? MEDIA_FADE_OUT_MS : 0);
   }
 
   const candidates = activeQueuePhotos.filter(isPhotoNearViewport);
-  const revealBatchStart = performance.now() + 40;
+  const assignmentDelay = hadExistingMedia ? MEDIA_FADE_OUT_MS : 0;
+  const revealBatchStart = performance.now() + assignmentDelay + 40;
   candidates.forEach((photo, index) => {
     photo.mediaRevealAt = revealBatchStart + index * MEDIA_REVEAL_STAGGER_MS;
     photo.assignmentQueued = true;
@@ -1082,7 +1090,7 @@ function assignRandomImages() {
       if (!photo.currentImageData && getActivePhotos().includes(photo)) {
         assignRandomImageToPhoto(photo);
       }
-    }, index * MEDIA_ASSIGNMENT_STAGGER_MS);
+    }, assignmentDelay + index * MEDIA_ASSIGNMENT_STAGGER_MS);
     pendingMediaAssignmentTimers.push(timer);
   });
 }
